@@ -1268,6 +1268,12 @@ body {
     box-shadow: 0 6px 20px rgba(202, 105, 226, 0.4);
 }
 
+.donation-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 .service-card h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
