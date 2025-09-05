@@ -1408,24 +1408,29 @@ p {
 
 /* Services Section */
 .services {
-    padding: 100px 0;
-    background: var(--background-white);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
 }
 
 .services h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .section-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 60px;
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--luxury-slate);
+    margin-bottom: 0;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .services-grid {
@@ -1437,11 +1442,11 @@ p {
 }
 
 .service-card {
-    background: var(--background-white);
-    border-radius: var(--border-radius-large);
+    background: var(--luxury-bone);
+    border-radius: 0;
     padding: 40px 32px;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
     text-align: center;
     position: relative;
@@ -1452,17 +1457,18 @@ p {
 
 .service-card.featured {
     transform: scale(1.02);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-medium);
+    border-color: var(--hero-coral);
+    box-shadow: 0 8px 24px rgba(214, 123, 123, 0.2);
 }
 
 .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-heavy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    border-color: var(--hero-pink);
 }
 
 .service-card.featured:hover {
-    transform: scale(1.02) translateY(-8px);
+    transform: scale(1.02) translateY(-4px);
 }
 
 .service-icon {
@@ -1591,10 +1597,12 @@ p {
 }
 
 .service-card h3 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 1.5rem;
-    color: var(--text-primary);
+    color: var(--luxury-ink);
     margin-bottom: 16px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .service-price {
@@ -1603,24 +1611,28 @@ p {
 }
 
 .service-price .price {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
+    font-weight: 400;
+    color: var(--hero-coral);
     display: block;
     margin-bottom: 4px;
+    letter-spacing: -0.01em;
 }
 
 .service-price .price-subtitle {
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     font-weight: 500;
 }
 
 .service-card p {
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     margin-bottom: 24px;
     line-height: 1.6;
     flex-grow: 1;
+    font-family: 'Inter', sans-serif;
 }
 
 .service-features {
@@ -1732,17 +1744,18 @@ p {
 
 /* Pricing Section */
 .pricing {
-    padding: 100px 0;
-    background: var(--background-light);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
     position: relative;
 }
 
 .pricing h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .pricing-grid {
@@ -1753,11 +1766,11 @@ p {
 }
 
 .pricing-card {
-    background: var(--background-white);
-    border-radius: var(--border-radius-large);
+    background: var(--luxury-bone);
+    border-radius: 0;
     padding: 40px 32px;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
     text-align: center;
     position: relative;
@@ -1765,17 +1778,18 @@ p {
 
 .pricing-card.featured {
     transform: scale(1.02);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-medium);
+    border-color: var(--hero-coral);
+    box-shadow: 0 8px 24px rgba(214, 123, 123, 0.2);
 }
 
 .pricing-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-heavy);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    border-color: var(--hero-pink);
 }
 
 .pricing-card.featured:hover {
-    transform: scale(1.02) translateY(-8px);
+    transform: scale(1.02) translateY(-4px);
 }
 
 .pricing-header {
@@ -1783,17 +1797,21 @@ p {
 }
 
 .pricing-header h3 {
-    color: var(--text-primary);
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    color: var(--luxury-ink);
     font-size: 1.5rem;
     margin-bottom: 16px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .price {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 3rem;
-    font-weight: 800;
-    color: var(--primary-color);
+    font-weight: 400;
+    color: var(--hero-coral);
     margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
 .price-subtitle {
@@ -1857,16 +1875,17 @@ p {
 
 /* Testimonials Section */
 .testimonials {
-    padding: 100px 0;
-    background: var(--background-light);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
 }
 
 .testimonials h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .testimonials .section-subtitle {
@@ -1983,16 +2002,18 @@ p {
 }
 
 .instructor-card {
-    background: var(--background-white);
-    border-radius: var(--border-radius-large);
+    background: var(--luxury-bone);
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
 }
 
 .instructor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    border-color: var(--hero-pink);
 }
 
 .instructor-image {
@@ -2021,37 +2042,35 @@ p {
 }
 
 .instructor-content h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.instructor-content h3 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    font-weight: 400;
+    color: var(--luxury-ink);
     margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
 .instructor-real-name {
+    font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-secondary);
+    font-weight: 500;
+    color: var(--luxury-slate);
     margin-bottom: 8px;
     font-style: italic;
 }
 
 .instructor-credentials {
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
 }
 
 .instructor-content p {
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 
 .instructor-summary {
@@ -2069,8 +2088,8 @@ p {
 
 /* TML Section */
 .tml-section {
-    padding: 100px 0;
-    background: var(--background-white);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
     position: relative;
 }
 
@@ -2082,15 +2101,18 @@ p {
 }
 
 .tml-text h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
     margin-bottom: 24px;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .tml-text p {
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     margin-bottom: 32px;
     line-height: 1.6;
 }
@@ -2190,16 +2212,18 @@ p {
 
 /* Contact Section */
 .contact {
-    padding: 100px 0;
-    background: var(--background-light);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
     text-align: center;
 }
 
 .contact h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .contact-content {
@@ -2346,8 +2370,8 @@ footer::before {
 
 /* Footer */
 .footer {
-    background: var(--background-light);
-    color: var(--text-primary);
+    background: var(--luxury-pearl);
+    color: var(--luxury-ink);
     padding: 80px 0 40px;
     border-top: 1px solid var(--border-color);
 }
