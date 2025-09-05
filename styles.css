@@ -646,6 +646,9 @@ body {
     box-shadow: var(--shadow-light);
     transition: var(--transition);
     border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 400px;
 }
 
 .event-portfolio-card:hover {
@@ -659,6 +662,7 @@ body {
     height: 200px;
     overflow: hidden;
     background: var(--background-light);
+    flex-shrink: 0;
 }
 
 .portfolio-img {
@@ -674,6 +678,9 @@ body {
 
 .event-content {
     padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .event-content h3 {
@@ -681,6 +688,12 @@ body {
     color: var(--text-primary);
     margin-bottom: 8px;
     font-weight: 700;
+    line-height: 1.4;
+    height: 3.6rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .event-location {
@@ -688,12 +701,16 @@ body {
     font-weight: 600;
     font-size: 0.95rem;
     margin-bottom: 12px;
+    display: block;
+    width: 100%;
 }
 
 .event-description {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.9rem;
+    flex-grow: 1;
+    margin-top: 8px;
 }
 
 .image-placeholder {
@@ -743,9 +760,8 @@ body {
 
 .impact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
-    align-items: start;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -754,11 +770,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .impact-icon {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 50%;
     display: flex;
@@ -769,8 +786,8 @@ body {
 }
 
 .impact-icon svg {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     stroke: currentColor;
 }
 
@@ -779,40 +796,49 @@ body {
     color: var(--text-primary);
     margin-bottom: 20px;
     font-weight: 700;
+    text-align: center;
 }
 
 .impact-description {
     color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .donation-list {
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .donation-item {
     display: flex;
     align-items: center;
     gap: 16px;
-    padding: 16px;
+    padding: 20px;
     background: var(--background-white);
     border-radius: var(--border-radius-large);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     border: 2px solid var(--border-color);
     transition: var(--transition);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--shadow-light);
 }
 
 .donation-item:hover {
     transform: translateX(4px);
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-medium);
 }
 
 .donation-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 50%;
     display: flex;
@@ -823,55 +849,58 @@ body {
 }
 
 .donation-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     stroke: currentColor;
 }
 
 .donation-content h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     font-weight: 700;
 }
 
 .donation-content p {
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .impact-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .stat-item {
     text-align: center;
-    padding: 20px;
+    padding: 24px;
     background: var(--background-white);
     border-radius: var(--border-radius-large);
     border: 2px solid var(--border-color);
     transition: var(--transition);
-}
-
-.stat-item:hover {
-    transform: translateY(-2px);
-    border-color: var(--primary-color);
     box-shadow: var(--shadow-light);
 }
 
+.stat-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+}
+
 .stat-number {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 8px;
 }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 600;
     text-transform: uppercase;
