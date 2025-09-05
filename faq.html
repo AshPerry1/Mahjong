@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Lookout Mountain Mahjong | Official TML Ambassador</title>
+    <meta name="description" content="Frequently asked questions about mahjong lessons, private events, and services from Mahj Jen and Mahj Hen. Get answers about our 101/102 lessons, pricing, and more.">
+    <meta name="keywords" content="mahjong FAQ, mahjong lessons questions, private events, TML ambassador, lookout mountain mahjong">
+    <meta name="author" content="Lookout Mountain Mahjong">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lookoutmountainmahjong.com/faq">
+    <meta property="og:title" content="FAQ - Lookout Mountain Mahjong | Official TML Ambassador">
+    <meta property="og:description" content="Frequently asked questions about mahjong lessons, private events, and services from Mahj Jen and Mahj Hen.">
+    <meta property="og:image" content="/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lookoutmountainmahjong.com/faq">
+    <meta property="twitter:title" content="FAQ - Lookout Mountain Mahjong | Official TML Ambassador">
+    <meta property="twitter:description" content="Frequently asked questions about mahjong lessons, private events, and services from Mahj Jen and Mahj Hen.">
+    <meta property="twitter:image" content="/logo.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#CA69E2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Mahjong FAQ">
+    <link rel="apple-touch-icon" href="/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* FAQ Page Specific Styles */
+        .faq-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(202, 105, 226, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(202, 105, 226, 0.1) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(202, 105, 226, 0.02) 20px, rgba(202, 105, 226, 0.02) 40px);
+            pointer-events: none;
+        }
+
+        .faq-hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #2c3e50 0%, #CA69E2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .faq-hero p {
+            font-size: 1.3rem;
+            color: #5a6c7d;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .faq-search {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e8e8e8;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: #CA69E2;
+            box-shadow: 0 0 0 3px rgba(202, 105, 226, 0.1);
+        }
+
+        .faq-search input::placeholder {
+            color: #9ca3af;
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 24px;
+            border: 2px solid #CA69E2;
+            background: white;
+            color: #CA69E2;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: #CA69E2;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(202, 105, 226, 0.3);
+        }
+
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-category {
+            margin-bottom: 80px;
+        }
+
+        .faq-category h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .faq-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #CA69E2, #a855b8);
+            border-radius: 2px;
+        }
+
+        .faq-accordion {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-accordion:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .faq-question {
+            padding: 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f8ff 100%);
+            border-bottom: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e8f4ff 100%);
+        }
+
+        .faq-question h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle::before,
+        .faq-toggle::after {
+            content: '';
+            position: absolute;
+            background: #CA69E2;
+            transition: all 0.3s ease;
+        }
+
+        .faq-toggle::before {
+            width: 2px;
+            height: 16px;
+            top: 4px;
+            left: 11px;
+        }
+
+        .faq-toggle::after {
+            width: 16px;
+            height: 2px;
+            top: 11px;
+            left: 4px;
+        }
+
+        .faq-accordion.active .faq-toggle::before {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-answer {
+            padding: 0 32px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .faq-accordion.active .faq-answer {
+            padding: 32px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .faq-contact {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f4ff 100%);
+            margin-top: 80px;
+        }
+
+        .faq-contact h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 24px;
+            font-weight: 700;
+        }
+
+        .faq-contact p {
+            font-size: 1.2rem;
+            color: #5a6c7d;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            background: #CA69E2;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(202, 105, 226, 0.3);
+        }
+
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(202, 105, 226, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .faq-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .faq-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .faq-categories {
+                gap: 12px;
+            }
+            
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+            
+            .faq-question {
+                padding: 24px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+            
+            .faq-accordion.active .faq-answer {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>Lookout Mountain Mahjong</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#testimonials">Reviews</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="faq-hero">
+            <div class="container">
+                <div class="faq-hero-content">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Everything you need to know about our mahjong lessons, private events, and services from Mahj Jen and Mahj Hen</p>
+                    <div class="faq-search">
+                        <input type="text" id="faqSearch" placeholder="Search questions..." onkeyup="searchFAQ()">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-categories">
+                    <button class="category-btn active" onclick="filterCategory('all')">All Questions</button>
+                    <button class="category-btn" onclick="filterCategory('lessons')">Lessons</button>
+                    <button class="category-btn" onclick="filterCategory('events')">Events</button>
+                    <button class="category-btn" onclick="filterCategory('logistics')">Logistics</button>
+                    <button class="category-btn" onclick="filterCategory('equipment')">Equipment</button>
+                </div>
+
+                <div class="faq-container">
+                    <!-- Lessons Category -->
+                    <div class="faq-category" data-category="lessons">
+                        <h2>Lesson Questions</h2>
+                        
+                        <div class="faq-accordion" data-category="lessons">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>How long are the lessons?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Both 101 and 102 lessons typically run 2-3 hours, depending on group size and questions. We ensure everyone has time to play at least one full game.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion" data-category="lessons">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What's the difference between 101 and 102?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>101 covers the basics: tiles, rules, and scoring. 102 builds on that with advanced strategies, Siamese and Patio play, and perfecting your technique.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion" data-category="lessons">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Can I book a private lesson?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! We offer private lessons for individuals or small groups. Contact us to discuss your specific needs and schedule.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Events Category -->
+                    <div class="faq-category" data-category="events">
+                        <h2>Event Questions</h2>
+                        
+                        <div class="faq-accordion" data-category="events">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>How many people can participate?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Lessons work best with 4-8 people. For private events, we can accommodate larger groups and will adjust the format accordingly.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion" data-category="events">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Do you travel for lessons?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We love traveling for private events. We've taught at homes, corporate offices, hotels, and resorts across the country.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logistics Category -->
+                    <div class="faq-category" data-category="logistics">
+                        <h2>Logistics & Policies</h2>
+                        
+                        <div class="faq-accordion" data-category="logistics">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What should I bring to a lesson?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Just bring yourself! We provide all mahjong tiles, tables, and materials. For private events, we can discuss additional setup needs.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion" data-category="logistics">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>What's your cancellation policy?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We require 48 hours notice for cancellations. We're happy to reschedule for weather or emergencies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Category -->
+                    <div class="faq-category" data-category="equipment">
+                        <h2>Equipment & TML</h2>
+                        
+                        <div class="faq-accordion" data-category="equipment">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>Do you provide mahjong tiles?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, we provide all equipment for lessons. We're also TML ambassadors and can help you purchase your own beautiful set.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-accordion" data-category="equipment">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <h3>How can I get my own TML tiles?</h3>
+                                <div class="faq-toggle"></div>
+                            </div>
+                            <div class="faq-answer">
+                                <p>As official TML ambassadors, we can help you purchase beautiful mahjong tiles. Use our referral code "LOOKOUTMOUNTAIN" for special access to their premium collections.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-contact">
+            <div class="container">
+                <h2>Still Have Questions?</h2>
+                <p>We're here to help! If you didn't find the answer you're looking for, reach out to Mahj Jen and Mahj Hen directly.</p>
+                <a href="mailto:lookoutmountainmahjong@gmail.com" class="back-to-home">
+                    <span>Email Us</span>
+                </a>
+                <div style="margin-top: 40px;">
+                    <a href="index.html" class="back-to-home">
+                        <span>← Back to Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Lookout Mountain Mahjong. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-text">Connect with us:</span>
+                    <div class="social-buttons">
+                        <a href="#" class="social-button">Instagram</a>
+                        <a href="#" class="social-button">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Functionality
+        function toggleFAQ(element) {
+            const accordion = element.parentElement;
+            const isActive = accordion.classList.contains('active');
+            
+            // Close all other accordions
+            document.querySelectorAll('.faq-accordion').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current accordion
+            if (!isActive) {
+                accordion.classList.add('active');
+            }
+        }
+
+        // Category Filter Functionality
+        function filterCategory(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Show/hide categories
+            document.querySelectorAll('.faq-category').forEach(cat => {
+                if (category === 'all' || cat.dataset.category === category) {
+                    cat.style.display = 'block';
+                } else {
+                    cat.style.display = 'none';
+                }
+            });
+        }
+
+        // Search Functionality
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faqSearch').value.toLowerCase();
+            const questions = document.querySelectorAll('.faq-question h3');
+            
+            questions.forEach(question => {
+                const accordion = question.closest('.faq-accordion');
+                const questionText = question.textContent.toLowerCase();
+                
+                if (questionText.includes(searchTerm)) {
+                    accordion.style.display = 'block';
+                    accordion.style.opacity = '1';
+                } else {
+                    accordion.style.display = 'none';
+                    accordion.style.opacity = '0';
+                }
+            });
+            
+            // Show all categories if search is empty
+            if (searchTerm === '') {
+                document.querySelectorAll('.faq-category').forEach(cat => {
+                    cat.style.display = 'block';
+                });
+                document.querySelectorAll('.faq-accordion').forEach(acc => {
+                    acc.style.display = 'block';
+                    acc.style.opacity = '1';
+                });
+            }
+        }
+
+        // Mobile Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

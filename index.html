@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookout Mountain Mahjong | Professional Mahjong Instruction</title>
+    <meta name="description" content="Expert American mahjong instruction from certified TML Ambassadors. Learn mahjong fundamentals and advanced strategies through personalized lessons and private events.">
+    <meta name="keywords" content="mahjong lessons, american mahjong, mahjong instruction, private events, TML ambassador, lookout mountain">
+    <meta name="author" content="Lookout Mountain Mahjong">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lookoutmountainmahjong.com/">
+    <meta property="og:title" content="Lookout Mountain Mahjong | Professional Mahjong Instruction">
+    <meta property="og:description" content="Expert American mahjong instruction from certified TML Ambassadors. Learn mahjong fundamentals and advanced strategies.">
+    <meta property="og:image" content="/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lookoutmountainmahjong.com/">
+    <meta property="twitter:title" content="Lookout Mountain Mahjong | Professional Mahjong Instruction">
+    <meta property="twitter:description" content="Expert American mahjong instruction from certified TML Ambassadors. Learn mahjong fundamentals and advanced strategies.">
+    <meta property="twitter:image" content="/logo.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#CA69E2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Mahjong">
+    <link rel="apple-touch-icon" href="/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Lookout Mountain Mahjong",
+      "description": "Professional mahjong instruction and private events",
+      "url": "https://lookoutmountainmahjong.com",
+      "logo": "https://lookoutmountainmahjong.com/logo.png",
+      "image": "https://lookoutmountainmahjong.com/logo.png",
+      "email": "lookoutmountainmahjong@gmail.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lookout Mountain",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.9779",
+        "longitude": "-85.3589"
+      },
+      "openingHours": "Mo-Su 09:00-18:00",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card",
+      "sameAs": [
+        "https://www.instagram.com/lookoutmountainmahjong",
+        "https://www.facebook.com/lookoutmountainmahjong"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Mahjong Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mahjong 101 Lessons",
+              "description": "Comprehensive beginner mahjong instruction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mahjong 102 Lessons",
+              "description": "Advanced mahjong strategies and techniques"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Private Events",
+              "description": "Customized mahjong events for groups"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>Lookout Mountain Mahjong</h2>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-background">
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Master American Mahjong</h1>
+                        <p class="hero-tagline">Professional instruction from certified TML Ambassadors</p>
+                        <p class="hero-description">Transform from beginner to confident player in just two lessons. Our expert instructors provide comprehensive mahjong education through structured courses, private events, and personalized guidance.</p>
+                                    <div class="hero-buttons">
+                            <button class="cta-button primary" onclick="sendEmail('101')">Book 101 Course</button>
+                            <button class="cta-button secondary" onclick="sendEmail('contact')">Schedule Consultation</button>
+            </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-image">
+                            <img src="main.jpg" alt="Professional mahjong instruction" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upcoming-event" class="upcoming-event">
+            <div class="container">
+                <h2>Upcoming Events</h2>
+                <p class="section-subtitle">Join us for our next mahjong tournament</p>
+                <div class="event-card">
+                    <div class="event-info">
+                        <h3>September 21st Tournament</h3>
+                        <p class="event-description">We have a fun tournament coming up on September 21st at the Lookout Mountain Golf Club. It is $50 per person and prizes will be awarded. There will be half-priced rosé all day by member charge. Non-members may be sponsored by a member.</p>
+                        
+                        <div class="event-details-grid">
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Date & Time</div>
+                                    <div class="detail-value">Sunday, September 21 • 2-4 PM</div>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Location</div>
+                                    <div class="detail-value">Lookout Mountain Golf Club</div>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <div class="detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                </div>
+                                <div class="detail-content">
+                                    <div class="detail-label">Price</div>
+                                    <div class="detail-value">$50 per person</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-contact">
+                            <p><strong>Call LMC at 706-820-1551 to register for this fun afternoon!</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="past-events" class="past-events">
+            <div class="container">
+                <h2>Past Events Portfolio</h2>
+                <p class="section-subtitle">Celebrating our mahjong community across the country</p>
+                <div class="events-grid">
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Chi O Mother/Daughter Mahjong</h3>
+                            <p class="event-location">Samford University</p>
+                            <p class="event-description">Special mother-daughter mahjong event bringing generations together through the game.</p>
+                        </div>
+                    </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Martha's Vineyard Private Lessons</h3>
+                            <p class="event-location">Martha's Vineyard, MA</p>
+                            <p class="event-description">Exclusive private mahjong instruction in one of America's most beautiful locations.</p>
+                        </div>
+                    </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Bristol, VA Club Event</h3>
+                            <p class="event-location">Bristol, Virginia</p>
+                            <p class="event-description">Traveled to Virginia to teach mahjong to local club members, expanding our reach.</p>
+                        </div>
+                    </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Lookout Mountain Club Tournament</h3>
+                            <p class="event-location">Lookout Mountain Golf Club</p>
+                            <p class="event-description">Our signature tournament bringing together mahjong enthusiasts from the region.</p>
+                        </div>
+                    </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Mini Tournament</h3>
+                            <p class="event-location">Lookout Mountain Golf Club</p>
+                            <p class="event-description">Intimate tournament format perfect for newcomers and experienced players alike.</p>
+                        </div>
+                    </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <div class="image-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21,15 16,10 5,21"></polyline>
+                                </svg>
+                                <span>Event Photo</span>
+                            </div>
+                        </div>
+                        <div class="event-content">
+                            <h3>Greenbrier Tournament</h3>
+                            <p class="event-location">The Greenbrier Resort</p>
+                            <p class="event-description">Prestigious tournament held over MLK weekend 2025 at the historic Greenbrier Resort.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community-impact" class="community-impact">
+            <div class="container">
+                <h2>Community Impact</h2>
+                <p class="section-subtitle">Giving back to our local community through mahjong education</p>
+                <div class="impact-content">
+                    <div class="impact-visual">
+                        <div class="impact-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="impact-details">
+                        <h3>Educational Outreach</h3>
+                        <p class="impact-description">We believe in the power of mahjong to bring communities together and provide educational opportunities for all ages.</p>
+                        <div class="donation-list">
+                            <div class="donation-item">
+                                <div class="donation-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                </div>
+                                <div class="donation-content">
+                                    <h4>Fairyland School</h4>
+                                    <p>Donated mahjong lessons and NMJL cards to support educational programs</p>
+                                </div>
+                            </div>
+                            <div class="donation-item">
+                                <div class="donation-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                </div>
+                                <div class="donation-content">
+                                    <h4>Lookout Mountain School</h4>
+                                    <p>Provided mahjong instruction and materials to enhance student learning</p>
+                                </div>
+                            </div>
+                            <div class="donation-item">
+                                <div class="donation-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                </div>
+                                <div class="donation-content">
+                                    <h4>Orange Grove</h4>
+                                    <p>Contributed mahjong lessons and NMJL cards to community programs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="impact-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Schools Supported</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Students Reached</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">∞</div>
+                                <div class="stat-label">Community Impact</div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services & Pricing</h2>
+                <p class="section-subtitle">Comprehensive mahjong education tailored to your needs</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <div class="icon-text">101</div>
+                        </div>
+                            <h3>Mahjong 101</h3>
+                        <div class="service-price">
+                            <span class="price">$75</span>
+                            <span class="price-subtitle">per person</span>
+                        </div>
+                        <p>Master the fundamentals: tile recognition, game rules, scoring systems, and basic strategy. Complete 1-2 full games during your first session.</p>
+                        <ul class="service-features">
+                            <li>2-3 hour comprehensive session</li>
+                            <li>All materials provided</li>
+                            <li>Hands-on gameplay experience</li>
+                            <li>Take-home reference materials</li>
+                            <li>Post-session support</li>
+                        </ul>
+                        <button class="service-button" onclick="sendEmail('101')">Book 101 Course</button>
+                    </div>
+                    <div class="service-card featured">
+                        <div class="service-icon">
+                            <div class="icon-text">102</div>
+                        </div>
+                            <h3>Mahjong 102</h3>
+                        <div class="service-price">
+                            <span class="price">$85</span>
+                            <span class="price-subtitle">per person</span>
+                        </div>
+                        <p>Advance your skills with advanced strategies, Siamese and Patio play techniques, and expert-level tactics to dominate the game.</p>
+                        <ul class="service-features">
+                            <li>2-3 hour advanced session</li>
+                            <li>Strategic gameplay analysis</li>
+                            <li>Advanced hand combinations</li>
+                            <li>Professional strategy guide</li>
+                            <li>Ongoing support access</li>
+                        </ul>
+                        <button class="service-button" onclick="sendEmail('102')">Book 102 Course</button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <div class="icon-text">Events</div>
+                        </div>
+                            <h3>Private Events</h3>
+                        <div class="service-price">
+                            <span class="price">$500+</span>
+                            <span class="price-subtitle">group rate</span>
+                        </div>
+                        <p>Customized experiences for corporate teams, social groups, and special occasions. We travel to your location with full setup included.</p>
+                        <ul class="service-features">
+                            <li>Flexible group sizes</li>
+                            <li>Corporate team building</li>
+                            <li>Travel to your location</li>
+                            <li>Customized experience</li>
+                            <li>Flexible scheduling</li>
+                        </ul>
+                        <button class="service-button" onclick="sendEmail('events')">Book Private Event</button>
+                    </div>
+                </div>
+                <div class="pricing-note">
+                    <p>Group discounts available for 4+ participants. All prices include materials and professional setup.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <h2>Client Success Stories</h2>
+                <p class="section-subtitle">Real results from our mahjong community</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The instructors' professional approach made complex mahjong concepts accessible. I was playing confidently after just one lesson."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <div class="image-placeholder small">
+                                    <span class="placeholder-text">S</span>
+                                </div>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah M.</h4>
+                                <span>Beginner Student</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Exceptional corporate team building experience. The instructors were professional, engaging, and created a memorable event for our team."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <div class="image-placeholder small">
+                                    <span class="placeholder-text">M</span>
+                                </div>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael R.</h4>
+                                <span>Corporate Client</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The 102 course elevated my game significantly. Advanced strategies and Siamese play opened new competitive possibilities."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <div class="image-placeholder small">
+                                    <span class="placeholder-text">L</span>
+                                </div>
+                            </div>
+                            <div class="author-info">
+                                <h4>Lisa T.</h4>
+                                <span>Intermediate Player</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Meet Your Instructors</h2>
+                <p class="section-subtitle">Certified TML Ambassadors with proven expertise</p>
+                <div class="instructors-grid">
+                    <div class="instructor-card">
+                        <div class="instructor-image">
+                            <div class="image-placeholder">
+                                <span class="placeholder-text">Mahj Jen</span>
+                        </div>
+                        </div>
+                        <div class="instructor-content">
+                            <h3>Mahj Jen</h3>
+                            <p class="instructor-credentials">Certified TML Ambassador</p>
+                            <p class="instructor-story">With over a decade of mahjong experience and certification as a TML Ambassador, Jen specializes in making complex mahjong concepts accessible to beginners. Her structured approach ensures every student builds a solid foundation for advanced play.</p>
+                        </div>
+                    </div>
+                    <div class="instructor-card">
+                        <div class="instructor-image">
+                        <div class="image-placeholder">
+                                <span class="placeholder-text">Mahj Hen</span>
+                    </div>
+                        </div>
+                        <div class="instructor-content">
+                            <h3>Mahj Hen</h3>
+                            <p class="instructor-credentials">Certified TML Ambassador</p>
+                            <p class="instructor-story">Ann brings twenty years of teaching experience to mahjong instruction. Her expertise in advanced strategies and competitive play makes her the ideal instructor for students ready to elevate their game to professional levels.</p>
+                        </div>
+                        </div>
+                    </div>
+                <div class="instructor-summary">
+                    <p class="story-conclusion">Our proven two-lesson system transforms beginners into confident players. Every session includes hands-on gameplay, comprehensive materials, and ongoing support to ensure your mahjong success.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tml-partnership" class="tml-section">
+            <div class="container">
+                <div class="tml-content">
+                    <div class="tml-text">
+                        <h2>Official TML Partnership</h2>
+                        <p>As certified TML Ambassadors, we provide access to premium mahjong equipment from The Mahjong Line. Our partnership ensures you receive the highest quality tiles and accessories for your mahjong journey.</p>
+                        <p><strong>We exclusively use TML tiles for all our lessons and events</strong> - ensuring consistency, quality, and authenticity in every mahjong experience we provide.</p>
+                        <p class="tml-contact-text">Use the link below to shop and contact us with any questions about TML products.</p>
+                        <button class="cta-button tml-button" onclick="sendEmail('tml')">Access TML Products</button>
+                    </div>
+                    <div class="tml-visual">
+                        <div class="tml-logo-container">
+                            <img src="Attachment-1.png" alt="The Mahjong Line Logo" class="tml-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Start Your Mahjong Journey</h2>
+                <p class="section-subtitle">Professional instruction awaits</p>
+                <div class="contact-content">
+                    <p>Ready to master American mahjong? Contact us to schedule your personalized instruction session or discuss custom event options.</p>
+                <a href="mailto:lookoutmountainmahjong@gmail.com" class="contact-email">lookoutmountainmahjong@gmail.com</a>
+                    <div class="contact-buttons">
+                        <button class="cta-button primary" onclick="sendEmail('101')">Book 101 Course</button>
+                        <button class="cta-button secondary" onclick="sendEmail('contact')">Schedule Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Lookout Mountain Mahjong. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-text">Connect with us:</span>
+                    <div class="social-buttons">
+                        <a href="#" class="social-button">Instagram</a>
+                        <a href="#" class="social-button">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

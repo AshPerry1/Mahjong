@@ -1,0 +1,56 @@
+{
+  "name": "Lookout Mountain Mahjong",
+  "short_name": "Mahjong",
+  "description": "Official TML Ambassador - Mahjong lessons and events",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#CA69E2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "entertainment", "games"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "shortcuts": [
+    {
+      "name": "Book 101 Lessons",
+      "short_name": "101",
+      "description": "Book Mahjong 101 lessons",
+      "url": "/#lessons",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Book Events",
+      "short_name": "Events",
+      "description": "Book private mahjong events",
+      "url": "/#events",
+      "icons": [
+        {
+          "src": "/logo.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

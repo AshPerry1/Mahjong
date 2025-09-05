@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (if you create one later)
+Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
