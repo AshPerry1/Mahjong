@@ -947,18 +947,21 @@ p {
 }
 
 .event-schedule {
-    margin-top: 25px;
-    padding: 20px;
-    background: var(--background-light);
-    border-radius: var(--border-radius-medium);
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--luxury-bone);
+    border-radius: 0;
     border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
 
 .event-schedule h4 {
-    color: var(--primary-color);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 15px 0;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    color: var(--luxury-ink);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.01em;
 }
 
 .event-schedule ul {
@@ -968,11 +971,12 @@ p {
 }
 
 .event-schedule li {
-    padding: 8px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--border-color);
-    color: var(--text-color);
+    color: var(--luxury-slate);
     font-size: 0.95rem;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
 }
 
 .event-schedule li:last-child {
@@ -980,8 +984,8 @@ p {
 }
 
 .event-schedule strong {
-    color: var(--primary-color);
-    font-weight: 600;
+    color: var(--hero-coral);
+    font-weight: 500;
 }
 
 .event-details-grid {
