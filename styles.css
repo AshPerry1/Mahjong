@@ -1468,18 +1468,19 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
+    gap: 20px;
 }
 
 .service-card.featured {
     transform: scale(1.02);
-    border-color: var(--hero-coral);
-    box-shadow: 0 8px 24px rgba(214, 123, 123, 0.2);
+    border-color: var(--garnet);
+    box-shadow: 0 8px 24px rgba(133, 49, 48, 0.2);
 }
 
 .service-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
-    border-color: var(--hero-pink);
+    border-color: var(--mountbatten-pink);
 }
 
 .service-card.featured:hover {
@@ -1487,7 +1488,8 @@ p {
 }
 
 .service-icon {
-    margin-bottom: 24px;
+    margin-bottom: 0;
+    order: -1;
 }
 
 .icon-placeholder {
@@ -1505,19 +1507,20 @@ p {
 }
 
 .icon-text {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background: var(--garnet);
     color: white;
     border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(133, 49, 48, 0.3);
     transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
 }
 
 .icon-text:hover {
@@ -1621,71 +1624,84 @@ p {
 }
 
 .service-price {
-    margin-bottom: 16px;
+    margin-bottom: 0;
     text-align: center;
+    order: 1;
 }
 
 .service-price .price {
     font-family: 'Playfair Display', 'Times New Roman', serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 400;
-    color: var(--hero-coral);
+    color: var(--garnet);
     display: block;
     margin-bottom: 4px;
     letter-spacing: -0.01em;
+    line-height: 1;
 }
 
 .service-price .price-subtitle {
     font-family: 'Inter', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--luxury-slate);
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .service-card p {
     color: var(--luxury-slate);
-    margin-bottom: 24px;
+    margin-bottom: 0;
     line-height: 1.6;
     flex-grow: 1;
     font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    order: 2;
 }
 
 .service-features {
     list-style: none;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     text-align: left;
+    padding: 0;
+    order: 3;
 }
 
 .service-features li {
-    color: var(--text-secondary);
-    padding: 8px 0;
+    color: var(--luxury-slate);
+    padding: 6px 0;
     position: relative;
     padding-left: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .service-features li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--primary-color);
+    color: var(--garnet);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .service-button {
     background: var(--garnet);
     color: white;
     border: none;
-    padding: 14px 28px;
+    padding: 16px 24px;
     border-radius: 0;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     width: 100%;
+    order: 4;
+    margin-top: auto;
 }
 
 .service-button:hover {
