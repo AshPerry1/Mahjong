@@ -657,33 +657,34 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Testimonials rotation functionality
-let currentTestimonials = [0, 1, 2]; // Currently visible testimonials
-let nextIndex = 3; // Next testimonial to show
-const totalTestimonials = 8;
+let currentPosition = 0; // Which position to rotate next (0, 1, or 2)
+const positions = [
+    [0, 3, 6], // Position 1: Sarah, Emma, James
+    [1, 4, 7], // Position 2: Michael, David, Amanda  
+    [2, 5]     // Position 3: Lisa, Rachel
+];
+let currentIndexes = [0, 0, 0]; // Current index in each position array
 
 function rotateTestimonials() {
-    // Hide current testimonials
-    currentTestimonials.forEach(index => {
-        const card = document.querySelector(`[data-testimonial="${index}"]`);
-        if (card) {
-            card.classList.remove('active');
-        }
-    });
+    // Hide current testimonial in the rotating position
+    const currentTestimonialIndex = positions[currentPosition][currentIndexes[currentPosition]];
+    const currentCard = document.querySelector(`[data-testimonial="${currentTestimonialIndex}"]`);
+    if (currentCard) {
+        currentCard.classList.remove('active');
+    }
     
-    // Remove the first testimonial and add the next one
-    const removedIndex = currentTestimonials.shift();
-    currentTestimonials.push(nextIndex);
+    // Move to next testimonial in this position
+    currentIndexes[currentPosition] = (currentIndexes[currentPosition] + 1) % positions[currentPosition].length;
     
-    // Show new testimonials
-    currentTestimonials.forEach(index => {
-        const card = document.querySelector(`[data-testimonial="${index}"]`);
-        if (card) {
-            card.classList.add('active');
-        }
-    });
+    // Show new testimonial in the same position
+    const newTestimonialIndex = positions[currentPosition][currentIndexes[currentPosition]];
+    const newCard = document.querySelector(`[data-testimonial="${newTestimonialIndex}"]`);
+    if (newCard) {
+        newCard.classList.add('active');
+    }
     
-    // Update next index (cycle back to 0 when we reach the end)
-    nextIndex = (nextIndex + 1) % totalTestimonials;
+    // Move to next position for next rotation
+    currentPosition = (currentPosition + 1) % 3;
 }
 
 // Start rotation every 10 seconds
