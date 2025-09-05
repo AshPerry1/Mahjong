@@ -154,7 +154,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100dvh;
-    background: linear-gradient(135deg, #fef7f0 0%, #f8f4f0 50%, #f0f0f0 100%);
+    background: linear-gradient(135deg, #fefefe 0%, #fafafa 100%);
     position: relative;
     display: flex;
     align-items: center;
@@ -177,9 +177,8 @@ body {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(221, 160, 221, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(255, 218, 185, 0.06) 0%, transparent 60%);
+        radial-gradient(circle at 20% 20%, rgba(202, 105, 226, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(160, 82, 224, 0.02) 0%, transparent 50%);
     background-size: 100% 100%;
 }
 
@@ -204,20 +203,19 @@ body {
     align-items: center;
     gap: 8px;
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
     color: var(--primary-color);
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     margin-bottom: 32px;
-    border: 1px solid rgba(202, 105, 226, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(202, 105, 226, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .badge-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .hero-title {
@@ -236,17 +234,14 @@ body {
 
 .title-highlight {
     display: block;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--primary-color);
     font-weight: 800;
     margin-top: 8px;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
     margin: 0 0 40px 0;
     font-weight: 400;
@@ -256,25 +251,25 @@ body {
 .hero-features {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     margin-bottom: 48px;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 12px 0;
+    gap: 12px;
+    padding: 8px 0;
 }
 
 .feature-icon {
-    font-size: 1.5rem;
-    width: 40px;
+    font-size: 1.2rem;
+    width: 24px;
     text-align: center;
 }
 
 .feature-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--text-primary);
     font-weight: 500;
 }
@@ -287,34 +282,32 @@ body {
 .cta-button {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    padding: 18px 36px;
+    gap: 8px;
+    padding: 16px 32px;
     border: none;
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--primary-color);
     color: white;
-    box-shadow: 0 12px 40px rgba(202, 105, 226, 0.3);
+    box-shadow: 0 4px 16px rgba(202, 105, 226, 0.2);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 60px rgba(202, 105, 226, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(202, 105, 226, 0.3);
 }
 
 .button-arrow {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     transition: transform 0.3s ease;
 }
 
 .cta-button:hover .button-arrow {
-    transform: translateX(4px);
+    transform: translateX(2px);
 }
 
 .hero-visual {
@@ -332,18 +325,18 @@ body {
 
 .image-frame {
     position: relative;
-    border-radius: 24px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     background: white;
-    padding: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .hero-img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
+    border-radius: 12px;
     display: block;
 }
 
@@ -358,55 +351,58 @@ body {
 
 .floating-tile {
     position: absolute;
-    width: 70px;
-    height: 90px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
+    width: 60px;
+    height: 80px;
+    background: white;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    animation: floatGentle 8s ease-in-out infinite;
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    animation: floatSubtle 6s ease-in-out infinite;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .floating-tile.tile-1 {
-    top: 15%;
-    left: -35px;
+    top: 10%;
+    left: -30px;
     animation-delay: 0s;
+    background: #fce7f3;
 }
 
 .floating-tile.tile-2 {
-    top: 45%;
-    right: -35px;
+    top: 50%;
+    right: -30px;
     animation-delay: 2s;
+    background: #f3e8ff;
 }
 
 .floating-tile.tile-3 {
-    bottom: 25%;
-    left: 15%;
+    bottom: 20%;
+    left: 10%;
     animation-delay: 4s;
+    background: #f1f5f9;
 }
 
 .floating-tile.tile-4 {
     top: 70%;
-    right: 10%;
+    right: 5%;
     animation-delay: 6s;
+    background: #f1f5f9;
 }
 
 .tile-symbol {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
 }
 
-@keyframes floatGentle {
+@keyframes floatSubtle {
     0%, 100% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateY(0px);
     }
     50% {
-        transform: translateY(-15px) rotate(3deg);
+        transform: translateY(-8px);
     }
 }
 
@@ -437,7 +433,7 @@ body {
     }
     
     .hero-description {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-style: normal;
     }
     
@@ -466,20 +462,20 @@ body {
     }
     
     .floating-tile {
-        width: 60px;
-        height: 80px;
+        width: 50px;
+        height: 70px;
     }
     
     .floating-tile.tile-1 {
-        left: -25px;
+        left: -20px;
     }
     
     .floating-tile.tile-2 {
-        right: -25px;
+        right: -20px;
     }
     
     .tile-symbol {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
 
