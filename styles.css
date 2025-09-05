@@ -2375,6 +2375,20 @@ p {
     margin-bottom: 20px;
     font-weight: 400;
     letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.contact .section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--luxury-slate);
+    margin-bottom: 0;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    text-align: center;
 }
 
 .contact-content {
@@ -2383,8 +2397,9 @@ p {
 }
 
 .contact-content p {
+    font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     margin-bottom: 32px;
     line-height: 1.6;
 }
@@ -2411,12 +2426,11 @@ p {
 }
 
 /* Footer */
-footer {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 40px 0;
+.footer {
+    background: var(--luxury-pearl);
+    color: var(--luxury-ink);
+    padding: 80px 0 40px 0;
     position: relative;
-    overflow: hidden;
 }
 
 footer::before {
@@ -2529,8 +2543,8 @@ footer::before {
 
 .footer-main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 80px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
     margin-bottom: 60px;
 }
 
@@ -2546,29 +2560,36 @@ footer::before {
 }
 
 .footer-logo-img {
+    width: 60px;
     height: 60px;
-    width: auto;
-    border-radius: 12px;
+    border-radius: 0;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 .footer-logo-text h3 {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 1.5rem;
+    color: var(--luxury-ink);
     margin: 0 0 8px 0;
-    color: var(--text-primary);
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .footer-tagline {
-    font-size: 1rem;
-    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--garnet);
     margin: 0;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .footer-description {
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    color: var(--luxury-slate);
     line-height: 1.6;
-    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -2579,10 +2600,12 @@ footer::before {
 }
 
 .footer-section h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 20px 0;
-    color: var(--text-primary);
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: 1.2rem;
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .footer-section ul {
@@ -2596,25 +2619,24 @@ footer::before {
 }
 
 .footer-section a {
-    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    color: var(--luxury-slate);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--primary-color);
+    color: var(--garnet);
 }
 
-.footer-section .ambassador-badge {
-    background: var(--primary-color);
-    color: white;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 8px;
+.ambassador-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--garnet);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .footer-bottom {
@@ -2628,10 +2650,11 @@ footer::before {
     align-items: center;
 }
 
-.footer-bottom p {
-    margin: 0;
-    color: var(--text-secondary);
+.footer-bottom-content p {
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
+    color: var(--luxury-slate);
+    margin: 0;
 }
 
 .footer-social {
@@ -2645,19 +2668,20 @@ footer::before {
     justify-content: center;
     width: 40px;
     height: 40px;
-    background: var(--background-white);
+    background: var(--luxury-bone);
     border: 1px solid var(--border-color);
-    border-radius: 50%;
-    color: var(--text-secondary);
+    border-radius: 0;
+    color: var(--luxury-slate);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .footer-social-link:hover {
-    background: var(--primary-color);
+    background: var(--garnet);
     color: white;
-    border-color: var(--primary-color);
+    border-color: var(--garnet);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(133, 49, 48, 0.3);
 }
 
 .footer-social-link svg {
