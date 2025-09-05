@@ -31,21 +31,31 @@
     --shadow-heavy: 0 10px 15px rgba(15, 23, 42, 0.20);
     --transition: all 0.3s ease;
     
-    /* Luxury Brand Colors - Matching Hero Image */
-    --luxury-gold: #D4AF37;
+    /* User's Custom Color Palette */
+    --mountbatten-pink: #896B7F;
+    --garnet: #853130;
+    --lion: #9B834D;
+    --burgundy: #710D1F;
+    --caribbean-current: #3D6F72;
+    
+    /* Updated Hero-Inspired Colors */
+    --hero-pink: var(--mountbatten-pink);
+    --hero-coral: var(--garnet);
+    --hero-warm-red: var(--burgundy);
+    --hero-deep-pink: var(--burgundy);
+    --hero-rose: var(--mountbatten-pink);
+    
+    /* Updated Luxury Colors */
+    --luxury-gold: var(--lion);
+    --luxury-teal: var(--caribbean-current);
+    
+    /* Additional Palette Variations */
     --luxury-cream: #FEF7ED;
     --luxury-charcoal: #1E293B;
     --luxury-slate: #334155;
     --luxury-ink: #0F172A;
     --luxury-bone: #FEFEFE;
     --luxury-pearl: #F8FAFC;
-    
-    /* Hero Image Inspired Colors */
-    --hero-pink: #E8A5A5;
-    --hero-coral: #D67B7B;
-    --hero-warm-red: #C85A5A;
-    --hero-deep-pink: #B84A4A;
-    --hero-rose: #F4B8B8;
 }
 
 body {
