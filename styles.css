@@ -2053,16 +2053,17 @@ footer::before {
 
 /* Footer */
 .footer {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 60px 0 20px;
+    background: var(--background-light);
+    color: var(--text-primary);
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border-color);
 }
 
-.footer-content {
+.footer-main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    margin-bottom: 40px;
+    gap: 80px;
+    margin-bottom: 60px;
 }
 
 .footer-brand {
@@ -2080,20 +2081,18 @@ footer::before {
     height: 60px;
     width: auto;
     border-radius: 12px;
-    background: white;
-    padding: 8px;
 }
 
 .footer-logo-text h3 {
     font-size: 1.8rem;
     font-weight: 700;
     margin: 0 0 8px 0;
-    color: white;
+    color: var(--text-primary);
 }
 
 .footer-tagline {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     margin: 0;
     font-weight: 500;
 }
@@ -2101,7 +2100,7 @@ footer::before {
 .footer-description {
     font-size: 1rem;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -2112,10 +2111,10 @@ footer::before {
 }
 
 .footer-section h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin: 0 0 20px 0;
-    color: white;
+    color: var(--text-primary);
 }
 
 .footer-section ul {
@@ -2129,18 +2128,18 @@ footer::before {
 }
 
 .footer-section a {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: white;
+    color: var(--primary-color);
 }
 
 .footer-section .ambassador-badge {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--primary-color);
     color: white;
     font-size: 0.8rem;
     font-weight: 600;
@@ -2151,7 +2150,7 @@ footer::before {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--border-color);
     padding-top: 30px;
 }
 
@@ -2163,49 +2162,37 @@ footer::before {
 
 .footer-bottom p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     font-size: 0.9rem;
 }
 
 .footer-social {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
-.footer-social-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.footer-social-buttons {
-    display: flex;
-    gap: 12px;
-}
-
-.footer-social-button {
+.footer-social-link {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: white;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.footer-social-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
+.footer-social-link:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
-.footer-social-button svg {
+.footer-social-link svg {
     flex-shrink: 0;
 }
 
@@ -2419,7 +2406,7 @@ footer::before {
         text-align: center;
     }
     
-    .footer-content {
+    .footer-main {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
@@ -2441,11 +2428,6 @@ footer::before {
     }
     
     .footer-social {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .footer-social-buttons {
         justify-content: center;
     }
     
