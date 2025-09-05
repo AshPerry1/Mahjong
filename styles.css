@@ -2039,6 +2039,82 @@ footer::before {
     }
 }
 
+/* Mobile Touch Optimizations */
+@media (max-width: 768px) {
+    /* Ensure all interactive elements are touch-friendly */
+    .cta-button,
+    .service-button,
+    .social-button {
+        min-height: 44px;
+        min-width: 44px;
+        touch-action: manipulation;
+    }
+    
+    /* Improve text readability on mobile */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    /* Ensure images don't overflow */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Improve form elements */
+    input, textarea, select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    /* Ensure cards don't overflow */
+    .service-card,
+    .pricing-card,
+    .testimonial-card,
+    .instructor-card,
+    .event-portfolio-card,
+    .donation-item {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Improve navigation on mobile */
+    .nav-menu.active {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--background-white);
+        box-shadow: var(--shadow-medium);
+        z-index: 1000;
+        padding: 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-menu.active li {
+        margin: 0;
+    }
+    
+    .nav-menu.active a {
+        font-size: 1.2rem;
+        padding: 12px 0;
+        display: block;
+        text-align: center;
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-menu {
@@ -2115,9 +2191,143 @@ footer::before {
         flex-direction: column;
     }
     
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .event-portfolio-card {
+        height: auto;
+        min-height: 350px;
+    }
+    
+    .event-portfolio-card .event-content {
+        padding: 20px;
+    }
+    
+    .event-portfolio-card h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        height: auto;
+    }
+    
+    .community-impact-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .donation-item {
+        padding: 20px;
+    }
+    
+    .donation-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .donation-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .service-card {
+        padding: 24px;
+    }
+    
+    .instructor-card {
+        margin-bottom: 24px;
+    }
+    
+    .instructor-image {
+        height: 200px;
+    }
+    
+    .instructor-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .instructor-real-name {
+        font-size: 1.1rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hero-img {
+        height: 300px;
+    }
+    
+    .event-img {
+        height: 200px;
+    }
+    
+    .tml-logo {
+        max-width: 200px;
+    }
+    
+    .travel-banner {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+    
+    .event-contact {
+        min-height: 60px;
+        padding: 16px;
+    }
+    
+    .event-contact p {
+        font-size: 1rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .cta-button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .contact-buttons .cta-button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .service-button {
+        width: 100%;
+        padding: 16px;
+        font-size: 1rem;
+    }
+    
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+    
+    .social-buttons {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .social-button {
+        margin: 0 8px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
 
@@ -2156,5 +2366,180 @@ footer::before {
     
     .instructor-content {
         padding: 24px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .pricing-card .price {
+        font-size: 2rem;
+    }
+    
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+    
+    .author-info h4 {
+        font-size: 1rem;
+    }
+    
+    .author-info p {
+        font-size: 0.8rem;
+    }
+    
+    .instructor-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .instructor-real-name {
+        font-size: 1rem;
+    }
+    
+    .instructor-story {
+        font-size: 0.9rem;
+    }
+    
+    .event-portfolio-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .event-description {
+        font-size: 0.9rem;
+    }
+    
+    .donation-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .donation-content p {
+        font-size: 0.9rem;
+    }
+    
+    .logo-text h2 {
+        font-size: 1rem;
+    }
+    
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .hero-img {
+        height: 250px;
+    }
+    
+    .event-img {
+        height: 180px;
+    }
+    
+    .travel-banner {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+    
+    .event-contact {
+        min-height: 50px;
+        padding: 12px;
+    }
+    
+    .event-contact p {
+        font-size: 0.9rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-button {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+    
+    .cta-button {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .social-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .nav-container {
+        padding: 0 12px;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    .hero {
+        padding: 80px 0 40px;
+    }
+    
+    .testimonials {
+        padding: 60px 0;
+    }
+    
+    .about {
+        padding: 60px 0;
+    }
+    
+    .services {
+        padding: 60px 0;
+    }
+    
+    .pricing {
+        padding: 60px 0;
+    }
+    
+    .past-events {
+        padding: 60px 0;
+    }
+    
+    .community-impact {
+        padding: 60px 0;
+    }
+    
+    .upcoming-event {
+        padding: 60px 0;
+    }
+    
+    .tml-section {
+        padding: 60px 0;
+    }
+    
+    .contact {
+        padding: 60px 0;
+    }
+    
+    .footer {
+        padding: 40px 0;
     }
 }
