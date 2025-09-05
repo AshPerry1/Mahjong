@@ -1226,24 +1226,29 @@ p {
 
 /* Community Impact Section */
 .community-impact {
-    padding: 100px 0;
-    background: var(--background-light);
+    padding: 120px 0;
+    background: var(--luxury-pearl);
 }
 
 .community-impact h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--luxury-ink);
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .community-impact .section-subtitle {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    margin-bottom: 60px;
-    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--luxury-slate);
+    margin-bottom: 0;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
 }
 
 .impact-content {
@@ -1264,13 +1269,13 @@ p {
 .impact-icon {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    border-radius: 50%;
+    background: var(--hero-coral);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 8px 32px rgba(214, 123, 123, 0.3);
 }
 
 .impact-icon svg {
@@ -1280,15 +1285,17 @@ p {
 }
 
 .impact-details h3 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 1.8rem;
-    color: var(--text-primary);
+    color: var(--luxury-ink);
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 400;
     text-align: center;
+    letter-spacing: -0.01em;
 }
 
 .impact-description {
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 40px;
@@ -1296,6 +1303,7 @@ p {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Inter', sans-serif;
 }
 
 .donation-list {
@@ -1305,23 +1313,23 @@ p {
 .donation-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px;
-    background: var(--background-white);
-    border-radius: var(--border-radius-large);
-    margin-bottom: 16px;
-    border: 2px solid var(--border-color);
-    transition: var(--transition);
+    gap: 20px;
+    padding: 24px;
+    background: var(--luxury-bone);
+    border-radius: 0;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: var(--shadow-light);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 .donation-item:hover {
-    transform: translateX(4px);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: var(--hero-pink);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 .donation-icon {
@@ -1340,56 +1348,62 @@ p {
 }
 
 .donation-content h4 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 1.2rem;
-    color: var(--text-primary);
+    color: var(--luxury-ink);
     margin-bottom: 8px;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .donation-content p {
-    color: var(--text-secondary);
+    color: var(--luxury-slate);
     line-height: 1.6;
     margin: 0;
     font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .impact-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 30px;
     max-width: 600px;
     margin: 0 auto;
 }
 
 .stat-item {
     text-align: center;
-    padding: 24px;
-    background: var(--background-white);
-    border-radius: var(--border-radius-large);
-    border: 2px solid var(--border-color);
-    transition: var(--transition);
-    box-shadow: var(--shadow-light);
+    padding: 32px;
+    background: var(--luxury-bone);
+    border-radius: 0;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 .stat-item:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: var(--hero-pink);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
 }
 
 .stat-number {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--primary-color);
+    font-weight: 400;
+    color: var(--hero-coral);
     margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
 .stat-label {
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-weight: 600;
+    color: var(--luxury-slate);
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
 }
 
 /* Services Section */
