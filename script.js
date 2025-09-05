@@ -66,6 +66,32 @@ Best regards,
 [Your Name]`;
             break;
             
+        case 'events':
+            subject = 'Book Private Mahjong Event - Lookout Mountain Mahjong';
+            body = `Dear Mahj Jen and Mahj Hen,
+
+I'm interested in booking a private mahjong event with Lookout Mountain Mahjong for my group.
+
+Event Details:
+- Group size: [Number of participants]
+- Preferred date(s): [Date(s)]
+- Event type: [Corporate team building/Social gathering/Special occasion]
+- Location: [Your venue/Our location]
+- Duration: [Preferred length]
+
+Could you please provide:
+- Custom pricing based on our needs
+- Available dates and times
+- What's included in the experience
+- Setup requirements and materials
+- Travel arrangements (if applicable)
+
+We're excited to experience mahjong instruction tailored to our group's needs and skill levels.
+
+Best regards,
+[Your Name]`;
+            break;
+            
         case 'contact':
             subject = 'Inquiry - Lookout Mountain Mahjong';
             body = `Dear Mahj Jen and Mahj Hen,
