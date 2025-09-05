@@ -2039,79 +2039,138 @@ footer::before {
     }
 }
 
-/* Mobile Touch Optimizations */
+/* Mobile Full-Width Optimizations */
 @media (max-width: 768px) {
-    /* Ensure all interactive elements are touch-friendly */
-    .cta-button,
-    .service-button,
-    .social-button {
-        min-height: 44px;
-        min-width: 44px;
-        touch-action: manipulation;
-    }
-    
-    /* Improve text readability on mobile */
-    body {
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-    }
-    
-    /* Prevent horizontal scrolling */
+    /* Ensure full width usage */
     html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
         overflow-x: hidden;
     }
     
-    /* Ensure images don't overflow */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    /* Improve form elements */
-    input, textarea, select {
-        font-size: 16px; /* Prevents zoom on iOS */
-    }
-    
-    /* Better spacing for mobile */
     .container {
+        width: 100%;
         max-width: 100%;
-        margin: 0 auto;
+        padding: 0 20px;
+        margin: 0;
+        box-sizing: border-box;
     }
     
-    /* Ensure cards don't overflow */
+    .nav-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Full-width sections */
+    .hero,
+    .services,
+    .pricing,
+    .testimonials,
+    .about,
+    .past-events,
+    .community-impact,
+    .upcoming-event,
+    .tml-section,
+    .contact,
+    .footer {
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Full-width grids */
+    .testimonials-container,
+    .instructors-grid,
+    .service-grid,
+    .pricing-grid,
+    .events-grid,
+    .community-impact-grid {
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Full-width cards */
     .service-card,
     .pricing-card,
     .testimonial-card,
     .instructor-card,
     .event-portfolio-card,
     .donation-item {
-        max-width: 100%;
+        width: 100%;
+        margin: 0 0 20px 0;
         box-sizing: border-box;
     }
     
-    /* Improve navigation on mobile */
-    .nav-menu.active {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--background-white);
-        box-shadow: var(--shadow-medium);
-        z-index: 1000;
-        padding: 20px;
-        flex-direction: column;
-        gap: 20px;
+    /* Full-width hero content */
+    .hero-content {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     
-    .nav-menu.active li {
-        margin: 0;
+    .hero-text {
+        width: 100%;
+        padding: 0;
     }
     
-    .nav-menu.active a {
-        font-size: 1.2rem;
+    .hero-img {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Full-width buttons */
+    .cta-button,
+    .service-button {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 12px 0;
+    }
+    
+    .hero-buttons,
+    .contact-buttons {
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* Full-width navigation */
+    .navbar {
+        width: 100%;
         padding: 12px 0;
-        display: block;
-        text-align: center;
+    }
+    
+    .nav-logo {
+        padding: 0;
+    }
+    
+    /* Full-width footer */
+    .footer-content {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Ensure no horizontal scroll */
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* Remove any margins that could cause issues */
+    .service-card,
+    .pricing-card,
+    .testimonial-card,
+    .instructor-card,
+    .event-portfolio-card,
+    .donation-item,
+    .event-card {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -2332,12 +2391,89 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+    /* Extra small screens - maximize space usage */
     .container {
         padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
     }
     
     .nav-container {
         padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Reduce padding on very small screens */
+    .hero,
+    .services,
+    .pricing,
+    .testimonials,
+    .about,
+    .past-events,
+    .community-impact,
+    .upcoming-event,
+    .tml-section,
+    .contact {
+        padding: 40px 0;
+    }
+    
+    /* Full-width grids on small screens */
+    .testimonials-container,
+    .instructors-grid,
+    .service-grid,
+    .pricing-grid,
+    .events-grid,
+    .community-impact-grid {
+        padding: 0 16px;
+        width: 100%;
+    }
+    
+    /* Ensure cards use full width */
+    .service-card,
+    .pricing-card,
+    .testimonial-card,
+    .instructor-card,
+    .event-portfolio-card,
+    .donation-item {
+        width: 100%;
+        margin: 0 0 16px 0;
+        padding: 20px;
+    }
+    
+    /* Full-width hero */
+    .hero-content {
+        padding: 0 16px;
+        width: 100%;
+    }
+    
+    .hero-text {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .hero-img {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Full-width buttons */
+    .cta-button,
+    .service-button {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+    
+    .hero-buttons,
+    .contact-buttons {
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* Full-width footer */
+    .footer-content {
+        padding: 0 16px;
+        width: 100%;
     }
     
     .hero {
