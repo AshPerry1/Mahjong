@@ -1558,43 +1558,35 @@ body {
     font-weight: 500;
 }
 
-.testimonials-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    height: 300px;
-    overflow: hidden;
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
 }
 
 .testimonial-card {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     background: var(--background-white);
-    padding: 40px;
     border-radius: var(--border-radius-large);
+    padding: 32px;
     box-shadow: var(--shadow-medium);
-    text-align: center;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.6s ease-in-out;
+    transition: var(--transition);
+    border: 2px solid var(--border-color);
 }
 
-.testimonial-card.active {
-    opacity: 1;
-    transform: translateX(0);
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-large);
+    border-color: var(--primary-color);
 }
 
-.testimonial-card.prev {
-    transform: translateX(-100%);
+.testimonial-content {
+    margin-bottom: 24px;
 }
 
 .testimonial-quote {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: var(--text-primary);
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
     font-style: italic;
     font-weight: 500;
 }
@@ -1602,28 +1594,27 @@ body {
 .testimonial-author {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .author-avatar {
-    width: 60px;
-    height: 60px;
-    background: var(--primary-color);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .author-info h4 {
-    font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 4px;
     font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 1.1rem;
 }
 
 .author-info p {
@@ -1632,31 +1623,6 @@ body {
     margin: 0;
 }
 
-.testimonial-indicators {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 40px;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--border-color);
-    cursor: pointer;
-    transition: var(--transition-smooth);
-}
-
-.indicator.active {
-    background: var(--primary-color);
-    transform: scale(1.2);
-}
-
-.indicator:hover {
-    background: var(--primary-color);
-    opacity: 0.7;
-}
 
 /* About Section */
 .about {

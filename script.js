@@ -656,66 +656,6 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Testimonials rotation functionality
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll('.testimonial-card');
-const indicators = document.querySelectorAll('.indicator');
-const totalTestimonials = testimonials.length;
-
-function showTestimonial(index) {
-    // Remove active class from all testimonials and indicators
-    testimonials.forEach(testimonial => testimonial.classList.remove('active', 'prev'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Add prev class to current testimonial before hiding
-    if (testimonials[currentTestimonial]) {
-        testimonials[currentTestimonial].classList.add('prev');
-    }
-    
-    // Update current index
-    currentTestimonial = index;
-    
-    // Show new testimonial
-    if (testimonials[currentTestimonial]) {
-        testimonials[currentTestimonial].classList.add('active');
-    }
-    
-    // Update indicator
-    if (indicators[currentTestimonial]) {
-        indicators[currentTestimonial].classList.add('active');
-    }
-}
-
-function nextTestimonial() {
-    const nextIndex = (currentTestimonial + 1) % totalTestimonials;
-    showTestimonial(nextIndex);
-}
-
-// Auto-rotate testimonials every 5 seconds
-let testimonialInterval = setInterval(nextTestimonial, 5000);
-
-// Add click handlers to indicators
-indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        clearInterval(testimonialInterval);
-        showTestimonial(index);
-        // Restart auto-rotation after manual selection
-        testimonialInterval = setInterval(nextTestimonial, 5000);
-    });
-});
-
-// Pause auto-rotation on hover
-const testimonialsContainer = document.querySelector('.testimonials-container');
-if (testimonialsContainer) {
-    testimonialsContainer.addEventListener('mouseenter', () => {
-        clearInterval(testimonialInterval);
-    });
-    
-    testimonialsContainer.addEventListener('mouseleave', () => {
-        testimonialInterval = setInterval(nextTestimonial, 5000);
-    });
-}
-
 // Service Worker registration for PWA capabilities
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
