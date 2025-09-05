@@ -31,7 +31,7 @@
     --shadow-heavy: 0 10px 15px rgba(15, 23, 42, 0.20);
     --transition: all 0.3s ease;
     
-    /* Luxury Brand Colors */
+    /* Luxury Brand Colors - Matching Hero Image */
     --luxury-gold: #D4AF37;
     --luxury-cream: #FEF7ED;
     --luxury-charcoal: #1E293B;
@@ -39,6 +39,13 @@
     --luxury-ink: #0F172A;
     --luxury-bone: #FEFEFE;
     --luxury-pearl: #F8FAFC;
+    
+    /* Hero Image Inspired Colors */
+    --hero-pink: #E8A5A5;
+    --hero-coral: #D67B7B;
+    --hero-warm-red: #C85A5A;
+    --hero-deep-pink: #B84A4A;
+    --hero-rose: #F4B8B8;
 }
 
 body {
@@ -324,16 +331,16 @@ p {
 }
 
 .cta-button.primary {
-    background: var(--luxury-gold);
-    color: var(--luxury-ink);
-    border-color: var(--luxury-gold);
+    background: var(--hero-warm-red);
+    color: white;
+    border-color: var(--hero-warm-red);
 }
 
 .cta-button.primary:hover {
-    background: rgba(212, 175, 55, 0.9);
-    border-color: rgba(212, 175, 55, 0.8);
+    background: var(--hero-deep-pink);
+    border-color: var(--hero-deep-pink);
     transform: translateY(-2px);
-    box-shadow: 0 8px 35px rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 35px rgba(200, 90, 90, 0.4);
 }
 
 .button-text {
@@ -823,12 +830,13 @@ p {
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--luxury-gold);
-    background: rgba(212, 175, 55, 0.1);
+    color: var(--hero-warm-red);
+    background: rgba(232, 165, 165, 0.15);
     padding: 6px 12px;
     border-radius: 20px;
     margin-bottom: 16px;
     align-self: flex-start;
+    border: 1px solid rgba(232, 165, 165, 0.3);
 }
 
 .event-info h3 {
@@ -895,11 +903,11 @@ p {
 
 
 .event-contact {
-    background: var(--luxury-gold);
+    background: var(--hero-warm-red);
     padding: 24px;
     border-radius: 0;
     text-align: center;
-    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 4px 16px rgba(200, 90, 90, 0.2);
     position: relative;
     overflow: hidden;
     margin-top: auto;
@@ -907,7 +915,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--luxury-gold);
+    border: 1px solid var(--hero-warm-red);
 }
 
 .event-contact::before {
@@ -928,7 +936,7 @@ p {
 
 .event-contact p {
     margin: 0;
-    color: var(--luxury-ink);
+    color: white;
     font-size: 1.1rem;
     font-weight: 500;
     font-family: 'Inter', sans-serif;
@@ -998,18 +1006,18 @@ p {
 .detail-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
-    border-color: var(--luxury-gold);
+    border-color: var(--hero-pink);
 }
 
 .detail-icon {
     width: 40px;
     height: 40px;
-    background: var(--luxury-gold);
+    background: var(--hero-coral);
     border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--luxury-ink);
+    color: white;
     flex-shrink: 0;
 }
 
