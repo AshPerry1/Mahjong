@@ -94,12 +94,21 @@ p {
 
 /* Navigation */
 .navbar {
-    background: var(--background-white);
-    position: static;
-    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--shadow-light);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.hero-nav {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -148,7 +157,7 @@ p {
 }
 
 .nav-logo h2 {
-    color: var(--primary-color);
+    color: var(--luxury-ink);
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-weight: 700;
     font-size: 1.5rem;
@@ -173,15 +182,18 @@ p {
 
 .nav-menu a {
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--luxury-ink);
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
 }
 
 .nav-menu a:hover {
-    color: var(--primary-color);
+    color: var(--luxury-gold);
+    background: rgba(212, 175, 55, 0.1);
 }
 
 .hamburger {
@@ -2902,6 +2914,8 @@ footer::before {
     
     .navbar {
         padding: 12px 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
     }
     
     .nav-container {
