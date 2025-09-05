@@ -281,6 +281,7 @@ body {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 @media (max-width: 768px) {
@@ -452,12 +453,34 @@ body {
 .event-card {
     background: linear-gradient(135deg, var(--background-white) 0%, var(--background-light) 100%);
     border-radius: var(--border-radius-large);
-    padding: 40px;
+    padding: 0;
     box-shadow: var(--shadow-medium);
     border: 3px solid var(--primary-color);
     position: relative;
     overflow: hidden;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-card .event-image {
+    height: 200px;
+    overflow: hidden;
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+
+.event-card .event-image .event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-card .event-info {
+    padding: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .event-card::before {
@@ -533,6 +556,7 @@ body {
     box-shadow: var(--shadow-medium);
     position: relative;
     overflow: hidden;
+    margin-top: auto;
 }
 
 .event-contact::before {
