@@ -1,3 +1,120 @@
+/* Container Queries for Components */
+.service-grid,
+.pricing-grid,
+.testimonials-container,
+.instructors-grid,
+.events-grid,
+.community-impact-grid {
+    container-type: inline-size;
+}
+
+@container (min-width: 500px) {
+    .service-card,
+    .pricing-card,
+    .testimonial-card,
+    .instructor-card,
+    .event-portfolio-card {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        gap: 16px;
+        align-items: center;
+    }
+}
+
+@container (min-width: 800px) {
+    .service-grid,
+    .pricing-grid,
+    .instructors-grid,
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@container (min-width: 1200px) {
+    .service-grid,
+    .pricing-grid,
+    .instructors-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .testimonial-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .rotating-banner {
+        animation: none !important;
+    }
+}
+
+/* Pointer/Hover Media Features */
+@media (pointer: coarse) {
+    .cta-button,
+    .service-card,
+    .pricing-card,
+    .testimonial-card,
+    .instructor-card,
+    .event-portfolio-card,
+    .donation-item {
+        padding: 14px 18px;
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-menu a {
+        padding: 12px 16px;
+        min-height: 44px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .nav-menu a:hover {
+        color: var(--primary-color);
+        transform: translateY(-2px);
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-heavy);
+    }
+    
+    .service-card:hover,
+    .pricing-card:hover,
+    .testimonial-card:hover,
+    .instructor-card:hover,
+    .event-portfolio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-medium);
+    }
+    
+    .donation-item:hover {
+        transform: translateX(4px);
+        border-color: var(--primary-color);
+        box-shadow: var(--shadow-medium);
+    }
+}
+
+/* Input zoom fix on iOS */
+input, select, textarea {
+    font-size: 16px;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -6,6 +123,14 @@
 }
 
 :root {
+    /* Fluid Typography */
+    --step-0: clamp(14px, 1.2vw + 0.4rem, 18px);
+    --step-1: clamp(18px, 1.5vw + 0.5rem, 24px);
+    --step-2: clamp(24px, 2vw + 0.5rem, 32px);
+    --step-3: clamp(32px, 2.5vw + 0.5rem, 48px);
+    --step-4: clamp(48px, 3vw + 0.5rem, 64px);
+    
+    /* Colors */
     --primary-color: #CA69E2;
     --secondary-color: #A052E0;
     --accent-color: #8b5cf6;
@@ -25,10 +150,11 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    font-size: var(--step-0);
+    line-height: 1.5;
     color: var(--text-primary);
     background: var(--background-white);
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
 }
 
