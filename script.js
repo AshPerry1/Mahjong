@@ -656,6 +656,51 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Testimonials rotation functionality
+let currentTestimonials = [0, 1, 2]; // Currently visible testimonials
+let nextIndex = 3; // Next testimonial to show
+const totalTestimonials = 8;
+
+function rotateTestimonials() {
+    // Hide current testimonials
+    currentTestimonials.forEach(index => {
+        const card = document.querySelector(`[data-testimonial="${index}"]`);
+        if (card) {
+            card.classList.remove('active');
+        }
+    });
+    
+    // Remove the first testimonial and add the next one
+    const removedIndex = currentTestimonials.shift();
+    currentTestimonials.push(nextIndex);
+    
+    // Show new testimonials
+    currentTestimonials.forEach(index => {
+        const card = document.querySelector(`[data-testimonial="${index}"]`);
+        if (card) {
+            card.classList.add('active');
+        }
+    });
+    
+    // Update next index (cycle back to 0 when we reach the end)
+    nextIndex = (nextIndex + 1) % totalTestimonials;
+}
+
+// Start rotation every 10 seconds
+let testimonialInterval = setInterval(rotateTestimonials, 10000);
+
+// Pause rotation on hover
+const testimonialsContainer = document.querySelector('.testimonials-container');
+if (testimonialsContainer) {
+    testimonialsContainer.addEventListener('mouseenter', () => {
+        clearInterval(testimonialInterval);
+    });
+    
+    testimonialsContainer.addEventListener('mouseleave', () => {
+        testimonialInterval = setInterval(rotateTestimonials, 10000);
+    });
+}
+
 // Service Worker registration for PWA capabilities
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
