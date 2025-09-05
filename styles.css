@@ -1468,7 +1468,6 @@ p {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap: 20px;
 }
 
 .service-card.featured {
@@ -1488,8 +1487,7 @@ p {
 }
 
 .service-icon {
-    margin-bottom: 0;
-    order: -1;
+    margin-bottom: 24px;
 }
 
 .icon-placeholder {
@@ -1507,15 +1505,15 @@ p {
 }
 
 .icon-text {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background: var(--garnet);
     color: white;
     border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     margin: 0 auto;
     box-shadow: 0 4px 12px rgba(133, 49, 48, 0.3);
@@ -1624,14 +1622,13 @@ p {
 }
 
 .service-price {
-    margin-bottom: 0;
+    margin-bottom: 20px;
     text-align: center;
-    order: 1;
 }
 
 .service-price .price {
     font-family: 'Playfair Display', 'Times New Roman', serif;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: var(--garnet);
     display: block;
@@ -1651,20 +1648,18 @@ p {
 
 .service-card p {
     color: var(--luxury-slate);
-    margin-bottom: 0;
+    margin-bottom: 24px;
     line-height: 1.6;
     flex-grow: 1;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
-    order: 2;
 }
 
 .service-features {
     list-style: none;
-    margin-bottom: 0;
+    margin-bottom: 32px;
     text-align: left;
     padding: 0;
-    order: 3;
 }
 
 .service-features li {
@@ -1700,7 +1695,6 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     width: 100%;
-    order: 4;
     margin-top: auto;
 }
 
