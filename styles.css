@@ -1705,6 +1705,21 @@ body {
     font-weight: 600;
 }
 
+.instructor-content h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.instructor-real-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
 .instructor-credentials {
     color: var(--text-secondary);
     font-size: 0.9rem;
