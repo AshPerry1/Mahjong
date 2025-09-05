@@ -151,10 +151,18 @@ body {
     transition: 0.3s;
 }
 
-/* Hero Section */
+/* Hero Section - Luxury Design */
+:root {
+    --ink: #0B0B0C;
+    --bone: #F7F5F2;
+    --gold: #C7A874;
+    --slate: #8B8D92;
+}
+
 .hero {
     min-height: 100dvh;
-    background: linear-gradient(135deg, #fefefe 0%, #fafafa 100%);
+    background: var(--ink);
+    color: var(--bone);
     position: relative;
     display: flex;
     align-items: center;
@@ -170,16 +178,38 @@ body {
     z-index: 1;
 }
 
-.hero-pattern {
+.hero-radial-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(60% 40% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-film-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.035;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+.hero-film-grain::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 20% 20%, rgba(202, 105, 226, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(160, 82, 224, 0.02) 0%, transparent 50%);
-    background-size: 100% 100%;
+        radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    filter: contrast(0.5);
 }
 
 .hero-content {
@@ -191,122 +221,104 @@ body {
     z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 96px 24px 160px;
 }
 
 .hero-text {
     max-width: 600px;
 }
 
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--primary-color);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    margin-bottom: 32px;
-    border: 1px solid rgba(202, 105, 226, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+.hero-eyebrow {
+    margin-bottom: 20px;
 }
 
-.badge-icon {
-    font-size: 1rem;
+.eyebrow-text {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate);
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 5vw, 4rem);
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 24px 0;
-    color: var(--text-primary);
-}
-
-.title-main {
-    display: block;
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(3.5rem, 5vw, 4.5rem);
     font-weight: 400;
-    color: var(--text-secondary);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px 0;
+    color: var(--bone);
 }
 
-.title-highlight {
-    display: block;
-    color: var(--primary-color);
-    font-weight: 800;
-    margin-top: 8px;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
+.hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: rgba(247, 245, 242, 0.85);
     margin: 0 0 40px 0;
     font-weight: 400;
-    font-style: italic;
+    max-width: 500px;
 }
 
-.hero-features {
+.hero-actions {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 48px;
-}
-
-.feature-item {
-    display: flex;
+    gap: 24px;
     align-items: center;
-    gap: 12px;
-    padding: 8px 0;
-}
-
-.feature-icon {
-    font-size: 1.2rem;
-    width: 24px;
-    text-align: center;
-}
-
-.feature-text {
-    font-size: 0.95rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.hero-action {
-    display: flex;
-    justify-content: flex-start;
 }
 
 .cta-button {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 16px 32px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 8px;
-    font-weight: 600;
+    border-radius: 16px;
+    font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 250ms ease-out;
     text-decoration: none;
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 4px 16px rgba(202, 105, 226, 0.2);
+    position: relative;
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(202, 105, 226, 0.3);
+.cta-button.primary {
+    background: var(--bone);
+    color: var(--ink);
+    border: 1px solid rgba(199, 168, 116, 0.2);
 }
 
-.button-arrow {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
+.cta-button.primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(199, 168, 116, 0.15);
+    border-color: var(--gold);
 }
 
-.cta-button:hover .button-arrow {
+.cta-button.secondary {
+    background: transparent;
+    color: var(--bone);
+    position: relative;
+}
+
+.cta-button.secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    background: var(--gold);
+    transition: width 300ms ease-out;
+}
+
+.cta-button.secondary:hover::after {
+    width: 100%;
+}
+
+.button-icon {
+    transition: transform 200ms ease-out;
+}
+
+.cta-button:hover .button-icon {
     transform: translateX(2px);
 }
 
@@ -325,129 +337,67 @@ body {
 
 .image-frame {
     position: relative;
-    border-radius: 16px;
+    border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    background: white;
-    padding: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--ink);
 }
 
-.hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-}
-
-.floating-elements {
+.image-stroke {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     pointer-events: none;
+    z-index: 2;
 }
 
-.floating-tile {
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.image-vignette {
     position: absolute;
-    width: 60px;
-    height: 80px;
-    background: white;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    animation: floatSubtle 6s ease-in-out infinite;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.floating-tile.tile-1 {
-    top: 10%;
-    left: -30px;
-    animation-delay: 0s;
-    background: #fce7f3;
-}
-
-.floating-tile.tile-2 {
-    top: 50%;
-    right: -30px;
-    animation-delay: 2s;
-    background: #f3e8ff;
-}
-
-.floating-tile.tile-3 {
-    bottom: 20%;
-    left: 10%;
-    animation-delay: 4s;
-    background: #f1f5f9;
-}
-
-.floating-tile.tile-4 {
-    top: 70%;
-    right: 5%;
-    animation-delay: 6s;
-    background: #f1f5f9;
-}
-
-.tile-symbol {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-@keyframes floatSubtle {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(120% 100% at 50% 0%, transparent, rgba(0, 0, 0, 0.55));
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* Hero Mobile Responsiveness */
 @media (max-width: 768px) {
-    .hero {
-        padding: 60px 0 40px;
-        min-height: auto;
-    }
-    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
-        padding: 0 20px;
+        padding: 60px 20px 80px;
     }
     
     .hero-text {
         max-width: 100%;
     }
     
-    .hero-badge {
-        margin: 0 auto 24px auto;
-    }
-    
     .hero-title {
-        font-size: clamp(2.2rem, 7vw, 3rem);
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
     }
     
-    .hero-description {
+    .hero-subtitle {
         font-size: 1rem;
-        font-style: normal;
+        max-width: 100%;
     }
     
-    .hero-features {
+    .hero-actions {
+        flex-direction: column;
+        gap: 16px;
         align-items: center;
-        margin-bottom: 32px;
-    }
-    
-    .feature-item {
-        justify-content: center;
-    }
-    
-    .hero-action {
-        justify-content: center;
     }
     
     .cta-button {
@@ -459,23 +409,6 @@ body {
     .hero-image-container {
         max-width: 400px;
         margin: 0 auto;
-    }
-    
-    .floating-tile {
-        width: 50px;
-        height: 70px;
-    }
-    
-    .floating-tile.tile-1 {
-        left: -20px;
-    }
-    
-    .floating-tile.tile-2 {
-        right: -20px;
-    }
-    
-    .tile-symbol {
-        font-size: 1.2rem;
     }
 }
 

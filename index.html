@@ -41,6 +41,9 @@
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -138,63 +141,42 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-background">
-                <div class="hero-pattern"></div>
+                <div class="hero-radial-light"></div>
+                <div class="hero-film-grain"></div>
             </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="hero-badge">
-                            <span class="badge-icon">♠</span>
-                            <span class="badge-text">Certified TML Ambassadors</span>
+                        <div class="hero-eyebrow">
+                            <span class="eyebrow-text">Certified TML Ambassadors</span>
                         </div>
-                        <h1 class="hero-title">
-                            <span class="title-main">Master the Art of</span>
-                            <span class="title-highlight">American Mahjong</span>
-                        </h1>
-                        <p class="hero-description">Join us for an elegant journey into the world of mahjong. From intimate lessons to grand celebrations, we bring the joy of this beautiful game to life with style and sophistication.</p>
-                        <div class="hero-features">
-                            <div class="feature-item">
-                                <span class="feature-icon">🌸</span>
-                                <span class="feature-text">Personalized Instruction</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">🎭</span>
-                                <span class="feature-text">Elegant Events</span>
-                            </div>
-                            <div class="feature-item">
-                                <span class="feature-icon">✨</span>
-                                <span class="feature-text">Luxury Experience</span>
-                            </div>
-                        </div>
-                        <div class="hero-action">
+                        <h1 class="hero-title">Master the Art of American Mahjong</h1>
+                        <p class="hero-subtitle">Expert instruction delivered with elegance and precision—where every lesson becomes a refined experience.</p>
+                        <div class="hero-actions">
                             <button class="cta-button primary" onclick="sendEmail('contact')">
                                 <span class="button-text">Begin Your Journey</span>
-                                <span class="button-arrow">→</span>
+                                <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12h14M13 5l7 7-7 7"/>
+                                </svg>
                             </button>
-                        </div>
+                            <a href="#services" class="cta-button secondary">
+                                <span class="button-text">Explore Services</span>
+                                <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12h14M13 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+            </div>
                     </div>
                     <div class="hero-visual">
                         <div class="hero-image-container">
                             <div class="image-frame">
+                                <div class="image-stroke"></div>
                                 <img src="./Main.png" 
                                      srcset="./Main.png 800w, ./Main.png 1200w, ./Main.png 1600w"
                                      sizes="(min-width: 1024px) 50vw, 100vw"
                                      alt="Elegant mahjong instruction" 
                                      class="hero-img">
-                            </div>
-                            <div class="floating-elements">
-                                <div class="floating-tile tile-1">
-                                    <span class="tile-symbol">🌸</span>
-                                </div>
-                                <div class="floating-tile tile-2">
-                                    <span class="tile-symbol">9</span>
-                                </div>
-                                <div class="floating-tile tile-3">
-                                    <span class="tile-symbol">W</span>
-                                </div>
-                                <div class="floating-tile tile-4">
-                                    <span class="tile-symbol">♠</span>
-                                </div>
+                                <div class="image-vignette"></div>
                             </div>
                         </div>
                     </div>
