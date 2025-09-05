@@ -275,6 +275,21 @@ body {
     font-weight: 500;
 }
 
+.events-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
 .event-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -439,11 +454,10 @@ body {
     border-radius: var(--border-radius-large);
     padding: 40px;
     box-shadow: var(--shadow-medium);
-    max-width: 800px;
-    margin: 0 auto;
     border: 3px solid var(--primary-color);
     position: relative;
     overflow: hidden;
+    height: fit-content;
 }
 
 .event-card::before {

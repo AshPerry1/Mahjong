@@ -11,6 +11,25 @@ function sendEmail(type) {
     button.disabled = true;
     
     switch(type) {
+        case 'lesson':
+            subject = 'Book Mahjong Lesson - Lookout Mountain Mahjong';
+            body = `Dear Mahj Jen and Mahj Hen,
+
+I'm excited to begin my mahjong journey with Lookout Mountain Mahjong and would love to book a lesson.
+
+Could you please share:
+- Available lesson dates and times
+- Location and venue details
+- What to expect during the session
+- Investment for the lesson
+- Whether you offer 101, 102, or other specialized courses
+
+I'm eager to master American mahjong under your expert guidance and would appreciate any recommendations for the best starting point based on my experience level.
+
+Best regards,
+[Your Name]`;
+            break;
+            
         case '101':
             subject = 'Book Mahjong 101 Lessons';
             body = `Dear Mahj Jen and Mahj Hen,
@@ -48,12 +67,19 @@ Best regards,
             break;
             
         case 'contact':
-            subject = 'Contact Lookout Mountain Mahjong';
+            subject = 'Inquiry - Lookout Mountain Mahjong';
             body = `Dear Mahj Jen and Mahj Hen,
 
 I'd love to connect with you about Lookout Mountain Mahjong and explore how we might work together.
 
-[Please share your specific inquiry, question, or how we can best serve your mahjong needs]
+I'm interested in learning more about:
+- Your mahjong instruction services
+- Available lesson types and scheduling
+- Private event options
+- Pricing and packages
+- Any upcoming tournaments or special events
+
+Please share any additional information that would help me understand how Lookout Mountain Mahjong can best serve my mahjong needs.
 
 I look forward to hearing from you and discovering how we can create an exceptional mahjong experience together.
 
