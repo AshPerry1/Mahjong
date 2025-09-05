@@ -1434,6 +1434,7 @@ p {
     margin-bottom: 20px;
     font-weight: 400;
     letter-spacing: -0.01em;
+    text-align: center;
 }
 
 .section-subtitle {
@@ -1452,8 +1453,9 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 32px;
-    margin-bottom: 60px;
+    margin: 0 auto 60px auto;
     align-items: stretch;
+    max-width: 1200px;
 }
 
 .service-card {
