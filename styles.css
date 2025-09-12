@@ -529,7 +529,7 @@ p {
     gap: 8px;
     padding: 16px 32px;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -765,7 +765,7 @@ p {
     background: var(--background-white);
     color: var(--text-primary);
     padding: 20px;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
@@ -893,7 +893,7 @@ p {
 .detail-item {
     background: var(--background-white);
     padding: 20px;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     box-shadow: var(--shadow-light);
     border: 2px solid var(--border-color);
     transition: var(--transition);
@@ -2165,6 +2165,41 @@ p {
     font-style: italic;
 }
 
+/* More Info Link */
+.more-info-link {
+    margin: 8px 0 16px 0;
+}
+
+.more-info-link a {
+    color: var(--rose-pink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.more-info-link a:hover {
+    color: var(--deep-pink);
+    text-decoration: underline;
+}
+
+/* Event Contact Link */
+.event-contact-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.event-contact-link:hover {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
 /* TML Section */
 .tml-section {
     padding: 120px 0;
@@ -2445,7 +2480,7 @@ footer::before {
     color: white;
     border: 2px solid rgba(202, 105, 226, 0.3);
     padding: 8px 16px;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
