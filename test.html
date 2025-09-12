@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Page - Lookout Mountain Mahjong</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-button { 
+            background: #E91E63; 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 0; 
+            display: inline-block;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Page - Button Check</h1>
+    <p>If you can see this page, the site is updating.</p>
+    
+    <h2>Greenbrier Registration Button Test:</h2>
+    <a href="https://docs.google.com/forms/d/15XZkvJ_PimtTxbEEd9Ee017SSrVJ1hSMpZy7Mhk5EO4/viewform" target="_blank" class="test-button">Register Here</a>
+    
+    <p>This button should link to the Google Form.</p>
+    
+    <script>
+        // Clear all caches
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) {
+                    caches.delete(name);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

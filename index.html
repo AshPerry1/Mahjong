@@ -741,6 +741,25 @@
         </div>
     </footer>
 
-    <script src="script.js?v=5.0&t=202509121920&new=true"></script>
+    <script>
+        // Force unregister service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for(let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        
+        // Clear all caches
+        if ('caches' in window) {
+            caches.keys().then(function(names) {
+                for (let name of names) {
+                    caches.delete(name);
+                }
+            });
+        }
+    </script>
+    <script src="script.js?v=6.0&t=202509121930&force=true"></script>
 </body>
 </html>
