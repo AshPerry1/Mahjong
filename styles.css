@@ -2585,9 +2585,33 @@ p {
         font-size: 2.5rem;
     }
     
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-scroll-arrow {
+        display: none;
+    }
+    
+    .navbar {
+        padding: 16px 0;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
     .tml-content {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+    
+    .tml-visual {
+        text-align: center;
+    }
+    
+    .tml-logo-container {
+        margin: 0 auto;
     }
     
     .instructors-grid {
@@ -2642,9 +2666,31 @@ p {
         flex-direction: column;
     }
     
+    .contact-content {
+        text-align: center;
+    }
+    
+    .contact-email {
+        font-size: 1rem;
+    }
+    
     .events-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+    
+    .events-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .event-card {
+        margin-bottom: 24px;
+    }
+    
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
     
     .event-portfolio-card {
@@ -2685,13 +2731,26 @@ p {
         height: 80px;
     }
     
-    .service-grid {
+    .services-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
     
     .service-card {
-        padding: 24px;
+        padding: 20px;
+        min-height: auto;
+    }
+    
+    .service-features {
+        min-height: auto;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
     }
     
     .instructor-card {
@@ -3090,5 +3149,131 @@ p {
     
     .footer {
         padding: 40px 0;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    h2 {
+        font-size: 3.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+    
+    .events-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    
+    .testimonials-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+    
+    .instructors-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Extra small screens (320px and below) */
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    .nav-container {
+        padding: 0 8px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .service-card {
+        padding: 16px;
+    }
+    
+    .service-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .event-card {
+        padding: 16px;
+    }
+    
+    .testimonial-card {
+        padding: 16px;
+    }
+    
+    .instructor-card {
+        padding: 16px;
+    }
+    
+    .footer-content {
+        gap: 20px;
+    }
+    
+    .footer-brand h3 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-social-link {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button,
+    .service-button,
+    .footer-social-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-menu a {
+        padding: 12px 16px;
+    }
+    
+    .event-contact-link,
+    .more-info-link a {
+        padding: 8px 12px;
+        display: inline-block;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-img,
+    .event-img,
+    .instructor-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }
