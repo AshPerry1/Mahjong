@@ -1,5 +1,5 @@
 // Service Worker for Lookout Mountain Mahjong
-const CACHE_NAME = 'mahjong-cache-v1';
+const CACHE_NAME = 'mahjong-cache-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -20,18 +20,25 @@ self.addEventListener('install', event => {
   );
 });
 
-// Fetch event - serve from cache when offline
+// Fetch event - always try network first, then cache
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-        // Return cached version or fetch from network
-        if (response) {
-          return response;
+        // If network request succeeds, update cache
+        if (response.status === 200) {
+          const responseClone = response.clone();
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              cache.put(event.request, responseClone);
+            });
         }
-        return fetch(event.request);
-      }
-    )
+        return response;
+      })
+      .catch(() => {
+        // If network fails, try cache
+        return caches.match(event.request);
+      })
   );
 });
 
