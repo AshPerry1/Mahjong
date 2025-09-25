@@ -959,6 +959,28 @@ p {
     line-height: 1.5;
 }
 
+.share-event-btn {
+    background: var(--rose-pink);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+    margin-top: 8px;
+}
+
+.share-event-btn:hover {
+    background: var(--deep-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
+}
+
 .event-contact::before {
     content: '';
     position: absolute;

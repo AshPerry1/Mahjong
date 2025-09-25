@@ -231,6 +231,7 @@
                                     <p>Check out the recap here: <a href="https://www.instagram.com/reel/DO6jKw2j9Z6/?igsh=MWg0bWY1YWdhbGVubA%3D%3D" target="_blank" style="color: var(--rose-pink); text-decoration: none;">Instagram Recap →</a></p>
                                     <p>We hope you can make the next tournament!</p>
                                 </div>
+                                <button class="share-event-btn" onclick="shareEvent('september')">📱 Share Event</button>
                             </div>
                         </div>
                     </div>
@@ -297,6 +298,7 @@
                             
                             <div class="event-contact">
                                 <a href="https://docs.google.com/forms/d/15XZkvJ_PimtTxbEEd9Ee017SSrVJ1hSMpZy7Mhk5EO4/viewform" target="_blank" class="event-contact-link">Register Here</a>
+                                <button class="share-event-btn" onclick="shareEvent('greenbrier')">📱 Share Event</button>
                             </div>
                         </div>
                     </div>
@@ -762,6 +764,56 @@
                     caches.delete(name);
                 }
             });
+        }
+        
+        // Share event function
+        function shareEvent(eventType) {
+            let message = '';
+            let url = 'https://lookoutmountainmahjong.com';
+            
+            if (eventType === 'september') {
+                message = `🎯 Hey! I wanted to share this awesome mahjong tournament with you!\n\n🏆 September 21st Tournament\n📅 Sunday, September 21 • 2-4 PM\n📍 Lookout Mountain Golf Club\n💰 $50 per person\n\nThis event has ended, but check out the recap: https://www.instagram.com/reel/DO6jKw2j9Z6/\n\nAre you interested in mahjong? We should definitely go to the next one together! 🀄️\n\nCheck out more events: ${url}`;
+            } else if (eventType === 'greenbrier') {
+                message = `🎯 Hey! I found this amazing mahjong tournament and thought you might be interested!\n\n🏆 Greenbrier Tournament\n📅 October 31 - November 1, 2025\n📍 The Greenbrier Resort, West Virginia\n💰 $299 per person\n\nThis is a premium multi-day tournament at the historic Greenbrier Resort! It includes welcome reception, tournament rounds, and winner celebrations.\n\nWant to join me? Let's register together! 🀄️\n\nRegister here: https://docs.google.com/forms/d/15XZkvJ_PimtTxbEEd9Ee017SSrVJ1hSMpZy7Mhk5EO4/viewform\n\nMore info: ${url}`;
+            }
+            
+            // Try to use Web Share API first (mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mahjong Tournament Invitation',
+                    text: message,
+                    url: url
+                }).catch(err => {
+                    console.log('Error sharing:', err);
+                    fallbackShare(message);
+                });
+            } else {
+                fallbackShare(message);
+            }
+        }
+        
+        function fallbackShare(message) {
+            // Copy to clipboard
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(message).then(() => {
+                    alert('📱 Event details copied to clipboard! Paste it in your text message to share with friends!');
+                }).catch(() => {
+                    promptShare(message);
+                });
+            } else {
+                promptShare(message);
+            }
+        }
+        
+        function promptShare(message) {
+            // Show the message in a prompt for manual copying
+            const textArea = document.createElement('textarea');
+            textArea.value = message;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('📱 Event details copied to clipboard! Paste it in your text message to share with friends!');
         }
     </script>
     <script src="script.js?v=6.0&t=202509121930&force=true"></script>
