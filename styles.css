@@ -963,16 +963,17 @@ p {
     background: var(--rose-pink);
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 14px 32px;
     border-radius: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
-    margin-top: 8px;
+    width: 200px;
+    text-align: center;
 }
 
 .share-event-btn:hover {
@@ -983,16 +984,17 @@ p {
 
 .event-buttons {
     display: flex;
+    flex-direction: column;
     gap: 12px;
     justify-content: center;
     margin: 16px 0;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .register-btn {
     background: var(--hero-warm-red);
     color: white;
-    padding: 12px 24px;
+    padding: 14px 32px;
     border-radius: 0;
     font-size: 1rem;
     font-weight: 600;
@@ -1003,6 +1005,8 @@ p {
     box-shadow: 0 2px 8px rgba(200, 90, 90, 0.3);
     border: none;
     cursor: pointer;
+    width: 200px;
+    text-align: center;
 }
 
 .register-btn:hover {
@@ -1014,9 +1018,9 @@ p {
 .recap-btn {
     background: var(--rose-pink);
     color: white;
-    padding: 12px 20px;
+    padding: 14px 32px;
     border-radius: 0;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -1025,6 +1029,8 @@ p {
     box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
     border: none;
     cursor: pointer;
+    width: 200px;
+    text-align: center;
 }
 
 .recap-btn:hover {
