@@ -1063,26 +1063,28 @@ p {
 .popup-content {
     background: white;
     border-radius: 0;
-    max-width: 500px;
+    max-width: 520px;
     width: 90%;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--rose-pink);
+    border: 1px solid var(--border-color);
 }
 
 .popup-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 20px;
+    right: 25px;
     background: none;
     border: none;
-    font-size: 28px;
+    font-size: 32px;
     color: var(--text-primary);
     cursor: pointer;
     z-index: 10001;
     transition: color 0.3s ease;
+    font-weight: 300;
+    line-height: 1;
 }
 
 .popup-close:hover {
@@ -1090,24 +1092,39 @@ p {
 }
 
 .popup-header {
-    background: linear-gradient(135deg, var(--rose-pink), var(--deep-pink));
-    color: white;
-    padding: 30px 30px 20px 30px;
+    background: white;
+    padding: 40px 30px 20px 30px;
     text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.popup-badge {
+    background: var(--rose-pink);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .popup-header h3 {
-    margin: 0 0 8px 0;
-    font-size: 1.5rem;
+    margin: 0 0 12px 0;
+    font-size: 2rem;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
 }
 
 .popup-subtitle {
     margin: 0;
-    font-size: 1rem;
-    opacity: 0.9;
-    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
 }
 
 .popup-body {
@@ -1115,27 +1132,49 @@ p {
 }
 
 .popup-highlights {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .highlight-item {
     display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    font-size: 1rem;
-    color: var(--text-primary);
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--pale-pink);
+    border-left: 4px solid var(--rose-pink);
 }
 
 .highlight-icon {
-    font-size: 1.2rem;
-    margin-right: 12px;
-    width: 24px;
-    text-align: center;
+    margin-right: 16px;
+    margin-top: 2px;
+    color: var(--rose-pink);
+    flex-shrink: 0;
+}
+
+.highlight-content {
+    flex: 1;
+}
+
+.highlight-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    font-family: 'Inter', sans-serif;
+}
+
+.highlight-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
 }
 
 .popup-description {
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 30px;
+    padding: 24px;
     background: var(--pale-pink);
     border-left: 4px solid var(--rose-pink);
 }
@@ -1145,28 +1184,30 @@ p {
     line-height: 1.6;
     color: var(--text-primary);
     font-size: 1rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .popup-actions {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .popup-register-btn {
     background: var(--hero-warm-red);
     color: white;
-    padding: 16px 24px;
+    padding: 16px 32px;
     border-radius: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 4px 16px rgba(200, 90, 90, 0.3);
+    font-family: 'Inter', sans-serif;
 }
 
 .popup-register-btn:hover {
@@ -1179,7 +1220,7 @@ p {
     background: var(--rose-pink);
     color: white;
     border: none;
-    padding: 14px 24px;
+    padding: 14px 32px;
     border-radius: 0;
     font-size: 1rem;
     font-weight: 600;
@@ -1188,6 +1229,7 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(233, 30, 99, 0.3);
+    font-family: 'Inter', sans-serif;
 }
 
 .popup-share-btn:hover {
@@ -1198,7 +1240,7 @@ p {
 
 .popup-footer {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -1207,6 +1249,7 @@ p {
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-style: italic;
+    font-family: 'Inter', sans-serif;
 }
 
 /* Mobile Responsive */
