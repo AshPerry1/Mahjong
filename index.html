@@ -749,6 +749,43 @@
         </div>
     </footer>
 
+    <!-- Greenbrier Tournament Popup -->
+    <div id="greenbrier-popup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <div class="popup-header">
+                <h3>🏆 Premium Mahjong Tournament</h3>
+                <p class="popup-subtitle">Don't miss this exclusive event!</p>
+            </div>
+            <div class="popup-body">
+                <div class="popup-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📍</span>
+                        <span>The Greenbrier Resort, West Virginia</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📅</span>
+                        <span>October 31 - November 1, 2025</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎯</span>
+                        <span>Multi-day tournament experience</span>
+                    </div>
+                </div>
+                <div class="popup-description">
+                    <p>Join us for our most prestigious mahjong tournament at the historic Greenbrier Resort! Enjoy competitive play in an elegant setting with welcome reception, tournament rounds, and winner celebrations.</p>
+                </div>
+                <div class="popup-actions">
+                    <a href="https://docs.google.com/forms/d/15XZkvJ_PimtTxbEEd9Ee017SSrVJ1hSMpZy7Mhk5EO4/viewform" target="_blank" class="popup-register-btn">Register Now - $299</a>
+                    <button class="popup-share-btn" onclick="shareEvent('greenbrier')">Share with Friends</button>
+                </div>
+                <div class="popup-footer">
+                    <p>Limited spots available • Premium experience included</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Force unregister service worker
         if ('serviceWorker' in navigator) {
@@ -817,6 +854,32 @@
             document.body.removeChild(textArea);
             alert('Event details copied to clipboard! Paste it in your text message to share with friends!');
         }
+        
+        // Popup functions
+        function showPopup() {
+            document.getElementById('greenbrier-popup').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+        
+        function closePopup() {
+            document.getElementById('greenbrier-popup').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            // Set cookie to not show popup again for 24 hours
+            const expires = new Date();
+            expires.setTime(expires.getTime() + (24 * 60 * 60 * 1000));
+            document.cookie = "popupShown=true; expires=" + expires.toUTCString() + "; path=/";
+        }
+        
+        // Show popup after 3 seconds if not shown before
+        function checkAndShowPopup() {
+            const popupShown = document.cookie.split(';').some(cookie => cookie.trim().startsWith('popupShown=true'));
+            if (!popupShown) {
+                setTimeout(showPopup, 3000); // Show after 3 seconds
+            }
+        }
+        
+        // Initialize popup check when page loads
+        document.addEventListener('DOMContentLoaded', checkAndShowPopup);
     </script>
     <script src="script.js?v=6.0&t=202509121930&force=true"></script>
 </body>
