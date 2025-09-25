@@ -301,19 +301,28 @@ p {
     letter-spacing: -0.01em;
     margin: 0 0 24px 0;
     color: white;
-    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.8), 0 2px 15px rgba(0, 0, 0, 0.6), 0 1px 5px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9), 0 2px 15px rgba(0, 0, 0, 0.7), 0 1px 5px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px 30px;
+    border-radius: 0;
+    backdrop-filter: blur(10px);
 }
 
 .hero-subtitle {
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
     line-height: 1.5;
-    color: black;
+    color: white;
     margin: 0 0 40px 0;
-    font-weight: 400;
+    font-weight: 500;
     max-width: 450px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8), 0 1px 8px rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 16px 24px;
+    border-radius: 0;
+    backdrop-filter: blur(10px);
 }
 
 .hero-action {
