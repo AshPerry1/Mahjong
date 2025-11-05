@@ -898,6 +898,22 @@ p {
     }
 }
 
+.event-card {
+    background: var(--luxury-bone);
+    border-radius: 0;
+    padding: 0;
+    box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .event-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 50px rgba(15, 23, 42, 0.12);
