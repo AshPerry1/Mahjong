@@ -658,19 +658,19 @@
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
-                        </div>
+                    </div>
                         <div class="form-group">
                             <label for="address">Address *</label>
                             <input type="text" id="address" name="address" required>
-                        </div>
+                    </div>
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
                             <input type="tel" id="phone" name="phone" required>
-                        </div>
+                    </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
-                        </div>
+                    </div>
                         <div class="form-group">
                             <label for="skill-level">Skill Level *</label>
                             <select id="skill-level" name="skill-level" required>
@@ -776,20 +776,19 @@
                     const friends = formData.get('friends');
                     
                     // Create a nicely formatted email message
-                    let messageBody = `Hello,\n\n`;
-                    messageBody += `I'm interested in joining your mahjong instruction program. Here are my details:\n\n`;
+                    let messageBody = `Hey Mahj Jen and Mahj Hen,\n\n`;
+                    messageBody += `I am signing up for your tournament. Please see the info below:\n\n`;
                     messageBody += `Name: ${name}\n`;
                     messageBody += `Email: ${email}\n`;
                     messageBody += `Phone: ${phone}\n`;
                     messageBody += `Address: ${address}\n`;
-                    messageBody += `Skill Level: ${skillLevel}\n\n`;
+                    messageBody += `Skill Level: ${skillLevel}\n`;
                     
                     if (friends && friends.trim()) {
-                        messageBody += `Friends who will be participating with me:\n${friends}\n\n`;
+                        messageBody += `Friends who will be participating with me: ${friends}\n`;
                     }
                     
-                    messageBody += `Looking forward to hearing from you!\n\n`;
-                    messageBody += `Best regards,\n${name}`;
+                    messageBody += `\nThanks,\n${name}`;
                     
                     // Create new FormData with formatted message
                     const formattedData = new FormData();
