@@ -648,8 +648,9 @@ p {
 }
 
 .events-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 50px;
     width: 100%;
     box-sizing: border-box;
@@ -872,8 +873,9 @@ p {
 }
 
 .events-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 50px;
     width: 100%;
     box-sizing: border-box;
@@ -892,6 +894,7 @@ p {
     height: auto;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 1200px;
     box-sizing: border-box;
 }
 
@@ -914,6 +917,7 @@ p {
     height: auto;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 1200px;
     box-sizing: border-box;
 }
 
