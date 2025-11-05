@@ -1028,6 +1028,10 @@ p {
     justify-content: center;
     border: 1px solid var(--border-color);
     gap: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .event-status-text {
@@ -1093,6 +1097,8 @@ p {
     text-align: center;
     margin: 16px 0 12px 0;
     line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .event-contact-info {
@@ -1101,6 +1107,8 @@ p {
     text-align: center;
     margin: 8px 0;
     line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .event-contact-info a {
@@ -1108,6 +1116,10 @@ p {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
 }
 
 .event-contact-info a:hover {
@@ -3699,11 +3711,29 @@ p {
     
     .event-contact {
         min-height: 60px;
-        padding: 16px;
+        padding: 16px 12px;
+        gap: 12px;
+    }
+    
+    .event-contact-label {
+        font-size: 0.9rem;
+        margin: 12px 0 8px 0;
+    }
+    
+    .event-contact-info {
+        font-size: 0.85rem;
+        margin: 6px 0;
+    }
+    
+    .event-contact-info a {
+        font-size: 0.85rem;
+        display: block;
+        word-break: break-word;
     }
     
     .event-contact p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        padding: 0 4px;
     }
     
     .section-subtitle {
