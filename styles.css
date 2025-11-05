@@ -640,20 +640,13 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
-    margin: 0 auto;
-    align-items: stretch;
-    padding: 0;
     width: 100%;
     box-sizing: border-box;
-    justify-items: center;
 }
 
 @media (max-width: 768px) {
     .events-container {
-        grid-template-columns: 1fr;
         gap: 40px;
-        padding: 0 24px;
-        width: 100%;
     }
 }
 
