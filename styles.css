@@ -873,7 +873,6 @@ p {
     grid-template-columns: 1fr;
     gap: 50px;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
 }
 
@@ -890,8 +889,13 @@ p {
     height: auto;
     transition: all 0.3s ease;
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .events-container {
+        padding: 0 24px;
+    }
 }
 
 .event-card:hover {
