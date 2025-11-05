@@ -604,13 +604,6 @@ p {
     overflow-x: hidden;
 }
 
-.upcoming-event .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-}
-
 .section-header {
     text-align: center;
     margin-bottom: 80px;
