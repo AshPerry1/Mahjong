@@ -606,7 +606,9 @@ p {
     padding: 120px 0;
     background: var(--luxury-pearl);
     width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .section-header {
