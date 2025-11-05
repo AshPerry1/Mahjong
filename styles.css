@@ -880,25 +880,8 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
-    margin: 0;
-    align-items: stretch;
-    padding: 0;
     width: 100%;
     box-sizing: border-box;
-    justify-items: stretch;
-}
-
-.events-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
-    margin: 0;
-    align-items: stretch;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    justify-items: stretch;
 }
 
 .event-card {
