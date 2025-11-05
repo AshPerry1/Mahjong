@@ -1443,6 +1443,16 @@ p {
     line-height: 1.6;
 }
 
+.tournament-signup-note {
+    color: var(--rose-pink);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
 .event-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
