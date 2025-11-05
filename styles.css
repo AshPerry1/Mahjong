@@ -1389,6 +1389,15 @@ p {
     font-weight: 500;
 }
 
+.event-schedule li span {
+    display: block;
+    margin-left: 20px;
+    margin-top: 4px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
 .event-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
