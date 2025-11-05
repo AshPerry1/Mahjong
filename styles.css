@@ -2980,7 +2980,7 @@ p {
 .tournament-modal-content {
     background: white;
     border-radius: 0;
-    max-width: 600px;
+    max-width: 900px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
@@ -3039,6 +3039,28 @@ p {
     padding: 40px;
     box-shadow: none;
     border: none;
+}
+
+/* Desktop form layout - two columns */
+@media (min-width: 768px) {
+    .tournament-modal-content .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+    
+    .tournament-modal-content .form-group {
+        margin-bottom: 0;
+    }
+    
+    /* Full width fields */
+    .tournament-modal-content .form-group-full {
+        grid-column: 1 / -1;
+    }
+    
+    .tournament-modal-content .form-group-full.form-status {
+        margin-top: 0;
+    }
 }
 
 /* Old footer styles removed - using new pink gradient footer below */
@@ -3331,6 +3353,16 @@ p {
     
     .tournament-modal-content .contact-form {
         padding: 24px 20px;
+        display: block !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    .tournament-modal-content .form-group {
+        margin-bottom: 20px !important;
+    }
+    
+    .tournament-modal-content .form-group-full {
+        grid-column: 1 !important;
     }
     
     .tournament-modal-close {
