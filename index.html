@@ -881,13 +881,32 @@
                     // Get form data and format it nicely
                     const formData = new FormData(form);
                     
-                    // Get form values
-                    const name = formData.get('name');
-                    const address = formData.get('address');
-                    const phone = formData.get('phone');
-                    const email = formData.get('email');
-                    const skillLevel = formData.get('skill-level');
-                    const friends = formData.get('friends');
+                    // Get form values and ensure they're not null
+                    const name = formData.get('name') || '';
+                    const address = formData.get('address') || '';
+                    const phone = formData.get('phone') || '';
+                    const email = formData.get('email') || '';
+                    const skillLevel = formData.get('skill-level') || '';
+                    const friends = formData.get('friends') || '';
+                    
+                    // Validate required fields
+                    if (!name.trim()) {
+                        statusDiv.className = 'form-status error';
+                        statusDiv.textContent = 'Please enter your name.';
+                        statusDiv.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Registration';
+                        return;
+                    }
+                    
+                    if (!email.trim()) {
+                        statusDiv.className = 'form-status error';
+                        statusDiv.textContent = 'Please enter your email.';
+                        statusDiv.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Registration';
+                        return;
+                    }
                     
                     // Get selected tournaments
                     const selectedTournaments = [];
@@ -906,30 +925,41 @@
                         return;
                     }
                     
-                    // Create a nicely formatted email message
+                    // Create a nicely formatted email message - ensure it's never empty
                     let messageBody = `Hey Mahj Jen and Mahj Hen,\n\n`;
                     messageBody += `I am signing up for your tournament. Please see the info below:\n\n`;
-                    messageBody += `Name: ${name}\n`;
-                    messageBody += `Email: ${email}\n`;
-                    messageBody += `Phone: ${phone}\n`;
-                    messageBody += `Address: ${address}\n`;
+                    messageBody += `Name: ${name.trim()}\n`;
+                    messageBody += `Email: ${email.trim()}\n`;
+                    if (phone && phone.trim()) {
+                        messageBody += `Phone: ${phone.trim()}\n`;
+                    }
+                    if (address && address.trim()) {
+                        messageBody += `Address: ${address.trim()}\n`;
+                    }
                     messageBody += `Tournament(s): ${selectedTournaments.join(', ')}\n`;
-                    messageBody += `Skill Level: ${skillLevel}\n`;
+                    if (skillLevel && skillLevel.trim()) {
+                        messageBody += `Skill Level: ${skillLevel.trim()}\n`;
+                    }
                     
                     if (friends && friends.trim()) {
-                        messageBody += `Friends who will be participating with me: ${friends}\n`;
+                        messageBody += `Friends who will be participating with me: ${friends.trim()}\n`;
                     }
                     
                     messageBody += `\n---\n`;
                     messageBody += `*You should receive a response within 1-2 business days (if not sooner) with instructions on how to book a room with the tournament discounted rate and pay the tournament fee.*\n`;
                     messageBody += `---\n\n`;
-                    messageBody += `Thanks,\n${name}`;
+                    messageBody += `Thanks,\n${name.trim()}`;
+                    
+                    // Ensure messageBody is not empty
+                    if (!messageBody || messageBody.trim().length === 0) {
+                        messageBody = 'Tournament registration form submission';
+                    }
                     
                     // Create new FormData with formatted message
                     const formattedData = new FormData();
-                    formattedData.append('name', name);
-                    formattedData.append('email', email);
-                    formattedData.append('_subject', `New Mahjong Tournament Registration from ${name}`);
+                    formattedData.append('name', name.trim());
+                    formattedData.append('email', email.trim());
+                    formattedData.append('_subject', `New Mahjong Tournament Registration from ${name.trim()}`);
                     formattedData.append('message', messageBody);
                     
                     // Add HTML version for better email formatting
