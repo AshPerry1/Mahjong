@@ -1514,8 +1514,9 @@ p {
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
+    min-height: 140px;
 }
 
 .detail-card:hover {
@@ -1568,7 +1569,7 @@ p {
 }
 
 .location-map-btn {
-    display: inline-block;
+    display: block;
     margin-top: 8px;
     padding: 8px 16px;
     background: var(--rose-pink);
@@ -1581,12 +1582,25 @@ p {
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .location-map-btn:hover {
     background: var(--deep-pink);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3);
+}
+
+.direction-arrow {
+    text-align: center;
+    color: var(--rose-pink);
+    font-size: 0.75rem;
+    margin-top: 4px;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 8px;
 }
 
 /* Past Events Portfolio Section */
