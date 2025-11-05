@@ -788,14 +788,37 @@
                         messageBody += `Friends who will be participating with me: ${friends}\n`;
                     }
                     
-                    messageBody += `\nThanks,\n${name}`;
+                    messageBody += `\n---\n`;
+                    messageBody += `*You should receive a response within 1-2 business days (if not sooner) with instructions on how to book a room with the tournament discounted rate and pay the tournament fee.*\n`;
+                    messageBody += `---\n\n`;
+                    messageBody += `Thanks,\n${name}`;
                     
                     // Create new FormData with formatted message
                     const formattedData = new FormData();
                     formattedData.append('name', name);
                     formattedData.append('email', email);
-                    formattedData.append('_subject', `New Mahjong Inquiry from ${name}`);
+                    formattedData.append('_subject', `New Mahjong Tournament Registration from ${name}`);
                     formattedData.append('message', messageBody);
+                    
+                    // Add HTML version for better email formatting
+                    let htmlMessage = `<p>Hey Mahj Jen and Mahj Hen,</p>`;
+                    htmlMessage += `<p>I am signing up for your tournament. Please see the info below:</p>`;
+                    htmlMessage += `<ul>`;
+                    htmlMessage += `<li><strong>Name:</strong> ${name}</li>`;
+                    htmlMessage += `<li><strong>Email:</strong> ${email}</li>`;
+                    htmlMessage += `<li><strong>Phone:</strong> ${phone}</li>`;
+                    htmlMessage += `<li><strong>Address:</strong> ${address}</li>`;
+                    htmlMessage += `<li><strong>Skill Level:</strong> ${skillLevel}</li>`;
+                    if (friends && friends.trim()) {
+                        htmlMessage += `<li><strong>Friends who will be participating with me:</strong> ${friends}</li>`;
+                    }
+                    htmlMessage += `</ul>`;
+                    htmlMessage += `<hr>`;
+                    htmlMessage += `<p><em>You should receive a response within 1-2 business days (if not sooner) with instructions on how to book a room with the tournament discounted rate and pay the tournament fee.</em></p>`;
+                    htmlMessage += `<hr>`;
+                    htmlMessage += `<p>Thanks,<br>${name}</p>`;
+                    
+                    formattedData.append('_html', htmlMessage);
                     
                     // Add optional fields if they exist
                     if (phone) formattedData.append('phone', phone);
