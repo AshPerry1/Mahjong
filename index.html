@@ -1087,36 +1087,37 @@
             
             const status = statusRadio.value;
             const statusText = status === 'interested' ? "I'm interested in these tournaments" : "I'm registering for these tournaments";
+            const statusIntro = status === 'interested' ? 'thought you might be interested' : 'am registering';
             
             let url = 'https://lookoutmountainmahjong.com';
-            let message = `Hey! I found these amazing mahjong tournaments and ${status === 'interested' ? 'thought you might be interested' : 'am registering'}!\n\n`;
-            message += `Greenbrier Tournaments 2026\n`;
-            message += `The Greenbrier Resort, West Virginia\n`;
-            message += `$350 per person\n\n`;
+            let message = `Hey! I found these amazing mahjong tournaments and ${statusIntro}!\n\n`;
+            message += `🏆 Greenbrier Tournaments 2026 🏆\n`;
+            message += `📍 The Greenbrier Resort, West Virginia\n`;
+            message += `💰 $350 per person\n\n`;
             message += `Tournament Dates:\n\n`;
             
             selectedTournaments.forEach((tournament, index) => {
                 if (tournament.includes('February')) {
-                    message += `Tournament 1: February 6-7, 2026\n`;
-                    message += `- Friday, Feb 6: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
-                    message += `- Saturday, Feb 7: Tournament Play (9:30am - 11:30am)\n\n`;
+                    message += `📅 Tournament 1: February 6-7, 2026\n`;
+                    message += `   • Friday, Feb 6: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `   • Saturday, Feb 7: Tournament Play (9:30am - 11:30am)\n\n`;
                 } else if (tournament.includes('March')) {
-                    message += `Tournament 2: March 6-7, 2026\n`;
-                    message += `- Friday, March 6: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
-                    message += `- Saturday, March 7: Tournament Play (9:30am - 11:30am)\n\n`;
+                    message += `📅 Tournament 2: March 6-7, 2026\n`;
+                    message += `   • Friday, March 6: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `   • Saturday, March 7: Tournament Play (9:30am - 11:30am)\n\n`;
                 } else if (tournament.includes('April')) {
-                    message += `Tournament 3: April 17-18, 2026\n`;
-                    message += `- Friday, April 17: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
-                    message += `- Saturday, April 18: Tournament Play (9:30am - 11:30am)\n\n`;
+                    message += `📅 Tournament 3: April 17-18, 2026\n`;
+                    message += `   • Friday, April 17: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `   • Saturday, April 18: Tournament Play (9:30am - 11:30am)\n\n`;
                 }
             });
             
             message += `These are premium multi-day tournaments at the historic Greenbrier Resort! All tiles, mats, and racks provided. Participants take home exciting Mahjong swag.\n\n`;
-            message += `Available to registered overnight guests only. Reservations required.\n\n`;
+            message += `📋 Important: Available to registered overnight guests only. Reservations required.\n\n`;
             message += `${statusText}!\n\n`;
-            message += `Want to join me? Let's register together!\n\n`;
-            message += `Email: lookoutmountainmahjong@gmail.com\n`;
-            message += `Phone: 919-247-3392 to contact Ann Henley Perry\n\n`;
+            message += `Want to join me? Let's register together! 🎲\n\n`;
+            message += `📧 Email: lookoutmountainmahjong@gmail.com\n`;
+            message += `📞 Phone: 919-247-3392 to contact Ann Henley Perry\n\n`;
             message += `More info: ${url}`;
             
             // Close the modal
