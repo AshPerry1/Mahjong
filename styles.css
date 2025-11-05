@@ -1535,6 +1535,7 @@ p {
     font-weight: 400;
     color: var(--luxury-ink);
     font-family: 'Inter', sans-serif;
+    margin-bottom: 0;
 }
 
 .detail-value {
