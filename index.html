@@ -235,7 +235,7 @@
                                 <p class="event-contact-info">Email: <a href="mailto:lookoutmountainmahjong@gmail.com">lookoutmountainmahjong@gmail.com</a></p>
                                 <p class="event-contact-info">Phone: <a href="tel:8554534858">(855) 453-4858</a> (Press Option 2)</p>
                                 <div class="event-buttons">
-                                    <a href="mailto:lookoutmountainmahjong@gmail.com?subject=Greenbrier Tournament Registration" class="register-btn">Register Here</a>
+                                    <button class="register-btn" onclick="openTournamentForm()">Register Here</button>
                                     <button class="share-event-btn" onclick="shareEvent('greenbrier')">Share Event</button>
                                 </div>
                     </div>
@@ -645,50 +645,10 @@
                     <p class="section-subtitle">Professional instruction awaits</p>
                     </div>
                 <div class="contact-content">
-                    <p>Ready to master American mahjong? Fill out the form below to register for instruction sessions. We'll get back to you soon to schedule your personalized lessons.</p>
-                    <!-- 
-                        FORM SETUP INSTRUCTIONS:
-                        1. Go to https://formspree.io and create a free account
-                        2. Click "New Form" and create a form
-                        3. Copy your Form ID (it will look like: xrgkwjxz)
-                        4. Replace "YOUR_FORM_ID" in the form action below with your actual Form ID
-                        5. The form will send emails directly to the email address you configure in Formspree
-                    -->
-                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required>
+                    <p>Ready to master American mahjong? Contact us to schedule your personalized instruction session or discuss custom event options.</p>
+                    <div class="contact-buttons">
+                        <button class="cta-button primary" onclick="sendEmail('contact')">Email Mahj Jen and Mahj Hen</button>
                     </div>
-                        <div class="form-group">
-                            <label for="address">Address *</label>
-                            <input type="text" id="address" name="address" required>
-                    </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                    </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                    </div>
-                        <div class="form-group">
-                            <label for="skill-level">Skill Level *</label>
-                            <select id="skill-level" name="skill-level" required>
-                                <option value="">Select your skill level...</option>
-                                <option value="Beginner">Beginner</option>
-                                <option value="Intermediate">Intermediate</option>
-                                <option value="Advanced">Advanced</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="friends">Friends Participating</label>
-                            <textarea id="friends" name="friends" rows="4" placeholder="Please list any friends who will be participating with you"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="cta-button primary form-submit-btn">Send Message</button>
-                        </div>
-                        <div id="form-status" class="form-status"></div>
-                    </form>
                 </div>
             </div>
         </section>
@@ -726,6 +686,60 @@
         </div>
     </footer>
 
+    <!-- Tournament Registration Modal -->
+    <div id="tournament-modal" class="tournament-modal-overlay" style="display: none;">
+        <div class="tournament-modal-content">
+            <button class="tournament-modal-close" onclick="closeTournamentForm()">&times;</button>
+            <div class="tournament-modal-header">
+                <h2>Greenbrier Tournament Registration</h2>
+                <p>Fill out the form below to register for the tournament</p>
+            </div>
+            <!-- 
+                FORM SETUP INSTRUCTIONS:
+                1. Go to https://formspree.io and create a free account
+                2. Click "New Form" and create a form
+                3. Copy your Form ID (it will look like: xrgkwjxz)
+                4. Replace "YOUR_FORM_ID" in the form action below with your actual Form ID
+                5. The form will send emails directly to the email address you configure in Formspree
+            -->
+            <form id="tournament-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="tournament-name">Name *</label>
+                    <input type="text" id="tournament-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="tournament-address">Address *</label>
+                    <input type="text" id="tournament-address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="tournament-phone">Phone Number *</label>
+                    <input type="tel" id="tournament-phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="tournament-email">Email *</label>
+                    <input type="email" id="tournament-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="tournament-skill-level">Skill Level *</label>
+                    <select id="tournament-skill-level" name="skill-level" required>
+                        <option value="">Select your skill level...</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tournament-friends">Friends Participating</label>
+                    <textarea id="tournament-friends" name="friends" rows="4" placeholder="Please list any friends who will be participating with you"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="cta-button primary form-submit-btn">Submit Registration</button>
+                </div>
+                <div id="tournament-form-status" class="form-status"></div>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Force unregister service worker
         if ('serviceWorker' in navigator) {
@@ -745,10 +759,39 @@
             });
         }
         
-        // Contact form handling
+        // Tournament form modal functions
+        function openTournamentForm() {
+            document.getElementById('tournament-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeTournamentForm() {
+            document.getElementById('tournament-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('tournament-modal');
+            if (event.target === modal) {
+                closeTournamentForm();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modal = document.getElementById('tournament-modal');
+                if (modal.style.display === 'flex') {
+                    closeTournamentForm();
+                }
+            }
+        });
+        
+        // Tournament form handling
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('contact-form');
-            const statusDiv = document.getElementById('form-status');
+            const form = document.getElementById('tournament-form');
+            const statusDiv = document.getElementById('tournament-form-status');
             
             if (form) {
                 form.addEventListener('submit', async function(e) {
@@ -756,7 +799,7 @@
                     
                     // Show loading state
                     statusDiv.className = 'form-status loading';
-                    statusDiv.textContent = 'Sending your message...';
+                    statusDiv.textContent = 'Sending your registration...';
                     statusDiv.style.display = 'block';
                     
                     // Disable submit button
@@ -838,13 +881,18 @@
                         if (response.ok) {
                             // Success
                             statusDiv.className = 'form-status success';
-                            statusDiv.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
+                            statusDiv.textContent = 'Thank you! Your registration has been sent successfully. We\'ll get back to you soon with booking instructions.';
                             form.reset();
                             submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Message';
+                            submitBtn.textContent = 'Submit Registration';
                             
                             // Scroll to status message
                             statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            
+                            // Close modal after 3 seconds
+                            setTimeout(function() {
+                                closeTournamentForm();
+                            }, 3000);
                         } else {
                             const data = await response.json();
                             if (data.errors) {
@@ -855,14 +903,14 @@
                                 throw new Error('Form submission failed');
                             }
                             submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Message';
+                            submitBtn.textContent = 'Submit Registration';
                         }
                     } catch (error) {
                         // Error
                         statusDiv.className = 'form-status error';
-                        statusDiv.textContent = 'Oops! There was an error sending your message. Please try again or email us directly at lookoutmountainmahjong@gmail.com';
+                        statusDiv.textContent = 'Oops! There was an error sending your registration. Please try again or email us directly at lookoutmountainmahjong@gmail.com';
                         submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
+                        submitBtn.textContent = 'Submit Registration';
                     }
                 });
             }
