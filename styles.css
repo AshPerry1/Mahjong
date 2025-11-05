@@ -599,6 +599,12 @@ p {
 .upcoming-event {
     padding: 120px 0;
     background: var(--luxury-pearl);
+    width: 100%;
+}
+
+.upcoming-event .container {
+    max-width: 100%;
+    padding: 0;
 }
 
 .section-header {
@@ -631,9 +637,10 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     align-items: stretch;
+    padding: 0;
 }
 
 @media (max-width: 768px) {
@@ -814,8 +821,9 @@ p {
     flex-direction: row;
     height: auto;
     transition: all 0.3s ease;
-    max-width: 1400px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
 }
 
 .event-card:hover {
