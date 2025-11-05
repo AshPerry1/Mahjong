@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=7.0&t=202501151300&refresh=true">
+    <link rel="stylesheet" href="styles.css?v=8.0&t=1762360370&nocache=true">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -760,23 +760,46 @@
     </div>
 
     <script>
-        // Force unregister service worker
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(function(registrations) {
-                for(let registration of registrations) {
-                    registration.unregister();
-                }
-            });
-        }
+        // Aggressive cache clearing and service worker unregistration
+        (function() {
+            // Unregister all service workers
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                    for(let registration of registrations) {
+                        registration.unregister().then(function(success) {
+                            if (success) {
+                                console.log('Service worker unregistered');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Clear all caches
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) {
+                        caches.delete(name).then(function(success) {
+                            if (success) {
+                                console.log('Cache deleted:', name);
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // Clear browser cache for this site
+            if ('storage' in navigator && 'estimate' in navigator.storage) {
+                navigator.storage.estimate().then(function(estimate) {
+                    console.log('Storage estimate:', estimate);
+                });
+            }
+        })();
         
-        // Clear all caches
-        if ('caches' in window) {
-            caches.keys().then(function(names) {
-                for (let name of names) {
-                    caches.delete(name);
-                }
-            });
-        }
+        // Force reload after cache clearing (commented out to avoid infinite loop)
+        // setTimeout(function() {
+        //     window.location.reload(true);
+        // }, 1000);
         
         // Tournament form modal functions
         function openTournamentForm() {
@@ -1006,6 +1029,6 @@
             alert('Event details copied to clipboard! Paste it in your text message to share with friends!');
         }
     </script>
-    <script src="script.js?v=7.0&t=202501151300&refresh=true"></script>
+    <script src="script.js?v=8.0&t=1762360370&nocache=true"></script>
 </body>
 </html>
