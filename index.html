@@ -645,7 +645,7 @@
                     <p class="section-subtitle">Professional instruction awaits</p>
                     </div>
                 <div class="contact-content">
-                    <p>Ready to master American mahjong? Fill out the form below to schedule your personalized instruction session or discuss custom event options.</p>
+                    <p>Ready to master American mahjong? Fill out the form below to register for instruction sessions. We'll get back to you soon to schedule your personalized lessons.</p>
                     <!-- 
                         FORM SETUP INSTRUCTIONS:
                         1. Go to https://formspree.io and create a free account
@@ -658,29 +658,31 @@
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
-                    </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
                         <div class="form-group">
                             <label for="email">Email *</label>
                             <input type="email" id="email" name="email" required>
-                    </div>
+                        </div>
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" name="phone">
-                    </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a subject...</option>
-                                <option value="Private Lessons">Private Lessons</option>
-                                <option value="Group Lessons">Group Lessons</option>
-                                <option value="Tournament Registration">Tournament Registration</option>
-                                <option value="Corporate Event">Corporate Event</option>
-                                <option value="Other">Other</option>
+                            <label for="skill-level">Skill Level *</label>
+                            <select id="skill-level" name="skill-level" required>
+                                <option value="">Select your skill level...</option>
+                                <option value="Beginner">Beginner</option>
+                                <option value="Intermediate">Intermediate</option>
+                                <option value="Advanced">Advanced</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
+                            <label for="friends">Friends Participating</label>
+                            <textarea id="friends" name="friends" rows="4" placeholder="Please list any friends who will be participating with you"></textarea>
                         </div>
                         <div class="form-group">
                             <button type="submit" class="cta-button primary form-submit-btn">Send Message</button>
@@ -762,13 +764,50 @@
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
                     
-                    // Get form data
+                    // Get form data and format it nicely
                     const formData = new FormData(form);
+                    
+                    // Get form values
+                    const name = formData.get('name');
+                    const address = formData.get('address');
+                    const phone = formData.get('phone');
+                    const email = formData.get('email');
+                    const skillLevel = formData.get('skill-level');
+                    const friends = formData.get('friends');
+                    
+                    // Create a nicely formatted email message
+                    let messageBody = `Hello,\n\n`;
+                    messageBody += `I'm interested in joining your mahjong instruction program. Here are my details:\n\n`;
+                    messageBody += `Name: ${name}\n`;
+                    messageBody += `Email: ${email}\n`;
+                    messageBody += `Phone: ${phone}\n`;
+                    messageBody += `Address: ${address}\n`;
+                    messageBody += `Skill Level: ${skillLevel}\n\n`;
+                    
+                    if (friends && friends.trim()) {
+                        messageBody += `Friends who will be participating with me:\n${friends}\n\n`;
+                    }
+                    
+                    messageBody += `Looking forward to hearing from you!\n\n`;
+                    messageBody += `Best regards,\n${name}`;
+                    
+                    // Create new FormData with formatted message
+                    const formattedData = new FormData();
+                    formattedData.append('name', name);
+                    formattedData.append('email', email);
+                    formattedData.append('_subject', `New Mahjong Inquiry from ${name}`);
+                    formattedData.append('message', messageBody);
+                    
+                    // Add optional fields if they exist
+                    if (phone) formattedData.append('phone', phone);
+                    if (address) formattedData.append('address', address);
+                    if (skillLevel) formattedData.append('skill-level', skillLevel);
+                    if (friends && friends.trim()) formattedData.append('friends', friends);
                     
                     try {
                         const response = await fetch(form.action, {
                             method: 'POST',
-                            body: formData,
+                            body: formattedData,
                             headers: {
                                 'Accept': 'application/json'
                             }
