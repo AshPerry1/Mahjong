@@ -642,15 +642,17 @@ p {
     max-width: 1400px;
     margin: 0 auto;
     align-items: stretch;
-    padding: 0 24px;
+    padding: 0;
     width: 100%;
     box-sizing: border-box;
+    justify-items: center;
 }
 
 @media (max-width: 768px) {
     .events-container {
         grid-template-columns: 1fr;
         gap: 40px;
+        padding: 0 24px;
     }
 }
 
@@ -831,6 +833,7 @@ p {
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
+    justify-self: center;
 }
 
 .event-card:hover {
