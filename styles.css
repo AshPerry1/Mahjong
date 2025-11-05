@@ -603,6 +603,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .upcoming-event .container {
@@ -611,8 +612,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .section-header {
@@ -620,9 +623,13 @@ p {
     margin-bottom: 80px;
     padding: 0;
     width: 100%;
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .upcoming-event h2 {
