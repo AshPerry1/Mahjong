@@ -655,7 +655,7 @@
     </main>
 
     <footer class="footer">
-        <div class="container">
+            <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Lookout Mountain Mahjong</h3>
@@ -720,6 +720,24 @@
                     <input type="email" id="tournament-email" name="email" required>
                 </div>
                 <div class="form-group">
+                    <label>Which tournament(s) would you like to attend? *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tournament-selection" value="Tournament 1: February 6-7, 2026">
+                            <span>Tournament 1: February 6-7, 2026</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tournament-selection" value="Tournament 2: March 6-7, 2026">
+                            <span>Tournament 2: March 6-7, 2026</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tournament-selection" value="Tournament 3: April 17-18, 2026">
+                            <span>Tournament 3: April 17-18, 2026</span>
+                        </label>
+                    </div>
+                    <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select multiple tournaments</small>
+                </div>
+                <div class="form-group">
                     <label for="tournament-skill-level">Skill Level *</label>
                     <select id="tournament-skill-level" name="skill-level" required>
                         <option value="">Select your skill level...</option>
@@ -734,7 +752,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="cta-button primary form-submit-btn">Submit Registration</button>
-                </div>
+            </div>
                 <div id="tournament-form-status" class="form-status"></div>
             </form>
         </div>
@@ -818,6 +836,23 @@
                     const skillLevel = formData.get('skill-level');
                     const friends = formData.get('friends');
                     
+                    // Get selected tournaments
+                    const selectedTournaments = [];
+                    const tournamentCheckboxes = form.querySelectorAll('input[name="tournament-selection"]:checked');
+                    tournamentCheckboxes.forEach(checkbox => {
+                        selectedTournaments.push(checkbox.value);
+                    });
+                    
+                    // Validate at least one tournament is selected
+                    if (selectedTournaments.length === 0) {
+                        statusDiv.className = 'form-status error';
+                        statusDiv.textContent = 'Please select at least one tournament.';
+                        statusDiv.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Registration';
+                        return;
+                    }
+                    
                     // Create a nicely formatted email message
                     let messageBody = `Hey Mahj Jen and Mahj Hen,\n\n`;
                     messageBody += `I am signing up for your tournament. Please see the info below:\n\n`;
@@ -825,6 +860,7 @@
                     messageBody += `Email: ${email}\n`;
                     messageBody += `Phone: ${phone}\n`;
                     messageBody += `Address: ${address}\n`;
+                    messageBody += `Tournament(s): ${selectedTournaments.join(', ')}\n`;
                     messageBody += `Skill Level: ${skillLevel}\n`;
                     
                     if (friends && friends.trim()) {
@@ -851,6 +887,7 @@
                     htmlMessage += `<li><strong>Email:</strong> ${email}</li>`;
                     htmlMessage += `<li><strong>Phone:</strong> ${phone}</li>`;
                     htmlMessage += `<li><strong>Address:</strong> ${address}</li>`;
+                    htmlMessage += `<li><strong>Tournament(s):</strong> ${selectedTournaments.join(', ')}</li>`;
                     htmlMessage += `<li><strong>Skill Level:</strong> ${skillLevel}</li>`;
                     if (friends && friends.trim()) {
                         htmlMessage += `<li><strong>Friends who will be participating with me:</strong> ${friends}</li>`;
@@ -868,6 +905,10 @@
                     if (address) formattedData.append('address', address);
                     if (skillLevel) formattedData.append('skill-level', skillLevel);
                     if (friends && friends.trim()) formattedData.append('friends', friends);
+                    // Add tournament selections
+                    selectedTournaments.forEach((tournament, index) => {
+                        formattedData.append(`tournament-${index + 1}`, tournament);
+                    });
                     
                     try {
                         const response = await fetch(form.action, {

@@ -2875,6 +2875,42 @@ p {
     padding-right: 40px;
 }
 
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 0;
+    transition: var(--transition);
+}
+
+.checkbox-label:hover {
+    background: var(--luxury-bone);
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--rose-pink);
+    flex-shrink: 0;
+}
+
+.checkbox-label span {
+    flex: 1;
+}
+
 .form-submit-btn {
     width: 100%;
     padding: 16px 32px;
