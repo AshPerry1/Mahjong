@@ -1121,23 +1121,35 @@
             // Close the modal
             closeShareModal();
             
-            // Create share options modal or directly open email/sms
-            const shareOptions = prompt('Would you like to share via:\n1. Email (type "email")\n2. Text Message (type "sms")\n3. Copy to Clipboard (type "copy")\n\nEnter your choice:', 'email');
-            
-            if (shareOptions === 'email' || shareOptions === null || shareOptions === '') {
-                // Open email client with pre-filled message
+            // Try to use Web Share API first (mobile - opens native share sheet)
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mahjong Tournament Invitation',
+                    text: message,
+                    url: url
+                }).catch(err => {
+                    console.log('Share cancelled or failed:', err);
+                    // Fallback to email if share is cancelled
+                    const subject = encodeURIComponent('Mahjong Tournament Invitation');
+                    const body = encodeURIComponent(message);
+                    const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
+                    window.location.href = mailtoLink;
+                });
+            } else {
+                // Desktop: Open email client directly with pre-filled message
                 const subject = encodeURIComponent('Mahjong Tournament Invitation');
                 const body = encodeURIComponent(message);
                 const mailtoLink = `mailto:?subject=${subject}&body=${body}`;
                 window.location.href = mailtoLink;
-            } else if (shareOptions === 'sms') {
-                // Open SMS app with pre-filled message
-                const smsBody = encodeURIComponent(message);
-                const smsLink = `sms:?body=${smsBody}`;
-                window.location.href = smsLink;
-            } else {
-                // Copy to clipboard as fallback
-                fallbackShare(message);
+                
+                // Also copy to clipboard as backup
+                setTimeout(() => {
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(message).then(() => {
+                            console.log('Message also copied to clipboard');
+                        });
+                    }
+                }, 500);
             }
         }
         
