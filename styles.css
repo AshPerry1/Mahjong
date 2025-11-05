@@ -77,6 +77,9 @@ body {
     background: var(--background-white);
     min-height: 100dvh;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
 
 /* Typography */
@@ -653,45 +656,17 @@ p {
 }
 
 @media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-        max-width: 100%;
-        position: relative;
+    .events-container {
+        gap: 40px;
+        padding: 0;
     }
     
     .container {
         padding: 0 16px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .nav-container {
-        padding: 0 16px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .events-container {
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-    
-    .event-card {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
     }
     
     .event-card .event-info {
         padding: 24px 16px;
-        width: 100%;
-        box-sizing: border-box;
     }
 }
 
