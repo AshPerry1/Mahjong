@@ -955,6 +955,34 @@ p {
     letter-spacing: 0.05em;
 }
 
+.event-note {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+.event-contact-info {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.event-contact-info a {
+    color: var(--rose-pink);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.event-contact-info a:hover {
+    color: var(--deep-pink);
+    text-decoration: underline;
+}
+
 .event-recap-info {
     text-align: center;
     color: var(--text-primary);
