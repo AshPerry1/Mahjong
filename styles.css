@@ -3593,7 +3593,54 @@ p {
     }
     
     .event-card .event-info {
+        padding: 24px 16px;
         width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .event-card .event-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .event-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .event-details-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .detail-card {
+        padding: 16px;
+    }
+    
+    .event-policies {
+        padding: 12px;
+    }
+    
+    .policies-title {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .policies-list {
+        font-size: 0.85rem;
+        padding-left: 16px;
+    }
+    
+    .event-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .register-btn,
+    .share-event-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 0.9rem;
     }
     
     .event-details-grid {
