@@ -661,10 +661,9 @@ p {
     margin: 0 auto;
     align-items: stretch;
     padding: 0;
-    width: 100%;
+    width: calc(100% - 48px);
     box-sizing: border-box;
     justify-items: center;
-    justify-self: center;
 }
 
 @media (max-width: 768px) {
@@ -672,6 +671,7 @@ p {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 0 24px;
+        width: 100%;
     }
 }
 
