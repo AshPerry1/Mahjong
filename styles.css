@@ -845,6 +845,7 @@ p {
     margin: 0 auto;
     padding: 0 24px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .section-header {
@@ -890,6 +891,19 @@ p {
     align-items: stretch;
     padding: 0;
     width: 100%;
+    box-sizing: border-box;
+    justify-items: stretch;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin: 0;
+    align-items: stretch;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     justify-items: stretch;
 }
