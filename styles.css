@@ -836,20 +836,6 @@ p {
     background: linear-gradient(135deg, var(--background-white) 0%, rgba(236, 72, 153, 0.05) 100%);
 }
 
-.events-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: stretch;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-    justify-items: center;
-    justify-self: center;
-}
-
 .event-card {
     background: var(--luxury-bone);
     border-radius: 0;
