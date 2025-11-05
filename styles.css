@@ -892,6 +892,8 @@ p {
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .event-badge {
