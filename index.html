@@ -715,7 +715,7 @@
                 4. Replace "YOUR_FORM_ID" in the form action below with your actual Form ID
                 5. The form will send emails directly to the email address you configure in Formspree
             -->
-            <form id="tournament-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form id="tournament-form" class="contact-form" action="#" method="POST">
                 <div class="form-group">
                     <label for="tournament-name">Name *</label>
                     <input type="text" id="tournament-name" name="name" required>
@@ -955,44 +955,6 @@
                     if (!messageBody || messageBody.trim().length === 0) {
                         messageBody = 'Tournament registration form submission';
                     }
-                    
-                    // Create new FormData with formatted message
-                    const formattedData = new FormData();
-                    formattedData.append('name', name.trim());
-                    formattedData.append('email', email.trim());
-                    formattedData.append('_subject', `New Mahjong Tournament Registration from ${name.trim()}`);
-                    formattedData.append('message', messageBody);
-                    
-                    // Add HTML version for better email formatting
-                    let htmlMessage = `<p>Hey Mahj Jen and Mahj Hen,</p>`;
-                    htmlMessage += `<p>I am signing up for your tournament. Please see the info below:</p>`;
-                    htmlMessage += `<ul>`;
-                    htmlMessage += `<li><strong>Name:</strong> ${name}</li>`;
-                    htmlMessage += `<li><strong>Email:</strong> ${email}</li>`;
-                    htmlMessage += `<li><strong>Phone:</strong> ${phone}</li>`;
-                    htmlMessage += `<li><strong>Address:</strong> ${address}</li>`;
-                    htmlMessage += `<li><strong>Tournament(s):</strong> ${selectedTournaments.join(', ')}</li>`;
-                    htmlMessage += `<li><strong>Skill Level:</strong> ${skillLevel}</li>`;
-                    if (friends && friends.trim()) {
-                        htmlMessage += `<li><strong>Friends who will be participating with me:</strong> ${friends}</li>`;
-                    }
-                    htmlMessage += `</ul>`;
-                    htmlMessage += `<hr>`;
-                    htmlMessage += `<p><em>You should receive a response within 1-2 business days (if not sooner) with instructions on how to book a room with the tournament discounted rate and pay the tournament fee.</em></p>`;
-                    htmlMessage += `<hr>`;
-                    htmlMessage += `<p>Thanks,<br>${name}</p>`;
-                    
-                    formattedData.append('_html', htmlMessage);
-                    
-                    // Add optional fields if they exist
-                    if (phone) formattedData.append('phone', phone);
-                    if (address) formattedData.append('address', address);
-                    if (skillLevel) formattedData.append('skill-level', skillLevel);
-                    if (friends && friends.trim()) formattedData.append('friends', friends);
-                    // Add tournament selections
-                    selectedTournaments.forEach((tournament, index) => {
-                        formattedData.append(`tournament-${index + 1}`, tournament);
-                    });
                     
                     try {
                         const controller = new AbortController();
