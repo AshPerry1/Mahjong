@@ -1392,6 +1392,12 @@ p {
     z-index: 2;
 }
 
+.event-contact .event-contact-label,
+.event-contact .event-contact-info {
+    color: #0F172A !important;
+    text-transform: none;
+}
+
 .event-schedule {
     margin-top: 32px;
     padding: 24px;
