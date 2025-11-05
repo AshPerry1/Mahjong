@@ -814,16 +814,6 @@ p {
 .upcoming-event {
     padding: 120px 0;
     background: var(--luxury-pearl);
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.upcoming-event .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    box-sizing: border-box;
-    width: 100%;
 }
 
 .section-header {
