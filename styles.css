@@ -873,14 +873,6 @@ p {
     line-height: 1.6;
 }
 
-.events-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 50px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .event-card {
     background: var(--luxury-bone);
     border-radius: 0;
