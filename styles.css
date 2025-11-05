@@ -600,6 +600,9 @@ p {
     padding: 120px 0;
     background: var(--luxury-pearl);
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .upcoming-event .container {
@@ -609,6 +612,7 @@ p {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    width: 100%;
 }
 
 .section-header {
