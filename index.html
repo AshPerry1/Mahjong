@@ -788,18 +788,44 @@
                 });
             }
             
-            // Clear browser cache for this site
-            if ('storage' in navigator && 'estimate' in navigator.storage) {
-                navigator.storage.estimate().then(function(estimate) {
-                    console.log('Storage estimate:', estimate);
-                });
+            // Force reload with cache bypass
+            if (performance && performance.navigation) {
+                console.log('Page reload type:', performance.navigation.type);
             }
         })();
         
-        // Force reload after cache clearing (commented out to avoid infinite loop)
-        // setTimeout(function() {
-        //     window.location.reload(true);
-        // }, 1000);
+        // Add cache clearing button for manual use
+        window.addEventListener('load', function() {
+            // Add a temporary cache clear button (remove after testing)
+            const clearCacheBtn = document.createElement('button');
+            clearCacheBtn.textContent = 'Clear Cache & Reload';
+            clearCacheBtn.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:9999;padding:10px 20px;background:#E91E63;color:white;border:none;border-radius:4px;cursor:pointer;font-weight:bold;';
+            clearCacheBtn.onclick = function() {
+                if ('caches' in window) {
+                    caches.keys().then(function(names) {
+                        names.forEach(function(name) {
+                            caches.delete(name);
+                        });
+                    });
+                }
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                        registrations.forEach(function(registration) {
+                            registration.unregister();
+                        });
+                    });
+                }
+                location.reload(true);
+            };
+            document.body.appendChild(clearCacheBtn);
+            
+            // Remove button after 30 seconds
+            setTimeout(function() {
+                if (clearCacheBtn.parentNode) {
+                    clearCacheBtn.parentNode.removeChild(clearCacheBtn);
+                }
+            }, 30000);
+        });
         
         // Tournament form modal functions
         function openTournamentForm() {
