@@ -764,6 +764,10 @@
                     <textarea id="tournament-friends" name="friends" rows="4" placeholder="Please list any friends who will be participating with you"></textarea>
                 </div>
                 <div class="form-group form-group-full">
+                    <label for="tournament-additional">Anything else you'd like to ask or share? (Optional)</label>
+                    <textarea id="tournament-additional" name="additional" rows="4" placeholder="Feel free to share any questions, comments, or additional information here"></textarea>
+                </div>
+                <div class="form-group form-group-full">
                     <button type="submit" class="cta-button primary form-submit-btn">Submit Registration</button>
                     </div>
                 <div id="tournament-form-status" class="form-status form-group-full"></div>
@@ -889,6 +893,7 @@
                     const email = formData.get('email') || '';
                     const skillLevel = formData.get('skill-level') || '';
                     const friends = formData.get('friends') || '';
+                    const additional = formData.get('additional') || '';
                     
                     // Validate required fields
                     if (!name.trim()) {
@@ -944,6 +949,10 @@
                     
                     if (friends && friends.trim()) {
                         messageBody += `Friends who will be participating with me: ${friends.trim()}\n`;
+                    }
+                    
+                    if (additional && additional.trim()) {
+                        messageBody += `\nAdditional information/questions:\n${additional.trim()}\n`;
                     }
                     
                     messageBody += `\n---\n`;
