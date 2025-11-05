@@ -1006,11 +1006,22 @@
                             submitBtn.textContent = 'Submit Registration';
                         }
                     } catch (error) {
-                        // Error
-                        statusDiv.className = 'form-status error';
-                        statusDiv.textContent = 'Oops! There was an error sending your registration. Please try again or email us directly at lookoutmountainmahjong@gmail.com';
+                        // Error handling
                         submitBtn.disabled = false;
                         submitBtn.textContent = 'Submit Registration';
+                        statusDiv.className = 'form-status error';
+                        statusDiv.style.display = 'block';
+                        
+                        if (error.name === 'AbortError') {
+                            statusDiv.textContent = 'Request timed out. Please check your internet connection and try again.';
+                        } else if (error.message && (error.message.includes('cancel') || error.message.includes('abort'))) {
+                            statusDiv.textContent = 'Request was cancelled. Please try again.';
+                        } else {
+                            statusDiv.textContent = 'Oops! There was an error sending your registration. Please try again or email us directly at lookoutmountainmahjong@gmail.com';
+                        }
+                        
+                        statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        console.error('Form submission error:', error);
                     }
                 });
             }
