@@ -1029,7 +1029,28 @@
                             if (data.errors) {
                                 // Formspree validation errors
                                 statusDiv.className = 'form-status error';
-                                statusDiv.textContent = 'Please check the form and try again. ' + Object.values(data.errors).map(error => error).join(', ');
+                                let errorMessages = [];
+                                
+                                // Handle different error formats
+                                if (Array.isArray(data.errors)) {
+                                    errorMessages = data.errors;
+                                } else if (typeof data.errors === 'object') {
+                                    // Extract error messages from object
+                                    errorMessages = Object.values(data.errors).map(error => {
+                                        if (typeof error === 'string') {
+                                            return error;
+                                        } else if (error && error.message) {
+                                            return error.message;
+                                        } else if (Array.isArray(error)) {
+                                            return error.join(', ');
+                                        }
+                                        return String(error);
+                                    });
+                                } else {
+                                    errorMessages = [String(data.errors)];
+                                }
+                                
+                                statusDiv.textContent = 'Please check the form and try again. ' + errorMessages.join(', ');
                             } else {
                                 throw new Error('Form submission failed');
                             }
