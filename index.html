@@ -238,7 +238,7 @@
                                     <a href="mailto:lookoutmountainmahjong@gmail.com?subject=Greenbrier Tournament Registration" class="register-btn">Register Here</a>
                                     <button class="share-event-btn" onclick="shareEvent('greenbrier')">Share Event</button>
                                 </div>
-                            </div>
+                    </div>
                         </div>
                     </div>
                 </div>
@@ -645,17 +645,55 @@
                     <p class="section-subtitle">Professional instruction awaits</p>
                     </div>
                 <div class="contact-content">
-                    <p>Ready to master American mahjong? Contact us to schedule your personalized instruction session or discuss custom event options.</p>
-                    <div class="contact-buttons">
-                        <button class="cta-button primary" onclick="sendEmail('contact')">Email Mahj Jen and Mahj Hen</button>
+                    <p>Ready to master American mahjong? Fill out the form below to schedule your personalized instruction session or discuss custom event options.</p>
+                    <!-- 
+                        FORM SETUP INSTRUCTIONS:
+                        1. Go to https://formspree.io and create a free account
+                        2. Click "New Form" and create a form
+                        3. Copy your Form ID (it will look like: xrgkwjxz)
+                        4. Replace "YOUR_FORM_ID" in the form action below with your actual Form ID
+                        5. The form will send emails directly to the email address you configure in Formspree
+                    -->
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
                     </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                    </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                    </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="Private Lessons">Private Lessons</option>
+                                <option value="Group Lessons">Group Lessons</option>
+                                <option value="Tournament Registration">Tournament Registration</option>
+                                <option value="Corporate Event">Corporate Event</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="cta-button primary form-submit-btn">Send Message</button>
+                        </div>
+                        <div id="form-status" class="form-status"></div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-            <div class="container">
+        <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>Lookout Mountain Mahjong</h3>
@@ -682,8 +720,8 @@
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Lookout Mountain Mahjong. All rights reserved.</p>
-                                    </div>
-                                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -704,6 +742,70 @@
                 }
             });
         }
+        
+        // Contact form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const statusDiv = document.getElementById('form-status');
+            
+            if (form) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    statusDiv.className = 'form-status loading';
+                    statusDiv.textContent = 'Sending your message...';
+                    statusDiv.style.display = 'block';
+                    
+                    // Disable submit button
+                    const submitBtn = form.querySelector('.form-submit-btn');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    
+                    // Get form data
+                    const formData = new FormData(form);
+                    
+                    try {
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Success
+                            statusDiv.className = 'form-status success';
+                            statusDiv.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.';
+                            form.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            
+                            // Scroll to status message
+                            statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            const data = await response.json();
+                            if (data.errors) {
+                                // Formspree validation errors
+                                statusDiv.className = 'form-status error';
+                                statusDiv.textContent = 'Please check the form and try again. ' + Object.values(data.errors).map(error => error).join(', ');
+                            } else {
+                                throw new Error('Form submission failed');
+                            }
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                        }
+                    } catch (error) {
+                        // Error
+                        statusDiv.className = 'form-status error';
+                        statusDiv.textContent = 'Oops! There was an error sending your message. Please try again or email us directly at lookoutmountainmahjong@gmail.com';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                    }
+                });
+            }
+        });
         
         // Share event function
         function shareEvent(eventType) {
