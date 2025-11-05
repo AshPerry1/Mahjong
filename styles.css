@@ -819,7 +819,7 @@ p {
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: auto;
     transition: all 0.3s ease;
     max-width: 100%;
@@ -833,10 +833,8 @@ p {
 }
 
 .event-card .event-image {
-    width: 45%;
-    min-width: 400px;
-    height: auto;
-    min-height: 500px;
+    width: 100%;
+    height: 400px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -859,7 +857,7 @@ p {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    width: 55%;
+    width: 100%;
 }
 
 .event-badge {
@@ -3465,8 +3463,7 @@ p {
     
     .event-card .event-image {
         width: 100%;
-        min-width: 100%;
-        min-height: 280px;
+        height: 280px;
     }
     
     .event-card .event-info {
