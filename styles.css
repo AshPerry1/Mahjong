@@ -604,13 +604,14 @@ p {
 
 .upcoming-event .container {
     max-width: 100%;
-    padding: 0 24px;
+    padding: 0;
 }
 
 .section-header {
     text-align: center;
     margin-bottom: 80px;
-    padding: 0 24px;
+    padding: 0;
+    width: 100%;
 }
 
 .upcoming-event h2 {
