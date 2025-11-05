@@ -600,22 +600,7 @@ p {
     padding: 120px 0;
     background: var(--luxury-pearl);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow-x: hidden;
-}
-
-.upcoming-event .container {
-    max-width: 1400px;
-    padding: 0 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .section-header {
