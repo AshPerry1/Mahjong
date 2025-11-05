@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+}
+
 :root {
     /* Fluid Typography */
     --step-0: clamp(14px, 1.2vw + 0.4rem, 18px);
