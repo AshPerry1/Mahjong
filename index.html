@@ -50,6 +50,114 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-8C0BWCXBF0');
+        
+        // Comprehensive Google Analytics Event Tracking
+        // Track all user interactions on the site
+        
+        // Helper function to send events
+        function trackEvent(category, action, label, value) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label,
+                'value': value
+            });
+        }
+        
+        // Track page views for sections (scroll tracking)
+        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
+        const viewedSections = new Set();
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !viewedSections.has(entry.target.id)) {
+                    viewedSections.add(entry.target.id);
+                    trackEvent('Section View', 'view_section', entry.target.id);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Initialize section tracking when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    sectionObserver.observe(section);
+                }
+            });
+            
+            // Track navigation link clicks
+            document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const target = this.getAttribute('href').substring(1);
+                    trackEvent('Navigation', 'click_nav_link', target);
+                });
+            });
+            
+            // Track CTA button clicks
+            document.querySelectorAll('button.cta-button, .cta-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim() || this.querySelector('.button-text')?.textContent.trim() || 'Unknown';
+                    trackEvent('CTA Button', 'click_cta', buttonText);
+                });
+            });
+            
+            // Track service button clicks
+            document.querySelectorAll('button.service-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim();
+                    trackEvent('Service Button', 'click_service', buttonText);
+                });
+            });
+            
+            // Track email link clicks
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const email = this.getAttribute('href').replace('mailto:', '').split('?')[0];
+                    trackEvent('Contact', 'click_email', email);
+                });
+            });
+            
+            // Track phone link clicks
+            document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const phone = this.getAttribute('href').replace('tel:', '');
+                    trackEvent('Contact', 'click_phone', phone);
+                });
+            });
+            
+            // Track external link clicks
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('href');
+                    const linkText = this.textContent.trim();
+                    trackEvent('External Link', 'click_external', linkText + ' - ' + url);
+                });
+            });
+            
+            // Track social media links
+            document.querySelectorAll('a.footer-social-link, a[href*="instagram"], a[href*="bit.ly"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('href');
+                    trackEvent('Social Media', 'click_social', url);
+                });
+            });
+            
+            // Track mobile menu interactions
+            const hamburger = document.querySelector('.hamburger');
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    const isOpen = this.classList.contains('active');
+                    trackEvent('Mobile Menu', isOpen ? 'close_menu' : 'open_menu', 'hamburger');
+                });
+            }
+            
+            // Track TML product link
+            document.querySelectorAll('a.tml-button, a[href*="themahjongline.com"]').forEach(link => {
+                link.addEventListener('click', function() {
+                    trackEvent('TML Partnership', 'click_shop_tml', 'TML Products Link');
+                });
+            });
+        });
     </script>
     
     <!-- Preload critical resources -->
@@ -912,22 +1020,46 @@
         function openTournamentForm() {
             document.getElementById('tournament-modal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'open_modal', {
+                    'event_category': 'Tournament',
+                    'event_label': 'Registration Form'
+                });
+            }
         }
         
         function closeTournamentForm() {
             document.getElementById('tournament-modal').style.display = 'none';
             document.body.style.overflow = 'auto';
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'close_modal', {
+                    'event_category': 'Tournament',
+                    'event_label': 'Registration Form'
+                });
+            }
         }
         
         // Share modal functions
         function openShareModal() {
             document.getElementById('share-modal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'open_modal', {
+                    'event_category': 'Share Event',
+                    'event_label': 'Share Modal'
+                });
+            }
         }
         
         function closeShareModal() {
             document.getElementById('share-modal').style.display = 'none';
             document.body.style.overflow = 'auto';
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'close_modal', {
+                    'event_category': 'Share Event',
+                    'event_label': 'Share Modal'
+                });
+            }
         }
         
         // Close modal when clicking outside
@@ -1020,6 +1152,13 @@
                         statusDiv.style.display = 'block';
                         submitBtn.disabled = false;
                         submitBtn.textContent = 'Submit Registration';
+                        // Track form validation error
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_validation_error', {
+                                'event_category': 'Tournament Form',
+                                'event_label': 'No tournament selected'
+                            });
+                        }
                         return;
                     }
                     
@@ -1065,6 +1204,15 @@
                     // Open email client
                     window.location.href = mailtoLink;
                     
+                    // Track form submission success
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'submit_tournament_form', {
+                            'event_category': 'Tournament Form',
+                            'event_label': selectedTournaments.join(', '),
+                            'value': selectedTournaments.length
+                        });
+                    }
+                    
                     // Show success message
                     statusDiv.className = 'form-status success';
                     statusDiv.textContent = 'Your email client should open with your registration details. Please send the email to complete your registration.';
@@ -1088,6 +1236,12 @@
         
         // Share event function - opens modal first
         function shareEvent(eventType) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click_share_event', {
+                    'event_category': 'Tournament',
+                    'event_label': 'Share Event Button'
+                });
+            }
             openShareModal();
         }
         
@@ -1111,6 +1265,14 @@
             }
             
             const status = statusRadio.value;
+            
+            // Track share event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'share_tournament', {
+                    'event_category': 'Share Event',
+                    'event_label': selectedTournaments.join(', ') + ' - ' + status
+                });
+            }
             const statusText = status === 'interested' ? "I'm interested in these tournaments" : "I'm registering for these tournaments";
             const statusIntro = status === 'interested' ? 'thought you might be interested' : 'am registering';
             

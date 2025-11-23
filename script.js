@@ -1,5 +1,13 @@
 // Enhanced email functionality with better UX
 function sendEmail(type) {
+    // Track email button click
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'click_email_button', {
+            'event_category': 'Email Action',
+            'event_label': type
+        });
+    }
+    
     const email = 'lookoutmountainmahjong@gmail.com';
     let subject = '';
     let body = '';
