@@ -196,6 +196,14 @@ Best regards,
         const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink);
         
+        // Track email client opened
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'email_client_opened', {
+                'event_category': 'Email Action',
+                'event_label': type + ' - Email Client Opened'
+            });
+        }
+        
         // Show success message
         showNotification('Email client opened! Please send your message.', 'success');
         

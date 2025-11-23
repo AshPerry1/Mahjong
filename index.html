@@ -157,6 +157,91 @@
                     trackEvent('TML Partnership', 'click_shop_tml', 'TML Products Link');
                 });
             });
+            
+            // Track logo clicks
+            document.querySelectorAll('a.logo-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    trackEvent('Navigation', 'click_logo', 'Logo');
+                });
+            });
+            
+            // Track scroll arrow clicks
+            document.querySelectorAll('a.scroll-arrow').forEach(link => {
+                link.addEventListener('click', function() {
+                    const target = this.getAttribute('href') || 'unknown';
+                    trackEvent('Navigation', 'click_scroll_arrow', target);
+                });
+            });
+            
+            // Track modal close button clicks
+            document.querySelectorAll('button.tournament-modal-close').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.tournament-modal, .share-modal');
+                    const modalType = modal ? (modal.classList.contains('share-modal') ? 'Share Modal' : 'Registration Form') : 'Unknown';
+                    trackEvent('Modal', 'click_close_button', modalType);
+                });
+            });
+            
+            // Track tournament registration button
+            document.querySelectorAll('button.register-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    trackEvent('Tournament', 'click_register_button', 'Register Here');
+                });
+            });
+            
+            // Track share event button
+            document.querySelectorAll('button.share-event-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    trackEvent('Tournament', 'click_share_button', 'Share Event');
+                });
+            });
+            
+            // Track form field interactions (focus events)
+            document.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('focus', function() {
+                    const fieldName = this.name || this.id || 'unknown';
+                    const formType = this.closest('form') ? (this.closest('#tournament-form') ? 'Tournament Form' : 'Other Form') : 'Standalone';
+                    trackEvent('Form Interaction', 'field_focus', formType + ' - ' + fieldName);
+                });
+            });
+            
+            // Track checkbox/radio selections in share modal
+            document.querySelectorAll('#share-modal input[type="checkbox"], #share-modal input[type="radio"]').forEach(input => {
+                input.addEventListener('change', function() {
+                    const inputType = this.type;
+                    const inputName = this.name;
+                    const inputValue = this.value;
+                    trackEvent('Share Modal', 'select_option', inputName + ' - ' + inputValue);
+                });
+            });
+            
+            // Track checkbox selections in tournament form
+            document.querySelectorAll('#tournament-form input[type="checkbox"]').forEach(input => {
+                input.addEventListener('change', function() {
+                    const isChecked = this.checked;
+                    const inputValue = this.value;
+                    trackEvent('Tournament Form', isChecked ? 'check_tournament' : 'uncheck_tournament', inputValue);
+                });
+            });
+            
+            // Track radio button selections in tournament form
+            document.querySelectorAll('#tournament-form input[type="radio"]').forEach(input => {
+                input.addEventListener('change', function() {
+                    const inputName = this.name;
+                    const inputValue = this.value;
+                    trackEvent('Tournament Form', 'select_radio', inputName + ' - ' + inputValue);
+                });
+            });
+            
+            // Track dropdown/select changes
+            document.querySelectorAll('select').forEach(select => {
+                select.addEventListener('change', function() {
+                    const selectName = this.name || this.id || 'unknown';
+                    const selectValue = this.value;
+                    const formType = this.closest('#tournament-form') ? 'Tournament Form' : 'Other Form';
+                    trackEvent('Form Interaction', 'select_change', formType + ' - ' + selectName + ' - ' + selectValue);
+                });
+            });
         });
     </script>
     
