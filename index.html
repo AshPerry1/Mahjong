@@ -61,6 +61,8 @@
                 'event_label': label,
                 'value': value
             });
+            // Console log for debugging (remove in production if desired)
+            console.log('GA Event:', category, '-', action, '-', label, value ? '- Value: ' + value : '');
         }
         
         // Track page views for sections (scroll tracking)
