@@ -1,10 +1,30 @@
 // Enhanced email functionality with better UX
 function sendEmail(type) {
-    // Track email button click
+    // Track email button click (conversion event for retargeting)
     if (typeof gtag !== 'undefined') {
         gtag('event', 'click_email_button', {
-            'event_category': 'Email Action',
-            'event_label': type
+            'event_category': 'Conversion',
+            'event_label': type,
+            'service_type': type,
+            'user_intent': 'service_inquiry',
+            'engagement_type': 'email_action'
+        });
+        
+        // Add service-specific audience parameter
+        const serviceMap = {
+            'lesson': 'General Lesson Inquiry',
+            '101': 'Mahjong 101 Course',
+            '102': 'Mahjong 102 Course',
+            'events': 'Private Event',
+            'contact': 'General Contact',
+            'travel': 'Travel Event',
+            'tml': 'TML Products'
+        };
+        
+        gtag('event', 'service_inquiry', {
+            'event_category': 'Conversion',
+            'event_label': serviceMap[type] || type,
+            'service_interest': type
         });
     }
     

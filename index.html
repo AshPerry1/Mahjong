@@ -49,21 +49,68 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-8C0BWCXBF0');
+        
+        // Configure Google Analytics with remarketing enabled
+        gtag('config', 'G-8C0BWCXBF0', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true,
+            'cookie_flags': 'SameSite=None;Secure'
+        });
         
         // Comprehensive Google Analytics Event Tracking
         // Track all user interactions on the site
         
-        // Helper function to send events
-        function trackEvent(category, action, label, value) {
-            gtag('event', action, {
+        // Helper function to send events with retargeting support
+        function trackEvent(category, action, label, value, isConversion = false) {
+            const eventParams = {
                 'event_category': category,
                 'event_label': label,
-                'value': value
-            });
-            // Console log for debugging (remove in production if desired)
-            console.log('GA Event:', category, '-', action, '-', label, value ? '- Value: ' + value : '');
+                'value': value,
+                // Add engagement parameters for audience building
+                'engagement_time_msec': 100,
+                'non_interaction': false
+            };
+            
+            // Mark conversion events for remarketing
+            if (isConversion) {
+                eventParams['conversion_label'] = label;
+                eventParams['send_to'] = 'G-8C0BWCXBF0';
+            }
+            
+            gtag('event', action, eventParams);
+            
+            // Console log for debugging
+            console.log('GA Event:', category, '-', action, '-', label, value ? '- Value: ' + value : '', isConversion ? '(CONVERSION)' : '');
         }
+        
+        // Track user engagement time
+        let engagementStartTime = Date.now();
+        let totalEngagementTime = 0;
+        
+        // Track page engagement
+        function trackEngagement() {
+            const now = Date.now();
+            const timeSpent = now - engagementStartTime;
+            totalEngagementTime += timeSpent;
+            
+            // Send engagement event every 30 seconds
+            if (totalEngagementTime >= 30000) {
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': totalEngagementTime,
+                    'event_category': 'Engagement',
+                    'event_label': 'Time on Site'
+                });
+                totalEngagementTime = 0;
+            }
+            engagementStartTime = now;
+        }
+        
+        // Track when user is active
+        document.addEventListener('mousemove', trackEngagement);
+        document.addEventListener('keypress', trackEngagement);
+        document.addEventListener('scroll', trackEngagement);
+        document.addEventListener('click', trackEngagement);
         
         // Track page views for sections (scroll tracking)
         const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
@@ -74,6 +121,14 @@
                 if (entry.isIntersecting && !viewedSections.has(entry.target.id)) {
                     viewedSections.add(entry.target.id);
                     trackEvent('Section View', 'view_section', entry.target.id);
+                    
+                    // Track content engagement for audience building
+                    gtag('event', 'content_engagement', {
+                        'event_category': 'Engagement',
+                        'event_label': 'Section Viewed - ' + entry.target.id,
+                        'content_type': entry.target.id,
+                        'engagement_type': 'section_view'
+                    });
                 }
             });
         }, { threshold: 0.5 });
@@ -95,35 +150,67 @@
                 });
             });
             
-            // Track CTA button clicks
+            // Track CTA button clicks (high intent for retargeting)
             document.querySelectorAll('button.cta-button, .cta-button').forEach(button => {
                 button.addEventListener('click', function() {
                     const buttonText = this.textContent.trim() || this.querySelector('.button-text')?.textContent.trim() || 'Unknown';
-                    trackEvent('CTA Button', 'click_cta', buttonText);
+                    trackEvent('CTA Button', 'click_cta', buttonText, null, true); // Mark as conversion
+                    
+                    // Add custom parameter for audience building
+                    gtag('event', 'high_intent_action', {
+                        'event_category': 'Conversion',
+                        'event_label': 'CTA Click - ' + buttonText,
+                        'engagement_type': 'button_click',
+                        'user_intent': 'high'
+                    });
                 });
             });
             
-            // Track service button clicks
+            // Track service button clicks (conversion event for retargeting)
             document.querySelectorAll('button.service-button').forEach(button => {
                 button.addEventListener('click', function() {
                     const buttonText = this.textContent.trim();
-                    trackEvent('Service Button', 'click_service', buttonText);
+                    trackEvent('Service Button', 'click_service', buttonText, null, true); // Mark as conversion
+                    
+                    // Add service interest for audience building
+                    gtag('event', 'service_interest', {
+                        'event_category': 'Conversion',
+                        'event_label': buttonText,
+                        'service_type': buttonText.toLowerCase().replace('book ', '').replace(' course', ''),
+                        'user_intent': 'service_inquiry'
+                    });
                 });
             });
             
-            // Track email link clicks
+            // Track email link clicks (high-value conversion)
             document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
                 link.addEventListener('click', function() {
                     const email = this.getAttribute('href').replace('mailto:', '').split('?')[0];
-                    trackEvent('Contact', 'click_email', email);
+                    trackEvent('Contact', 'click_email', email, null, true); // Mark as conversion
+                    
+                    // Add contact intent for retargeting
+                    gtag('event', 'contact_intent', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Email Click',
+                        'contact_method': 'email',
+                        'user_intent': 'contact'
+                    });
                 });
             });
             
-            // Track phone link clicks
+            // Track phone link clicks (high-value conversion)
             document.querySelectorAll('a[href^="tel:"]').forEach(link => {
                 link.addEventListener('click', function() {
                     const phone = this.getAttribute('href').replace('tel:', '');
-                    trackEvent('Contact', 'click_phone', phone);
+                    trackEvent('Contact', 'click_phone', phone, null, true); // Mark as conversion
+                    
+                    // Add contact intent for retargeting
+                    gtag('event', 'contact_intent', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Phone Click',
+                        'contact_method': 'phone',
+                        'user_intent': 'contact'
+                    });
                 });
             });
             
@@ -153,10 +240,19 @@
                 });
             }
             
-            // Track TML product link
+            // Track TML product link (conversion for affiliate tracking)
             document.querySelectorAll('a.tml-button, a[href*="themahjongline.com"]').forEach(link => {
                 link.addEventListener('click', function() {
-                    trackEvent('TML Partnership', 'click_shop_tml', 'TML Products Link');
+                    trackEvent('TML Partnership', 'click_shop_tml', 'TML Products Link', null, true); // Mark as conversion
+                    
+                    // Add product interest for retargeting
+                    gtag('event', 'product_interest', {
+                        'event_category': 'Conversion',
+                        'event_label': 'TML Product Click',
+                        'product_type': 'mahjong_products',
+                        'affiliate_partner': 'TML',
+                        'user_intent': 'product_purchase'
+                    });
                 });
             });
             
@@ -184,10 +280,18 @@
                 });
             });
             
-            // Track tournament registration button
+            // Track tournament registration button (high-value conversion)
             document.querySelectorAll('button.register-btn').forEach(button => {
                 button.addEventListener('click', function() {
-                    trackEvent('Tournament', 'click_register_button', 'Register Here');
+                    trackEvent('Tournament', 'click_register_button', 'Register Here', null, true); // Mark as conversion
+                    
+                    // Add tournament interest for retargeting
+                    gtag('event', 'tournament_interest', {
+                        'event_category': 'Conversion',
+                        'event_label': 'Tournament Registration Click',
+                        'product_type': 'tournament',
+                        'user_intent': 'tournament_registration'
+                    });
                 });
             });
             
@@ -1291,12 +1395,23 @@
                     // Open email client
                     window.location.href = mailtoLink;
                     
-                    // Track form submission success
+                    // Track form submission success (major conversion event)
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'submit_tournament_form', {
-                            'event_category': 'Tournament Form',
+                            'event_category': 'Conversion',
                             'event_label': selectedTournaments.join(', '),
-                            'value': selectedTournaments.length
+                            'value': selectedTournaments.length,
+                            'conversion_label': 'Tournament Registration Submitted',
+                            'product_type': 'tournament',
+                            'user_intent': 'tournament_registration_complete'
+                        });
+                        
+                        // Add to audience: Tournament Registrants
+                        gtag('event', 'tournament_registration_complete', {
+                            'event_category': 'Conversion',
+                            'event_label': 'Tournament Registration',
+                            'tournaments_selected': selectedTournaments.length,
+                            'tournament_dates': selectedTournaments.join(', ')
                         });
                     }
                     
@@ -1325,8 +1440,10 @@
         function shareEvent(eventType) {
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'click_share_event', {
-                    'event_category': 'Tournament',
-                    'event_label': 'Share Event Button'
+                    'event_category': 'Conversion',
+                    'event_label': 'Share Event Button',
+                    'user_intent': 'tournament_sharing',
+                    'engagement_type': 'social_sharing'
                 });
             }
             openShareModal();
@@ -1353,11 +1470,15 @@
             
             const status = statusRadio.value;
             
-            // Track share event
+            // Track share event (conversion for viral tracking)
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'share_tournament', {
-                    'event_category': 'Share Event',
-                    'event_label': selectedTournaments.join(', ') + ' - ' + status
+                    'event_category': 'Conversion',
+                    'event_label': selectedTournaments.join(', ') + ' - ' + status,
+                    'tournaments_shared': selectedTournaments.length,
+                    'share_status': status,
+                    'user_intent': 'tournament_sharing',
+                    'engagement_type': 'social_sharing'
                 });
             }
             const statusText = status === 'interested' ? "I'm interested in these tournaments" : "I'm registering for these tournaments";
