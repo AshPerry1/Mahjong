@@ -547,6 +547,16 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
                                     </li>
+                                    <li><strong>Tournament 3:</strong> <strong>May 29-31, 2026</strong><br>
+                                        <span style="font-style: italic;">Friday, May 29: Welcome Cocktail<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
+                                        <span style="font-style: italic;">Saturday, May 30: Tournament Play<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                    </li>
                                 </ul>
                                 <p class="tournament-signup-note">Sign up for one or all!</p>
                             </div>
@@ -1058,6 +1068,10 @@
                             <input type="checkbox" name="tournament-selection" value="Tournament 2: April 17-18, 2026">
                             <span>Tournament 2: April 17-18, 2026</span>
                         </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tournament-selection" value="Tournament 3: May 29-31, 2026">
+                            <span>Tournament 3: May 29-31, 2026</span>
+                        </label>
                     </div>
                     <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select multiple tournaments</small>
                     </div>
@@ -1105,6 +1119,10 @@
                         <label class="checkbox-label">
                             <input type="checkbox" name="share-tournament-selection" value="Tournament 2: April 17-18, 2026">
                             <span>Tournament 2: April 17-18, 2026</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="share-tournament-selection" value="Tournament 3: May 29-31, 2026">
+                            <span>Tournament 3: May 29-31, 2026</span>
                         </label>
                     </div>
                     <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select multiple tournaments</small>
@@ -1488,6 +1506,15 @@
                     message += `Tournament 2: April 17-18, 2026\n`;
                     message += `   • Friday, April 17: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
                     message += `   • Saturday, April 18: Tournament Play\n`;
+                    message += `     Round 1: 9:30-10:25am then change tables\n`;
+                    message += `     Round 2: 10:30-11:25am\n`;
+                    message += `     Lunch break\n`;
+                    message += `     Round 3: 1:00-1:55pm\n`;
+                    message += `     Awards at 2:30pm\n\n`;
+                } else if (tournament.includes('May')) {
+                    message += `Tournament 3: May 29-31, 2026\n`;
+                    message += `   • Friday, May 29: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `   • Saturday, May 30: Tournament Play\n`;
                     message += `     Round 1: 9:30-10:25am then change tables\n`;
                     message += `     Round 2: 10:30-11:25am\n`;
                     message += `     Lunch break\n`;
