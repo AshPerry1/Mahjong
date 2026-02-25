@@ -1185,7 +1185,8 @@ p {
     align-items: center;
 }
 
-.register-btn {
+.register-btn,
+a.register-btn {
     background: var(--hero-warm-red);
     color: white;
     padding: 14px 32px;
@@ -1201,6 +1202,7 @@ p {
     cursor: pointer;
     width: 200px;
     text-align: center;
+    display: inline-block;
 }
 
 .register-btn:hover {

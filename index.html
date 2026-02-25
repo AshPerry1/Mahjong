@@ -1207,16 +1207,18 @@
             }
         })();
         
-        // Tournament form modal functions
+        // Tournament registration - open external Google Form for all tournaments
         function openTournamentForm() {
-            document.getElementById('tournament-modal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScTZBlI_DANMw_tfoQ7i3lHLxJTTLQGAjL5Bg__9v7R6t-qNQ/viewform';
+            
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'open_modal', {
-                    'event_category': 'Tournament',
-                    'event_label': 'Registration Form'
+                gtag('event', 'open_registration_form', {
+                    event_category: 'Tournament',
+                    event_label: 'Greenbrier Google Form'
                 });
             }
+            
+            window.open(formUrl, '_blank');
         }
         
         function closeTournamentForm() {
