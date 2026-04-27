@@ -233,11 +233,16 @@ Best regards,
     }, 800);
 }
 
-// Enhanced smooth scrolling with offset for fixed navbar
+// Enhanced smooth scrolling with offset for fixed navbar + optional promo banner
+function getFixedHeaderScrollOffset() {
+    const bannerH = parseFloat(getComputedStyle(document.body).getPropertyValue('--site-promo-banner-height')) || 0;
+    return bannerH + 96;
+}
+
 function smoothScrollTo(targetId) {
     const target = document.querySelector(targetId);
     if (target) {
-        const offset = 80; // Account for fixed navbar
+        const offset = getFixedHeaderScrollOffset();
         const targetPosition = target.offsetTop - offset;
         
         window.scrollTo({
@@ -263,23 +268,32 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 let isMenuOpen = false;
 
-hamburger.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-    
-    // Add ARIA attributes for accessibility
-    hamburger.setAttribute('aria-expanded', isMenuOpen);
-    hamburger.setAttribute('aria-label', isMenuOpen ? 'Close menu' : 'Open menu');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (isMenuOpen) {
+        document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+
+        hamburger.setAttribute('aria-expanded', isMenuOpen);
+        hamburger.setAttribute('aria-label', isMenuOpen ? 'Close menu' : 'Open menu');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMenuOpen) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                isMenuOpen = false;
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -287,18 +301,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (isMenuOpen && !hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-        isMenuOpen = false;
-        hamburger.setAttribute('aria-expanded', 'false');
-    }
-});
+}
 
 // Enhanced intersection observer for animations
 const observerOptions = {
@@ -314,42 +317,61 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Enhanced navbar background change on scroll
-let lastScrollY = window.scrollY;
-const navbar = document.querySelector('.navbar');
+// Enhanced navbar: solid background + hide on scroll down / show on scroll up
+let lastScrollY = window.scrollY || 0;
+const navbar = document.getElementById('site-navbar') || document.querySelector('.navbar');
 
 function updateNavbar() {
-    const currentScrollY = window.scrollY;
-    
-    if (currentScrollY > 100) {
+    if (!navbar) return;
+
+    const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
+    if (currentScrollY > 80) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
     }
-    
-    // Hide/show navbar on scroll (optional)
-    if (currentScrollY > lastScrollY && currentScrollY > 200) {
+
+    if (currentScrollY <= 40) {
+        navbar.classList.remove('navbar-hidden');
+    } else if (currentScrollY > lastScrollY + 2 && currentScrollY > 72) {
         navbar.classList.add('navbar-hidden');
-    } else {
+        if (isMenuOpen && hamburger && navMenu) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            isMenuOpen = false;
+            hamburger.setAttribute('aria-expanded', 'false');
+        }
+    } else if (currentScrollY + 2 < lastScrollY) {
         navbar.classList.remove('navbar-hidden');
     }
-    
+
     lastScrollY = currentScrollY;
 }
 
-// Throttled scroll event
-let ticking = false;
-function requestTick() {
-    if (!ticking) {
-        requestAnimationFrame(updateNavbar);
-        ticking = true;
-    }
+let navScrollRaf = null;
+function scheduleNavbarUpdate() {
+    if (!navbar || navScrollRaf !== null) return;
+    navScrollRaf = requestAnimationFrame(() => {
+        navScrollRaf = null;
+        updateNavbar();
+    });
 }
 
-window.addEventListener('scroll', () => {
-    ticking = false;
-    requestTick();
-});
+if (navbar) {
+    window.addEventListener('scroll', scheduleNavbarUpdate, { passive: true });
+    window.addEventListener('resize', scheduleNavbarUpdate, { passive: true });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            lastScrollY = window.scrollY || 0;
+            updateNavbar();
+        });
+    } else {
+        lastScrollY = window.scrollY || 0;
+        updateNavbar();
+    }
+}
 
 // Enhanced tile animations
 const tiles = document.querySelectorAll('.tile');
@@ -565,15 +587,6 @@ const enhancedStyles = `
         transform: translateY(0);
     }
     
-    .navbar.scrolled {
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    .navbar.navbar-hidden {
-        transform: translateY(-100%);
-    }
-    
     .loading-spinner {
         display: inline-block;
         width: 16px;
@@ -624,7 +637,7 @@ const enhancedStyles = `
         .nav-menu {
             position: fixed;
             left: -100%;
-            top: 80px;
+            top: calc(var(--site-promo-banner-height, 0px) + 80px);
             flex-direction: column;
             background-color: rgba(255, 255, 255, 0.98);
             width: 100%;
@@ -633,10 +646,12 @@ const enhancedStyles = `
             box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
             padding: 2rem 0;
             backdrop-filter: blur(20px);
+            z-index: 1004;
         }
         
         .nav-menu.active {
             left: 0;
+            display: flex !important;
         }
         
         .nav-menu li {
@@ -682,8 +697,7 @@ if ('IntersectionObserver' in window) {
 
 // Keyboard navigation enhancement
 document.addEventListener('keydown', (e) => {
-    // Escape key closes mobile menu
-    if (e.key === 'Escape' && isMenuOpen) {
+    if (e.key === 'Escape' && isMenuOpen && hamburger && navMenu) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.style.overflow = '';
@@ -750,3 +764,26 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+(function initPromoBannerDismiss() {
+    const STORAGE_KEY = 'lmm_promo_banner_dismissed';
+
+    function wireDismissButtons() {
+        document.querySelectorAll('.site-promo-banner-dismiss').forEach((btn) => {
+            btn.addEventListener('click', () => {
+                try {
+                    localStorage.setItem(STORAGE_KEY, '1');
+                } catch (e) {
+                    /* private mode */
+                }
+                document.documentElement.classList.add('promo-banner-dismissed');
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireDismissButtons);
+    } else {
+        wireDismissButtons();
+    }
+})();

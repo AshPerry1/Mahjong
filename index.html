@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>try { if (localStorage.getItem('lmm_promo_banner_dismissed') === '1') document.documentElement.classList.add('promo-banner-dismissed'); } catch (e) {}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
@@ -425,36 +426,30 @@
     }
     </script>
 </head>
-<body>
+<body class="has-promo-banner">
     <div class="site-promo-banner" role="region" aria-label="Follow Lookout Mountain Mahjong on TikTok">
+        <button type="button" class="site-promo-banner-dismiss" aria-label="Dismiss TikTok announcement">&times;</button>
         <div class="site-promo-banner-inner">
             <span class="site-promo-banner-text">Follow us on <strong>TikTok</strong> for tips, events &amp; behind-the-scenes mahjong.</span>
             <a href="https://www.tiktok.com/@lookoutmountainmahjong?_r=1&amp;_t=ZP-95tdjJexDah" class="site-promo-banner-cta" target="_blank" rel="noopener noreferrer">@lookoutmountainmahjong</a>
         </div>
     </div>
-    <main>
-        <section id="hero" class="hero">
-            <div class="hero-background">
-                <img src="./Hero.png" alt="Luxury mahjong instruction space" class="hero-bg-image">
-                <div class="hero-overlay"></div>
-            </div>
-            
-            <nav class="navbar hero-nav">
+    <nav class="navbar hero-nav" id="site-navbar" aria-label="Primary">
         <div class="nav-container">
             <div class="nav-logo">
-                        <a href="#hero" class="logo-link">
-                <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">
-                <div class="logo-text">
-                    <h2>Lookout Mountain Mahjong</h2>
-                </div>
-                        </a>
+                <a href="#hero" class="logo-link">
+                    <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h2>Lookout Mountain Mahjong</h2>
+                    </div>
+                </a>
             </div>
             <ul class="nav-menu">
-                        <li><a href="#services">Services</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#about">About</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -464,6 +459,12 @@
             </div>
         </div>
     </nav>
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-background">
+                <img src="./Hero.png" alt="Luxury mahjong instruction space" class="hero-bg-image">
+                <div class="hero-overlay"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
