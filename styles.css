@@ -123,6 +123,92 @@ p {
     padding: 0 24px;
 }
 
+/* Top promo — TikTok (fixed; navbar offset when present) */
+.site-promo-banner {
+    /* Navbar uses this for `top`; keep >= typical banner content height to avoid overlap */
+    --site-promo-banner-height: 58px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10002;
+    min-height: var(--site-promo-banner-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #0a0a0a 0%, #1a0f18 40%, #241018 100%);
+    border-bottom: 1px solid rgba(233, 30, 99, 0.4);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.site-promo-banner-inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.8125rem, 2.2vw, 0.9375rem);
+    line-height: 1.4;
+    color: #f8fafc;
+    text-align: center;
+}
+
+.site-promo-banner-text strong {
+    color: #ff6b9d;
+    font-weight: 700;
+}
+
+.site-promo-banner-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-decoration: none;
+    color: #fff;
+    background: var(--rose-pink);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.site-promo-banner-cta:hover {
+    background: var(--deep-pink);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(233, 30, 99, 0.45);
+}
+
+body:has(.site-promo-banner) .navbar {
+    top: var(--site-promo-banner-height);
+}
+
+body:has(.site-promo-banner) .faq-hero {
+    padding-top: 156px;
+}
+
+@media (max-width: 720px) {
+    .site-promo-banner {
+        --site-promo-banner-height: 92px;
+    }
+
+    .site-promo-banner-inner {
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px 16px 12px;
+    }
+
+    body:has(.site-promo-banner) .faq-hero {
+        padding-top: 182px;
+    }
+}
+
 /* Navigation */
 .navbar {
     background: transparent;
