@@ -527,27 +527,7 @@
                             <div class="event-schedule">
                                 <h4>Tournament Dates:</h4>
                                 <ul>
-                                    <li><strong>Tournament 1:</strong> <strong>March 6-7, 2026</strong><br>
-                                        <span style="font-style: italic;">Friday, March 6: Welcome Cocktail<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
-                                        <span style="font-style: italic;">Saturday, March 7: Tournament Play<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
-                                    </li>
-                                    <li><strong>Tournament 2:</strong> <strong>April 17-18, 2026</strong><br>
-                                        <span style="font-style: italic;">Friday, April 17: Welcome Cocktail<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
-                                        <span style="font-style: italic;">Saturday, April 18: Tournament Play<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
-                                    </li>
-                                    <li><strong>Tournament 3:</strong> <strong>May 29-31, 2026</strong><br>
+                                    <li><strong>May 29-31, 2026</strong><br>
                                         <span style="font-style: italic;">Friday, May 29: Welcome Cocktail<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
                                         <span style="font-style: italic;">Saturday, May 30: Tournament Play<br>
@@ -558,7 +538,7 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
                                     </li>
                                 </ul>
-                                <p class="tournament-signup-note">Sign up for one or all!</p>
+                                <p class="tournament-signup-note">Registration is open for the May weekend.</p>
                             </div>
                             
                             <div class="event-contact">
@@ -1058,22 +1038,13 @@
                     <input type="email" id="tournament-email" name="email" required>
                         </div>
                 <div class="form-group form-group-full">
-                    <label>Which tournament(s) would you like to attend? *</label>
+                    <label>Tournament weekend *</label>
                     <div class="checkbox-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="tournament-selection" value="Tournament 1: March 6-7, 2026">
-                            <span>Tournament 1: March 6-7, 2026</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="tournament-selection" value="Tournament 2: April 17-18, 2026">
-                            <span>Tournament 2: April 17-18, 2026</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="tournament-selection" value="Tournament 3: May 29-31, 2026">
-                            <span>Tournament 3: May 29-31, 2026</span>
+                            <input type="checkbox" name="tournament-selection" value="May 29-31, 2026">
+                            <span>May 29-31, 2026</span>
                         </label>
                     </div>
-                    <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select multiple tournaments</small>
                     </div>
                 <div class="form-group">
                     <label for="tournament-skill-level">Skill Level *</label>
@@ -1106,26 +1077,17 @@
             <button class="tournament-modal-close" onclick="closeShareModal()">&times;</button>
             <div class="tournament-modal-header">
                 <h2>Share Tournament Event</h2>
-                <p>Select which tournaments to share and your status</p>
+                <p>Confirm the tournament to share and your status</p>
                 </div>
             <div class="contact-form">
                 <div class="form-group form-group-full">
-                    <label>Which tournament(s) would you like to share? *</label>
+                    <label>Tournament to share *</label>
                     <div class="checkbox-group">
                         <label class="checkbox-label">
-                            <input type="checkbox" name="share-tournament-selection" value="Tournament 1: March 6-7, 2026">
-                            <span>Tournament 1: March 6-7, 2026</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="share-tournament-selection" value="Tournament 2: April 17-18, 2026">
-                            <span>Tournament 2: April 17-18, 2026</span>
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="share-tournament-selection" value="Tournament 3: May 29-31, 2026">
-                            <span>Tournament 3: May 29-31, 2026</span>
+                            <input type="checkbox" name="share-tournament-selection" value="May 29-31, 2026">
+                            <span>May 29-31, 2026</span>
                         </label>
                     </div>
-                    <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select multiple tournaments</small>
                 </div>
                 <div class="form-group form-group-full">
                     <label>Your status: *</label>
@@ -1495,26 +1457,8 @@
             message += `Tournament Dates:\n\n`;
             
             selectedTournaments.forEach((tournament, index) => {
-                if (tournament.includes('March')) {
-                    message += `Tournament 1: March 6-7, 2026\n`;
-                    message += `   • Friday, March 6: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
-                    message += `   • Saturday, March 7: Tournament Play\n`;
-                    message += `     Round 1: 9:30-10:25am then change tables\n`;
-                    message += `     Round 2: 10:30-11:25am\n`;
-                    message += `     Lunch break\n`;
-                    message += `     Round 3: 1:00-1:55pm\n`;
-                    message += `     Awards at 2:30pm\n\n`;
-                } else if (tournament.includes('April')) {
-                    message += `Tournament 2: April 17-18, 2026\n`;
-                    message += `   • Friday, April 17: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
-                    message += `   • Saturday, April 18: Tournament Play\n`;
-                    message += `     Round 1: 9:30-10:25am then change tables\n`;
-                    message += `     Round 2: 10:30-11:25am\n`;
-                    message += `     Lunch break\n`;
-                    message += `     Round 3: 1:00-1:55pm\n`;
-                    message += `     Awards at 2:30pm\n\n`;
-                } else if (tournament.includes('May')) {
-                    message += `Tournament 3: May 29-31, 2026\n`;
+                if (tournament.includes('May')) {
+                    message += `May 29-31, 2026\n`;
                     message += `   • Friday, May 29: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
                     message += `   • Saturday, May 30: Tournament Play\n`;
                     message += `     Round 1: 9:30-10:25am then change tables\n`;
