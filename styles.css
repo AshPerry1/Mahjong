@@ -1575,6 +1575,17 @@ a.register-btn {
     letter-spacing: 0.02em;
 }
 
+.tournament-guest-highlight {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.55;
+    margin: 18px 0 0 0;
+    padding: 14px 16px;
+    border-left: 4px solid var(--rose-pink);
+    background: var(--pale-pink);
+}
+
 .event-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

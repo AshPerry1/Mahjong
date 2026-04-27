@@ -495,7 +495,7 @@
                         <div class="event-info">
                             <div class="event-badge">Premium Event</div>
                             <h3>Greenbrier Tournaments 2026</h3>
-                            <p class="event-description">Join us at The Greenbrier Resort for exclusive mahjong tournament experiences. Each weekend begins with a Friday evening welcome cocktail reception featuring casual play and complimentary cocktails. Saturday brings competitive tournament play where top finishers earn bragging rights and exclusive prizes. All tiles, mats, and racks provided. Participants take home exciting Mahjong swag.</p>
+                            <p class="event-description">Join us at The Greenbrier Resort for exclusive mahjong tournament experiences. Each weekend begins with a Friday evening welcome cocktail reception featuring casual play and complimentary cocktails. Saturday brings competitive tournament play where top finishers earn bragging rights and exclusive prizes. All tiles, mats, and racks provided. Participants take home exciting Mahjong swag. Upcoming weekends include <strong>May 29–31, 2026</strong> and <strong>September 4–6, 2026</strong>, each with the same Friday-and-Saturday rhythm. For the May weekend, we are over the moon to welcome <strong>Carmen Johnston</strong> of Carmen Johnston Gardens and <strong>Michelle Bradley Robinson</strong> of House of MBR at the Friday welcome reception—two powerhouse guests you will want to meet, mingle with, and play alongside.</p>
                             
                             <div class="event-details-grid">
                                 <div class="detail-card">
@@ -537,8 +537,19 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
                                     </li>
+                                    <li><strong>September 4-6, 2026</strong><br>
+                                        <span style="font-style: italic;">Friday, September 4: Welcome Cocktail<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
+                                        <span style="font-style: italic;">Saturday, September 5: Tournament Play<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                    </li>
                                 </ul>
-                                <p class="tournament-signup-note">Registration is open for the May weekend.</p>
+                                <p class="tournament-guest-highlight">May weekend only — special guests at the Friday welcome reception: <strong>Carmen Johnston</strong> (Carmen Johnston Gardens) and <strong>Michelle Bradley Robinson</strong> (House of MBR). Come ready to mix, play, and soak up a weekend to remember at America's Resort.</p>
+                                <p class="tournament-signup-note">Registration is open — sign up for one weekend or both!</p>
                             </div>
                             
                             <div class="event-contact">
@@ -1038,13 +1049,18 @@
                     <input type="email" id="tournament-email" name="email" required>
                         </div>
                 <div class="form-group form-group-full">
-                    <label>Tournament weekend *</label>
+                    <label>Tournament weekend(s) *</label>
                     <div class="checkbox-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="tournament-selection" value="May 29-31, 2026">
                             <span>May 29-31, 2026</span>
                         </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tournament-selection" value="September 4-6, 2026">
+                            <span>September 4-6, 2026</span>
+                        </label>
                     </div>
+                    <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select both weekends</small>
                     </div>
                 <div class="form-group">
                     <label for="tournament-skill-level">Skill Level *</label>
@@ -1077,17 +1093,22 @@
             <button class="tournament-modal-close" onclick="closeShareModal()">&times;</button>
             <div class="tournament-modal-header">
                 <h2>Share Tournament Event</h2>
-                <p>Confirm the tournament to share and your status</p>
+                <p>Select tournament(s) to share and your status</p>
                 </div>
             <div class="contact-form">
                 <div class="form-group form-group-full">
-                    <label>Tournament to share *</label>
+                    <label>Tournament(s) to share *</label>
                     <div class="checkbox-group">
                         <label class="checkbox-label">
                             <input type="checkbox" name="share-tournament-selection" value="May 29-31, 2026">
                             <span>May 29-31, 2026</span>
                         </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="share-tournament-selection" value="September 4-6, 2026">
+                            <span>September 4-6, 2026</span>
+                        </label>
                     </div>
+                    <small style="color: var(--text-secondary); font-size: 0.85rem;">You can select both</small>
                 </div>
                 <div class="form-group form-group-full">
                     <label>Your status: *</label>
@@ -1460,7 +1481,17 @@
                 if (tournament.includes('May')) {
                     message += `May 29-31, 2026\n`;
                     message += `   • Friday, May 29: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `     Special guests at the welcome reception: Carmen Johnston (Carmen Johnston Gardens) and Michelle Bradley Robinson (House of MBR) — don't miss them!\n`;
                     message += `   • Saturday, May 30: Tournament Play\n`;
+                    message += `     Round 1: 9:30-10:25am then change tables\n`;
+                    message += `     Round 2: 10:30-11:25am\n`;
+                    message += `     Lunch break\n`;
+                    message += `     Round 3: 1:00-1:55pm\n`;
+                    message += `     Awards at 2:30pm\n\n`;
+                } else if (tournament.includes('September')) {
+                    message += `September 4-6, 2026\n`;
+                    message += `   • Friday, September 4: Welcome Cocktail Reception (5:00pm - 7:00pm)\n`;
+                    message += `   • Saturday, September 5: Tournament Play\n`;
                     message += `     Round 1: 9:30-10:25am then change tables\n`;
                     message += `     Round 2: 10:30-11:25am\n`;
                     message += `     Lunch break\n`;
