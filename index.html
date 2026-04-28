@@ -543,6 +543,9 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                        <div class="tournament-countdown" data-countdown-target="2026-05-29T17:00:00-04:00">
+                                            Countdown to kickoff: loading...
+                                        </div>
                                     </li>
                                     <li><strong>September 4-6, 2026</strong><br>
                                         <span style="font-style: italic;">Friday, September 4: Welcome Cocktail<br>
@@ -553,6 +556,9 @@
                                         &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                        <div class="tournament-countdown" data-countdown-target="2026-09-04T17:00:00-04:00">
+                                            Countdown to kickoff: loading...
+                                        </div>
                                     </li>
                                 </ul>
                                 <p class="tournament-guest-highlight">May weekend only — special guests at the Friday welcome reception: <strong>Carmen Johnston</strong> (Carmen Johnston Gardens) and <strong>Michelle Bradley Robinson</strong> (House of MBR). Come ready to mix, play, and soak up a weekend to remember at America's Resort.</p>
@@ -1197,6 +1203,45 @@
                 console.log('Page reload type:', performance.navigation.type);
             }
         })();
+
+        function formatTournamentCountdown(msRemaining) {
+            if (msRemaining <= 0) return 'The tournament weekend is here!';
+
+            const totalSeconds = Math.floor(msRemaining / 1000);
+            const days = Math.floor(totalSeconds / 86400);
+            const hours = Math.floor((totalSeconds % 86400) / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        function initializeTournamentCountdowns() {
+            const countdownElements = document.querySelectorAll('.tournament-countdown[data-countdown-target]');
+            if (!countdownElements.length) return;
+
+            const updateCountdowns = () => {
+                const now = Date.now();
+
+                countdownElements.forEach((element) => {
+                    const target = element.getAttribute('data-countdown-target');
+                    const targetTime = Date.parse(target);
+
+                    if (Number.isNaN(targetTime)) {
+                        element.textContent = 'Countdown unavailable';
+                        return;
+                    }
+
+                    const msRemaining = targetTime - now;
+                    element.textContent = `Countdown to kickoff: ${formatTournamentCountdown(msRemaining)}`;
+                });
+            };
+
+            updateCountdowns();
+            setInterval(updateCountdowns, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeTournamentCountdowns);
         
         // Tournament registration - open external Google Form for all tournaments
         function openTournamentForm() {

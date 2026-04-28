@@ -1750,6 +1750,31 @@ a.register-btn {
     background: var(--pale-pink);
 }
 
+.tournament-countdown {
+    margin: 10px 0 0 20px;
+    padding: 8px 12px;
+    display: inline-flex;
+    align-items: center;
+    max-width: calc(100% - 20px);
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--deep-pink);
+    background: rgba(248, 187, 217, 0.35);
+    border: 1px solid rgba(233, 30, 99, 0.25);
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+    .tournament-countdown {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        width: fit-content;
+        font-size: 0.82rem;
+    }
+}
+
 .event-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
