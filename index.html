@@ -1652,11 +1652,19 @@
         }
 
         (function initTournamentDateTabsFallback() {
-            const tabs = Array.from(document.querySelectorAll('[data-tournament-tab]'));
-            if (!tabs.length) return;
-            tabs.forEach((tab) => {
-                tab.addEventListener('click', () => setTournamentTab(tab.dataset.tournamentTab));
-            });
+            const tabContainer = document.querySelector('.tournament-date-tabs');
+            if (!tabContainer) return;
+
+            function handleTabSwitch(event) {
+                const tab = event.target.closest('[data-tournament-tab]');
+                if (!tab) return;
+                event.preventDefault();
+                event.stopPropagation();
+                setTournamentTab(tab.dataset.tournamentTab);
+            }
+
+            tabContainer.addEventListener('click', handleTabSwitch);
+            tabContainer.addEventListener('touchstart', handleTabSwitch, { passive: false });
         })();
     </script>
     <script src="script.js?v=12.0&t=1762361189&rebuild=1" id="js-link"></script>
