@@ -440,7 +440,14 @@ html.promo-banner-dismissed body.has-promo-banner .faq-hero {
     background:
         radial-gradient(circle at 20% 25%, rgba(202, 105, 226, 0.18) 0%, transparent 42%),
         radial-gradient(circle at 82% 18%, rgba(168, 85, 184, 0.16) 0%, transparent 38%),
-        radial-gradient(circle at 50% 85%, rgba(186, 120, 220, 0.12) 0%, transparent 46%);
+        radial-gradient(circle at 50% 85%, rgba(186, 120, 220, 0.12) 0%, transparent 46%),
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 20px,
+            rgba(202, 105, 226, 0.05) 20px,
+            rgba(202, 105, 226, 0.05) 40px
+        );
     z-index: 2;
 }
 
@@ -1828,12 +1835,18 @@ a.register-btn:hover,
 .tournament-guest-highlight {
     color: var(--text-primary);
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.55;
     margin: 18px 0 0 0;
     padding: 14px 16px;
     border-left: 4px solid #a855b8;
     background: rgba(202, 105, 226, 0.12);
+}
+
+.tournament-guest-highlight a {
+    color: #6b21a8;
+    font-weight: 700;
+    text-decoration-thickness: 2px;
 }
 
 .tournament-countdown {
@@ -1866,6 +1879,12 @@ a.register-btn:hover,
         width: 100%;
         justify-content: center;
         font-size: 0.82rem;
+    }
+
+    .tournament-guest-highlight {
+        font-size: 0.95rem;
+        line-height: 1.45;
+        padding: 12px 14px;
     }
 }
 
