@@ -2029,7 +2029,7 @@ a.register-btn:hover,
 
 .detail-card {
     background: var(--luxury-bone);
-    border-radius: 0;
+    border-radius: 14px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
     border: 1px solid var(--border-color);
@@ -2049,7 +2049,7 @@ a.register-btn:hover,
     width: 40px;
     height: 40px;
     background: #a855b8;
-    border-radius: 0;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
