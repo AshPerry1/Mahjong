@@ -1104,3 +1104,49 @@ if ('serviceWorker' in navigator) {
         wireTabs();
     }
 })();
+
+(function initPastEventPortfolioFlips() {
+    function toggleCard(card, forceState) {
+        const willFlip = typeof forceState === 'boolean'
+            ? forceState
+            : !card.classList.contains('is-flipped');
+
+        card.classList.toggle('is-flipped', willFlip);
+        card.setAttribute('aria-pressed', willFlip ? 'true' : 'false');
+
+        const front = card.querySelector('.event-face-front');
+        const back = card.querySelector('.event-face-back');
+        if (front) {
+            front.setAttribute('aria-hidden', willFlip ? 'true' : 'false');
+        }
+        if (back) {
+            back.setAttribute('aria-hidden', willFlip ? 'false' : 'true');
+        }
+    }
+
+    function wirePortfolioCards() {
+        const cards = Array.from(document.querySelectorAll('[data-portfolio-card]'));
+        if (!cards.length) return;
+
+        cards.forEach((card) => {
+            card.addEventListener('click', (e) => {
+                const interactive = e.target.closest('a, button');
+                if (interactive) return;
+                toggleCard(card);
+            });
+
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleCard(card);
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wirePortfolioCards);
+    } else {
+        wirePortfolioCards();
+    }
+})();
