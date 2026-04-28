@@ -2850,6 +2850,11 @@ a.register-btn:hover,
     padding: 6px;
 }
 
+.services-grid .service-card:nth-child(1) .icon-text,
+.services-grid .service-card:nth-child(2) .icon-text {
+    border-radius: 16px !important;
+}
+
 .travel-text {
     color: white;
     font-weight: 700;
