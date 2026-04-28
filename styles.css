@@ -2939,7 +2939,7 @@ a.register-btn:hover,
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: var(--rose-pink);
+    background: #a855b8;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2947,7 +2947,7 @@ a.register-btn:hover,
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(133, 49, 48, 0.3);
+    box-shadow: 0 4px 12px rgba(168, 85, 184, 0.3);
 }
 
 .author-info h4 {
@@ -3224,7 +3224,7 @@ a.register-btn:hover,
 }
 
 .tml-button {
-    background: var(--rose-pink);
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%);
     color: white;
     border-radius: 0;
     font-weight: 500;
@@ -3242,8 +3242,8 @@ a.register-btn:hover,
 }
 
 .tml-button:hover {
-    background: var(--deep-pink);
-    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+    background: linear-gradient(135deg, #b957d5 0%, #9333b3 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 184, 0.32);
     transform: translateY(-2px);
 }
 
