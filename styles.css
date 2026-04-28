@@ -3546,6 +3546,11 @@ a.register-btn:hover,
     flex-wrap: wrap;
 }
 
+.contact-buttons .cta-button {
+    justify-content: center;
+    text-align: center;
+}
+
 /* Contact Form Styles */
 .contact-form {
     background: white;
