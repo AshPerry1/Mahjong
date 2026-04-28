@@ -1183,7 +1183,7 @@ html.promo-banner-dismissed body.has-promo-banner .faq-hero {
     color: #8a36b2;
     background: rgba(202, 105, 226, 0.14);
     padding: 6px 12px;
-    border-radius: 0;
+    border-radius: 999px;
     margin-bottom: 16px;
     align-self: flex-start;
     border: 1px solid rgba(202, 105, 226, 0.35);
