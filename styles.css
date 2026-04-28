@@ -3279,7 +3279,7 @@ a.register-btn:hover,
     background: var(--luxury-bone);
     border-radius: 0;
     font-size: 1.1rem;
-    color: var(--luxury-slate);
+    color: #8a36b2;
     line-height: 1.6;
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
     border: 1px solid var(--border-color);
