@@ -1732,8 +1732,12 @@ a.register-btn:hover,
 
 .event-contact .event-contact-label,
 .event-contact .event-contact-info {
-    color: var(--rose-pink) !important;
+    color: #8a36b2 !important;
     text-transform: none;
+}
+
+.event-contact .event-contact-info a {
+    color: #8a36b2 !important;
 }
 
 .event-schedule {
@@ -2075,7 +2079,7 @@ a.register-btn:hover,
 
 .event-location {
     font-family: 'Inter', sans-serif;
-    color: var(--rose-pink);
+    color: #8a36b2;
     font-weight: 500;
     font-size: 0.95rem;
     margin-bottom: 12px;
