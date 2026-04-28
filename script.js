@@ -797,6 +797,72 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+(function initImpactStatCounters() {
+    function parseTargetValue(text) {
+        const trimmed = (text || '').trim();
+        const match = trimmed.match(/^(\d+)(.*)$/);
+        if (!match) return null;
+        return {
+            value: parseInt(match[1], 10),
+            suffix: match[2] || ''
+        };
+    }
+
+    function animateCounter(el) {
+        if (!el || el.dataset.countAnimated === '1') return;
+        const parsed = parseTargetValue(el.textContent);
+        if (!parsed) return;
+
+        const durationMs = 1400;
+        const startTime = performance.now();
+        el.dataset.countAnimated = '1';
+
+        function tick(now) {
+            const progress = Math.min((now - startTime) / durationMs, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(parsed.value * eased);
+            el.textContent = `${current}${parsed.suffix}`;
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = `${parsed.value}${parsed.suffix}`;
+            }
+        }
+
+        requestAnimationFrame(tick);
+    }
+
+    function wireImpactStats() {
+        const statNumbers = Array.from(document.querySelectorAll('.impact-stats .stat-number'));
+        if (!statNumbers.length) return;
+
+        const statsSection = document.querySelector('.impact-stats');
+        if (!statsSection) return;
+
+        if (!('IntersectionObserver' in window)) {
+            statNumbers.forEach(animateCounter);
+            return;
+        }
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                statNumbers.forEach(animateCounter);
+                observer.unobserve(entry.target);
+            });
+        }, { threshold: 0.35 });
+
+        counterObserver.observe(statsSection);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireImpactStats);
+    } else {
+        wireImpactStats();
+    }
+})();
+
 (function initPromoBannerDismiss() {
     const STORAGE_KEY = 'lmm_promo_banner_dismissed';
 
