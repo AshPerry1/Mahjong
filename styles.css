@@ -141,7 +141,7 @@ body.has-promo-banner {
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, #0a0a0a 0%, #1a0f18 40%, #241018 100%);
-    border-bottom: 1px solid rgba(233, 30, 99, 0.4);
+    border-bottom: 1px solid rgba(168, 85, 184, 0.45);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     pointer-events: none;
 }
@@ -172,7 +172,7 @@ body.has-promo-banner {
 }
 
 .site-promo-banner-dismiss:hover {
-    background: rgba(233, 30, 99, 0.55);
+    background: rgba(168, 85, 184, 0.55);
     color: #fff;
 }
 
@@ -199,7 +199,7 @@ body.has-promo-banner {
 }
 
 .site-promo-banner-text strong {
-    color: #ff6b9d;
+    color: #ca69e2;
     font-weight: 700;
 }
 
@@ -213,7 +213,7 @@ body.has-promo-banner {
     font-size: 0.8125rem;
     text-decoration: none;
     color: #fff;
-    background: var(--rose-pink);
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: var(--transition);
     white-space: nowrap;
@@ -221,9 +221,9 @@ body.has-promo-banner {
 }
 
 .site-promo-banner-cta:hover {
-    background: var(--deep-pink);
+    background: linear-gradient(135deg, #b957d5 0%, #9333b3 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(233, 30, 99, 0.45);
+    box-shadow: 0 4px 14px rgba(168, 85, 184, 0.45);
 }
 
 body.has-promo-banner .faq-hero {
