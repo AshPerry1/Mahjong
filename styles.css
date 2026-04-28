@@ -2564,7 +2564,6 @@ a.register-btn:hover,
 
 .service-card.featured {
     transform: scale(1.02);
-    border-color: #a855b8;
     box-shadow: 0 8px 24px rgba(168, 85, 184, 0.2);
 }
 
