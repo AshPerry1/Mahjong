@@ -3255,7 +3255,7 @@ a.register-btn:hover,
     font-style: italic;
 }
 
-.instructor-credentials {
+.instructor-content .instructor-credentials {
     color: #8a36b2;
     font-size: 0.9rem;
     font-weight: 500;
