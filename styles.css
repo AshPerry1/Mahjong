@@ -2839,6 +2839,16 @@ a.register-btn:hover,
 
 .services .travel-banner {
     background: linear-gradient(45deg, #ca69e2, #a855b8, #ca69e2) !important;
+    border-radius: 12px;
+}
+
+.services-grid .service-card:last-child .icon-text {
+    width: 84px;
+    height: 84px;
+    border-radius: 14px;
+    font-size: 1rem;
+    line-height: 1.1;
+    padding: 6px;
 }
 
 .travel-text {
