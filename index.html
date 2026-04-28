@@ -1629,7 +1629,32 @@
             document.body.removeChild(textArea);
             alert('Event details copied to clipboard! Paste it in your text message to share with friends!');
         }
+
+        // Inline fallback so date tabs work even if cached script.js is stale.
+        (function initTournamentDateTabsFallback() {
+            const tabs = Array.from(document.querySelectorAll('[data-tournament-tab]'));
+            const panels = Array.from(document.querySelectorAll('[data-tournament-panel]'));
+            if (!tabs.length || !panels.length) return;
+
+            function setActiveTab(target) {
+                tabs.forEach((tab) => {
+                    const isActive = tab.dataset.tournamentTab === target;
+                    tab.classList.toggle('is-active', isActive);
+                    tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                panels.forEach((panel) => {
+                    const isActive = panel.dataset.tournamentPanel === target;
+                    panel.classList.toggle('is-active', isActive);
+                    panel.hidden = !isActive;
+                });
+            }
+
+            tabs.forEach((tab) => {
+                tab.addEventListener('click', () => setActiveTab(tab.dataset.tournamentTab));
+            });
+        })();
     </script>
-    <script src="script.js?v=11.0&t=1762361189&rebuild=1" id="js-link"></script>
+    <script src="script.js?v=12.0&t=1762361189&rebuild=1" id="js-link"></script>
 </body>
 </html>
