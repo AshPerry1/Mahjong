@@ -1800,12 +1800,12 @@ a.register-btn:hover,
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #fff;
-    background: linear-gradient(90deg, var(--deep-pink), var(--coral-pink));
-    box-shadow: 0 4px 12px rgba(233, 30, 99, 0.28);
+    background: linear-gradient(90deg, #a855b8, #ca69e2);
+    box-shadow: 0 4px 12px rgba(168, 85, 184, 0.28);
 }
 
 .tournament-signup-note {
-    color: var(--rose-pink);
+    color: #8a36b2;
     font-size: 1rem;
     font-weight: 600;
     text-align: center;
@@ -1821,8 +1821,8 @@ a.register-btn:hover,
     line-height: 1.55;
     margin: 18px 0 0 0;
     padding: 14px 16px;
-    border-left: 4px solid var(--rose-pink);
-    background: var(--pale-pink);
+    border-left: 4px solid #a855b8;
+    background: rgba(202, 105, 226, 0.12);
 }
 
 .tournament-countdown {
@@ -1834,9 +1834,9 @@ a.register-btn:hover,
     font-size: 0.86rem;
     font-weight: 600;
     line-height: 1.4;
-    color: var(--deep-pink);
-    background: rgba(248, 187, 217, 0.35);
-    border: 1px solid rgba(233, 30, 99, 0.25);
+    color: #7e22ce;
+    background: rgba(202, 105, 226, 0.12);
+    border: 1px solid rgba(168, 85, 184, 0.28);
     letter-spacing: 0.01em;
 }
 
@@ -1884,13 +1884,13 @@ a.register-btn:hover,
 .detail-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
-    border-color: var(--hero-pink);
+    border-color: #a855b8;
 }
 
 .detail-icon {
     width: 40px;
     height: 40px;
-    background: var(--hero-coral);
+    background: #a855b8;
     border-radius: 0;
     display: flex;
     align-items: center;
