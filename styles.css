@@ -1600,6 +1600,64 @@ a.register-btn {
     box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
 }
 
+/* FAQ-inspired modern rounded purple button style across site */
+.cta-button,
+.service-button,
+.register-btn,
+a.register-btn,
+.share-event-btn,
+.form-submit-btn,
+.popup-register-btn,
+.popup-share-btn,
+.social-button {
+    border-radius: 999px;
+    border: 1px solid rgba(202, 105, 226, 0.28);
+    box-shadow: 0 4px 16px rgba(202, 105, 226, 0.22);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.cta-button.primary,
+.service-button,
+.register-btn,
+a.register-btn,
+.form-submit-btn,
+.popup-register-btn {
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%);
+    color: #fff;
+    border-color: rgba(168, 85, 184, 0.45);
+}
+
+.cta-button.primary:hover,
+.service-button:hover,
+.register-btn:hover,
+a.register-btn:hover,
+.form-submit-btn:hover,
+.popup-register-btn:hover {
+    background: linear-gradient(135deg, #b957d5 0%, #9333b3 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(168, 85, 184, 0.32);
+}
+
+.cta-button.secondary,
+.share-event-btn,
+.popup-share-btn,
+.social-button {
+    background: #fff;
+    color: #a855b8;
+    border-color: rgba(202, 105, 226, 0.5);
+}
+
+.cta-button.secondary:hover,
+.share-event-btn:hover,
+.popup-share-btn:hover,
+.social-button:hover {
+    background: #ca69e2;
+    color: #fff;
+    border-color: #ca69e2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(168, 85, 184, 0.32);
+}
+
 .popup-footer {
     text-align: center;
     padding-top: 20px;
