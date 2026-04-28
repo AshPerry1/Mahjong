@@ -2381,8 +2381,8 @@ a.register-btn:hover,
 
 .service-card.featured {
     transform: scale(1.02);
-    border-color: var(--rose-pink);
-    box-shadow: 0 8px 24px rgba(133, 49, 48, 0.2);
+    border-color: #a855b8;
+    box-shadow: 0 8px 24px rgba(168, 85, 184, 0.2);
 }
 
 .service-card:hover {
@@ -2402,7 +2402,7 @@ a.register-btn:hover,
 .icon-placeholder {
     width: 80px;
     height: 80px;
-    background: var(--rose-pink);
+    background: #a855b8;
     color: white;
     border-radius: 0;
     display: flex;
@@ -2416,7 +2416,7 @@ a.register-btn:hover,
 .icon-text {
     width: 70px;
     height: 70px;
-    background: var(--rose-pink);
+    background: #a855b8;
     color: white;
     border-radius: 0;
     display: flex;
@@ -2425,14 +2425,14 @@ a.register-btn:hover,
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0 auto;
-    box-shadow: 0 4px 12px rgba(133, 49, 48, 0.3);
+    box-shadow: 0 4px 12px rgba(168, 85, 184, 0.3);
     transition: all 0.3s ease;
     font-family: 'Inter', sans-serif;
 }
 
 .icon-text:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(133, 49, 48, 0.4);
+    box-shadow: 0 6px 20px rgba(168, 85, 184, 0.4);
 }
 
 .heart-icon {
@@ -2539,7 +2539,7 @@ a.register-btn:hover,
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: 2.5rem;
     font-weight: 400;
-    color: var(--rose-pink);
+    color: #8a36b2;
     display: block;
     margin-bottom: 4px;
     letter-spacing: -0.01em;
@@ -2586,13 +2586,13 @@ a.register-btn:hover,
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--rose-pink);
+    color: #8a36b2;
     font-weight: 700;
     font-size: 0.9rem;
 }
 
 .service-button {
-    background: var(--rose-pink);
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%);
     color: white;
     border: none;
     padding: 16px 24px;
@@ -2609,13 +2609,13 @@ a.register-btn:hover,
 }
 
 .service-button:hover {
-    background: var(--deep-pink);
+    background: linear-gradient(135deg, #b957d5 0%, #9333b3 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(133, 49, 48, 0.3);
+    box-shadow: 0 6px 20px rgba(168, 85, 184, 0.32);
 }
 
 .travel-banner {
-    background: linear-gradient(45deg, var(--rose-pink), var(--deep-pink), var(--rose-pink));
+    background: linear-gradient(45deg, #ca69e2, #a855b8, #ca69e2);
     background-size: 200% 200%;
     animation: travelGradient 3s ease-in-out infinite;
     padding: 8px 16px;
@@ -2627,6 +2627,35 @@ a.register-btn:hover,
     z-index: 10;
     overflow: hidden;
     box-shadow: var(--shadow-medium);
+}
+
+/* Ensure services card accents stay purple across all breakpoints/cascade order */
+.services .icon-text,
+.services .icon-placeholder {
+    background: #a855b8 !important;
+    box-shadow: 0 4px 12px rgba(168, 85, 184, 0.3) !important;
+}
+
+.services .service-price .price {
+    color: #8a36b2 !important;
+}
+
+.services .service-features li::before {
+    color: #8a36b2 !important;
+}
+
+.services .service-button {
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%) !important;
+    border-color: rgba(168, 85, 184, 0.45) !important;
+}
+
+.services .service-button:hover {
+    background: linear-gradient(135deg, #b957d5 0%, #9333b3 100%) !important;
+    box-shadow: 0 6px 20px rgba(168, 85, 184, 0.32) !important;
+}
+
+.services .travel-banner {
+    background: linear-gradient(45deg, #ca69e2, #a855b8, #ca69e2) !important;
 }
 
 .travel-text {
@@ -3515,7 +3544,7 @@ a.register-btn:hover,
 }
 
 .tournament-modal-close:hover {
-    color: var(--rose-pink);
+    color: #8a36b2;
 }
 
 .tournament-modal-header {
