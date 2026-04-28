@@ -863,6 +863,189 @@ if ('serviceWorker' in navigator) {
     }
 })();
 
+(function initServiceFitQuiz() {
+    function getSelectedValue(name) {
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        return selected ? selected.value : '';
+    }
+
+    function buildResult(scores) {
+        const total = scores.s101 + scores.s102 + scores.custom;
+        let pick = '101';
+
+        if (scores.custom >= 2) {
+            pick = 'custom';
+        } else if (scores.s102 > scores.s101) {
+            pick = '102';
+        } else if (scores.s102 === scores.s101) {
+            const q1 = getSelectedValue('q1');
+            pick = q1 === '102' ? '102' : '101';
+        }
+
+        if (total === 0) {
+            pick = '101';
+        }
+
+        if (pick === 'custom') {
+            return {
+                title: 'Recommended: Custom / Private Package',
+                body: 'Based on your answers, a tailored experience (private event, larger group, venue logistics, or travel) is usually the best fit. We’ll coordinate details, materials, and flow for your group.',
+                primaryText: 'Plan a private / custom experience',
+                secondaryText: 'Prefer lessons instead? Book 101',
+                primaryType: 'events',
+                secondaryType: '101'
+            };
+        }
+
+        if (pick === '102') {
+            return {
+                title: 'Recommended: Mahjong 102',
+                body: 'Based on your answers, you’re ready for advanced strategy, coaching-style feedback, and next-level play drills (including topics like Siamese / Patio concepts when appropriate).',
+                primaryText: 'Book 102 Course',
+                secondaryText: 'Need fundamentals first? Book 101',
+                primaryType: '102',
+                secondaryType: '101'
+            };
+        }
+
+        return {
+            title: 'Recommended: Mahjong 101',
+            body: 'Based on your answers, a fundamentals-first session is the smartest starting point—tile fluency, NMJL rules/scoring confidence, and guided play so you finish feeling ready for real games.',
+            primaryText: 'Book 101 Course',
+            secondaryText: 'Already experienced? Book 102',
+            primaryType: '101',
+            secondaryType: '102'
+        };
+    }
+
+    function renderResult(result) {
+        const el = document.getElementById('service-fit-result');
+        if (!el) return;
+
+        el.classList.remove('is-hidden');
+        el.innerHTML = `
+            <h4>${result.title}</h4>
+            <p>${result.body}</p>
+            <div class="service-fit-result-actions">
+                <button type="button" class="service-fit-btn primary" onclick="sendEmail('${result.primaryType}')">${result.primaryText}</button>
+                <button type="button" class="service-fit-btn secondary" onclick="sendEmail('${result.secondaryType}')">${result.secondaryText}</button>
+            </div>
+            <p class="service-fit-mini">Want a second opinion? Email us at <strong>lookoutmountainmahjong@gmail.com</strong> — mention you used the Services quiz.</p>
+        `;
+    }
+
+    function updateStepUI(state) {
+        const steps = Array.from(document.querySelectorAll('.service-fit-step'));
+        const prev = document.querySelector('[data-quiz-prev]');
+        const next = document.querySelector('[data-quiz-next]');
+        const finish = document.querySelector('[data-quiz-finish]');
+        const progressText = document.getElementById('service-fit-progress-text');
+        const restart = document.querySelector('[data-quiz-restart]');
+
+        steps.forEach((step, idx) => {
+            step.classList.toggle('is-active', idx + 1 === state.step);
+        });
+
+        if (progressText) {
+            progressText.textContent = `Question ${state.step} of 4`;
+        }
+
+        if (prev) prev.disabled = state.step === 1;
+        if (next) {
+            next.classList.toggle('is-hidden', state.step === 4);
+            next.disabled = !getSelectedValue(`q${state.step}`);
+        }
+        if (finish) {
+            finish.classList.toggle('is-hidden', state.step !== 4);
+            finish.disabled = !getSelectedValue('q4');
+        }
+        if (restart) restart.classList.toggle('is-hidden', !state.showRestart);
+    }
+
+    function wireQuiz() {
+        const root = document.getElementById('service-fit-quiz');
+        if (!root) return;
+
+        const state = { step: 1, showRestart: false };
+
+        root.addEventListener('change', (e) => {
+            const target = e.target;
+            if (target && target.matches('input[type="radio"]')) {
+                updateStepUI(state);
+            }
+        });
+
+        const prev = root.querySelector('[data-quiz-prev]');
+        const next = root.querySelector('[data-quiz-next]');
+        const finish = root.querySelector('[data-quiz-finish]');
+        const restart = root.querySelector('[data-quiz-restart]');
+
+        if (prev) {
+            prev.addEventListener('click', () => {
+                state.step = Math.max(1, state.step - 1);
+                updateStepUI(state);
+            });
+        }
+
+        if (next) {
+            next.addEventListener('click', () => {
+                if (!getSelectedValue(`q${state.step}`)) return;
+                state.step = Math.min(4, state.step + 1);
+                updateStepUI(state);
+            });
+        }
+
+        if (finish) {
+            finish.addEventListener('click', () => {
+                if (!getSelectedValue('q4')) return;
+                const scores = {
+                    s101: 0,
+                    s102: 0,
+                    custom: 0
+                };
+                ['q1', 'q2', 'q3', 'q4'].forEach((q) => {
+                    const v = getSelectedValue(q);
+                    if (v === '101') scores.s101 += 1;
+                    if (v === '102') scores.s102 += 1;
+                    if (v === 'custom') scores.custom += 1;
+                });
+
+                renderResult(buildResult(scores));
+                state.showRestart = true;
+                updateStepUI(state);
+                const resultEl = document.getElementById('service-fit-result');
+                if (resultEl) {
+                    resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+
+        if (restart) {
+            restart.addEventListener('click', () => {
+                root.querySelectorAll('input[type="radio"]').forEach((input) => {
+                    input.checked = false;
+                });
+                state.step = 1;
+                state.showRestart = false;
+                const resultEl = document.getElementById('service-fit-result');
+                if (resultEl) {
+                    resultEl.classList.add('is-hidden');
+                    resultEl.innerHTML = '';
+                }
+                updateStepUI(state);
+            });
+        }
+
+        updateStepUI(state);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireQuiz);
+    } else {
+        wireQuiz();
+    }
+})();
+
 (function initPromoBannerDismiss() {
     const STORAGE_KEY = 'lmm_promo_banner_dismissed';
 
