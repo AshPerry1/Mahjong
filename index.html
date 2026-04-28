@@ -534,37 +534,44 @@
                             
                             <div class="event-schedule">
                                 <h4>Tournament Dates:</h4>
-                                <ul>
-                                    <li>
+                                <div class="tournament-date-tabs" role="tablist" aria-label="Choose tournament weekend">
+                                    <button type="button" class="tournament-date-tab is-active" role="tab" aria-selected="true" data-tournament-tab="may">May 29-31</button>
+                                    <button type="button" class="tournament-date-tab" role="tab" aria-selected="false" data-tournament-tab="september">Sep 4-6</button>
+                                </div>
+                                <div class="tournament-panels">
+                                    <article class="tournament-panel is-active" data-tournament-panel="may">
                                         <div class="special-guest-indicator">Special Guest Weekend</div>
-                                        <strong>May 29-31, 2026</strong><br>
-                                        <span style="font-style: italic;">Friday, May 29: Welcome Cocktail<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
-                                        <span style="font-style: italic;">Saturday, May 30: Tournament Play<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                        <strong>May 29-31, 2026</strong>
+                                        <p class="schedule-line"><em>Friday, May 29:</em> Welcome Cocktail Reception (5:00pm - 7:00pm)</p>
+                                        <p class="schedule-line"><em>Saturday, May 30:</em> Tournament Play</p>
+                                        <ul class="schedule-rounds">
+                                            <li>Round 1: 9:30-10:25am then change tables</li>
+                                            <li>Round 2: 10:30-11:25am</li>
+                                            <li>Lunch break</li>
+                                            <li>Round 3: 1:00-1:55pm</li>
+                                            <li>Awards at 2:30pm</li>
+                                        </ul>
                                         <div class="tournament-countdown" data-countdown-target="2026-05-29T17:00:00-04:00">
                                             Countdown to kickoff: loading...
                                         </div>
-                                    </li>
-                                    <li><strong>September 4-6, 2026</strong><br>
-                                        <span style="font-style: italic;">Friday, September 4: Welcome Cocktail<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Reception (5:00pm - 7:00pm)</span><br>
-                                        <span style="font-style: italic;">Saturday, September 5: Tournament Play<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 1: 9:30-10:25am then change tables<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 2: 10:30-11:25am<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Lunch break<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Round 3: 1:00-1:55pm<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Awards at 2:30pm</span>
+                                        <p class="tournament-guest-highlight">May weekend special guests at Friday's welcome reception: <strong>Carmen Johnston</strong> (Carmen Johnston Gardens) and <strong>Michelle Bradley Robinson</strong>, founder of <strong>House of MBR</strong>. Explore her collection at <a href="https://houseofmbr.com/" target="_blank" rel="noopener noreferrer">houseofmbr.com</a>.</p>
+                                    </article>
+                                    <article class="tournament-panel" data-tournament-panel="september" hidden>
+                                        <strong>September 4-6, 2026</strong>
+                                        <p class="schedule-line"><em>Friday, September 4:</em> Welcome Cocktail Reception (5:00pm - 7:00pm)</p>
+                                        <p class="schedule-line"><em>Saturday, September 5:</em> Tournament Play</p>
+                                        <ul class="schedule-rounds">
+                                            <li>Round 1: 9:30-10:25am then change tables</li>
+                                            <li>Round 2: 10:30-11:25am</li>
+                                            <li>Lunch break</li>
+                                            <li>Round 3: 1:00-1:55pm</li>
+                                            <li>Awards at 2:30pm</li>
+                                        </ul>
                                         <div class="tournament-countdown" data-countdown-target="2026-09-04T17:00:00-04:00">
                                             Countdown to kickoff: loading...
                                         </div>
-                                    </li>
-                                </ul>
-                                <p class="tournament-guest-highlight">May weekend special guests at Friday's welcome reception:<br><strong>Carmen Johnston</strong> (Carmen Johnston Gardens) and <strong>Michelle Bradley Robinson</strong>, founder of <strong>House of MBR</strong>.<br>Explore her collection at <a href="https://houseofmbr.com/" target="_blank" rel="noopener noreferrer">houseofmbr.com</a> and come ready for a weekend to remember at America's Resort.</p>
+                                    </article>
+                                </div>
                                 <p class="tournament-signup-note">Registration is open — sign up for one weekend or both!</p>
                             </div>
                             

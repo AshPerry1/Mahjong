@@ -819,3 +819,39 @@ if ('serviceWorker' in navigator) {
         wireDismissButtons();
     }
 })();
+
+(function initTournamentDateTabs() {
+    function wireTabs() {
+        const tabs = Array.from(document.querySelectorAll('[data-tournament-tab]'));
+        const panels = Array.from(document.querySelectorAll('[data-tournament-panel]'));
+        if (!tabs.length || !panels.length) {
+            return;
+        }
+
+        function setActiveTab(target) {
+            tabs.forEach((tab) => {
+                const isActive = tab.dataset.tournamentTab === target;
+                tab.classList.toggle('is-active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            panels.forEach((panel) => {
+                const isActive = panel.dataset.tournamentPanel === target;
+                panel.classList.toggle('is-active', isActive);
+                panel.hidden = !isActive;
+            });
+        }
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                setActiveTab(tab.dataset.tournamentTab);
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireTabs);
+    } else {
+        wireTabs();
+    }
+})();

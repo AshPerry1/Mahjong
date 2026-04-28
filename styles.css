@@ -1825,6 +1825,62 @@ a.register-btn:hover,
     margin: 0;
 }
 
+.tournament-date-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.tournament-date-tab {
+    border: 1px solid rgba(168, 85, 184, 0.28);
+    background: #fff;
+    color: #7e22ce;
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tournament-date-tab.is-active {
+    background: linear-gradient(135deg, #ca69e2 0%, #a855b8 100%);
+    color: #fff;
+    border-color: rgba(168, 85, 184, 0.45);
+    box-shadow: 0 4px 12px rgba(168, 85, 184, 0.24);
+}
+
+.tournament-panel {
+    padding: 10px 0 6px;
+    border-top: 1px solid var(--border-color);
+}
+
+.tournament-panel.is-active {
+    display: block;
+}
+
+.schedule-line {
+    margin: 10px 0 0;
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+.schedule-rounds {
+    margin: 10px 0 0 0;
+    padding: 0 0 0 18px;
+    color: var(--text-secondary);
+    font-size: 0.91rem;
+    line-height: 1.55;
+}
+
+.schedule-rounds li {
+    padding: 0;
+    border-bottom: none;
+    margin: 4px 0;
+}
+
 .event-schedule li {
     padding: 12px 0;
     border-bottom: 1px solid var(--border-color);
@@ -1912,6 +1968,31 @@ a.register-btn:hover,
 }
 
 @media (max-width: 768px) {
+    .tournament-date-tabs {
+        gap: 8px;
+    }
+
+    .tournament-date-tab {
+        flex: 1;
+        text-align: center;
+        padding: 9px 10px;
+        font-size: 0.8rem;
+    }
+
+    .tournament-panel {
+        padding-top: 12px;
+    }
+
+    .schedule-line {
+        font-size: 0.9rem;
+    }
+
+    .schedule-rounds {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        padding-left: 16px;
+    }
+
     .special-guest-indicator {
         font-size: 0.68rem;
         letter-spacing: 0.04em;
