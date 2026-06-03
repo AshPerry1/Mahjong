@@ -1183,10 +1183,11 @@ if ('serviceWorker' in navigator) {
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
     }
 
-    function formatViewLabel(count) {
+    function formatClickLabel(count) {
         const total = Number(count) || 0;
-        if (total <= 1) return '1 person viewed this';
-        return `${total.toLocaleString()} people viewed this`;
+        if (total <= 0) return '';
+        if (total === 1) return 'Opened from this page once';
+        return `Opened from this page ${total.toLocaleString()} times`;
     }
 
     async function hashViewerId(value) {
@@ -1232,44 +1233,38 @@ if ('serviceWorker' in navigator) {
         }
     }
 
-    function getBaseViews(product) {
-        return Number(product.baseViews) || 0;
-    }
-
-    async function getProductViewCount(product) {
+    async function getProductClickCount(product) {
         const handle = product.handle;
         if (viewCountCache.has(handle)) {
             return viewCountCache.get(handle);
         }
-        const liveViews = await fetchCountApiValue(viewsCountKey(handle));
-        const total = getBaseViews(product) + liveViews;
-        viewCountCache.set(handle, total);
-        return total;
+        const clicks = await fetchCountApiValue(viewsCountKey(handle));
+        viewCountCache.set(handle, clicks);
+        return clicks;
     }
 
-    async function recordProductView(product) {
+    async function recordProductClick(product) {
         const handle = product.handle;
-        const sessionKey = `lmm-shop-viewed-${handle}`;
-        if (sessionStorage.getItem(sessionKey)) {
-            return getProductViewCount(product);
-        }
-
         const ipHash = await getViewerIpHash();
+        const sessionKey = `lmm-shop-click-${handle}`;
+        const visitorKey = `lmm-shop-click-${handle}-${ipHash}`;
+
+        if (sessionStorage.getItem(sessionKey) || localStorage.getItem(visitorKey)) {
+            return getProductClickCount(product);
+        }
+
         const dedupCount = await hitCountApiValue(dedupCountKey(handle, ipHash));
-
-        if (dedupCount === 1) {
+        if (dedupCount !== 1) {
             sessionStorage.setItem(sessionKey, '1');
-            const liveViews = await hitCountApiValue(viewsCountKey(handle));
-            const total = getBaseViews(product) + liveViews;
-            viewCountCache.set(handle, total);
-            return total;
+            localStorage.setItem(visitorKey, '1');
+            return getProductClickCount(product);
         }
 
-        if (dedupCount > 1) {
-            sessionStorage.setItem(sessionKey, '1');
-        }
-
-        return getProductViewCount(product);
+        sessionStorage.setItem(sessionKey, '1');
+        localStorage.setItem(visitorKey, '1');
+        const clicks = await hitCountApiValue(viewsCountKey(handle));
+        viewCountCache.set(handle, clicks);
+        return clicks;
     }
 
     function trackShopClick(label, url) {
@@ -1281,27 +1276,28 @@ if ('serviceWorker' in navigator) {
         });
     }
 
-    function updateProductViewBadge(card, count, animate) {
-        const badge = card.querySelector('.shop-product-views');
-        if (!badge) return;
-        badge.textContent = formatViewLabel(count);
-        badge.classList.toggle('is-popular', count >= 20);
-        if (animate) {
-            badge.classList.remove('is-updated');
-            void badge.offsetWidth;
-            badge.classList.add('is-updated');
+    function updateProductClickLabel(card, count) {
+        const label = card.querySelector('.shop-product-clicks');
+        if (!label) return;
+        const text = formatClickLabel(count);
+        if (!text) {
+            label.hidden = true;
+            label.textContent = '';
+            return;
         }
+        label.hidden = false;
+        label.textContent = text;
     }
 
-    async function hydrateProductViewCounts(products) {
+    async function hydrateProductClickCounts(products) {
         await Promise.all(products.map(async (product) => {
             const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
             if (!card) return;
             try {
-                const count = await getProductViewCount(product);
-                updateProductViewBadge(card, count, false);
+                const count = await getProductClickCount(product);
+                updateProductClickLabel(card, count);
             } catch (error) {
-                updateProductViewBadge(card, getBaseViews(product), false);
+                updateProductClickLabel(card, 0);
             }
         }));
     }
@@ -1318,12 +1314,12 @@ if ('serviceWorker' in navigator) {
                 trackShopClick(product.title, url);
                 window.open(url, '_blank', 'noopener,noreferrer');
 
-                recordProductView(product)
-                    .then((count) => updateProductViewBadge(card, count, true))
-                    .catch(() => updateProductViewBadge(card, getBaseViews(product), false));
+                recordProductClick(product)
+                    .then((count) => updateProductClickLabel(card, count))
+                    .catch(() => {});
 
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'shop_product_view', {
+                    gtag('event', 'shop_product_click', {
                         event_category: 'Shop',
                         event_label: product.title,
                         product_handle: product.handle
@@ -1383,13 +1379,13 @@ if ('serviceWorker' in navigator) {
         productsEl.innerHTML = products.map((product) => `
             <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
-                    <span class="shop-product-views" aria-live="polite">${formatViewLabel(getBaseViews(product))}</span>
                     ${renderProductImage(product)}
                 </div>
                 <div class="shop-product-body">
                     <span class="shop-product-collection">${product.collection}</span>
                     <h4>${product.title}</h4>
                     <span class="shop-product-price">${formatPrice(product.price)}</span>
+                    <span class="shop-product-clicks" hidden aria-live="polite"></span>
                     <span class="shop-product-cta">Buy on Thread &amp; Ink Co <span class="shop-product-cta-arrow" aria-hidden="true"></span></span>
                 </div>
             </a>
@@ -1401,7 +1397,7 @@ if ('serviceWorker' in navigator) {
         renderProducts(catalogData.products);
         wireExternalShopLinks();
         wireProductCards(catalogData.products);
-        await hydrateProductViewCounts(catalogData.products);
+        await hydrateProductClickCounts(catalogData.products);
     }
 
     function showError() {
