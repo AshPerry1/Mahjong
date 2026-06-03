@@ -114,7 +114,7 @@
         document.addEventListener('click', trackEngagement);
         
         // Track page views for sections (scroll tracking)
-        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
+        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'thread-and-ink-shop', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
         const viewedSections = new Set();
         
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -449,6 +449,7 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#thread-and-ink-shop">Shop</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1122,6 +1123,29 @@
             </div>
         </section>
 
+        <section id="thread-and-ink-shop" class="thread-and-ink-shop">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Thread &amp; Ink Co</h2>
+                    <p class="section-subtitle">Personalized gifts, mahjong accessories, and more from Mahj Jen</p>
+                </div>
+                <div class="shop-intro">
+                    <p>Shop <strong>Thread &amp; Ink Co</strong>, Jen Kline&rsquo;s boutique for embroidered gifts, mahjong accessories, Greenbrier tournament gear, bags, stationery, and entertaining essentials. New customers can use code <strong>WELCOME10</strong> for 10% off at checkout on <a href="https://threadandinkco.com/" target="_blank" rel="noopener noreferrer">threadandinkco.com</a>.</p>
+                    <a href="https://threadandinkco.com/" class="cta-button primary shop-all-btn" target="_blank" rel="noopener noreferrer" data-shop-external="all">Visit Full Shop</a>
+                </div>
+                <div class="shop-collections" id="shop-collections" aria-live="polite">
+                    <p class="shop-loading">Loading collections&hellip;</p>
+                </div>
+                <div class="shop-products-header">
+                    <h3>Featured Items</h3>
+                    <p>Browse highlights below&mdash;checkout happens securely on Thread &amp; Ink Co.</p>
+                </div>
+                <div class="shop-products" id="shop-products" aria-live="polite">
+                    <p class="shop-loading">Loading products&hellip;</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
@@ -1148,6 +1172,7 @@
                         </div>
                 
                 <div class="footer-contact">
+                    <p><a href="#thread-and-ink-shop">Thread &amp; Ink Co Shop</a></p>
                     <p><a href="mailto:lookoutmountainmahjong@gmail.com">lookoutmountainmahjong@gmail.com</a></p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/lookoutmountainmahjong?igsh=MXU3czZsdXRvNWozcQ==" target="_blank" rel="noopener noreferrer" class="footer-social-link">

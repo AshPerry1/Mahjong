@@ -1150,3 +1150,96 @@ if ('serviceWorker' in navigator) {
         wirePortfolioCards();
     }
 })();
+
+(function initThreadAndInkShop() {
+    const collectionsEl = document.getElementById('shop-collections');
+    const productsEl = document.getElementById('shop-products');
+    if (!collectionsEl || !productsEl) return;
+
+    const SHOP_HOME = 'https://threadandinkco.com/';
+
+    function formatPrice(price) {
+        const amount = Number.parseFloat(price);
+        if (Number.isNaN(amount)) return price;
+        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    }
+
+    function trackShopClick(label, url) {
+        if (typeof gtag === 'undefined') return;
+        gtag('event', 'click_thread_and_ink', {
+            event_category: 'Shop',
+            event_label: label,
+            link_url: url
+        });
+    }
+
+    function wireExternalShopLinks() {
+        document.querySelectorAll('[data-shop-external], .shop-collection-card, .shop-product-card').forEach((link) => {
+            link.addEventListener('click', () => {
+                const label = link.getAttribute('data-shop-external')
+                    || link.querySelector('h4')?.textContent?.trim()
+                    || 'Thread & Ink';
+                trackShopClick(label, link.href);
+            });
+        });
+    }
+
+    function renderCollections(collections) {
+        collectionsEl.innerHTML = collections.map((collection) => `
+            <a class="shop-collection-card" href="${collection.url}" target="_blank" rel="noopener noreferrer">
+                <div class="shop-collection-image">
+                    ${collection.image
+                        ? `<img src="${collection.image}" alt="" loading="lazy" decoding="async">`
+                        : '<span class="shop-product-placeholder">Collection</span>'}
+                </div>
+                <div class="shop-collection-body">
+                    <h4>${collection.title}</h4>
+                    <span class="shop-collection-count">${collection.count} items</span>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    function renderProducts(products) {
+        productsEl.innerHTML = products.map((product) => `
+            <a class="shop-product-card" href="${product.url}" target="_blank" rel="noopener noreferrer">
+                <div class="shop-product-image">
+                    ${product.image
+                        ? `<img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">`
+                        : '<span class="shop-product-placeholder">View on shop</span>'}
+                </div>
+                <div class="shop-product-body">
+                    <span class="shop-product-collection">${product.collection}</span>
+                    <h4>${product.title}</h4>
+                    <span class="shop-product-price">${formatPrice(product.price)}</span>
+                    <span class="shop-product-cta">Shop now</span>
+                </div>
+            </a>
+        `).join('');
+    }
+
+    function showError() {
+        collectionsEl.innerHTML = '<p class="shop-error">Collections are temporarily unavailable.</p>';
+        productsEl.innerHTML = `<p class="shop-error">Browse the full catalog at <a href="${SHOP_HOME}" target="_blank" rel="noopener noreferrer">threadandinkco.com</a>.</p>`;
+    }
+
+    async function loadCatalog() {
+        try {
+            const response = await fetch('/threadandink-catalog.json', { cache: 'no-cache' });
+            if (!response.ok) throw new Error('catalog fetch failed');
+            const catalog = await response.json();
+            renderCollections(catalog.collections || []);
+            renderProducts(catalog.products || []);
+            wireExternalShopLinks();
+        } catch (error) {
+            console.warn('Thread & Ink catalog load failed', error);
+            showError();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadCatalog);
+    } else {
+        loadCatalog();
+    }
+})();
