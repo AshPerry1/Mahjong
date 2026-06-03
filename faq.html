@@ -3,7 +3,7 @@
 <head>
     <script>try { if (localStorage.getItem('lmm_promo_banner_dismissed') === '1') document.documentElement.classList.add('promo-banner-dismissed'); } catch (e) {}</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>FAQ - Lookout Mountain Mahjong | Official TML Ambassador</title>
     <meta name="description" content="Frequently asked questions about mahjong lessons, private events, and services from Mahj Jen and Mahj Hen. Get answers about our 101/102 lessons, pricing, and more.">
     <meta name="keywords" content="mahjong FAQ, mahjong lessons questions, private events, TML ambassador, lookout mountain mahjong">
@@ -35,6 +35,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8C0BWCXBF0"></script>
+    <script src="analytics.js?v=1"></script>
     
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
@@ -354,7 +357,7 @@
         }
     </style>
 </head>
-<body class="has-promo-banner">
+<body class="has-promo-banner faq-page">
     <div class="site-promo-banner" role="region" aria-label="Follow Lookout Mountain Mahjong on TikTok">
         <button type="button" class="site-promo-banner-dismiss" aria-label="Dismiss TikTok announcement">&times;</button>
         <div class="site-promo-banner-inner">
@@ -362,7 +365,7 @@
             <a href="https://www.tiktok.com/@lookoutmountainmahjong?_r=1&amp;_t=ZP-95tdjJexDah" class="site-promo-banner-cta" target="_blank" rel="noopener noreferrer">@lookoutmountainmahjong</a>
         </div>
     </div>
-    <nav class="navbar" id="site-navbar" aria-label="Primary">
+    <nav class="navbar hero-nav" id="site-navbar" aria-label="Primary">
         <div class="nav-container">
             <div class="nav-logo">
                 <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">

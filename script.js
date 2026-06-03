@@ -325,8 +325,11 @@ function updateNavbar() {
     if (!navbar) return;
 
     const currentScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    const isLightHeaderPage = document.body.classList.contains('shop-page')
+        || document.body.classList.contains('faq-page')
+        || !document.querySelector('.hero');
 
-    if (currentScrollY > 80) {
+    if (isLightHeaderPage || currentScrollY > 80) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
@@ -1154,13 +1157,16 @@ if ('serviceWorker' in navigator) {
 (function initThreadAndInkShop() {
     const collectionsEl = document.getElementById('shop-collections');
     const productsEl = document.getElementById('shop-products');
+    const filtersEl = document.getElementById('shop-filters');
+    const productsCountEl = document.getElementById('shop-products-count');
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
     const CATALOG_URL = 'threadandink-catalog.json';
     const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
-    let catalogData = { collections: [], products: [] };
+    let catalogData = { collections: [], products: [], categories: [] };
+    let activeCategory = 'all';
     let viewerIpHash = null;
     const viewCountCache = new Map();
 
@@ -1267,13 +1273,17 @@ if ('serviceWorker' in navigator) {
         return clicks;
     }
 
-    function trackShopClick(label, url) {
-        if (typeof gtag === 'undefined') return;
-        gtag('event', 'click_thread_and_ink', {
-            event_category: 'Shop',
-            event_label: label,
-            link_url: url
-        });
+    function trackShopClick(label, url, action) {
+        const eventAction = action || 'click_thread_and_ink';
+        if (typeof trackEvent === 'function') {
+            trackEvent('Shop', eventAction, label, null, true);
+        } else if (typeof gtag !== 'undefined') {
+            gtag('event', eventAction, {
+                event_category: 'Shop',
+                event_label: label,
+                link_url: url
+            });
+        }
     }
 
     function updateProductClickLabel(card, count) {
@@ -1311,20 +1321,22 @@ if ('serviceWorker' in navigator) {
             card.addEventListener('click', (event) => {
                 event.preventDefault();
                 const url = card.href;
-                trackShopClick(product.title, url);
-                window.open(url, '_blank', 'noopener,noreferrer');
-
-                recordProductClick(product)
-                    .then((count) => updateProductClickLabel(card, count))
-                    .catch(() => {});
+                trackShopClick(product.title, url, 'shop_product_click');
 
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'shop_product_click', {
                         event_category: 'Shop',
                         event_label: product.title,
-                        product_handle: product.handle
+                        product_handle: product.handle,
+                        link_url: url
                     });
                 }
+
+                window.open(url, '_blank', 'noopener,noreferrer');
+
+                recordProductClick(product)
+                    .then((count) => updateProductClickLabel(card, count))
+                    .catch(() => {});
             });
         });
     }
@@ -1337,7 +1349,56 @@ if ('serviceWorker' in navigator) {
                 const label = link.getAttribute('data-shop-external')
                     || link.querySelector('h4')?.textContent?.trim()
                     || 'Thread & Ink';
-                trackShopClick(label, link.href);
+                const action = link.getAttribute('data-shop-external')
+                    ? 'click_thread_and_ink_full_shop'
+                    : link.classList.contains('shop-collection-card')
+                        ? 'shop_collection_click'
+                        : 'click_thread_and_ink';
+                trackShopClick(label, link.href, action);
+            });
+        });
+    }
+
+    function getFilteredProducts() {
+        if (activeCategory === 'all') return catalogData.products;
+        return catalogData.products.filter((product) => (
+            Array.isArray(product.categories) && product.categories.includes(activeCategory)
+        ));
+    }
+
+    function updateProductsCount(count) {
+        if (!productsCountEl) return;
+        const label = count === 1 ? '1 product' : `${count} products`;
+        productsCountEl.textContent = `Showing ${label}. Click any item to buy on Thread & Ink Co.`;
+    }
+
+    function renderFilters(categories) {
+        if (!filtersEl || !categories.length) return;
+
+        filtersEl.innerHTML = categories.map((category) => `
+            <button
+                type="button"
+                class="shop-filter-btn${category.id === activeCategory ? ' is-active' : ''}"
+                data-category="${category.id}"
+                role="tab"
+                aria-selected="${category.id === activeCategory ? 'true' : 'false'}"
+            >${category.label}</button>
+        `).join('');
+
+        filtersEl.querySelectorAll('.shop-filter-btn').forEach((button) => {
+            button.addEventListener('click', () => {
+                activeCategory = button.dataset.category || 'all';
+                filtersEl.querySelectorAll('.shop-filter-btn').forEach((btn) => {
+                    const isActive = btn.dataset.category === activeCategory;
+                    btn.classList.toggle('is-active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                renderProducts(getFilteredProducts());
+                wireProductCards(getFilteredProducts());
+                hydrateProductClickCounts(getFilteredProducts());
+                if (typeof trackEvent === 'function') {
+                    trackEvent('Shop', 'filter_category', activeCategory);
+                }
             });
         });
     }
@@ -1371,6 +1432,7 @@ if ('serviceWorker' in navigator) {
     }
 
     function renderProducts(products) {
+        updateProductsCount(products.length);
         if (!products.length) {
             productsEl.innerHTML = '<p class="shop-empty">No products match this category.</p>';
             return;
@@ -1394,10 +1456,12 @@ if ('serviceWorker' in navigator) {
 
     async function renderCatalog() {
         renderCollections(catalogData.collections);
-        renderProducts(catalogData.products);
+        renderFilters(catalogData.categories);
+        const visibleProducts = getFilteredProducts();
+        renderProducts(visibleProducts);
         wireExternalShopLinks();
-        wireProductCards(catalogData.products);
-        await hydrateProductClickCounts(catalogData.products);
+        wireProductCards(visibleProducts);
+        await hydrateProductClickCounts(visibleProducts);
     }
 
     function showError() {
@@ -1412,18 +1476,24 @@ if ('serviceWorker' in navigator) {
             const catalog = await response.json();
             catalogData = {
                 collections: catalog.collections || [],
-                products: catalog.products || []
+                products: catalog.products || [],
+                categories: catalog.categories || [{ id: 'all', label: 'All' }]
             };
             await renderCatalog();
         } catch (error) {
             console.warn('Thread & Ink catalog load failed', error);
             showError();
+            wireExternalShopLinks();
         }
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadCatalog);
+        document.addEventListener('DOMContentLoaded', function() {
+            wireExternalShopLinks();
+            loadCatalog();
+        });
     } else {
+        wireExternalShopLinks();
         loadCatalog();
     }
 })();

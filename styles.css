@@ -122,7 +122,8 @@ p {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
 
 /* Top promo — TikTok (fixed; below nav in stacking so menu stays clickable) */
@@ -137,6 +138,7 @@ body.has-promo-banner {
     right: 0;
     z-index: 1001;
     min-height: var(--site-promo-banner-height);
+    padding-top: env(safe-area-inset-top, 0px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,6 +232,10 @@ body.has-promo-banner .faq-hero {
     padding-top: 156px;
 }
 
+body.has-promo-banner .shop-page-hero {
+    padding-top: calc(var(--site-promo-banner-height, 0px) + 112px);
+}
+
 @media (max-width: 720px) {
     body.has-promo-banner {
         --site-promo-banner-height: 92px;
@@ -244,6 +250,10 @@ body.has-promo-banner .faq-hero {
     body.has-promo-banner .faq-hero {
         padding-top: 182px;
     }
+
+    body.has-promo-banner .shop-page-hero {
+        padding-top: calc(var(--site-promo-banner-height, 0px) + 120px);
+    }
 }
 
 html.promo-banner-dismissed .site-promo-banner {
@@ -256,6 +266,10 @@ html.promo-banner-dismissed body.has-promo-banner {
 
 html.promo-banner-dismissed body.has-promo-banner .faq-hero {
     padding-top: 120px;
+}
+
+html.promo-banner-dismissed body.has-promo-banner .shop-page-hero {
+    padding-top: 112px;
 }
 
 /* Navigation — fixed to viewport; direct child of body so no ancestor transform/filter traps it */
@@ -309,7 +323,8 @@ html.promo-banner-dismissed body.has-promo-banner .faq-hero {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -399,6 +414,15 @@ html.promo-banner-dismissed body.has-promo-banner .faq-hero {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    padding: 10px;
+    margin: -10px;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -889,7 +913,8 @@ html.promo-banner-dismissed body.has-promo-banner .faq-hero {
     }
     
     .container {
-        padding: 0 16px;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
     }
     
     .event-card .event-info {
@@ -3897,7 +3922,7 @@ a.register-btn:hover,
 }
 
 .shop-page-hero {
-    padding: 132px 0 56px;
+    padding: calc(var(--site-promo-banner-height, 0px) + 112px) 0 56px;
     background:
         linear-gradient(135deg, rgba(202, 105, 226, 0.08) 0%, rgba(248, 250, 252, 0.95) 55%, rgba(255, 245, 252, 1) 100%);
     text-align: center;
@@ -3961,6 +3986,8 @@ a.register-btn:hover,
     font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
     line-height: 1.7;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .shop-page-description a {
@@ -4011,7 +4038,9 @@ a.register-btn:hover,
     text-decoration: none;
     color: inherit;
     overflow: hidden;
+    min-width: 0;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .shop-collection-card:hover {
@@ -4044,6 +4073,7 @@ a.register-btn:hover,
     margin-bottom: 6px;
     font-weight: 500;
     line-height: 1.35;
+    overflow-wrap: break-word;
 }
 
 .shop-collection-count {
@@ -4085,7 +4115,9 @@ a.register-btn:hover,
     text-decoration: none;
     color: inherit;
     overflow: hidden;
+    min-width: 0;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .shop-product-card:hover {
@@ -4150,6 +4182,7 @@ a.register-btn:hover,
     line-height: 1.35;
     font-weight: 500;
     flex: 1;
+    overflow-wrap: break-word;
 }
 
 .shop-product-price {
@@ -4273,11 +4306,24 @@ a.register-btn:hover,
 
 @media (max-width: 768px) {
     .shop-page-hero {
-        padding: 112px 0 40px;
+        padding-bottom: 40px;
     }
 
     .thread-and-ink-shop {
         padding-bottom: 80px;
+    }
+
+    .shop-page-description {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .shop-page-hero .shop-all-btn {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
     }
 
     .shop-collections,
@@ -4285,12 +4331,92 @@ a.register-btn:hover,
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
     }
+
+    .shop-collection-body {
+        padding: 12px 14px 14px;
+    }
+
+    .shop-collection-body h4 {
+        font-size: 0.95rem;
+    }
+
+    .shop-collection-count {
+        font-size: 0.75rem;
+        line-height: 1.35;
+    }
+
+    .shop-product-body {
+        padding: 14px;
+        gap: 6px;
+    }
+
+    .shop-product-body h4 {
+        font-size: 1rem;
+    }
+
+    .shop-product-cta {
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .shop-products-header {
+        margin-bottom: 24px;
+    }
+
+    .shop-products-header p {
+        font-size: 0.95rem;
+    }
+
+    .shop-collections {
+        margin-bottom: 40px;
+    }
+
+    .shop-filters {
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    .shop-filter-btn {
+        padding: 10px 16px;
+        font-size: 0.875rem;
+    }
 }
 
 @media (max-width: 520px) {
     .shop-collections,
     .shop-products {
         grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .shop-page-hero h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .shop-page-hero {
+        padding-bottom: 32px;
+    }
+
+    .shop-page-hero .shop-all-btn {
+        font-size: 0.85rem;
+        padding: 14px 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .shop-collection-body h4,
+    .shop-product-body h4 {
+        font-size: 0.9rem;
+    }
+
+    .shop-product-cta {
+        font-size: 0.7rem;
+        letter-spacing: 0.03em;
+    }
+
+    body.shop-page .nav-logo h2 {
+        font-size: 0.9rem;
+        line-height: 1.2;
     }
 }
 
@@ -4791,7 +4917,8 @@ a.register-btn:hover,
     }
     
     .nav-container {
-        padding: 0 20px;
+        padding-left: max(20px, env(safe-area-inset-left, 0px));
+        padding-right: max(20px, env(safe-area-inset-right, 0px));
     }
     
     .tml-content {
@@ -5210,13 +5337,15 @@ a.register-btn:hover,
 @media (max-width: 480px) {
     /* Extra small screens - maximize space usage */
     .container {
-        padding: 0 16px;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
         width: 100%;
         max-width: 100%;
     }
     
     .nav-container {
-        padding: 0 16px;
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
         width: 100%;
         max-width: 100%;
     }
@@ -5457,10 +5586,18 @@ a.register-btn:hover,
     }
     
     .container {
-        padding: 0 12px;
+        padding-left: max(12px, env(safe-area-inset-left, 0px));
+        padding-right: max(12px, env(safe-area-inset-right, 0px));
+        width: 100%;
+        max-width: 100%;
     }
-    
-    .hero {
+
+    .nav-container {
+        padding-left: max(12px, env(safe-area-inset-left, 0px));
+        padding-right: max(12px, env(safe-area-inset-right, 0px));
+        width: 100%;
+        max-width: 100%;
+    }
         padding: 80px 0 40px;
     }
     
@@ -5549,11 +5686,13 @@ a.register-btn:hover,
 /* Extra small screens (320px and below) */
 @media (max-width: 320px) {
     .container {
-        padding: 0 8px;
+        padding-left: max(8px, env(safe-area-inset-left, 0px));
+        padding-right: max(8px, env(safe-area-inset-right, 0px));
     }
     
     .nav-container {
-        padding: 0 8px;
+        padding-left: max(8px, env(safe-area-inset-left, 0px));
+        padding-right: max(8px, env(safe-area-inset-right, 0px));
     }
     
     .hero-text h1 {
@@ -5606,9 +5745,22 @@ a.register-btn:hover,
 @media (hover: none) and (pointer: coarse) {
     .cta-button,
     .service-button,
-    .footer-social-link {
+    .footer-social-link,
+    .shop-all-btn,
+    .shop-filter-btn {
         min-height: 44px;
         min-width: 44px;
+    }
+
+    .shop-collection-card:hover,
+    .shop-product-card:hover {
+        transform: none;
+    }
+
+    .shop-collection-card:active,
+    .shop-product-card:active {
+        border-color: var(--hero-pink);
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
     }
     
     .nav-menu a {

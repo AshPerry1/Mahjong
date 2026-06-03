@@ -19,45 +19,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8C0BWCXBF0"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-8C0BWCXBF0', {
-            'send_page_view': true,
-            'allow_google_signals': true,
-            'allow_ad_personalization_signals': true,
-            'cookie_flags': 'SameSite=None;Secure'
-        });
-
-        function trackEvent(category, action, label, value, isConversion = false) {
-            const eventParams = {
-                'event_category': category,
-                'event_label': label,
-                'value': value,
-                'engagement_time_msec': 100,
-                'non_interaction': false
-            };
-            if (isConversion) {
-                eventParams['conversion_label'] = label;
-                eventParams['send_to'] = 'G-8C0BWCXBF0';
-            }
-            gtag('event', action, eventParams);
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('[data-shop-external]').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    trackEvent('Shop', 'click_thread_and_ink_full_shop', 'Visit Full Shop', null, true);
-                });
-            });
-        });
-    </script>
+    <script src="analytics.js?v=1"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=12.1&shop-header=1">
+    <link rel="stylesheet" href="styles.css?v=12.2&shop-mobile=1">
 </head>
 <body class="has-promo-banner shop-page">
     <div class="site-promo-banner" role="region" aria-label="Follow Lookout Mountain Mahjong on TikTok">
@@ -68,7 +35,7 @@
         </div>
     </div>
 
-    <nav class="navbar" id="site-navbar" aria-label="Primary">
+    <nav class="navbar hero-nav" id="site-navbar" aria-label="Primary">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html" class="logo-link">
@@ -78,7 +45,7 @@
                     </div>
                 </a>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#pricing">Pricing</a></li>
                 <li><a href="index.html#testimonials">Reviews</a></li>
@@ -87,11 +54,11 @@
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -114,9 +81,10 @@
                     <p class="shop-loading">Loading collections&hellip;</p>
                 </div>
                 <div class="shop-products-header">
-                    <h3>Featured Products</h3>
-                    <p>Click any item to view and purchase on Thread &amp; Ink Co.</p>
+                    <h3>All Products</h3>
+                    <p id="shop-products-count">Browse mahjong and Greenbrier gear. Click any item to buy on Thread &amp; Ink Co.</p>
                 </div>
+                <div class="shop-filters" id="shop-filters" role="tablist" aria-label="Filter products"></div>
                 <div class="shop-products" id="shop-products" aria-live="polite">
                     <p class="shop-loading">Loading products&hellip;</p>
                 </div>
@@ -157,6 +125,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=16.1"></script>
+    <script src="script.js?v=16.3"></script>
 </body>
 </html>
