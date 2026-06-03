@@ -49,14 +49,14 @@
     <script src="analytics.js?v=1"></script>
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=13.1&tml-partnership=1" as="style">
+    <link rel="preload" href="styles.css?v=13.2&past-events=1" as="style">
     <link rel="preload" href="script.js" as="script">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=13.1&tml-partnership=1" id="css-link">
+    <link rel="stylesheet" href="styles.css?v=13.2&past-events=1" id="css-link">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -205,171 +205,68 @@
         <section id="past-events" class="past-events">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-eyebrow">Community Archive</span>
                     <h2>Past Events Portfolio</h2>
                     <p class="section-subtitle">Celebrating our mahjong community across the country</p>
                 </div>
                 <div class="events-grid">
-                    <div
-                        class="event-portfolio-card portfolio-card-hint"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Chi O Mother/Daughter Mahjong — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./Chio.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Chi O Mother/Daughter Mahjong</h3>
-                                        <p class="event-location">Samford University</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./Chio.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Chi O Mother/Daughter Mahjong</h3>
-                                    <p class="event-location event-location-back">Samford University</p>
-                                    <p class="event-description">Special mother-daughter mahjong event bringing generations together through the game.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./Chio.png" alt="Chi O Mother/Daughter Mahjong Event" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Chi O Mother/Daughter Mahjong</h3>
+                            <p class="event-location">Samford University</p>
+                            <p class="event-description">Special mother-daughter mahjong event bringing generations together through the game.</p>
                         </div>
                     </div>
-                    <div
-                        class="event-portfolio-card"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Martha's Vineyard Private Lessons — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./vineyard.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Martha's Vineyard Private Lessons</h3>
-                                        <p class="event-location">Martha's Vineyard, MA</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./vineyard.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Martha's Vineyard Private Lessons</h3>
-                                    <p class="event-location event-location-back">Martha's Vineyard, MA</p>
-                                    <p class="event-description">Exclusive private mahjong instruction in one of America's most beautiful locations.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./vineyard.png" alt="Martha's Vineyard Private Lessons" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Martha's Vineyard Private Lessons</h3>
+                            <p class="event-location">Martha's Vineyard, MA</p>
+                            <p class="event-description">Exclusive private mahjong instruction in one of America's most beautiful locations.</p>
                         </div>
                     </div>
-                    <div
-                        class="event-portfolio-card"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Bristol, VA Club Event — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./Bristol.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Bristol, VA Club Event</h3>
-                                        <p class="event-location">Bristol, Virginia</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./Bristol.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Bristol, VA Club Event</h3>
-                                    <p class="event-location event-location-back">Bristol, Virginia</p>
-                                    <p class="event-description">Traveled to Virginia to teach mahjong to local club members, expanding our reach.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./Bristol.png" alt="Bristol, VA Club Event" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Bristol, VA Club Event</h3>
+                            <p class="event-location">Bristol, Virginia</p>
+                            <p class="event-description">Traveled to Virginia to teach mahjong to local club members, expanding our reach.</p>
                         </div>
                     </div>
-                    <div
-                        class="event-portfolio-card"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Lookout Mountain Club Tournament — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./club.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Lookout Mountain Club Tournament</h3>
-                                        <p class="event-location">Lookout Mountain Golf Club</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./club.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Lookout Mountain Club Tournament</h3>
-                                    <p class="event-location event-location-back">Lookout Mountain Golf Club</p>
-                                    <p class="event-description">Our signature tournament bringing together mahjong enthusiasts from the region.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./club.png" alt="Lookout Mountain Club Tournament" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Lookout Mountain Club Tournament</h3>
+                            <p class="event-location">Lookout Mountain Golf Club</p>
+                            <p class="event-description">Our signature tournament bringing together mahjong enthusiasts from the region.</p>
                         </div>
                     </div>
-                    <div
-                        class="event-portfolio-card"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Mini Tournament — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./mini.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Mini Tournament</h3>
-                                        <p class="event-location">Lookout Mountain Golf Club</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./mini.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Mini Tournament</h3>
-                                    <p class="event-location event-location-back">Lookout Mountain Golf Club</p>
-                                    <p class="event-description">Intimate tournament format perfect for newcomers and experienced players alike.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./mini.png" alt="Mini Tournament Event" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Mini Tournament</h3>
+                            <p class="event-location">Lookout Mountain Golf Club</p>
+                            <p class="event-description">Intimate tournament format perfect for newcomers and experienced players alike.</p>
                         </div>
                     </div>
-                    <div
-                        class="event-portfolio-card"
-                        tabindex="0"
-                        role="button"
-                        aria-pressed="false"
-                        data-portfolio-card
-                        aria-label="Greenbrier Tournament — show details">
-                        <div class="event-flip">
-                            <div class="event-flip-inner">
-                                <div class="event-face event-face-front">
-                                    <div class="event-image">
-                                        <img src="./Greenbrier.png" alt="" class="event-img" aria-hidden="true">
-                                    </div>
-                                    <div class="event-front-text">
-                                        <h3>Greenbrier Tournament</h3>
-                                        <p class="event-location">The Greenbrier Resort</p>
-                                    </div>
-                                </div>
-                                <div class="event-face event-face-back" aria-hidden="true">
-                                    <img src="./Greenbrier.png" alt="" class="event-img-back">
-                                    <h3 class="event-back-title">Greenbrier Tournament</h3>
-                                    <p class="event-location event-location-back">The Greenbrier Resort</p>
-                                    <p class="event-description">Prestigious tournament held over MLK weekend 2025 at the historic Greenbrier Resort.</p>
-                                </div>
-                            </div>
+                    <div class="event-portfolio-card">
+                        <div class="event-image">
+                            <img src="./Greenbrier.png" alt="Greenbrier Tournament Event" class="event-img">
+                        </div>
+                        <div class="event-content">
+                            <h3>Greenbrier Tournament</h3>
+                            <p class="event-location">The Greenbrier Resort</p>
+                            <p class="event-description">Prestigious tournament held over MLK weekend 2025 at the historic Greenbrier Resort.</p>
                         </div>
                     </div>
                 </div>
