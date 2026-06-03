@@ -1158,8 +1158,12 @@ if ('serviceWorker' in navigator) {
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
+    const COUNT_API = 'https://api.countapi.xyz';
+    const COUNT_NAMESPACE = 'lmm-mahjong-shop';
     let catalogData = { collections: [], products: [] };
     let activeFilter = 'all';
+    let viewerIpHash = null;
+    const viewCountCache = new Map();
 
     function formatPrice(price) {
         const amount = Number.parseFloat(price);
@@ -1167,9 +1171,80 @@ if ('serviceWorker' in navigator) {
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
     }
 
+    function formatViewLabel(count) {
+        const total = Number(count) || 0;
+        if (total <= 1) return '1 person viewed this';
+        return `${total.toLocaleString()} people viewed this`;
+    }
+
     function matchesFilter(item, filter) {
         if (filter === 'all') return true;
         return Array.isArray(item.categories) && item.categories.includes(filter);
+    }
+
+    async function hashViewerId(value) {
+        const msgUint8 = new TextEncoder().encode(`${value}:lmm-shop-views`);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map((byte) => byte.toString(16).padStart(2, '0')).join('').slice(0, 20);
+    }
+
+    async function getViewerIpHash() {
+        if (viewerIpHash) return viewerIpHash;
+        try {
+            const response = await fetch('https://api64.ipify.org?format=json', { cache: 'no-store' });
+            if (!response.ok) throw new Error('ip lookup failed');
+            const data = await response.json();
+            viewerIpHash = await hashViewerId(data.ip || 'anonymous');
+        } catch (error) {
+            viewerIpHash = await hashViewerId('anonymous');
+        }
+        return viewerIpHash;
+    }
+
+    async function fetchCountApiValue(key) {
+        const response = await fetch(`${COUNT_API}/get/${COUNT_NAMESPACE}/${key}`, { cache: 'no-store' });
+        if (!response.ok) return 0;
+        const data = await response.json();
+        return Number.isFinite(data.value) ? data.value : 0;
+    }
+
+    async function hitCountApiValue(key) {
+        const response = await fetch(`${COUNT_API}/hit/${COUNT_NAMESPACE}/${key}`, { cache: 'no-store' });
+        if (!response.ok) return 0;
+        const data = await response.json();
+        return Number.isFinite(data.value) ? data.value : 0;
+    }
+
+    function getBaseViews(product) {
+        return Number(product.baseViews) || 0;
+    }
+
+    async function getProductViewCount(product) {
+        const handle = product.handle;
+        if (viewCountCache.has(handle)) {
+            return viewCountCache.get(handle);
+        }
+        const liveViews = await fetchCountApiValue(`views-${handle}`);
+        const total = getBaseViews(product) + liveViews;
+        viewCountCache.set(handle, total);
+        return total;
+    }
+
+    async function recordProductView(product) {
+        const handle = product.handle;
+        const ipHash = await getViewerIpHash();
+        const dedupKey = `dedup-${handle}-${ipHash}`;
+        const dedupCount = await hitCountApiValue(dedupKey);
+
+        if (dedupCount === 1) {
+            const liveViews = await hitCountApiValue(`views-${handle}`);
+            const total = getBaseViews(product) + liveViews;
+            viewCountCache.set(handle, total);
+            return total;
+        }
+
+        return getProductViewCount(product);
     }
 
     function trackShopClick(label, url) {
@@ -1181,8 +1256,60 @@ if ('serviceWorker' in navigator) {
         });
     }
 
+    function updateProductViewBadge(card, count, animate) {
+        const badge = card.querySelector('.shop-product-views');
+        if (!badge) return;
+        badge.textContent = formatViewLabel(count);
+        badge.classList.toggle('is-popular', count >= 20);
+        if (animate) {
+            badge.classList.remove('is-updated');
+            void badge.offsetWidth;
+            badge.classList.add('is-updated');
+        }
+    }
+
+    async function hydrateProductViewCounts(products) {
+        await Promise.all(products.map(async (product) => {
+            const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
+            if (!card) return;
+            const count = await getProductViewCount(product);
+            updateProductViewBadge(card, count, false);
+        }));
+    }
+
+    function wireProductCards(products) {
+        products.forEach((product) => {
+            const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
+            if (!card || card.dataset.shopWired === 'true') return;
+            card.dataset.shopWired = 'true';
+
+            card.addEventListener('click', async (event) => {
+                event.preventDefault();
+                const url = card.href;
+                trackShopClick(product.title, url);
+
+                try {
+                    const count = await recordProductView(product);
+                    updateProductViewBadge(card, count, true);
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'shop_product_view', {
+                            event_category: 'Shop',
+                            event_label: product.title,
+                            product_handle: product.handle,
+                            view_count: count
+                        });
+                    }
+                } catch (error) {
+                    console.warn('Product view tracking failed', error);
+                }
+
+                window.open(url, '_blank', 'noopener,noreferrer');
+            });
+        });
+    }
+
     function wireExternalShopLinks() {
-        document.querySelectorAll('[data-shop-external], .shop-collection-card, .shop-product-card').forEach((link) => {
+        document.querySelectorAll('[data-shop-external], .shop-collection-card').forEach((link) => {
             if (link.dataset.shopWired === 'true') return;
             link.dataset.shopWired = 'true';
             link.addEventListener('click', () => {
@@ -1222,8 +1349,9 @@ if ('serviceWorker' in navigator) {
         }
 
         productsEl.innerHTML = products.map((product) => `
-            <a class="shop-product-card" href="${product.url}" target="_blank" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
+            <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
+                    <span class="shop-product-views" aria-live="polite">Loading views…</span>
                     ${product.image
                         ? `<img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">`
                         : '<span class="shop-product-placeholder">Mahjong gear</span>'}
@@ -1232,18 +1360,20 @@ if ('serviceWorker' in navigator) {
                     <span class="shop-product-collection">${product.collection}</span>
                     <h4>${product.title}</h4>
                     <span class="shop-product-price">${formatPrice(product.price)}</span>
-                    <span class="shop-product-cta">Buy on Thread &amp; Ink Co</span>
+                    <span class="shop-product-cta">Buy on Thread &amp; Ink Co <span class="shop-product-cta-arrow" aria-hidden="true"></span></span>
                 </div>
             </a>
         `).join('');
     }
 
-    function renderCatalog() {
+    async function renderCatalog() {
         const collections = catalogData.collections.filter((item) => matchesFilter(item, activeFilter));
         const products = catalogData.products.filter((item) => matchesFilter(item, activeFilter));
         renderCollections(collections);
         renderProducts(products);
         wireExternalShopLinks();
+        wireProductCards(products);
+        await hydrateProductViewCounts(products);
     }
 
     function wireFilters() {
@@ -1277,7 +1407,7 @@ if ('serviceWorker' in navigator) {
                 products: catalog.products || []
             };
             wireFilters();
-            renderCatalog();
+            await renderCatalog();
         } catch (error) {
             console.warn('Thread & Ink catalog load failed', error);
             showError();

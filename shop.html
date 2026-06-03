@@ -57,73 +57,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=11.2&t=1762361189&rebuild=1&flip-cards=1">
-
-    <style>
-        .shop-page-hero {
-            padding: 140px 0 60px;
-            background: linear-gradient(135deg, #f8f9ff 0%, #fff5fc 100%);
-            text-align: center;
-        }
-
-        .shop-page-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-
-        .shop-page-hero p {
-            max-width: 640px;
-            margin: 0 auto;
-            color: #5a6c7d;
-            font-size: 1.15rem;
-            line-height: 1.6;
-        }
-
-        .nav-menu a.active {
-            color: var(--primary-color, #CA69E2);
-            font-weight: 600;
-        }
-
-        .shop-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-        }
-
-        .shop-filter-btn {
-            border: 1px solid var(--border-color, #e8e8e8);
-            background: #fff;
-            color: var(--luxury-ink, #2c3e50);
-            padding: 10px 20px;
-            border-radius: 999px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .shop-filter-btn:hover,
-        .shop-filter-btn.is-active {
-            border-color: var(--hero-pink, #CA69E2);
-            background: var(--hero-pink, #CA69E2);
-            color: #fff;
-        }
-
-        .shop-empty {
-            grid-column: 1 / -1;
-            text-align: center;
-            color: var(--luxury-slate, #5a6c7d);
-            font-family: 'Inter', sans-serif;
-            padding: 24px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css?v=12.0&shop-views=1">
 </head>
-<body class="has-promo-banner">
+<body class="has-promo-banner shop-page">
     <div class="site-promo-banner" role="region" aria-label="Follow Lookout Mountain Mahjong on TikTok">
         <button type="button" class="site-promo-banner-dismiss" aria-label="Dismiss TikTok announcement">&times;</button>
         <div class="site-promo-banner-inner">
@@ -164,6 +100,7 @@
             <div class="container">
                 <h1>Mahjong Shop</h1>
                 <p>Browse Greenbrier tournament gear, mahj accessories, and mahjong favorites from <strong>Thread &amp; Ink Co</strong>. View everything here&mdash;when you&rsquo;re ready, each item opens on threadandinkco.com to checkout securely.</p>
+                <div class="shop-page-hero-badge">Live view counts &mdash; see what other shoppers are checking out</div>
             </div>
         </section>
 
@@ -191,7 +128,7 @@
                 </div>
                 <div class="shop-products-header">
                     <h3>Featured Products</h3>
-                    <p>Click any item to view details and purchase on Thread &amp; Ink Co.</p>
+                    <p>Each product shows how many people have viewed it. Click to buy on Thread &amp; Ink Co.</p>
                 </div>
                 <div class="shop-products" id="shop-products" aria-live="polite">
                     <p class="shop-loading">Loading products&hellip;</p>
@@ -233,6 +170,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=14.0&t=1762361189&rebuild=1"></script>
+    <script src="script.js?v=15.0&shop-views=1"></script>
 </body>
 </html>
