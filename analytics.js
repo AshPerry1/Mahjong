@@ -276,7 +276,7 @@
     }
 
     function initHomeTracking() {
-        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
+        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
         const viewedSections = new Set();
 
         const sectionObserver = new IntersectionObserver(function(entries) {

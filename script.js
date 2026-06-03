@@ -1166,113 +1166,13 @@ if ('serviceWorker' in navigator) {
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
     const CATALOG_URL = 'threadandink-catalog.json?v=featured-sweater-1';
-    const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
     let catalogData = { collections: [], products: [], categories: [], featured: null };
     let activeCategory = 'all';
-    let viewerIpHash = null;
-    const viewCountCache = new Map();
-
-    function viewsCountKey(handle) {
-        return `lmm-mahjong-shop-views-${handle}`;
-    }
-
-    function dedupCountKey(handle, ipHash) {
-        return `lmm-mahjong-shop-dedup-${handle}-${ipHash}`;
-    }
-
-    function parseCountValue(value) {
-        const parsed = Number.parseInt(value, 10);
-        return Number.isFinite(parsed) ? parsed : 0;
-    }
 
     function formatPrice(price) {
         const amount = Number.parseFloat(price);
         if (Number.isNaN(amount)) return price;
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
-    }
-
-    function formatClickLabel(count) {
-        const total = Number(count) || 0;
-        if (total <= 0) return '';
-        if (total === 1) return 'Opened from this page once';
-        return `Opened from this page ${total.toLocaleString()} times`;
-    }
-
-    async function hashViewerId(value) {
-        const msgUint8 = new TextEncoder().encode(`${value}:lmm-shop-views`);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map((byte) => byte.toString(16).padStart(2, '0')).join('').slice(0, 20);
-    }
-
-    async function getViewerIpHash() {
-        if (viewerIpHash) return viewerIpHash;
-        try {
-            const response = await fetch('https://api64.ipify.org?format=json', { cache: 'no-store' });
-            if (!response.ok) throw new Error('ip lookup failed');
-            const data = await response.json();
-            viewerIpHash = await hashViewerId(data.ip || 'anonymous');
-        } catch (error) {
-            viewerIpHash = await hashViewerId('anonymous');
-        }
-        return viewerIpHash;
-    }
-
-    async function fetchCountApiValue(key) {
-        try {
-            const response = await fetch(`${COUNT_API}/get/${encodeURIComponent(key)}`, { cache: 'no-store' });
-            if (response.status === 404) return 0;
-            if (!response.ok) return 0;
-            const data = await response.json();
-            return parseCountValue(data.value);
-        } catch (error) {
-            return 0;
-        }
-    }
-
-    async function hitCountApiValue(key) {
-        try {
-            const response = await fetch(`${COUNT_API}/hit/${encodeURIComponent(key)}`, { cache: 'no-store' });
-            if (!response.ok) return 0;
-            const data = await response.json();
-            return parseCountValue(data.value);
-        } catch (error) {
-            return 0;
-        }
-    }
-
-    async function getProductClickCount(product) {
-        const handle = product.handle;
-        if (viewCountCache.has(handle)) {
-            return viewCountCache.get(handle);
-        }
-        const clicks = await fetchCountApiValue(viewsCountKey(handle));
-        viewCountCache.set(handle, clicks);
-        return clicks;
-    }
-
-    async function recordProductClick(product) {
-        const handle = product.handle;
-        const ipHash = await getViewerIpHash();
-        const sessionKey = `lmm-shop-click-${handle}`;
-        const visitorKey = `lmm-shop-click-${handle}-${ipHash}`;
-
-        if (sessionStorage.getItem(sessionKey) || localStorage.getItem(visitorKey)) {
-            return getProductClickCount(product);
-        }
-
-        const dedupCount = await hitCountApiValue(dedupCountKey(handle, ipHash));
-        if (dedupCount !== 1) {
-            sessionStorage.setItem(sessionKey, '1');
-            localStorage.setItem(visitorKey, '1');
-            return getProductClickCount(product);
-        }
-
-        sessionStorage.setItem(sessionKey, '1');
-        localStorage.setItem(visitorKey, '1');
-        const clicks = await hitCountApiValue(viewsCountKey(handle));
-        viewCountCache.set(handle, clicks);
-        return clicks;
     }
 
     function trackShopClick(label, url, action) {
@@ -1288,57 +1188,27 @@ if ('serviceWorker' in navigator) {
         }
     }
 
-    function updateProductClickLabel(card, count) {
-        const label = card.querySelector('.shop-product-clicks');
-        if (!label) return;
-        const text = formatClickLabel(count);
-        if (!text) {
-            label.hidden = true;
-            label.textContent = '';
-            return;
-        }
-        label.hidden = false;
-        label.textContent = text;
-    }
-
-    async function hydrateProductClickCounts(products) {
-        await Promise.all(products.map(async (product) => {
-            const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
-            if (!card) return;
-            try {
-                const count = await getProductClickCount(product);
-                updateProductClickLabel(card, count);
-            } catch (error) {
-                updateProductClickLabel(card, 0);
-            }
-        }));
+    function findProductCard(handle) {
+        return document.querySelector(`[data-product-handle="${handle}"]`);
     }
 
     function wireProductCards(products) {
         products.forEach((product) => {
-            const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
+            const card = findProductCard(product.handle);
             if (!card || card.dataset.shopWired === 'true') return;
             card.dataset.shopWired = 'true';
 
-            card.addEventListener('click', (event) => {
-                event.preventDefault();
-                const url = card.href;
-                trackShopClick(product.title, url, 'shop_product_click');
+            card.addEventListener('click', () => {
+                trackShopClick(product.title, card.href, 'shop_product_click');
 
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'shop_product_click', {
                         event_category: 'Shop',
                         event_label: product.title,
                         product_handle: product.handle,
-                        link_url: url
+                        link_url: card.href
                     });
                 }
-
-                window.open(url, '_blank', 'noopener,noreferrer');
-
-                recordProductClick(product)
-                    .then((count) => updateProductClickLabel(card, count))
-                    .catch(() => {});
             });
         });
     }
@@ -1391,7 +1261,7 @@ if ('serviceWorker' in navigator) {
 
         featuredWrapEl.hidden = false;
         featuredEl.innerHTML = `
-            <a class="shop-featured-card shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
+            <a class="shop-featured-card shop-product-card" href="${product.url}" data-product-handle="${product.handle}" target="_blank" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-featured-image shop-product-image">
                     ${renderProductImage(product)}
                 </div>
@@ -1401,7 +1271,6 @@ if ('serviceWorker' in navigator) {
                     <h4>${product.title}</h4>
                     ${description ? `<p class="shop-featured-description">${description}</p>` : ''}
                     <span class="shop-product-price">${formatPrice(product.price)}</span>
-                    <span class="shop-product-clicks" hidden aria-live="polite"></span>
                     <span class="shop-product-cta shop-featured-cta">Buy on Thread &amp; Ink Co <span class="shop-product-cta-arrow" aria-hidden="true"></span></span>
                 </div>
             </a>
@@ -1437,7 +1306,6 @@ if ('serviceWorker' in navigator) {
                 });
                 renderProducts(getFilteredProducts());
                 wireProductCards(getFilteredProducts());
-                hydrateProductClickCounts(getFilteredProducts());
                 if (typeof trackEvent === 'function') {
                     trackEvent('Shop', 'filter_category', activeCategory);
                 }
@@ -1481,7 +1349,7 @@ if ('serviceWorker' in navigator) {
         }
 
         productsEl.innerHTML = products.map((product) => `
-            <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
+            <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" target="_blank" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
                     ${renderProductImage(product)}
                 </div>
@@ -1489,7 +1357,6 @@ if ('serviceWorker' in navigator) {
                     <span class="shop-product-collection">${product.collection}</span>
                     <h4>${product.title}</h4>
                     <span class="shop-product-price">${formatPrice(product.price)}</span>
-                    <span class="shop-product-clicks" hidden aria-live="polite"></span>
                     <span class="shop-product-cta">Buy on Thread &amp; Ink Co <span class="shop-product-cta-arrow" aria-hidden="true"></span></span>
                 </div>
             </a>
@@ -1506,7 +1373,6 @@ if ('serviceWorker' in navigator) {
         const featuredProduct = getFeaturedProduct();
         const productsToWire = featuredProduct ? [featuredProduct, ...visibleProducts] : visibleProducts;
         wireProductCards(productsToWire);
-        await hydrateProductClickCounts(productsToWire);
     }
 
     function showError() {

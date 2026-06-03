@@ -122,7 +122,7 @@ def main():
         "categories": [
             {"id": "all", "label": "All"},
             {"id": "greenbrier", "label": "Greenbrier"},
-            {"id": "mahjong", "label": "Mahjong & Mahj"},
+            {"id": "mahjong", "label": "Mahjong"},
         ],
         "collections": [
             {
