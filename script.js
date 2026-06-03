@@ -1154,7 +1154,6 @@ if ('serviceWorker' in navigator) {
 (function initThreadAndInkShop() {
     const collectionsEl = document.getElementById('shop-collections');
     const productsEl = document.getElementById('shop-products');
-    const filtersEl = document.getElementById('shop-filters');
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
@@ -1162,7 +1161,6 @@ if ('serviceWorker' in navigator) {
     const COUNT_API = 'https://api.countapi.xyz';
     const COUNT_NAMESPACE = 'lmm-mahjong-shop';
     let catalogData = { collections: [], products: [] };
-    let activeFilter = 'all';
     let viewerIpHash = null;
     const viewCountCache = new Map();
 
@@ -1176,11 +1174,6 @@ if ('serviceWorker' in navigator) {
         const total = Number(count) || 0;
         if (total <= 1) return '1 person viewed this';
         return `${total.toLocaleString()} people viewed this`;
-    }
-
-    function matchesFilter(item, filter) {
-        if (filter === 'all') return true;
-        return Array.isArray(item.categories) && item.categories.includes(filter);
     }
 
     async function hashViewerId(value) {
@@ -1373,29 +1366,11 @@ if ('serviceWorker' in navigator) {
     }
 
     async function renderCatalog() {
-        const collections = catalogData.collections.filter((item) => matchesFilter(item, activeFilter));
-        const products = catalogData.products.filter((item) => matchesFilter(item, activeFilter));
-        renderCollections(collections);
-        renderProducts(products);
+        renderCollections(catalogData.collections);
+        renderProducts(catalogData.products);
         wireExternalShopLinks();
-        wireProductCards(products);
-        await hydrateProductViewCounts(products);
-    }
-
-    function wireFilters() {
-        if (!filtersEl) return;
-
-        filtersEl.querySelectorAll('[data-shop-filter]').forEach((button) => {
-            button.addEventListener('click', () => {
-                activeFilter = button.dataset.shopFilter || 'all';
-                filtersEl.querySelectorAll('[data-shop-filter]').forEach((btn) => {
-                    const isActive = btn === button;
-                    btn.classList.toggle('is-active', isActive);
-                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                });
-                renderCatalog();
-            });
-        });
+        wireProductCards(catalogData.products);
+        await hydrateProductViewCounts(catalogData.products);
     }
 
     function showError() {
@@ -1412,7 +1387,6 @@ if ('serviceWorker' in navigator) {
                 collections: catalog.collections || [],
                 products: catalog.products || []
             };
-            wireFilters();
             await renderCatalog();
         } catch (error) {
             console.warn('Thread & Ink catalog load failed', error);
