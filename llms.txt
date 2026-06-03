@@ -8,7 +8,7 @@
 - https://lookoutmountainmahjong.com/shop.html (public shop)
 - https://lookoutmountainmahjong.com/faq.html (public FAQ)
 
-## Hidden SEO pages (516 URLs — sitemap only, not in site nav)
+## Hidden SEO pages (562 URLs — sitemap only, not in site nav)
 - https://lookoutmountainmahjong.com/sitemap.xml (all URLs)
 - https://lookoutmountainmahjong.com/mahjong.html (primary mahjong keyword page)
 - https://lookoutmountainmahjong.com/mahjong-keyword-hub.html (mahjong search index)
@@ -20,6 +20,8 @@
 - https://lookoutmountainmahjong.com/albuquerque-mahjong.html
 - https://lookoutmountainmahjong.com/alexandria-va-mahjong.html
 - https://lookoutmountainmahjong.com/all-hubs-mahjong-hub.html
+- https://lookoutmountainmahjong.com/alpha-chi-omega-mahjong.html
+- https://lookoutmountainmahjong.com/alpha-phi-mahjong.html
 - https://lookoutmountainmahjong.com/alpharetta-mahjong.html
 - https://lookoutmountainmahjong.com/american-mah-jongg.html
 - https://lookoutmountainmahjong.com/american-mahjong-history.html
@@ -38,6 +40,7 @@
 - https://lookoutmountainmahjong.com/arlington-va-mahjong.html
 - https://lookoutmountainmahjong.com/art-gallery-mahjong.html
 - https://lookoutmountainmahjong.com/asheville-mahjong.html
+- https://lookoutmountainmahjong.com/aspen-co-mahjong.html
 - https://lookoutmountainmahjong.com/assisted-living-mahjong.html
 - https://lookoutmountainmahjong.com/athens-ga-mahjong.html
 - https://lookoutmountainmahjong.com/atlanta-mahjong.html
@@ -60,6 +63,8 @@
 - https://lookoutmountainmahjong.com/birmingham-mahjong.html
 - https://lookoutmountainmahjong.com/birthday-mahjong.html
 - https://lookoutmountainmahjong.com/block-party-mahjong.html
+- https://lookoutmountainmahjong.com/block-party-mahjong.html
+- https://lookoutmountainmahjong.com/bluffton-sc-mahjong.html
 - https://lookoutmountainmahjong.com/boca-raton-mahjong.html
 - https://lookoutmountainmahjong.com/boise-mahjong.html
 - https://lookoutmountainmahjong.com/book-club-mahjong.html
@@ -70,6 +75,7 @@
 - https://lookoutmountainmahjong.com/boulder-co-mahjong.html
 - https://lookoutmountainmahjong.com/bourbon-and-mahjong.html
 - https://lookoutmountainmahjong.com/boutique-hotel-mahjong.html
+- https://lookoutmountainmahjong.com/bozeman-mt-mahjong.html
 - https://lookoutmountainmahjong.com/brain-health-mahjong.html
 - https://lookoutmountainmahjong.com/brand-mahjong-hub.html
 - https://lookoutmountainmahjong.com/brentwood-tn-mahjong.html
@@ -77,10 +83,13 @@
 - https://lookoutmountainmahjong.com/bridal-shower-mahjong.html
 - https://lookoutmountainmahjong.com/brooklyn-mahjong.html
 - https://lookoutmountainmahjong.com/buckhead-mahjong.html
+- https://lookoutmountainmahjong.com/buffalo-ny-mahjong.html
 - https://lookoutmountainmahjong.com/buy-mahjong-tiles.html
+- https://lookoutmountainmahjong.com/cabin-mahjong.html
 - https://lookoutmountainmahjong.com/california-mahjong.html
 - https://lookoutmountainmahjong.com/calling-mahjong.html
 - https://lookoutmountainmahjong.com/cape-cod-mahjong.html
+- https://lookoutmountainmahjong.com/carmel-in-mahjong.html
 - https://lookoutmountainmahjong.com/cary-nc-mahjong.html
 - https://lookoutmountainmahjong.com/certified-mahjong-instructor.html
 - https://lookoutmountainmahjong.com/champagne-mahjong.html
@@ -109,12 +118,14 @@
 - https://lookoutmountainmahjong.com/college-alumni-mahjong.html
 - https://lookoutmountainmahjong.com/collierville-tn-mahjong.html
 - https://lookoutmountainmahjong.com/colorado-mahjong.html
+- https://lookoutmountainmahjong.com/columbia-md-mahjong.html
 - https://lookoutmountainmahjong.com/columbia-sc-mahjong.html
 - https://lookoutmountainmahjong.com/columbia-sc-mahjong.html
 - https://lookoutmountainmahjong.com/columbus-ga-mahjong.html
 - https://lookoutmountainmahjong.com/columbus-mahjong.html
 - https://lookoutmountainmahjong.com/connecticut-mahjong.html
 - https://lookoutmountainmahjong.com/corporate-mahjong-events.html
+- https://lookoutmountainmahjong.com/cottage-mahjong.html
 - https://lookoutmountainmahjong.com/country-club-mahjong.html
 - https://lookoutmountainmahjong.com/couples-mahjong.html
 - https://lookoutmountainmahjong.com/cruise-mahjong.html
@@ -125,6 +136,7 @@
 - https://lookoutmountainmahjong.com/declare-mahjong.html
 - https://lookoutmountainmahjong.com/defensive-mahjong.html
 - https://lookoutmountainmahjong.com/delaware-mahjong.html
+- https://lookoutmountainmahjong.com/delta-gamma-mahjong.html
 - https://lookoutmountainmahjong.com/denver-mahjong.html
 - https://lookoutmountainmahjong.com/derby-party-mahjong.html
 - https://lookoutmountainmahjong.com/des-moines-mahjong.html
@@ -134,6 +146,7 @@
 - https://lookoutmountainmahjong.com/discard-strategy-mahjong.html
 - https://lookoutmountainmahjong.com/durham-nc-mahjong.html
 - https://lookoutmountainmahjong.com/east-seat-mahjong.html
+- https://lookoutmountainmahjong.com/easter-brunch-mahjong.html
 - https://lookoutmountainmahjong.com/easter-mahjong.html
 - https://lookoutmountainmahjong.com/empty-nester-mahjong.html
 - https://lookoutmountainmahjong.com/engagement-party-mahjong.html
@@ -146,7 +159,9 @@
 - https://lookoutmountainmahjong.com/family-reunion-mahjong.html
 - https://lookoutmountainmahjong.com/farragut-tn-mahjong.html
 - https://lookoutmountainmahjong.com/fathers-day-mahjong.html
+- https://lookoutmountainmahjong.com/fayetteville-nc-mahjong.html
 - https://lookoutmountainmahjong.com/finance-mahjong.html
+- https://lookoutmountainmahjong.com/first-left-pass-mahjong.html
 - https://lookoutmountainmahjong.com/first-mahjong-lesson.html
 - https://lookoutmountainmahjong.com/florida-mahjong-hub.html
 - https://lookoutmountainmahjong.com/florida-mahjong.html
@@ -158,7 +173,9 @@
 - https://lookoutmountainmahjong.com/friendsgiving-mahjong.html
 - https://lookoutmountainmahjong.com/fundraising-gala-mahjong.html
 - https://lookoutmountainmahjong.com/galentines-mahjong.html
+- https://lookoutmountainmahjong.com/gamma-phi-beta-mahjong.html
 - https://lookoutmountainmahjong.com/garden-club-mahjong.html
+- https://lookoutmountainmahjong.com/garden-party-mahjong.html
 - https://lookoutmountainmahjong.com/gen-z-mahjong.html
 - https://lookoutmountainmahjong.com/georgia-mahjong-hub.html
 - https://lookoutmountainmahjong.com/georgia-mahjong.html
@@ -176,6 +193,7 @@
 - https://lookoutmountainmahjong.com/greenbrier-mahjong-hub.html
 - https://lookoutmountainmahjong.com/greenbrier-mahjong.html
 - https://lookoutmountainmahjong.com/greenbrier-prep-mahjong.html
+- https://lookoutmountainmahjong.com/greensboro-mahjong.html
 - https://lookoutmountainmahjong.com/greenville-nc-mahjong.html
 - https://lookoutmountainmahjong.com/greenville-sc-mahjong.html
 - https://lookoutmountainmahjong.com/greenwich-ct-mahjong.html
@@ -186,6 +204,7 @@
 - https://lookoutmountainmahjong.com/hartford-ct-mahjong.html
 - https://lookoutmountainmahjong.com/hawaii-mahjong.html
 - https://lookoutmountainmahjong.com/healthcare-mahjong.html
+- https://lookoutmountainmahjong.com/hendersonville-nc-mahjong.html
 - https://lookoutmountainmahjong.com/high-tea-mahjong.html
 - https://lookoutmountainmahjong.com/hilton-head-mahjong.html
 - https://lookoutmountainmahjong.com/hire-mahjong-instructor.html
@@ -219,6 +238,7 @@
 - https://lookoutmountainmahjong.com/junior-league-mahjong.html
 - https://lookoutmountainmahjong.com/kansas-city-mahjong.html
 - https://lookoutmountainmahjong.com/kansas-mahjong.html
+- https://lookoutmountainmahjong.com/kappa-alpha-theta-mahjong.html
 - https://lookoutmountainmahjong.com/kappa-delta-mahjong.html
 - https://lookoutmountainmahjong.com/kappa-kappa-gamma-mahjong.html
 - https://lookoutmountainmahjong.com/kentucky-mahjong.html
@@ -238,6 +258,7 @@
 - https://lookoutmountainmahjong.com/library-mahjong.html
 - https://lookoutmountainmahjong.com/little-rock-mahjong.html
 - https://lookoutmountainmahjong.com/local-mahjong.html
+- https://lookoutmountainmahjong.com/long-island-mahjong.html
 - https://lookoutmountainmahjong.com/lookout-mountain-georgia-mahjong.html
 - https://lookoutmountainmahjong.com/lookout-mountain-mahjong.html
 - https://lookoutmountainmahjong.com/lookout-mountain-tn-mahjong.html
@@ -248,6 +269,7 @@
 - https://lookoutmountainmahjong.com/luxury-mahjong-retreat.html
 - https://lookoutmountainmahjong.com/m.html
 - https://lookoutmountainmahjong.com/macon-ga-mahjong.html
+- https://lookoutmountainmahjong.com/madison-wi-mahjong.html
 - https://lookoutmountainmahjong.com/mah-jongg-lessons.html
 - https://lookoutmountainmahjong.com/mahj-jen-mahj-hen.html
 - https://lookoutmountainmahjong.com/mahjong-101.html
@@ -283,6 +305,7 @@
 - https://lookoutmountainmahjong.com/mahjong-gift-experience.html
 - https://lookoutmountainmahjong.com/mahjong-hands.html
 - https://lookoutmountainmahjong.com/mahjong-hashtags.html
+- https://lookoutmountainmahjong.com/mahjong-hot-tile.html
 - https://lookoutmountainmahjong.com/mahjong-instructor.html
 - https://lookoutmountainmahjong.com/mahjong-jokers.html
 - https://lookoutmountainmahjong.com/mahjong-keyword-hub.html
@@ -295,6 +318,7 @@
 - https://lookoutmountainmahjong.com/mahjong-meme.html
 - https://lookoutmountainmahjong.com/mahjong-night.html
 - https://lookoutmountainmahjong.com/mahjong-online-vs-in-person.html
+- https://lookoutmountainmahjong.com/mahjong-pairs.html
 - https://lookoutmountainmahjong.com/mahjong-party-cost.html
 - https://lookoutmountainmahjong.com/mahjong-party.html
 - https://lookoutmountainmahjong.com/mahjong-pushers.html
@@ -304,6 +328,7 @@
 - https://lookoutmountainmahjong.com/mahjong-rules.html
 - https://lookoutmountainmahjong.com/mahjong-scoring.html
 - https://lookoutmountainmahjong.com/mahjong-set.html
+- https://lookoutmountainmahjong.com/mahjong-singles.html
 - https://lookoutmountainmahjong.com/mahjong-south.html
 - https://lookoutmountainmahjong.com/mahjong-starter-kit.html
 - https://lookoutmountainmahjong.com/mahjong-strategy.html
@@ -333,6 +358,7 @@
 - https://lookoutmountainmahjong.com/maryland-mahjong.html
 - https://lookoutmountainmahjong.com/massachusetts-mahjong.html
 - https://lookoutmountainmahjong.com/matthews-nc-mahjong.html
+- https://lookoutmountainmahjong.com/mclean-va-mahjong.html
 - https://lookoutmountainmahjong.com/memorial-day-mahjong.html
 - https://lookoutmountainmahjong.com/memory-care-mahjong.html
 - https://lookoutmountainmahjong.com/memphis-mahjong.html
@@ -356,6 +382,7 @@
 - https://lookoutmountainmahjong.com/murfreesboro-mahjong.html
 - https://lookoutmountainmahjong.com/myrtle-beach-mahjong.html
 - https://lookoutmountainmahjong.com/nantucket-mahjong.html
+- https://lookoutmountainmahjong.com/napa-valley-mahjong.html
 - https://lookoutmountainmahjong.com/naples-florida-mahjong.html
 - https://lookoutmountainmahjong.com/nashville-mahjong.html
 - https://lookoutmountainmahjong.com/national-mah-jongg-league-lessons.html
@@ -368,13 +395,16 @@
 - https://lookoutmountainmahjong.com/new-jersey-mahjong.html
 - https://lookoutmountainmahjong.com/new-mexico-mahjong.html
 - https://lookoutmountainmahjong.com/new-orleans-mahjong.html
+- https://lookoutmountainmahjong.com/new-years-day-mahjong.html
 - https://lookoutmountainmahjong.com/new-years-mahjong.html
 - https://lookoutmountainmahjong.com/new-york-mahjong.html
+- https://lookoutmountainmahjong.com/newport-news-mahjong.html
 - https://lookoutmountainmahjong.com/newport-ri-mahjong.html
 - https://lookoutmountainmahjong.com/nmjl-card.html
 - https://lookoutmountainmahjong.com/nmjl-membership.html
 - https://lookoutmountainmahjong.com/nonprofit-mahjong.html
 - https://lookoutmountainmahjong.com/norfolk-va-mahjong.html
+- https://lookoutmountainmahjong.com/north-carolina-mahjong-hub.html
 - https://lookoutmountainmahjong.com/north-carolina-mahjong.html
 - https://lookoutmountainmahjong.com/north-dakota-mahjong.html
 - https://lookoutmountainmahjong.com/northern-virginia-mahjong.html
@@ -392,6 +422,7 @@
 - https://lookoutmountainmahjong.com/panhellenic-mahjong.html
 - https://lookoutmountainmahjong.com/park-city-mahjong.html
 - https://lookoutmountainmahjong.com/patio-mahjong.html
+- https://lookoutmountainmahjong.com/pawleys-island-mahjong.html
 - https://lookoutmountainmahjong.com/peachtree-city-mahjong.html
 - https://lookoutmountainmahjong.com/pennsylvania-mahjong.html
 - https://lookoutmountainmahjong.com/pensacola-mahjong.html
@@ -405,6 +436,7 @@
 - https://lookoutmountainmahjong.com/play-mahjong.html
 - https://lookoutmountainmahjong.com/pool-party-mahjong.html
 - https://lookoutmountainmahjong.com/pooler-ga-mahjong.html
+- https://lookoutmountainmahjong.com/porch-mahjong.html
 - https://lookoutmountainmahjong.com/portland-mahjong.html
 - https://lookoutmountainmahjong.com/portland-me-mahjong.html
 - https://lookoutmountainmahjong.com/press.html
@@ -418,11 +450,14 @@
 - https://lookoutmountainmahjong.com/real-estate-mahjong.html
 - https://lookoutmountainmahjong.com/red-dragon-mahjong.html
 - https://lookoutmountainmahjong.com/rehoboth-beach-mahjong.html
+- https://lookoutmountainmahjong.com/reno-nv-mahjong.html
 - https://lookoutmountainmahjong.com/resort-mahjong.html
+- https://lookoutmountainmahjong.com/reston-va-mahjong.html
 - https://lookoutmountainmahjong.com/retirement-mahjong-party.html
 - https://lookoutmountainmahjong.com/rhode-island-mahjong.html
 - https://lookoutmountainmahjong.com/richmond-mahjong.html
 - https://lookoutmountainmahjong.com/ringgold-ga-mahjong.html
+- https://lookoutmountainmahjong.com/rochester-ny-mahjong.html
 - https://lookoutmountainmahjong.com/rooftop-mahjong.html
 - https://lookoutmountainmahjong.com/roswell-mahjong.html
 - https://lookoutmountainmahjong.com/rotary-club-mahjong.html
@@ -442,37 +477,47 @@
 - https://lookoutmountainmahjong.com/seaside-florida-mahjong.html
 - https://lookoutmountainmahjong.com/seasonal-mahjong-hub.html
 - https://lookoutmountainmahjong.com/seattle-mahjong.html
+- https://lookoutmountainmahjong.com/sedona-az-mahjong.html
 - https://lookoutmountainmahjong.com/senior-center-mahjong.html
 - https://lookoutmountainmahjong.com/share-mahjong.html
+- https://lookoutmountainmahjong.com/short-hills-nj-mahjong.html
 - https://lookoutmountainmahjong.com/shreveport-mahjong.html
 - https://lookoutmountainmahjong.com/siamese-mahjong.html
+- https://lookoutmountainmahjong.com/sigma-kappa-mahjong.html
 - https://lookoutmountainmahjong.com/signal-mountain-mahjong.html
 - https://lookoutmountainmahjong.com/sisters-weekend-mahjong.html
+- https://lookoutmountainmahjong.com/ski-lodge-mahjong.html
 - https://lookoutmountainmahjong.com/snowbird-mahjong.html
 - https://lookoutmountainmahjong.com/soap-dragon-mahjong.html
 - https://lookoutmountainmahjong.com/social-benefits-mahjong.html
 - https://lookoutmountainmahjong.com/sorority-mahjong-parties.html
+- https://lookoutmountainmahjong.com/south-carolina-mahjong-hub.html
 - https://lookoutmountainmahjong.com/south-carolina-mahjong.html
 - https://lookoutmountainmahjong.com/south-dakota-mahjong.html
 - https://lookoutmountainmahjong.com/southern-mahjong.html
 - https://lookoutmountainmahjong.com/spa-mahjong.html
 - https://lookoutmountainmahjong.com/spartanburg-sc-mahjong.html
 - https://lookoutmountainmahjong.com/spring-break-mahjong.html
+- https://lookoutmountainmahjong.com/spring-hill-tn-mahjong.html
 - https://lookoutmountainmahjong.com/spring-mahjong.html
 - https://lookoutmountainmahjong.com/st-augustine-mahjong.html
 - https://lookoutmountainmahjong.com/st-louis-mahjong.html
 - https://lookoutmountainmahjong.com/stamford-ct-mahjong.html
 - https://lookoutmountainmahjong.com/states-mahjong-hub.html
 - https://lookoutmountainmahjong.com/summer-mahjong.html
+- https://lookoutmountainmahjong.com/summerville-sc-mahjong.html
 - https://lookoutmountainmahjong.com/sunday-brunch-mahjong.html
 - https://lookoutmountainmahjong.com/super-bowl-mahjong.html
 - https://lookoutmountainmahjong.com/supper-club-mahjong.html
 - https://lookoutmountainmahjong.com/sweet-16-mahjong.html
 - https://lookoutmountainmahjong.com/synagogue-mahjong.html
+- https://lookoutmountainmahjong.com/table-talk-mahjong.html
+- https://lookoutmountainmahjong.com/tailgate-mahjong.html
 - https://lookoutmountainmahjong.com/tallahassee-mahjong.html
 - https://lookoutmountainmahjong.com/tampa-mahjong.html
 - https://lookoutmountainmahjong.com/teach-me-mahjong.html
 - https://lookoutmountainmahjong.com/team-building-alternative-mahjong.html
+- https://lookoutmountainmahjong.com/tennessee-mahjong-hub.html
 - https://lookoutmountainmahjong.com/tennessee-mahjong.html
 - https://lookoutmountainmahjong.com/tennis-club-mahjong.html
 - https://lookoutmountainmahjong.com/texas-mahjong-hub.html
@@ -516,6 +561,7 @@
 - https://lookoutmountainmahjong.com/wilmington-de-mahjong.html
 - https://lookoutmountainmahjong.com/wilmington-nc-mahjong.html
 - https://lookoutmountainmahjong.com/win-at-mahjong.html
+- https://lookoutmountainmahjong.com/win-on-discard-mahjong.html
 - https://lookoutmountainmahjong.com/wine-and-mahjong.html
 - https://lookoutmountainmahjong.com/wine-club-mahjong.html
 - https://lookoutmountainmahjong.com/winston-salem-mahjong.html
