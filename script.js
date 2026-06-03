@@ -1158,11 +1158,24 @@ if ('serviceWorker' in navigator) {
 
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
-    const COUNT_API = 'https://api.countapi.xyz';
-    const COUNT_NAMESPACE = 'lmm-mahjong-shop';
+    const CATALOG_URL = 'threadandink-catalog.json';
+    const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
     let catalogData = { collections: [], products: [] };
     let viewerIpHash = null;
     const viewCountCache = new Map();
+
+    function viewsCountKey(handle) {
+        return `lmm-mahjong-shop-views-${handle}`;
+    }
+
+    function dedupCountKey(handle, ipHash) {
+        return `lmm-mahjong-shop-dedup-${handle}-${ipHash}`;
+    }
+
+    function parseCountValue(value) {
+        const parsed = Number.parseInt(value, 10);
+        return Number.isFinite(parsed) ? parsed : 0;
+    }
 
     function formatPrice(price) {
         const amount = Number.parseFloat(price);
@@ -1197,17 +1210,26 @@ if ('serviceWorker' in navigator) {
     }
 
     async function fetchCountApiValue(key) {
-        const response = await fetch(`${COUNT_API}/get/${COUNT_NAMESPACE}/${key}`, { cache: 'no-store' });
-        if (!response.ok) return 0;
-        const data = await response.json();
-        return Number.isFinite(data.value) ? data.value : 0;
+        try {
+            const response = await fetch(`${COUNT_API}/get/${encodeURIComponent(key)}`, { cache: 'no-store' });
+            if (response.status === 404) return 0;
+            if (!response.ok) return 0;
+            const data = await response.json();
+            return parseCountValue(data.value);
+        } catch (error) {
+            return 0;
+        }
     }
 
     async function hitCountApiValue(key) {
-        const response = await fetch(`${COUNT_API}/hit/${COUNT_NAMESPACE}/${key}`, { cache: 'no-store' });
-        if (!response.ok) return 0;
-        const data = await response.json();
-        return Number.isFinite(data.value) ? data.value : 0;
+        try {
+            const response = await fetch(`${COUNT_API}/hit/${encodeURIComponent(key)}`, { cache: 'no-store' });
+            if (!response.ok) return 0;
+            const data = await response.json();
+            return parseCountValue(data.value);
+        } catch (error) {
+            return 0;
+        }
     }
 
     function getBaseViews(product) {
@@ -1219,7 +1241,7 @@ if ('serviceWorker' in navigator) {
         if (viewCountCache.has(handle)) {
             return viewCountCache.get(handle);
         }
-        const liveViews = await fetchCountApiValue(`views-${handle}`);
+        const liveViews = await fetchCountApiValue(viewsCountKey(handle));
         const total = getBaseViews(product) + liveViews;
         viewCountCache.set(handle, total);
         return total;
@@ -1227,15 +1249,24 @@ if ('serviceWorker' in navigator) {
 
     async function recordProductView(product) {
         const handle = product.handle;
+        const sessionKey = `lmm-shop-viewed-${handle}`;
+        if (sessionStorage.getItem(sessionKey)) {
+            return getProductViewCount(product);
+        }
+
         const ipHash = await getViewerIpHash();
-        const dedupKey = `dedup-${handle}-${ipHash}`;
-        const dedupCount = await hitCountApiValue(dedupKey);
+        const dedupCount = await hitCountApiValue(dedupCountKey(handle, ipHash));
 
         if (dedupCount === 1) {
-            const liveViews = await hitCountApiValue(`views-${handle}`);
+            sessionStorage.setItem(sessionKey, '1');
+            const liveViews = await hitCountApiValue(viewsCountKey(handle));
             const total = getBaseViews(product) + liveViews;
             viewCountCache.set(handle, total);
             return total;
+        }
+
+        if (dedupCount > 1) {
+            sessionStorage.setItem(sessionKey, '1');
         }
 
         return getProductViewCount(product);
@@ -1266,8 +1297,12 @@ if ('serviceWorker' in navigator) {
         await Promise.all(products.map(async (product) => {
             const card = productsEl.querySelector(`[data-product-handle="${product.handle}"]`);
             if (!card) return;
-            const count = await getProductViewCount(product);
-            updateProductViewBadge(card, count, false);
+            try {
+                const count = await getProductViewCount(product);
+                updateProductViewBadge(card, count, false);
+            } catch (error) {
+                updateProductViewBadge(card, getBaseViews(product), false);
+            }
         }));
     }
 
@@ -1277,27 +1312,23 @@ if ('serviceWorker' in navigator) {
             if (!card || card.dataset.shopWired === 'true') return;
             card.dataset.shopWired = 'true';
 
-            card.addEventListener('click', async (event) => {
+            card.addEventListener('click', (event) => {
                 event.preventDefault();
                 const url = card.href;
                 trackShopClick(product.title, url);
-
-                try {
-                    const count = await recordProductView(product);
-                    updateProductViewBadge(card, count, true);
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'shop_product_view', {
-                            event_category: 'Shop',
-                            event_label: product.title,
-                            product_handle: product.handle,
-                            view_count: count
-                        });
-                    }
-                } catch (error) {
-                    console.warn('Product view tracking failed', error);
-                }
-
                 window.open(url, '_blank', 'noopener,noreferrer');
+
+                recordProductView(product)
+                    .then((count) => updateProductViewBadge(card, count, true))
+                    .catch(() => updateProductViewBadge(card, getBaseViews(product), false));
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'shop_product_view', {
+                        event_category: 'Shop',
+                        event_label: product.title,
+                        product_handle: product.handle
+                    });
+                }
             });
         });
     }
@@ -1352,7 +1383,7 @@ if ('serviceWorker' in navigator) {
         productsEl.innerHTML = products.map((product) => `
             <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
-                    <span class="shop-product-views" aria-live="polite">Loading views…</span>
+                    <span class="shop-product-views" aria-live="polite">${formatViewLabel(getBaseViews(product))}</span>
                     ${renderProductImage(product)}
                 </div>
                 <div class="shop-product-body">
@@ -1380,7 +1411,7 @@ if ('serviceWorker' in navigator) {
 
     async function loadCatalog() {
         try {
-            const response = await fetch('/threadandink-catalog.json', { cache: 'no-cache' });
+            const response = await fetch(CATALOG_URL, { cache: 'no-cache' });
             if (!response.ok) throw new Error('catalog fetch failed');
             const catalog = await response.json();
             catalogData = {

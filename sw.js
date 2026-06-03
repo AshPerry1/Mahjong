@@ -1,11 +1,14 @@
 // Service Worker for Lookout Mountain Mahjong
-const CACHE_NAME = 'mahjong-cache-v8';
+const CACHE_NAME = 'mahjong-cache-v9';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/shop.html',
   '/styles.css',
   '/script.js',
   '/logo.png',
+  '/threadandink-catalog.json',
+  '/thread-and-ink-logo.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
 ];
 
