@@ -38,6 +38,7 @@
     window.trackEvent = trackEvent;
 
     function getPageType() {
+        if (document.body.classList.contains('seo-page')) return 'seo';
         if (document.body.classList.contains('shop-page')) return 'shop';
         if (document.body.classList.contains('faq-page')) return 'faq';
         if (document.querySelector('.hero')) return 'home';
@@ -355,6 +356,48 @@
         });
     }
 
+    function initSeoTracking() {
+        const slug = document.body.dataset.seoSlug
+            || window.location.pathname.replace(/^\//, '').replace(/\.html$/, '');
+        const heading = document.querySelector('.seo-page h1');
+        const pageTopic = heading ? heading.textContent.trim() : slug;
+
+        gtag('event', 'seo_page_view', {
+            event_category: 'SEO',
+            event_label: slug,
+            page_topic: pageTopic,
+            page_type: 'seo',
+            page_path: window.location.pathname
+        });
+
+        document.querySelectorAll('.seo-page a[href]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const href = this.getAttribute('href') || '';
+                const linkText = (this.textContent || '').trim() || href;
+                const isBook = href.indexOf('book-mahjong-lesson') !== -1;
+                const isHome = href === '/' || href === 'https://lookoutmountainmahjong.com/'
+                    || href === 'https://lookoutmountainmahjong.com';
+
+                trackEvent(
+                    'SEO',
+                    isBook ? 'click_book_link' : (isHome ? 'click_home_link' : 'click_internal_link'),
+                    slug + ' -> ' + linkText,
+                    null,
+                    isBook
+                );
+
+                if (isBook) {
+                    gtag('event', 'high_intent_action', {
+                        event_category: 'Conversion',
+                        event_label: 'SEO Book Link - ' + slug,
+                        page_type: 'seo',
+                        user_intent: 'high'
+                    });
+                }
+            });
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         initEngagementTracking();
         initSiteTracking();
@@ -363,5 +406,6 @@
         if (pageType === 'home') initHomeTracking();
         if (pageType === 'shop') initShopTracking();
         if (pageType === 'faq') initFaqTracking();
+        if (pageType === 'seo') initSeoTracking();
     });
 })();
