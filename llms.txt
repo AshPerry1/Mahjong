@@ -1,30 +1,21 @@
 # Lookout Mountain Mahjong
 # https://lookoutmountainmahjong.com
 
-> Certified TML Ambassadors Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry) teach American mahjong lessons, host tournaments at The Greenbrier Resort, and run private events nationwide.
+> Certified TML Ambassadors Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry) teach American mahjong nationwide.
 
-## Public website (main site)
+## Public website (only these are linked in navigation)
 - Home: https://lookoutmountainmahjong.com/
 - Shop: https://lookoutmountainmahjong.com/shop.html
 - FAQ: https://lookoutmountainmahjong.com/faq.html
 
-## SEO pages (indexed via sitemap; not linked from main navigation)
+## Crawler-only SEO pages (sitemap.xml — not linked from public site)
 - Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
-- Mahjong hub: https://lookoutmountainmahjong.com/mahjong.html
-- Short link: https://lookoutmountainmahjong.com/m.html
-- Find us: https://lookoutmountainmahjong.com/find-us.html
-- Mahj Jen & Mahj Hen: https://lookoutmountainmahjong.com/mahj-jen-mahj-hen.html
-- Book lessons: https://lookoutmountainmahjong.com/book-mahjong-lesson.html
-- Mahjong 101 ($125): https://lookoutmountainmahjong.com/mahjong-101.html
-- Mahjong 102 ($115): https://lookoutmountainmahjong.com/mahjong-102.html
-- Lessons near me: https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html
-- Greenbrier: https://lookoutmountainmahjong.com/greenbrier-mahjong.html
-- Press: https://lookoutmountainmahjong.com/press.html
+- Full index of 41+ keyword pages at same domain (mahjong.html, chattanooga-mahjong.html, mahj-jen-mahj-hen.html, get-mahjn.html, etc.)
 
 ## Contact
 - Email: lookoutmountainmahjong@gmail.com
 - Phone: +1-919-247-3392
 - Instagram: https://www.instagram.com/lookoutmountainmahjong/
 
-## Topics
-American mahjong, mah jongg, mahjong lessons, Greenbrier, Lookout Mountain Georgia, Mahj Jen, Mahj Hen, TML tiles, LOOKOUTMOUNTAIN
+## Brand / search terms
+Mountain Mahjong, A Bam Good Time, Get Mahj'n, Mahj Jen, Mahj Hen, Greenbrier mahjong, TML LOOKOUTMOUNTAIN, american mah jongg

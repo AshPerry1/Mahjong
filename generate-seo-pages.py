@@ -274,6 +274,101 @@ PAGES = [
         "h1": "Invite Friends to Mahjong",
         "body": """<p>Who wants to learn mahjong? Book Mahjong 101 — Mahj Jen &amp; Mahj Hen bring the tiles. lookoutmountainmahjong.com</p>""",
     },
+    {
+        "file": "get-mahjn.html",
+        "title": "Get Mahj'n | Lookout Mountain Mahjong",
+        "description": "Get Mahj'n... It's Good For You! American mahjong lessons with Mahj Jen & Mahj Hen. Lookout Mountain Mahjong.",
+        "keywords": "get mahjn, get mahj'n, mahjong trend, mountain mahjong",
+        "h1": "Get Mahj'n... It's Good For You",
+        "body": """<p>The viral American mahjong movement — lessons, tiles, and tournaments with <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a>. Follow @lookoutmountainmahjong.</p>""",
+    },
+    {
+        "file": "a-bam-good-time.html",
+        "title": "A Bam Good Time | Lookout Mountain Mahjong",
+        "description": "A Bam Good Time — American mahjong with Lookout Mountain Mahjong. Mahj Jen & Mahj Hen, TML Ambassadors.",
+        "keywords": "a bam good time, bam good time mahjong, mountain mahjong",
+        "h1": "A Bam Good Time",
+        "body": """<p><strong>Lookout Mountain Mahjong</strong> — <em>A Bam Good Time</em> on and off the tiles. Book <a href="mahjong-101.html">Mahjong 101</a>.</p>""",
+    },
+    {
+        "file": "mountain-mahjong.html",
+        "title": "Mountain Mahjong | Jenn Kline & Ann Henley Perry",
+        "description": "Mountain Mahjong with Mahj Jen and Mahj Hen. American mahjong lessons, Greenbrier tournaments, @lookoutmountainmahjong.",
+        "keywords": "mountain mahjong, mountain mahjong lessons, lookout mountain mahjong",
+        "h1": "Mountain Mahjong",
+        "body": """<p><strong>Mountain Mahjong</strong> is Lookout Mountain Mahjong — <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a>, certified TML Ambassadors based on Lookout Mountain, Georgia.</p>""",
+    },
+    {
+        "file": "american-mah-jongg.html",
+        "title": "American Mah Jongg Lessons",
+        "description": "American mah jongg lessons with certified instructors. NMJL card, jokers, Charleston — Lookout Mountain Mahjong.",
+        "keywords": "american mah jongg, mah jongg lessons, mah jongg near me, mahjong jongg",
+        "h1": "American Mah Jongg",
+        "body": """<p>American <strong>mah jongg</strong> (mahjong) with the annual NMJL card. Learn with <a href="learn-american-mahjong.html">our beginner guide</a> or book <a href="mahjong-101.html">Mahjong 101</a>.</p>""",
+    },
+    {
+        "file": "mahjong-instructor.html",
+        "title": "Mahjong Instructor | Certified TML Ambassadors",
+        "description": "Certified mahjong instructors Mahj Jen & Mahj Hen. TML Ambassadors teaching American mahjong nationwide.",
+        "keywords": "mahjong instructor, mahjong teacher, certified mahjong instructor",
+        "h1": "Mahjong Instructor",
+        "body": """<p>Certified TML Ambassador instructors — <a href="mahj-jen-mahj-hen.html">Jenn Kline &amp; Ann Henley Perry</a>. Private and group lessons.</p>""",
+    },
+    {
+        "file": "mahjong-class.html",
+        "title": "Mahjong Class | Mahjong 101 & 102",
+        "description": "Mahjong class for beginners and advanced players. Mahjong 101 $125, Mahjong 102 $115. Lookout Mountain Mahjong.",
+        "keywords": "mahjong class, mahjong classes near me, mahjong lesson class",
+        "h1": "Mahjong Class",
+        "body": """<p><a href="mahjong-101.html">Mahjong 101</a> for beginners · <a href="mahjong-102.html">Mahjong 102</a> for strategy. We bring tiles and tables.</p>""",
+    },
+    {
+        "file": "mahjong-tournament.html",
+        "title": "Mahjong Tournament | Greenbrier & Private Events",
+        "description": "Mahjong tournaments at The Greenbrier and private mini-tournaments nationwide. Lookout Mountain Mahjong.",
+        "keywords": "mahjong tournament, mah jongg tournament, greenbrier mahjong tournament",
+        "h1": "Mahjong Tournament",
+        "body": """<p>Tournament play at <a href="greenbrier-mahjong.html">The Greenbrier</a> and private mini-tournaments. Prepare with <a href="mahjong-102.html">Mahjong 102</a>.</p>""",
+    },
+    {
+        "file": "lookoutmountainmahjong.html",
+        "title": "@lookoutmountainmahjong | Instagram Mahjong",
+        "description": "lookoutmountainmahjong — Instagram & TikTok mahjong community. American mahjong tips, tiles, and events.",
+        "keywords": "lookoutmountainmahjong, instagram mahjong, tiktok mahjong, mahjong viral",
+        "h1": "@lookoutmountainmahjong",
+        "body": """<p>Follow on Instagram &amp; TikTok for daily mahjong content. American mahjong lessons with Mahj Jen &amp; Mahj Hen.</p>""",
+    },
+    {
+        "file": "birmingham-mahjong.html",
+        "title": "Birmingham Mahjong Lessons",
+        "description": "Birmingham Alabama mahjong lessons and private events. Lookout Mountain Mahjong travels statewide.",
+        "keywords": "birmingham mahjong, mahjong birmingham alabama, alabama mahjong",
+        "h1": "Birmingham Mahjong",
+        "body": """<p>Private mahjong lessons in Birmingham and across Alabama. <a href="mahjong-lessons-near-me.html">Lessons near me</a>.</p>""",
+    },
+    {
+        "file": "raleigh-mahjong.html",
+        "title": "Raleigh Mahjong Lessons",
+        "description": "Raleigh NC mahjong lessons and private events with Lookout Mountain Mahjong.",
+        "keywords": "raleigh mahjong, mahjong raleigh nc, north carolina mahjong",
+        "h1": "Raleigh Mahjong",
+        "body": """<p>Raleigh and Triangle area private lessons. Also see <a href="charlotte-mahjong.html">Charlotte mahjong</a>.</p>""",
+    },
+    {
+        "file": "the-mahjong-line.html",
+        "title": "The Mahjong Line | TML Ambassador LOOKOUTMOUNTAIN",
+        "description": "The Mahjong Line TML tiles — pink, purple, green. Lookout Mountain Mahjong ambassador code LOOKOUTMOUNTAIN.",
+        "keywords": "the mahjong line, TML tiles, mahjong line tiles, LOOKOUTMOUNTAIN code",
+        "h1": "The Mahjong Line — TML Ambassador",
+        "body": """<p>Certified TML Ambassadors. Referral code: <strong>LOOKOUTMOUNTAIN</strong>. See <a href="mahjong-tiles.html">mahjong tiles</a>.</p>""",
+    },
+]
+
+# Main site pages (included in sitemap only — never generated by this script)
+PUBLIC_SITE = [
+    ("", "weekly", "1.0"),
+    ("shop.html", "weekly", "0.9"),
+    ("faq.html", "monthly", "0.8"),
 ]
 
 
@@ -308,6 +403,7 @@ def render(page: dict) -> str:
     <link rel="stylesheet" href="/seo.css">
 </head>
 <body>
+    <!-- Crawler-only SEO page — not linked from the public website -->
     <article class="seo-page">
         <h1>{page["h1"]}</h1>
         {page["body"]}
@@ -318,11 +414,37 @@ def render(page: dict) -> str:
 """
 
 
+def write_sitemap(root: Path):
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for path, freq, priority in PUBLIC_SITE:
+        loc = HOME if not path else f"{BASE}/{path}"
+        lines.append("  <url>")
+        lines.append(f"    <loc>{loc}</loc>")
+        lines.append(f"    <changefreq>{freq}</changefreq>")
+        lines.append(f"    <priority>{priority}</priority>")
+        lines.append("  </url>")
+    for page in PAGES:
+        priority = page.get("priority", "0.75")
+        freq = page.get("changefreq", "monthly")
+        lines.append("  <url>")
+        lines.append(f"    <loc>{BASE}/{page['file']}</loc>")
+        lines.append(f"    <changefreq>{freq}</changefreq>")
+        lines.append(f"    <priority>{priority}</priority>")
+        lines.append("  </url>")
+    lines.append("</urlset>")
+    lines.append("")
+    (root / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
+
+
 def main():
     root = Path(__file__).parent
     for page in PAGES:
         (root / page["file"]).write_text(render(page), encoding="utf-8")
-    print(f"Wrote {len(PAGES)} hidden SEO pages.")
+    write_sitemap(root)
+    print(f"Wrote {len(PAGES)} hidden SEO pages + sitemap.xml")
 
 
 if __name__ == "__main__":
