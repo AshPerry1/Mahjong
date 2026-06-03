@@ -138,7 +138,7 @@ PAGES = [
 <p><a href="mahjong-strategy.html">Strategy</a> · <a href="mahjong-scoring.html">Scoring</a> · <a href="mahjong-hands.html">Hands</a> · <a href="win-at-mahjong.html">Win at mahjong</a> · <a href="mahjong-102.html">Mahjong 102</a></p>
 <h2>Mahjong Tiles</h2>
 <p><a href="mahjong-tiles.html">Tiles</a> · <a href="buy-mahjong-tiles.html">Buy tiles</a> · <a href="mahjong-set.html">Mahjong set</a> · <a href="mahjong-accessories.html">Accessories</a></p>
-<p><a href="find-us.html">Find us</a> · <a href="book-mahjong-lesson.html">Book mahjong now</a></p>""",
+<p><a href="find-us.html">Find us</a> · <a href="cities-mahjong-hub.html">Cities</a> · <a href="venues-mahjong-hub.html">Venues</a> · <a href="book-mahjong-lesson.html">Book mahjong now</a></p>""",
         priority="0.98",
         changefreq="weekly",
     ),
@@ -163,6 +163,10 @@ PAGES = [
 <p><a href="mahjong-tiles.html">Mahjong tiles</a> · <a href="the-mahjong-line.html">The Mahjong Line</a> · TML code <strong>LOOKOUTMOUNTAIN</strong></p>
 <h2>Contact</h2>
 <p>lookoutmountainmahjong@gmail.com · (919) 247-3392 · <a href="press.html">Press</a></p>
+<h2>Cities &amp; Regions</h2>
+<p><a href="cities-mahjong-hub.html">Mahjong by city</a> · <a href="north-carolina-mahjong.html">North Carolina</a> · <a href="south-carolina-mahjong.html">South Carolina</a> · <a href="alabama-mahjong.html">Alabama</a> · <a href="texas-mahjong.html">Texas</a> · <a href="florida-mahjong.html">Florida</a> · <a href="virginia-mahjong.html">Virginia</a></p>
+<h2>Venues</h2>
+<p><a href="venues-mahjong-hub.html">Every venue</a> · <a href="hoa-mahjong.html">HOA</a> · <a href="church-mahjong.html">Church</a> · <a href="senior-center-mahjong.html">Senior center</a> · <a href="resort-mahjong.html">Resort</a></p>
 <h2>Viral &amp; Social</h2>
 <p><a href="viral-mahjong-hub.html">★ Viral mahjong hub</a> · <a href="viral-share-pack.html">Share pack</a> · <a href="why-everyones-getting-mahjn.html">Why everyone's getting Mahj'n</a> · <a href="viral-mahjong.html">Viral mahjong</a> · <a href="share-mahjong.html">Share mahjong</a> · <a href="invite.html">Invite friends</a> · <a href="mahjong-captions.html">Captions</a> · <a href="mahjong-hashtags.html">Hashtags</a> · <a href="instagram-mahjong.html">Instagram</a> · <a href="tiktok-mahjong.html">TikTok</a> · <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a></p>""",
         priority="0.92",
@@ -449,6 +453,66 @@ PAGES = [
             ],
         },
     ),
+    # ── Wave 4: cities, venues, seasonal, regional hubs ──
+    page("cities-mahjong-hub.html", "Mahjong by City | Nationwide Lessons", "Mahjong lessons by city — complete city index for Lookout Mountain Mahjong travel areas.", "mahjong by city, mahjong cities, mahjong locations", "Mahjong by City", """<p>We teach <strong>mahjong</strong> on Lookout Mountain and travel nationwide. Find your city:</p>
+<h2>Southeast</h2>
+<p><a href="chattanooga-mahjong.html">Chattanooga</a> · <a href="atlanta-mahjong.html">Atlanta</a> · <a href="nashville-mahjong.html">Nashville</a> · <a href="charlotte-mahjong.html">Charlotte</a> · <a href="raleigh-mahjong.html">Raleigh</a> · <a href="charleston-sc-mahjong.html">Charleston SC</a> · <a href="savannah-mahjong.html">Savannah</a> · <a href="birmingham-mahjong.html">Birmingham</a> · <a href="greenville-sc-mahjong.html">Greenville SC</a></p>
+<h2>Florida &amp; Texas</h2>
+<p><a href="florida-mahjong.html">Florida</a> · <a href="miami-mahjong.html">Miami</a> · <a href="tampa-mahjong.html">Tampa</a> · <a href="orlando-mahjong.html">Orlando</a> · <a href="palm-beach-mahjong.html">Palm Beach</a> · <a href="naples-florida-mahjong.html">Naples</a> · <a href="dallas-mahjong.html">Dallas</a> · <a href="houston-mahjong.html">Houston</a> · <a href="austin-mahjong.html">Austin</a></p>
+<h2>Mid-Atlantic &amp; More</h2>
+<p><a href="washington-dc-mahjong.html">Washington DC</a> · <a href="richmond-mahjong.html">Richmond</a> · <a href="philadelphia-mahjong.html">Philadelphia</a> · <a href="boston-mahjong.html">Boston</a> · <a href="chicago-mahjong.html">Chicago</a> · <a href="denver-mahjong.html">Denver</a></p>
+<p><a href="mahjong-lessons-near-me.html">Mahjong near me</a> · <a href="book-mahjong-lesson.html">Book</a></p>""", priority="0.90"),
+    page("north-carolina-mahjong.html", "North Carolina Mahjong", "North Carolina mahjong lessons — Charlotte, Raleigh, Asheville, Wilmington, statewide.", "north carolina mahjong, nc mahjong", "North Carolina Mahjong", "<p>NC statewide travel. <a href=\"charlotte-mahjong.html\">Charlotte</a> · <a href=\"raleigh-mahjong.html\">Raleigh</a> · <a href=\"asheville-mahjong.html\">Asheville</a> · <a href=\"wilmington-nc-mahjong.html\">Wilmington</a>.</p>"),
+    page("south-carolina-mahjong.html", "South Carolina Mahjong", "South Carolina mahjong — Greenville, Charleston, Columbia, statewide.", "south carolina mahjong, sc mahjong", "South Carolina Mahjong", "<p><a href=\"greenville-sc-mahjong.html\">Greenville</a> · <a href=\"charleston-sc-mahjong.html\">Charleston</a> · <a href=\"columbia-sc-mahjong.html\">Columbia</a>.</p>"),
+    page("alabama-mahjong.html", "Alabama Mahjong", "Alabama mahjong lessons — Birmingham, Huntsville, Mobile, statewide.", "alabama mahjong, mahjong alabama", "Alabama Mahjong", "<p><a href=\"birmingham-mahjong.html\">Birmingham</a> · <a href=\"huntsville-mahjong.html\">Huntsville</a> · <a href=\"mobile-mahjong.html\">Mobile</a>.</p>"),
+    page("texas-mahjong.html", "Texas Mahjong", "Texas mahjong lessons — Dallas, Houston, Austin, San Antonio.", "texas mahjong, mahjong texas", "Texas Mahjong", "<p><a href=\"dallas-mahjong.html\">Dallas</a> · <a href=\"houston-mahjong.html\">Houston</a> · <a href=\"austin-mahjong.html\">Austin</a> · <a href=\"san-antonio-mahjong.html\">San Antonio</a>.</p>"),
+    page("kentucky-mahjong.html", "Kentucky Mahjong", "Kentucky mahjong — Louisville and statewide events.", "kentucky mahjong, mahjong kentucky", "Kentucky Mahjong", "<p><a href=\"louisville-mahjong.html\">Louisville</a> · nationwide private events.</p>"),
+    page("virginia-mahjong.html", "Virginia Mahjong", "Virginia mahjong lessons — Richmond, NOVA, statewide.", "virginia mahjong, mahjong virginia", "Virginia Mahjong", "<p><a href=\"richmond-mahjong.html\">Richmond</a> · <a href=\"northern-virginia-mahjong.html\">Northern Virginia</a>.</p>"),
+    city("miami-mahjong.html", "Miami", "Miami FL mahjong lessons and events.", "miami mahjong, mahjong miami florida", "South Florida private mahjong parties and lessons.", "<p><a href=\"florida-mahjong.html\">Florida</a></p>"),
+    city("tampa-mahjong.html", "Tampa", "Tampa Bay mahjong lessons.", "tampa mahjong, mahjong tampa bay", "Tampa, St. Pete &amp; Gulf Coast events."),
+    city("orlando-mahjong.html", "Orlando", "Orlando FL mahjong private events.", "orlando mahjong, mahjong orlando florida", "Central Florida resort &amp; private home lessons."),
+    city("san-antonio-mahjong.html", "San Antonio", "San Antonio TX mahjong.", "san antonio mahjong, mahjong san antonio", "South Texas private lessons.", "<p><a href=\"texas-mahjong.html\">Texas</a></p>"),
+    city("philadelphia-mahjong.html", "Philadelphia", "Philadelphia PA mahjong lessons.", "philadelphia mahjong, mahjong philly", "Philly metro private events."),
+    city("washington-dc-mahjong.html", "Washington DC", "Washington DC mahjong — DMV area lessons.", "washington dc mahjong, dc mahjong, dmv mahjong", "DC, Maryland &amp; Virginia metro events."),
+    city("northern-virginia-mahjong.html", "Northern Virginia", "Northern Virginia mahjong — NOVA private lessons.", "northern virginia mahjong, nova mahjong, arlington mahjong", "NOVA corporate &amp; private events.", "<p><a href=\"washington-dc-mahjong.html\">DC area</a></p>"),
+    city("boston-mahjong.html", "Boston", "Boston MA mahjong lessons.", "boston mahjong, mahjong boston massachusetts", "New England travel events."),
+    city("chicago-mahjong.html", "Chicago", "Chicago IL mahjong private events.", "chicago mahjong, mahjong chicago illinois", "Midwest corporate &amp; private lessons."),
+    city("denver-mahjong.html", "Denver", "Denver CO mahjong lessons.", "denver mahjong, mahjong denver colorado", "Colorado private events."),
+    city("mobile-mahjong.html", "Mobile", "Mobile AL mahjong.", "mobile alabama mahjong, mobile mahjong", "Gulf Coast Alabama.", "<p><a href=\"alabama-mahjong.html\">Alabama</a></p>"),
+    city("columbia-sc-mahjong.html", "Columbia SC", "Columbia South Carolina mahjong.", "columbia sc mahjong, columbia south carolina mahjong", "Midlands SC events.", "<p><a href=\"south-carolina-mahjong.html\">SC</a></p>"),
+    city("alpharetta-mahjong.html", "Alpharetta", "Alpharetta GA mahjong — North Atlanta metro.", "alpharetta mahjong, north atlanta mahjong", "North Fulton private lessons.", "<p><a href=\"atlanta-mahjong.html\">Atlanta</a></p>"),
+    city("franklin-tn-mahjong.html", "Franklin TN", "Franklin Tennessee mahjong — Nashville area.", "franklin tn mahjong, franklin tennessee mahjong", "Williamson County events.", "<p><a href=\"nashville-mahjong.html\">Nashville</a></p>"),
+    mahjong_kw("hoa-mahjong.html", "HOA & Neighborhood Events", "HOA mahjong event — neighborhood game night with professional instructors.", "hoa mahjong, neighborhood mahjong event, community mahjong", "HOA Mahjong Event", "<p>Perfect for <a href=\"neighborhood-mahjong.html\">neighborhood groups</a> and HOAs. Book <a href=\"mahjong-101.html\">Mahjong 101</a> for the clubhouse.</p>"),
+    mahjong_kw("church-mahjong.html", "Church & Fellowship Events", "Church mahjong fellowship event — community game day with lessons.", "church mahjong, fellowship mahjong, church group mahjong", "Church Mahjong Fellowship", "<p>Fellowship hall <strong>mahjong</strong> events — we bring tiles and teach everyone. <a href=\"book-mahjong-lesson.html\">Book</a>.</p>"),
+    mahjong_kw("synagogue-mahjong.html", "Synagogue & Community Events", "Synagogue mahjong event — social mah jongg programming.", "synagogue mahjong, jewish community mahjong, temple mah jongg", "Synagogue Mahjong", "<p>Community <strong>mah jongg</strong> programming for synagogues and Jewish community centers.</p>"),
+    mahjong_kw("senior-center-mahjong.html", "Senior Center Programs", "Senior center mahjong — beginner lessons for senior communities.", "senior center mahjong, mahjong for seniors program", "Senior Center Mahjong", "<p><a href=\"mahjong-for-seniors.html\">Mahjong for seniors</a> — we teach at senior centers and retirement communities nationwide.</p>"),
+    mahjong_kw("assisted-living-mahjong.html", "Assisted Living Activities", "Assisted living mahjong activity — engaging tile game for residents.", "assisted living mahjong, nursing home mahjong activity", "Assisted Living Mahjong", "<p>Gentle, engaging <strong>mahjong</strong> lessons for assisted living and memory care communities.</p>"),
+    mahjong_kw("library-mahjong.html", "Library Programs", "Library mahjong program — free community education through your library.", "library mahjong program, public library mah jongg", "Library Mahjong Program", "<p>Partner with your library for a community <strong>mahjong</strong> intro. <a href=\"mahjong-101.html\">Mahjong 101</a> format.</p>"),
+    mahjong_kw("garden-club-mahjong.html", "Garden Club Events", "Garden club mahjong — unique programming for garden clubs.", "garden club mahjong, garden club event idea", "Garden Club Mahjong", "<p>When the garden rests — <strong>mahjong</strong> at the club. <a href=\"ladies-luncheon-mahjong.html\">Luncheon</a> format available.</p>"),
+    mahjong_kw("client-appreciation-mahjong.html", "Client Appreciation Events", "Client appreciation mahjong — unique event for real estate, finance, and professional services.", "client appreciation mahjong, client event mahjong", "Client Appreciation Mahjong", "<p>Stand out with a <strong>mahjong</strong> client event. <a href=\"corporate-mahjong-events.html\">Corporate</a> · <a href=\"real-estate-mahjong.html\">Real estate</a>.</p>"),
+    mahjong_kw("real-estate-mahjong.html", "Real Estate Agent Events", "Real estate agent mahjong event — client appreciation that gets talked about.", "real estate mahjong, realtor client event mahjong", "Real Estate Mahjong Events", "<p>Realtors: host a <strong>mahjong</strong> open house event clients will remember. <a href=\"client-appreciation-mahjong.html\">Client appreciation</a>.</p>"),
+    mahjong_kw("nonprofit-mahjong.html", "Nonprofit Fundraisers", "Nonprofit mahjong fundraiser — philanthropy with tiles.", "nonprofit mahjong, mahjong fundraiser nonprofit", "Nonprofit Mahjong Fundraiser", "<p><a href=\"charity-mahjong-event.html\">Charity mahjong</a> events for nonprofits — sell seats, teach mahjong, raise funds.</p>"),
+    mahjong_kw("resort-mahjong.html", "Resort & Hotel Events", "Resort mahjong — luxury hotel and resort programming.", "resort mahjong, hotel mahjong event, luxury mahjong", "Resort Mahjong", "<p>Luxury <strong>resort mahjong</strong> like <a href=\"greenbrier-mahjong.html\">The Greenbrier</a>. We travel to resorts nationwide.</p>"),
+    mahjong_kw("cruise-mahjong.html", "Cruise & Travel Group Mahjong", "Cruise group mahjong lesson — pre-cruise or travel club events.", "cruise mahjong, travel group mahjong, mahjong cruise", "Cruise Group Mahjong", "<p>Travel clubs and cruise groups — learn <strong>mahjong</strong> before you sail. <a href=\"vacation-mahjong.html\">Vacation mahjong</a>.</p>"),
+    mahjong_kw("siamese-mahjong.html", "Siamese Mahjong", "Siamese mahjong — play two hands at once. Learn in Mahjong 102.", "siamese mahjong, siamese mah jongg rules", "Siamese Mahjong", "<p><strong>Siamese mahjong</strong> — advanced play with two hands simultaneously. Taught in <a href=\"mahjong-102.html\">Mahjong 102</a>.</p>"),
+    mahjong_kw("patio-mahjong.html", "Patio Mahjong", "Patio mahjong — larger group format for 8+ players.", "patio mahjong, patio mah jongg, mahjong patio rules", "Patio Mahjong", "<p><strong>Patio mahjong</strong> for bigger groups. Learn in <a href=\"mahjong-102.html\">Mahjong 102</a> after <a href=\"mahjong-101.html\">101</a>.</p>"),
+    mahjong_kw("american-vs-chinese-mahjong.html", "American vs Chinese Mahjong", "American vs Chinese mahjong — key differences explained.", "american vs chinese mahjong, difference mahjong types", "American vs Chinese Mahjong", "<p>We teach <strong>American mahjong</strong> (NMJL, jokers, Charleston) — not Chinese mahjong. <a href=\"learn-american-mahjong.html\">Learn American</a>.</p>"),
+    mahjong_kw("mothers-day-mahjong.html", "Mother's Day Mahjong", "Mother's Day mahjong gift — book a lesson for mom and friends.", "mothers day mahjong, mahjong mothers day gift", "Mother's Day Mahjong", "<p>The perfect <strong>Mother's Day</strong> gift — a <a href=\"mahjong-101.html\">Mahjong 101</a> party for mom and her friends. <a href=\"mother-daughter-mahjong.html\">Mother-daughter</a>.</p>"),
+    mahjong_kw("summer-mahjong.html", "Summer Mahjong", "Summer mahjong — lake house, beach, and vacation lessons.", "summer mahjong, summer mah jongg party", "Summer Mahjong", "<p><strong>Summer mahjong</strong> at the <a href=\"lake-house-mahjong.html\">lake</a>, <a href=\"beach-house-mahjong.html\">beach</a>, or backyard. We travel.</p>"),
+    mahjong_kw("holiday-mahjong.html", "Holiday Mahjong Parties", "Holiday mahjong party — Thanksgiving, Christmas, New Year's gathering.", "holiday mahjong, christmas mahjong party, thanksgiving mahjong", "Holiday Mahjong", "<p>Make the holidays memorable with a family <strong>mahjong</strong> lesson. <a href=\"holiday-mahjong-party.html\">Holiday parties</a>.</p>"),
+    page("venues-mahjong-hub.html", "Mahjong for Every Venue | Event Index", "Mahjong for every venue — corporate, church, HOA, country club, resort, nonprofit.", "mahjong venue, mahjong event venues, where to play mahjong", "Mahjong for Every Venue", """<p><strong>Mahjong</strong> works anywhere. We bring tiles and teach on-site:</p>
+<ul>
+<li><a href="corporate-mahjong-events.html">Corporate offices</a></li>
+<li><a href="country-club-mahjong.html">Country clubs</a></li>
+<li><a href="church-mahjong.html">Churches</a></li>
+<li><a href="hoa-mahjong.html">HOAs &amp; neighborhoods</a></li>
+<li><a href="senior-center-mahjong.html">Senior centers</a></li>
+<li><a href="library-mahjong.html">Libraries</a></li>
+<li><a href="resort-mahjong.html">Resorts &amp; hotels</a></li>
+<li><a href="greenbrier-mahjong.html">The Greenbrier</a></li>
+<li><a href="private-mahjong-lessons.html">Private homes</a></li>
+</ul>
+<p><a href="hire-mahjong-instructor.html">Hire an instructor</a> · <a href="book-mahjong-lesson.html">Book</a></p>""", priority="0.88"),
 ]
 
 
