@@ -1286,3 +1286,123 @@ if ('serviceWorker' in navigator) {
         loadCatalog();
     }
 })();
+
+(function initShareButtons() {
+    function getShareData(container) {
+        const pageUrl = window.location.href;
+        const title = container.dataset.shareTitle || document.title;
+        const text = container.dataset.shareText || title;
+        return { pageUrl, title, text };
+    }
+
+    function trackShare(method) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'share', { method: method, page_location: window.location.href });
+        }
+    }
+
+    function wireShareContainer(container) {
+        const { pageUrl, title, text } = getShareData(container);
+        const encodedUrl = encodeURIComponent(pageUrl);
+        const encodedTitle = encodeURIComponent(title);
+        const encodedText = encodeURIComponent(text + ' ' + pageUrl);
+
+        container.querySelectorAll('[data-share]').forEach(function(el) {
+            const kind = el.getAttribute('data-share');
+
+            if (kind === 'facebook') {
+                el.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+                return;
+            }
+
+            if (kind === 'email') {
+                el.href = 'mailto:?subject=' + encodedTitle + '&body=' + encodedText;
+                return;
+            }
+
+            if (kind === 'whatsapp') {
+                el.href = 'https://wa.me/?text=' + encodedText;
+                return;
+            }
+
+            if (kind === 'sms') {
+                el.href = 'sms:?&body=' + encodedText;
+                return;
+            }
+
+            el.addEventListener('click', function(e) {
+                if (kind === 'native' && navigator.share) {
+                    e.preventDefault();
+                    navigator.share({ title: title, text: text, url: pageUrl })
+                        .then(function() { trackShare('native'); })
+                        .catch(function() {});
+                    return;
+                }
+
+                if (kind === 'copy') {
+                    e.preventDefault();
+                    const markCopied = function() {
+                        el.classList.add('is-copied');
+                        const original = el.textContent;
+                        el.textContent = 'Link Copied!';
+                        trackShare('copy');
+                        setTimeout(function() {
+                            el.classList.remove('is-copied');
+                            el.textContent = original;
+                        }, 2000);
+                    };
+
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(pageUrl).then(markCopied).catch(function() {
+                            window.prompt('Copy this link:', pageUrl);
+                        });
+                    } else {
+                        window.prompt('Copy this link:', pageUrl);
+                        markCopied();
+                    }
+                }
+            });
+        });
+    }
+
+    document.querySelectorAll('.share-buttons').forEach(wireShareContainer);
+})();
+
+(function initCopyTipButtons() {
+    document.querySelectorAll('.tip-copy-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var text = btn.getAttribute('data-copy') || '';
+            var markCopied = function() {
+                btn.classList.add('is-copied');
+                var original = btn.textContent;
+                btn.textContent = 'Copied!';
+                if (typeof gtag === 'function') {
+                    gtag('event', 'copy_tip', { event_category: 'Viral', event_label: 'mahjong_tip' });
+                }
+                setTimeout(function() {
+                    btn.classList.remove('is-copied');
+                    btn.textContent = original;
+                }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(markCopied);
+            } else {
+                window.prompt('Copy this tip:', text);
+                markCopied();
+            }
+        });
+    });
+})();
+
+(function initInstagramStickyFab() {
+    if (document.querySelector('.instagram-sticky-fab')) return;
+    var fab = document.createElement('a');
+    fab.href = 'https://www.instagram.com/lookoutmountainmahjong/';
+    fab.className = 'instagram-sticky-fab';
+    fab.setAttribute('target', '_blank');
+    fab.setAttribute('rel', 'noopener noreferrer me');
+    fab.setAttribute('aria-label', 'Follow @lookoutmountainmahjong on Instagram');
+    fab.setAttribute('data-track', 'instagram-sticky-fab');
+    fab.innerHTML = '<span class="instagram-sticky-fab-icon" aria-hidden="true"></span><span class="instagram-sticky-fab-text">Follow</span>';
+    document.body.appendChild(fab);
+})();

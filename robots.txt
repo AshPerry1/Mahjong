@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /test.html
 
-# Sitemap location (if you create one later)
 Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
 
-# Crawl delay
-Crawl-delay: 1
+# AI / LLM site summary: https://lookoutmountainmahjong.com/llms.txt
+# Press & humans: https://lookoutmountainmahjong.com/humans.txt

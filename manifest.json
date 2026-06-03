@@ -1,7 +1,8 @@
 {
   "name": "Lookout Mountain Mahjong",
   "short_name": "Mahjong",
-  "description": "Official TML Ambassador - Mahjong lessons and events",
+  "alternateName": ["Mountain Mahjong", "A Bam Good Time", "@lookoutmountainmahjong"],
+  "description": "Get Mahj'n... It's Good For You! American mahjong lessons, Greenbrier tournaments & TML tiles with Mahj Jen & Mahj Hen. Follow @lookoutmountainmahjong.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -29,28 +30,81 @@
   "related_applications": [],
   "shortcuts": [
     {
-      "name": "Book 101 Lessons",
-      "short_name": "101",
-      "description": "Book Mahjong 101 lessons",
-      "url": "/#services",
-      "icons": [
-        {
-          "src": "/logo.png",
-          "sizes": "96x96"
-        }
-      ]
+      "name": "Invite Friends",
+      "short_name": "Invite",
+      "description": "Copy-paste mahjong invites",
+      "url": "/invite.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
     },
     {
-      "name": "Book Events",
-      "short_name": "Events",
-      "description": "Book private mahjong events",
-      "url": "/#contact",
-      "icons": [
-        {
-          "src": "/logo.png",
-          "sizes": "96x96"
-        }
-      ]
+      "name": "Book a Lesson",
+      "short_name": "Book",
+      "description": "Mahjong 101 & 102 booking",
+      "url": "/book-mahjong-lesson.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Find Us",
+      "short_name": "Find Us",
+      "description": "Every way to find Lookout Mountain Mahjong",
+      "url": "/find-us.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Mahjong Hub",
+      "short_name": "Mahjong",
+      "description": "Everything mahjong",
+      "url": "/mahjong.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "M — Short Link",
+      "short_name": "M",
+      "description": "M is for Mahjong",
+      "url": "/m.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Follow on Instagram",
+      "short_name": "Instagram",
+      "description": "@lookoutmountainmahjong",
+      "url": "/#instagram",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Mahjong Lessons",
+      "short_name": "Lessons",
+      "description": "Book Mahjong 101 and 102 lessons",
+      "url": "/#services",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Mahjong FAQ",
+      "short_name": "FAQ",
+      "description": "American mahjong questions answered",
+      "url": "/faq.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Mahjong Shop",
+      "short_name": "Shop",
+      "description": "Thread & Ink mahjong apparel",
+      "url": "/shop.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Mahjong Tips",
+      "short_name": "Tips",
+      "description": "10 shareable mahjong tips",
+      "url": "/mahjong-tips.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Greenbrier Mahjong",
+      "short_name": "Greenbrier",
+      "description": "Mahjong tournaments at The Greenbrier Resort",
+      "url": "/greenbrier-mahjong.html",
+      "icons": [{ "src": "/logo.png", "sizes": "96x96" }]
     }
   ]
 }
