@@ -3892,12 +3892,84 @@ a.register-btn:hover,
 
 /* Thread & Ink Shop */
 .thread-and-ink-shop {
-    padding: 120px 0;
-    background: linear-gradient(180deg, var(--luxury-bone) 0%, var(--luxury-pearl) 100%);
+    padding: 0 0 120px;
+    background: linear-gradient(180deg, rgba(255, 245, 252, 1) 0%, var(--luxury-pearl) 100%);
 }
 
-.thread-and-ink-shop .section-header h2::after {
+.shop-page-hero {
+    padding: 132px 0 56px;
+    background:
+        linear-gradient(135deg, rgba(202, 105, 226, 0.08) 0%, rgba(248, 250, 252, 0.95) 55%, rgba(255, 245, 252, 1) 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 82%, rgba(202, 105, 226, 0.12) 0%, transparent 52%),
+        radial-gradient(circle at 82% 18%, rgba(233, 30, 99, 0.08) 0%, transparent 48%);
+    pointer-events: none;
+}
+
+.shop-page-hero .container {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+}
+
+.shop-page-hero h1 {
+    font-family: 'Playfair Display', 'Times New Roman', serif;
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    color: var(--luxury-ink);
+    margin-bottom: 14px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 16px;
+}
+
+.shop-page-hero h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    border-radius: 999px;
     background: linear-gradient(90deg, #ca69e2, #a855b8);
+}
+
+.shop-page-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--rose-pink);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.shop-page-description {
+    max-width: 620px;
+    margin: 0 auto 28px;
+    color: var(--luxury-slate);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.shop-page-description a {
+    color: var(--rose-pink);
+    font-weight: 600;
+}
+
+.shop-page-hero .shop-all-btn {
+    display: inline-flex;
 }
 
 .shop-intro {
@@ -4097,80 +4169,6 @@ a.register-btn:hover,
     grid-column: 1 / -1;
 }
 
-/* Shop page */
-.shop-page-hero {
-    padding: 140px 0 72px;
-    background:
-        linear-gradient(135deg, rgba(202, 105, 226, 0.08) 0%, rgba(248, 250, 252, 0.95) 55%, rgba(255, 245, 252, 1) 100%);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.shop-page-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(circle at 18% 82%, rgba(202, 105, 226, 0.12) 0%, transparent 52%),
-        radial-gradient(circle at 82% 18%, rgba(233, 30, 99, 0.08) 0%, transparent 48%);
-    pointer-events: none;
-}
-
-.shop-page-hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-.shop-page-hero h1 {
-    font-family: 'Playfair Display', 'Times New Roman', serif;
-    font-size: clamp(2.5rem, 5vw, 3.75rem);
-    color: var(--luxury-ink);
-    margin-bottom: 18px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 16px;
-}
-
-.shop-page-hero h1::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #ca69e2, #a855b8);
-}
-
-.shop-page-hero p {
-    max-width: 680px;
-    margin: 0 auto;
-    color: var(--luxury-slate);
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-.shop-page-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 24px;
-    padding: 10px 18px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(202, 105, 226, 0.25);
-    color: var(--rose-pink);
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    box-shadow: var(--shadow-light);
-}
-
 .nav-menu a.active {
     color: var(--rose-pink);
     font-weight: 600;
@@ -4309,8 +4307,12 @@ a.register-btn:hover,
 }
 
 @media (max-width: 768px) {
+    .shop-page-hero {
+        padding: 112px 0 40px;
+    }
+
     .thread-and-ink-shop {
-        padding: 80px 0;
+        padding-bottom: 80px;
     }
 
     .shop-collections,
