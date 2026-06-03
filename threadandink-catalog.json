@@ -1,60 +1,25 @@
 {
+  "categories": [
+    { "id": "all", "label": "All" },
+    { "id": "greenbrier", "label": "Greenbrier" },
+    { "id": "mahjong", "label": "Mahjong & Mahj" }
+  ],
   "collections": [
     {
-      "title": "Bags, Bags, and more Bags",
-      "handle": "bags",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/image_99c742fd-bae9-40bb-bd09-b5fe57b57be7.jpg?v=1678391044",
-      "url": "https://threadandinkco.com/collections/bags",
-      "count": 51
-    },
-    {
-      "title": "Bar, Drinkware and Entertaining",
-      "handle": "bar",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/Screen_Shot_2019-02-13_at_1.51.30_PM.png?v=1550183651",
-      "url": "https://threadandinkco.com/collections/bar",
-      "count": 80
-    },
-    {
-      "title": "Bathrobes, Blankets, Pajamas and Towels",
-      "handle": "lounge-scarves-royal-highnies-etc",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/DSC_0056.jpg?v=1678390683",
-      "url": "https://threadandinkco.com/collections/lounge-scarves-royal-highnies-etc",
-      "count": 24
+      "title": "Mahjong at The Greenbrier",
+      "handle": "christmas",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/IMG_6782.jpg?v=1771887209",
+      "url": "https://threadandinkco.com/collections/christmas",
+      "count": 29,
+      "categories": ["greenbrier"]
     },
     {
       "title": "Games, Golf and Mahjong",
       "handle": "games-and-mahjong",
       "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/IMG_0512.jpg?v=1701112053",
       "url": "https://threadandinkco.com/collections/games-and-mahjong",
-      "count": 53
-    },
-    {
-      "title": "Mahjong at The Greenbrier",
-      "handle": "christmas",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/IMG_6782.jpg?v=1771887209",
-      "url": "https://threadandinkco.com/collections/christmas",
-      "count": 29
-    },
-    {
-      "title": "Stationery, Enclosures, Pads of Paper and Stickers",
-      "handle": "paper",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/Screen_Shot_2019-02-20_at_12.38.53_PM.png?v=1550685140",
-      "url": "https://threadandinkco.com/collections/paper",
-      "count": 38
-    },
-    {
-      "title": "Travel",
-      "handle": "travel",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/522A1CB2-5EAE-4B95-90DD-1630D175B2F3.jpg?v=1688587998",
-      "url": "https://threadandinkco.com/collections/travel",
-      "count": 70
-    },
-    {
-      "title": "Clearance",
-      "handle": "clearance",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/collections/Photoroom_20250709_142932.png?v=1752612541",
-      "url": "https://threadandinkco.com/collections/clearance",
-      "count": 2
+      "count": 53,
+      "categories": ["mahjong"]
     }
   ],
   "products": [
@@ -64,7 +29,8 @@
       "price": "55.00",
       "image": null,
       "collection": "Mahjong at The Greenbrier",
-      "url": "https://threadandinkco.com/products/mahj-at-the-greenbrier-large-canvas-bag"
+      "url": "https://threadandinkco.com/products/mahj-at-the-greenbrier-large-canvas-bag",
+      "categories": ["greenbrier", "mahjong"]
     },
     {
       "title": "Mahj at the Greenbrier Small Canvas Bag",
@@ -72,39 +38,8 @@
       "price": "36.00",
       "image": null,
       "collection": "Mahjong at The Greenbrier",
-      "url": "https://threadandinkco.com/products/mahj-at-the-greenbrier-small-canvas"
-    },
-    {
-      "title": "Bam Bird Tile Toggle Necklace",
-      "handle": "bam-bird-tile-toggle-necklace",
-      "price": "76.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.24.39PM.png?v=1779830724",
-      "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/bam-bird-tile-toggle-necklace"
-    },
-    {
-      "title": "Bam Bird Tile Pearl Necklace",
-      "handle": "bam-bird-tile-pearl-necklace",
-      "price": "92.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.24.54PM.png?v=1779830744",
-      "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/bam-bird-tile-pearl-necklace"
-    },
-    {
-      "title": "Mahjong Chubby Notepad",
-      "handle": "mahjong-chubby-notepad",
-      "price": "28.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot_2026-05-28_at_12.12.28_PM.png?v=1779984800",
-      "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/mahjong-chubby-notepad"
-    },
-    {
-      "title": "Mahj Dittie Notepad",
-      "handle": "mahj-dittie-notepad",
-      "price": "8.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot_2026-05-28_at_12.12.28_PM.png?v=1779984800",
-      "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/mahj-dittie-notepad"
+      "url": "https://threadandinkco.com/products/mahj-at-the-greenbrier-small-canvas",
+      "categories": ["greenbrier", "mahjong"]
     },
     {
       "title": "TML Mats",
@@ -112,7 +47,8 @@
       "price": "85.00",
       "image": null,
       "collection": "Mahjong at The Greenbrier",
-      "url": "https://threadandinkco.com/products/tml-mats"
+      "url": "https://threadandinkco.com/products/tml-mats",
+      "categories": ["greenbrier", "mahjong"]
     },
     {
       "title": "ML Racks",
@@ -120,23 +56,26 @@
       "price": "225.00",
       "image": null,
       "collection": "Mahjong at The Greenbrier",
-      "url": "https://threadandinkco.com/products/ml-racks"
+      "url": "https://threadandinkco.com/products/ml-racks",
+      "categories": ["greenbrier", "mahjong"]
     },
     {
-      "title": "Silk Scarf",
-      "handle": "silk-scarf",
-      "price": "150.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.14.16PM.png?v=1779830236",
+      "title": "Bam Bird Tile Toggle Necklace",
+      "handle": "bam-bird-tile-toggle-necklace",
+      "price": "76.00",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.24.39PM.png?v=1779830724",
       "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/silk-scarf"
+      "url": "https://threadandinkco.com/products/bam-bird-tile-toggle-necklace",
+      "categories": ["mahjong"]
     },
     {
-      "title": "Quilted Tote Bags",
-      "handle": "quilted-tote-bags",
-      "price": "45.00",
-      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/35342E06-53F6-440C-A5DC-50D6677AE01E.jpg?v=1769641496",
-      "collection": "Bags",
-      "url": "https://threadandinkco.com/products/quilted-tote-bags"
+      "title": "Bam Bird Tile Pearl Necklace",
+      "handle": "bam-bird-tile-pearl-necklace",
+      "price": "92.00",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.24.54PM.png?v=1779830744",
+      "collection": "Games, Golf and Mahjong",
+      "url": "https://threadandinkco.com/products/bam-bird-tile-pearl-necklace",
+      "categories": ["mahjong"]
     },
     {
       "title": "Bam Bird Tile Bracelet",
@@ -144,7 +83,26 @@
       "price": "64.00",
       "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.24.10PM.png?v=1779830761",
       "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/bam-bird-tile-bracelet"
+      "url": "https://threadandinkco.com/products/bam-bird-tile-bracelet",
+      "categories": ["mahjong"]
+    },
+    {
+      "title": "Mahjong Chubby Notepad",
+      "handle": "mahjong-chubby-notepad",
+      "price": "28.00",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot_2026-05-28_at_12.12.28_PM.png?v=1779984800",
+      "collection": "Games, Golf and Mahjong",
+      "url": "https://threadandinkco.com/products/mahjong-chubby-notepad",
+      "categories": ["mahjong"]
+    },
+    {
+      "title": "Mahj Dittie Notepad",
+      "handle": "mahj-dittie-notepad",
+      "price": "8.00",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot_2026-05-28_at_12.12.28_PM.png?v=1779984800",
+      "collection": "Games, Golf and Mahjong",
+      "url": "https://threadandinkco.com/products/mahj-dittie-notepad",
+      "categories": ["mahjong"]
     },
     {
       "title": "The Big Card",
@@ -152,7 +110,17 @@
       "price": "10.00",
       "image": null,
       "collection": "Games, Golf and Mahjong",
-      "url": "https://threadandinkco.com/products/the-big-card"
+      "url": "https://threadandinkco.com/products/the-big-card",
+      "categories": ["mahjong"]
+    },
+    {
+      "title": "Silk Scarf",
+      "handle": "silk-scarf",
+      "price": "150.00",
+      "image": "https://cdn.shopify.com/s/files/1/0146/4169/2720/files/Screenshot2026-05-26at5.14.16PM.png?v=1779830236",
+      "collection": "Games, Golf and Mahjong",
+      "url": "https://threadandinkco.com/products/silk-scarf",
+      "categories": ["mahjong"]
     }
   ]
 }

@@ -1154,14 +1154,22 @@ if ('serviceWorker' in navigator) {
 (function initThreadAndInkShop() {
     const collectionsEl = document.getElementById('shop-collections');
     const productsEl = document.getElementById('shop-products');
+    const filtersEl = document.getElementById('shop-filters');
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
+    let catalogData = { collections: [], products: [] };
+    let activeFilter = 'all';
 
     function formatPrice(price) {
         const amount = Number.parseFloat(price);
         if (Number.isNaN(amount)) return price;
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    }
+
+    function matchesFilter(item, filter) {
+        if (filter === 'all') return true;
+        return Array.isArray(item.categories) && item.categories.includes(filter);
     }
 
     function trackShopClick(label, url) {
@@ -1175,6 +1183,8 @@ if ('serviceWorker' in navigator) {
 
     function wireExternalShopLinks() {
         document.querySelectorAll('[data-shop-external], .shop-collection-card, .shop-product-card').forEach((link) => {
+            if (link.dataset.shopWired === 'true') return;
+            link.dataset.shopWired = 'true';
             link.addEventListener('click', () => {
                 const label = link.getAttribute('data-shop-external')
                     || link.querySelector('h4')?.textContent?.trim()
@@ -1185,42 +1195,76 @@ if ('serviceWorker' in navigator) {
     }
 
     function renderCollections(collections) {
+        if (!collections.length) {
+            collectionsEl.innerHTML = '<p class="shop-empty">No collections match this category.</p>';
+            return;
+        }
+
         collectionsEl.innerHTML = collections.map((collection) => `
-            <a class="shop-collection-card" href="${collection.url}" target="_blank" rel="noopener noreferrer">
+            <a class="shop-collection-card" href="${collection.url}" target="_blank" rel="noopener noreferrer" title="View full collection on Thread &amp; Ink Co">
                 <div class="shop-collection-image">
                     ${collection.image
-                        ? `<img src="${collection.image}" alt="" loading="lazy" decoding="async">`
+                        ? `<img src="${collection.image}" alt="${collection.title}" loading="lazy" decoding="async">`
                         : '<span class="shop-product-placeholder">Collection</span>'}
                 </div>
                 <div class="shop-collection-body">
                     <h4>${collection.title}</h4>
-                    <span class="shop-collection-count">${collection.count} items</span>
+                    <span class="shop-collection-count">${collection.count} items on Thread &amp; Ink Co</span>
                 </div>
             </a>
         `).join('');
     }
 
     function renderProducts(products) {
+        if (!products.length) {
+            productsEl.innerHTML = '<p class="shop-empty">No products match this category.</p>';
+            return;
+        }
+
         productsEl.innerHTML = products.map((product) => `
-            <a class="shop-product-card" href="${product.url}" target="_blank" rel="noopener noreferrer">
+            <a class="shop-product-card" href="${product.url}" target="_blank" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
                     ${product.image
                         ? `<img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">`
-                        : '<span class="shop-product-placeholder">View on shop</span>'}
+                        : '<span class="shop-product-placeholder">Mahjong gear</span>'}
                 </div>
                 <div class="shop-product-body">
                     <span class="shop-product-collection">${product.collection}</span>
                     <h4>${product.title}</h4>
                     <span class="shop-product-price">${formatPrice(product.price)}</span>
-                    <span class="shop-product-cta">Shop now</span>
+                    <span class="shop-product-cta">Buy on Thread &amp; Ink Co</span>
                 </div>
             </a>
         `).join('');
     }
 
+    function renderCatalog() {
+        const collections = catalogData.collections.filter((item) => matchesFilter(item, activeFilter));
+        const products = catalogData.products.filter((item) => matchesFilter(item, activeFilter));
+        renderCollections(collections);
+        renderProducts(products);
+        wireExternalShopLinks();
+    }
+
+    function wireFilters() {
+        if (!filtersEl) return;
+
+        filtersEl.querySelectorAll('[data-shop-filter]').forEach((button) => {
+            button.addEventListener('click', () => {
+                activeFilter = button.dataset.shopFilter || 'all';
+                filtersEl.querySelectorAll('[data-shop-filter]').forEach((btn) => {
+                    const isActive = btn === button;
+                    btn.classList.toggle('is-active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+                renderCatalog();
+            });
+        });
+    }
+
     function showError() {
         collectionsEl.innerHTML = '<p class="shop-error">Collections are temporarily unavailable.</p>';
-        productsEl.innerHTML = `<p class="shop-error">Browse the full catalog at <a href="${SHOP_HOME}" target="_blank" rel="noopener noreferrer">threadandinkco.com</a>.</p>`;
+        productsEl.innerHTML = `<p class="shop-error">Browse the full mahjong catalog at <a href="${SHOP_HOME}" target="_blank" rel="noopener noreferrer">threadandinkco.com</a>.</p>`;
     }
 
     async function loadCatalog() {
@@ -1228,9 +1272,12 @@ if ('serviceWorker' in navigator) {
             const response = await fetch('/threadandink-catalog.json', { cache: 'no-cache' });
             if (!response.ok) throw new Error('catalog fetch failed');
             const catalog = await response.json();
-            renderCollections(catalog.collections || []);
-            renderProducts(catalog.products || []);
-            wireExternalShopLinks();
+            catalogData = {
+                collections: catalog.collections || [],
+                products: catalog.products || []
+            };
+            wireFilters();
+            renderCatalog();
         } catch (error) {
             console.warn('Thread & Ink catalog load failed', error);
             showError();
