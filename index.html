@@ -114,7 +114,7 @@
         document.addEventListener('click', trackEngagement);
         
         // Track page views for sections (scroll tracking)
-        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'tml-partnership', 'thread-and-ink-shop', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
+        const sections = ['hero', 'services', 'pricing', 'testimonials', 'about', 'contact', 'past-events', 'community-impact', 'upcoming-event'];
         const viewedSections = new Set();
         
         const sectionObserver = new IntersectionObserver((entries) => {
@@ -449,7 +449,7 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#thread-and-ink-shop">Shop</a></li>
+                <li><a href="shop.html">Shop</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1097,55 +1097,6 @@
             </div>
         </section>
 
-        <section id="tml-partnership" class="tml-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Official TML Partnership</h2>
-                    <p class="section-subtitle">Exclusive access to premium mahjong products and resources</p>
-                </div>
-                <div class="tml-content">
-                    <div class="tml-text">
-                        <p>As certified TML Ambassadors, we're proud to offer exclusive access to The Mahjong Line's premium products and educational resources. Our partnership ensures you receive the highest quality mahjong sets, accessories, and learning materials.</p>
-                        <p><strong>What you get:</strong> Professional-grade mahjong tiles, luxury playing surfaces, comprehensive rule books, and exclusive TML Ambassador discounts on premium products.</p>
-                        <p class="tml-contact-text">Ready to elevate your mahjong experience? Shop premium mahjong sets and accessories with our exclusive ambassador referral link.</p>
-                        <a href="https://themahjongline.com/?ref=LOOKOUTMOUNTAINMAHJ&amp;utm_source=ShopMy&amp;utm_medium=affiliate&amp;utm_campaign=Ann+Henley+Perry+&amp;%2BJen%2BKline%2BLookout%2BMountain%2BMahjong=&amp;utm_content=Quick+Link&amp;utm_referrer=shopmy.us&amp;smsclickid=5669b324-1eb1-4bd5-8000-89c8529ad1c5&amp;smscode=LOOKOUTMTN10&amp;utm_term=5669b324-1eb1-4bd5-8000-89c8529ad1c5&amp;_su_rec=7p7Qv7Q1Zk1zXxLwjPvdm89rRoj1kQX_y33Vei4KyH8_U_m8iatumb5lb2RWoQtbl-JdLvGotyVCNL3D1ccjO6GEnTUxc8-_Yyz52JUUguZIqg47tofhXOxlYffIwBK4NQCPK2vR1qGy6TJljjkEfZ5cQhBiIBGK0uu1FonL4MCKAA6G068OwWNV3d1abPWdX_2N0JLceegcrWHImscHvkw44xH0DMMLvyhW5GQ3-J1fMXw7xRgHMN-byUWqpyBiNVgCaKFmrwcdXqqS4g&amp;_su_rec_id=948efb2c-5693-44a8-9482-960e235dd3d8-1777899051" target="_blank" class="cta-button tml-button"><span class="button-text">Shop TML Products</span><span class="tml-button-arrow" aria-hidden="true"></span></a>
-            </div>
-                    <div class="tml-visual">
-                        <div class="tml-logo-container">
-                            <img src="Attachment-1.png" 
-                                 srcset="Attachment-1.png 400w, Attachment-1.png 600w, Attachment-1.png 800w"
-                                 sizes="(min-width: 768px) 50vw, 100vw"
-                                 alt="The Mahjong Line Logo" 
-                                 class="tml-logo">
-                                    </div>
-                                </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="thread-and-ink-shop" class="thread-and-ink-shop">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Thread &amp; Ink Co</h2>
-                    <p class="section-subtitle">Personalized gifts, mahjong accessories, and more from Mahj Jen</p>
-                </div>
-                <div class="shop-intro">
-                    <p>Shop <strong>Thread &amp; Ink Co</strong>, Jen Kline&rsquo;s boutique for embroidered gifts, mahjong accessories, Greenbrier tournament gear, bags, stationery, and entertaining essentials. New customers can use code <strong>WELCOME10</strong> for 10% off at checkout on <a href="https://threadandinkco.com/" target="_blank" rel="noopener noreferrer">threadandinkco.com</a>.</p>
-                    <a href="https://threadandinkco.com/" class="cta-button primary shop-all-btn" target="_blank" rel="noopener noreferrer" data-shop-external="all">Visit Full Shop</a>
-                </div>
-                <div class="shop-collections" id="shop-collections" aria-live="polite">
-                    <p class="shop-loading">Loading collections&hellip;</p>
-                </div>
-                <div class="shop-products-header">
-                    <h3>Featured Items</h3>
-                    <p>Browse highlights below&mdash;checkout happens securely on Thread &amp; Ink Co.</p>
-                </div>
-                <div class="shop-products" id="shop-products" aria-live="polite">
-                    <p class="shop-loading">Loading products&hellip;</p>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
@@ -1172,7 +1123,7 @@
                         </div>
                 
                 <div class="footer-contact">
-                    <p><a href="#thread-and-ink-shop">Thread &amp; Ink Co Shop</a></p>
+                    <p><a href="shop.html">Shop</a></p>
                     <p><a href="mailto:lookoutmountainmahjong@gmail.com">lookoutmountainmahjong@gmail.com</a></p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/lookoutmountainmahjong?igsh=MXU3czZsdXRvNWozcQ==" target="_blank" rel="noopener noreferrer" class="footer-social-link">
