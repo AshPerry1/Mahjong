@@ -1,5 +1,5 @@
 // Service Worker for Lookout Mountain Mahjong
-const CACHE_NAME = 'mahjong-cache-v11';
+const CACHE_NAME = 'mahjong-cache-v12';
 const urlsToCache = [
   '/',
   '/index.html',

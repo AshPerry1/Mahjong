@@ -32,7 +32,7 @@
       "name": "Book 101 Lessons",
       "short_name": "101",
       "description": "Book Mahjong 101 lessons",
-      "url": "/#lessons",
+      "url": "/#services",
       "icons": [
         {
           "src": "/logo.png",
@@ -44,7 +44,7 @@
       "name": "Book Events",
       "short_name": "Events",
       "description": "Book private mahjong events",
-      "url": "/#events",
+      "url": "/#contact",
       "icons": [
         {
           "src": "/logo.png",
