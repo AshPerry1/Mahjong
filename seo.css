@@ -35,3 +35,20 @@ a:hover { color: #4a1d6b; }
     font-size: 0.9rem;
     color: #555;
 }
+.viral-copy {
+    background: #faf8ff;
+    border-left: 3px solid #CA69E2;
+    padding: 14px 18px;
+    margin: 1.25rem 0;
+    border-radius: 0 8px 8px 0;
+}
+.viral-copy p:last-child { margin-bottom: 0; }
+.viral-copy-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6f2c9d;
+    margin: 0 0 8px;
+}

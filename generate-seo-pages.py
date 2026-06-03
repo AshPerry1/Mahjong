@@ -23,6 +23,8 @@ ORG = {
         "https://www.instagram.com/lookoutmountainmahjong/",
         "https://www.tiktok.com/@lookoutmountainmahjong",
     ],
+    "slogan": "Get Mahj'n... It's Good For You",
+    "description": "A Bam Good Time — certified TML Ambassadors teaching American mahjong nationwide.",
 }
 
 PUBLIC_SITE = [
@@ -93,7 +95,9 @@ PAGES = [
 <h2>Tiles &amp; Shop</h2>
 <p><a href="mahjong-tiles.html">Mahjong tiles</a> · <a href="the-mahjong-line.html">The Mahjong Line</a> · TML code <strong>LOOKOUTMOUNTAIN</strong></p>
 <h2>Contact</h2>
-<p>lookoutmountainmahjong@gmail.com · (919) 247-3392 · <a href="press.html">Press</a></p>""",
+<p>lookoutmountainmahjong@gmail.com · (919) 247-3392 · <a href="press.html">Press</a></p>
+<h2>Viral &amp; Social</h2>
+<p><a href="why-everyones-getting-mahjn.html">Why everyone's getting Mahj'n</a> · <a href="viral-mahjong.html">Viral mahjong</a> · <a href="share-mahjong.html">Share mahjong</a> · <a href="invite.html">Invite friends</a> · <a href="instagram-mahjong.html">Instagram mahjong</a> · <a href="tiktok-mahjong.html">TikTok mahjong</a> · <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a></p>""",
         priority="0.92",
     ),
     page("mahj-jen-mahj-hen.html", "Mahj Jen & Mahj Hen | Jenn Kline & Ann Henley Perry", "Meet Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry), TML Ambassadors and co-founders of Lookout Mountain Mahjong.", "mahj jen, mahj hen, jen kline mahjong, ann henley perry mahjong", "Mahj Jen &amp; Mahj Hen", """<p><strong>Jenn Kline (Mahj Jen)</strong> and <strong>Ann Henley Perry (Mahj Hen)</strong> teach American mahjong from Lookout Mountain, Georgia to The Greenbrier and nationwide.</p>
@@ -130,13 +134,20 @@ PAGES = [
 <li><a href="savannah-mahjong.html">Savannah</a></li>
 </ul>""", priority="0.88"),
     page("private-mahjong-lessons.html", "Private Mahjong Lessons", "Private mahjong at your home, club, or event — nationwide.", "private mahjong lessons, in home mahjong", "Private Mahjong Lessons", "<p>4–8 players · we bring tiles &amp; tables · <a href=\"mahjong-101.html\">Mahjong 101</a> $125/person</p>"),
-    page("mahjong-tips.html", "American Mahjong Tips", "Mahjong tips — NMJL card, Charleston, jokers, strategy.", "mahjong tips, american mahjong tips", "Mahjong Tips", """<ol>
-<li>Learn the NMJL card early</li>
-<li>Pay attention during the Charleston</li>
-<li>Use jokers on high-value hands</li>
-<li>Play often — hands change every year</li>
-<li>Book <a href="mahjong-101.html">Mahjong 101</a> for hands-on coaching</li>
-</ol>"""),
+    page("mahjong-tips.html", "10 Mahjong Tips Everyone's Sharing", "10 viral American mahjong tips — Charleston, jokers, NMJL card, strategy. @lookoutmountainmahjong", "mahjong tips, viral mahjong tips, mahjong tricks, how to win mahjong", "10 Mahjong Tips Going Viral", """<p>Share these with your group chat — then book <a href="mahjong-101.html">Mahjong 101</a> with Mahj Jen &amp; Mahj Hen.</p>
+<ol>
+<li><strong>Learn the NMJL card first.</strong> American mah jongg hands change every year — skim the card before you play.</li>
+<li><strong>Watch the Charleston.</strong> Three rounds of passing reveal what everyone is building.</li>
+<li><strong>Save jokers for big hands.</strong> Don't waste wild tiles on cheap wins.</li>
+<li><strong>Call strategically.</strong> Sometimes the best move is not to call.</li>
+<li><strong>Defend when someone is hot.</strong> Discard safely when a player is one tile away.</li>
+<li><strong>Play often.</strong> Muscle memory beats memorizing every hand.</li>
+<li><strong>Host a lesson.</strong> <a href="girls-night-mahjong.html">Girls night mahjong</a> beats another dinner out.</li>
+<li><strong>Get beautiful tiles.</strong> <a href="mahjong-tiles.html">TML pink, purple &amp; green</a> — code LOOKOUTMOUNTAIN.</li>
+<li><strong>Follow @lookoutmountainmahjong.</strong> Daily tips on <a href="instagram-mahjong.html">Instagram</a>.</li>
+<li><strong>Get Mahj'n.</strong> It's good for you. <a href="book-mahjong-lesson.html">Book a lesson</a>.</li>
+</ol>
+<p>More: <a href="share-mahjong.html">copy-paste texts to invite friends</a>.</p>""", priority="0.85", changefreq="weekly"),
     page("mahjong-tiles.html", "Mahjong Tiles | TML Pink Purple Green", "TML mahjong tiles — pink, purple, green. Code LOOKOUTMOUNTAIN.", "mahjong tiles, TML tiles, pink purple green mahjong", "Mahjong Tiles", "<p>Certified <a href=\"the-mahjong-line.html\">The Mahjong Line</a> ambassadors. Code: <strong>LOOKOUTMOUNTAIN</strong>.</p>"),
     page("the-mahjong-line.html", "The Mahjong Line | TML LOOKOUTMOUNTAIN", "The Mahjong Line tiles — TML Ambassador code LOOKOUTMOUNTAIN.", "the mahjong line, TML, mahjong line tiles", "The Mahjong Line", "<p>Premium American mahjong tiles. Referral: <strong>LOOKOUTMOUNTAIN</strong>. <a href=\"mahjong-tiles.html\">Tile guide</a>.</p>"),
     page("greenbrier-mahjong.html", "Greenbrier Mahjong | The Greenbrier Resort", "Greenbrier mahjong tournaments at The Greenbrier Resort, West Virginia.", "greenbrier mahjong, the greenbrier mahjong", "Greenbrier Mahjong", """<p>American mahjong at <strong>The Greenbrier Resort</strong>, White Sulphur Springs, WV — luxury tournaments and lessons with <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a>.</p>
@@ -171,7 +182,13 @@ PAGES = [
     page("mahjong-tournament.html", "Mahjong Tournament", "Mahjong tournaments — Greenbrier and private mini-tournaments.", "mahjong tournament, mah jongg tournament", "Mahjong Tournament", "<p><a href=\"greenbrier-mahjong.html\">Greenbrier</a> resort tournaments · private mini-tournaments · <a href=\"mahjong-102.html\">102 prep</a>.</p>"),
     page("luxury-mahjong-retreat.html", "Luxury Mahjong Retreat", "Luxury mahjong retreats at The Greenbrier and destination venues.", "luxury mahjong, mahjong retreat, resort mahjong", "Luxury Mahjong Retreat", "<p>Resort mahjong at <a href=\"greenbrier-mahjong.html\">The Greenbrier</a> and <a href=\"marthas-vineyard-mahjong.html\">Martha&rsquo;s Vineyard</a>.</p>"),
     page("press.html", "Press | Lookout Mountain Mahjong", "Press contact — mahjong trend, Greenbrier, Mahj Jen & Mahj Hen.", "mahjong press, mahjong news", "Press &amp; Media", "<p>Jenn Kline &amp; Ann Henley Perry · lookoutmountainmahjong@gmail.com · (919) 247-3392 · @lookoutmountainmahjong</p>"),
-    page("invite.html", "Invite Friends to Mahjong", "Invite friends to a mahjong lesson.", "invite friends mahjong", "Invite Friends to Mahjong", "<p>Book <a href=\"mahjong-101.html\">Mahjong 101</a> for your group — Mahj Jen &amp; Mahj Hen bring the tiles.</p>"),
+    page("invite.html", "Invite Friends to Mahjong | Copy & Share", "Copy-paste mahjong invites for group chat, text & DM. Get Mahj'n with Lookout Mountain Mahjong.", "invite friends mahjong, mahjong party invite text, group chat mahjong", "Invite Friends to Get Mahj'n", """<p>Paste any message below into your group chat. Every path leads to <a href="book-mahjong-lesson.html">booking Mahjong 101</a>.</p>
+<div class="viral-copy"><p class="viral-copy-label">Group chat classic</p><p>Who wants to learn mahjong?? 🀄 Mahj Jen &amp; Mahj Hen come teach us — tiles included. Get Mahj'n! lookoutmountainmahjong.com · @lookoutmountainmahjong</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Girls night pitch</p><p>Girls night idea: book a mahjong lesson instead of another dinner 🍷🀄 $125/person, 4–8 friends, they bring EVERYTHING.</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Greenbrier flex</p><p>These are the instructors who teach mahjong at THE GREENBRIER 🏔️🀄 We need to book Mahjong 101 ASAP.</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Instagram DM</p><p>Have you seen @lookoutmountainmahjong?? American mahjong — A Bam Good Time 🀄✨</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Short &amp; sweet</p><p>M is for Mahjong 🀄 @lookoutmountainmahjong</p></div>
+<p>More viral copy: <a href="share-mahjong.html">share mahjong messages</a> · <a href="mahjong-tips.html">10 tips</a></p>""", priority="0.82", changefreq="weekly"),
     page("get-mahjn.html", "Get Mahj'n | Lookout Mountain Mahjong", "Get Mahj'n... It's Good For You!", "get mahjn, get mahj'n", "Get Mahj'n... It's Good For You", "<p>The viral American mahjong movement. <a href=\"mahj-jen-mahj-hen.html\">Mahj Jen &amp; Mahj Hen</a> · @lookoutmountainmahjong</p>"),
     page("a-bam-good-time.html", "A Bam Good Time | Mountain Mahjong", "A Bam Good Time — Lookout Mountain Mahjong brand.", "a bam good time, bam good time mahjong", "A Bam Good Time", "<p><em>A Bam Good Time</em> — American mahjong with <a href=\"mountain-mahjong.html\">Mountain Mahjong</a>.</p>"),
     page("mountain-mahjong.html", "Mountain Mahjong", "Mountain Mahjong with Mahj Jen and Mahj Hen.", "mountain mahjong", "Mountain Mahjong", "<p><a href=\"lookout-mountain-mahjong.html\">Lookout Mountain Mahjong</a> · TML Ambassadors · <a href=\"book-mahjong-lesson.html\">Book</a></p>"),
@@ -200,6 +217,45 @@ PAGES = [
         },
         priority="0.8",
     ),
+    # ── Viral & trend pages ──
+    page("why-everyones-getting-mahjn.html", "Why Everyone's Getting Mahj'n", "Why American mahjong is going viral — screen-free connection, Instagram, country clubs, The Greenbrier.", "why is mahjong popular, mahjong trend, mahjong viral 2026, everyone playing mahjong", "Why Everyone's Getting Mahj'n", """<p>American mahjong is the fastest-growing social board game in the South — and <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a> are at the center of it on <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a>.</p>
+<h2>Why Now?</h2>
+<ul>
+<li>Screen-free connection millennials &amp; Gen X crave</li>
+<li>Beautiful <a href="pink-purple-green-mahjong.html">pink, purple &amp; green TML tiles</a></li>
+<li>Perfect for <a href="girls-night-mahjong.html">girls night</a>, <a href="country-club-mahjong.html">country clubs</a>, and <a href="greenbrier-mahjong.html">luxury resorts</a></li>
+<li>Easy to learn in one afternoon — <a href="mahjong-101.html">Mahjong 101</a></li>
+</ul>
+<p><em>Get Mahj'n... It's Good For You.</em> · <a href="share-mahjong.html">Share with friends</a></p>""", priority="0.88", changefreq="weekly"),
+    page("viral-mahjong.html", "Viral Mahjong | The Trend Taking Over", "Viral mahjong on Instagram & TikTok — @lookoutmountainmahjong, Greenbrier, Mountain Mahjong.", "viral mahjong, mahjong tiktok, mahjong instagram trend", "Viral Mahjong", """<p>From Lookout Mountain to The Greenbrier — American mahjong is everywhere. Follow the viral story at <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a>.</p>
+<p><a href="why-everyones-getting-mahjn.html">Why it's trending</a> · <a href="mahjong-tips.html">10 tips</a> · <a href="press.html">Press</a></p>""", priority="0.86", changefreq="weekly"),
+    page("share-mahjong.html", "Share Mahjong | Group Chat Messages", "Copy-paste mahjong messages to share with friends. Get Mahj'n — Lookout Mountain Mahjong.", "share mahjong, mahjong group text, text friends mahjong", "Share Mahjong With Everyone You Know", """<p>American mahjong spreads by word of mouth. Copy any message:</p>
+<div class="viral-copy"><p class="viral-copy-label">Text your neighbor</p><p>OK hear me out — what if we learned mahjong instead of book club this month? 🀄 There's a duo called Mahj Jen &amp; Mahj Hen who come teach you. $125/person.</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Work group</p><p>Team offsite idea that isn't another trust fall: mahjong lessons 🀄 Screen-free, actually fun, they bring the tiles.</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Family group</p><p>Mom wants mahjong lessons for her birthday — who's in? 4–8 people, they teach you the whole game in one afternoon.</p></div>
+<div class="viral-copy"><p class="viral-copy-label">Social share line</p><p>Get Mahj'n... It's Good For You! 🀄 @lookoutmountainmahjong · Mountain Mahjong · A Bam Good Time</p></div>
+<p><a href="invite.html">More invites</a> · <a href="book-mahjong-lesson.html">Book</a></p>""", priority="0.84", changefreq="weekly"),
+    page("instagram-mahjong.html", "Instagram Mahjong | @lookoutmountainmahjong", "Instagram mahjong — daily tips, tiles, Greenbrier, Get Mahj'n. Follow @lookoutmountainmahjong.", "instagram mahjong, mahjong instagram, lookoutmountainmahjong instagram", "Instagram Mahjong", "<p>Daily American mahjong on Instagram: tips, TML tiles, behind-the-scenes, and <em>A Bam Good Time</em>. <a href=\"lookoutmountainmahjong.html\">@lookoutmountainmahjong</a> · also on <a href=\"tiktok-mahjong.html\">TikTok</a>.</p>", priority="0.85"),
+    page("tiktok-mahjong.html", "TikTok Mahjong | @lookoutmountainmahjong", "TikTok mahjong — viral American mah jongg content from Mountain Mahjong.", "tiktok mahjong, mahjong tiktok viral", "TikTok Mahjong", "<p>Follow <a href=\"lookoutmountainmahjong.html\">@lookoutmountainmahjong</a> on TikTok for mahjong tips, tiles &amp; event highlights.</p>"),
+    page("pink-purple-green-mahjong.html", "Pink Purple Green Mahjong Tiles | TML", "Pink purple and green mahjong tiles from The Mahjong Line — the aesthetic driving the viral mahjong trend.", "pink purple green mahjong, aesthetic mahjong tiles, TML pink tiles", "Pink, Purple &amp; Green Mahjong", "<p>The tile aesthetic behind the viral mahjong movement. TML Ambassador code: <strong>LOOKOUTMOUNTAIN</strong>. <a href=\"the-mahjong-line.html\">The Mahjong Line</a> · <a href=\"mahjong-tiles.html\">tiles guide</a>.</p>"),
+    page("aqua-mat-mahjong.html", "Aqua Mat Mahjong | TML Accessories", "TML aqua mat and mahjong accessories — Lookout Mountain Mahjong ambassador picks.", "aqua mat mahjong, mahjong mat, TML accessories", "Aqua Mat &amp; Mahjong Accessories", "<p>Certified <a href=\"the-mahjong-line.html\">TML ambassadors</a> — tiles, mats, and accessories. Code <strong>LOOKOUTMOUNTAIN</strong>.</p>"),
+    page("southern-mahjong.html", "Southern Mahjong | The South's Favorite Game", "Southern mahjong culture — Lookout Mountain to Greenbrier, girls night to country clubs.", "southern mahjong, mahjong south, southern ladies mahjong", "Southern Mahjong", "<p>Mahjong is the South's social superpower. We teach across GA, TN, NC, AL &amp; beyond. <a href=\"girls-night-mahjong.html\">Girls night</a> · <a href=\"greenbrier-mahjong.html\">Greenbrier</a>.</p>"),
+    page("screen-free-game-night.html", "Screen-Free Game Night | Mahjong", "Screen-free game night idea — American mahjong beats another Netflix night.", "screen free game night, social board games, offline games friends", "Screen-Free Game Night", "<p>Put down the phones. Pick up the tiles. Book <a href=\"mahjong-101.html\">Mahjong 101</a> for your friend group.</p>"),
+    page("millennial-mahjong.html", "Millennial Mahjong", "Why millennials love American mahjong — social, aesthetic, strategic.", "millennial mahjong, gen y mahjong", "Millennial Mahjong", "<p>Millennials are driving the mahjong revival. Learn in one afternoon: <a href=\"beginner-mahjong.html\">beginner mahjong</a>.</p>"),
+    page("empty-nester-mahjong.html", "Empty Nester Mahjong", "Empty nesters discovering American mahjong — new hobby, new friends.", "empty nester mahjong, retirement hobby mahjong", "Empty Nester Mahjong", "<p>The kids are gone — time to Get Mahj'n. <a href=\"mahjong-101.html\">Mahjong 101</a> is the perfect new chapter.</p>"),
+    page("mother-daughter-mahjong.html", "Mother Daughter Mahjong", "Mother-daughter mahjong lessons — bond over tiles.", "mother daughter mahjong, mahjong with mom", "Mother-Daughter Mahjong", "<p>Book a private <a href=\"mahjong-101.html\">Mahjong 101</a> for mothers and daughters — a memory you'll replay forever.</p>"),
+    page("vacation-mahjong.html", "Vacation Mahjong | Destination Lessons", "Vacation mahjong — Martha's Vineyard, beach houses, and destination events.", "vacation mahjong, beach mahjong, destination mahjong", "Vacation Mahjong", "<p>We travel to you: <a href=\"marthas-vineyard-mahjong.html\">Martha's Vineyard</a>, beach weeks, and family reunions.</p>"),
+    page("holiday-mahjong-party.html", "Holiday Mahjong Party", "Holiday mahjong party — Thanksgiving, Christmas, New Year's gathering idea.", "holiday mahjong party, christmas mahjong, thanksgiving mahjong", "Holiday Mahjong Party", "<p>Skip the awkward small talk — teach the whole family mahjong. <a href=\"book-mahjong-lesson.html\">Book a holiday lesson</a>.</p>"),
+    page("book-club-mahjong.html", "Book Club Mahjong | Switch It Up", "Book club bored? Try a mahjong lesson instead.", "book club mahjong, book club alternative", "Book Club Mahjong", "<p>When nobody finished the book — learn mahjong instead. <a href=\"girls-night-mahjong.html\">Girls night mahjong</a> $125/person.</p>"),
+    page("charity-mahjong-event.html", "Charity Mahjong Event", "Charity mahjong fundraiser — philanthropy with tiles.", "charity mahjong, mahjong fundraiser, philanthropy mahjong", "Charity Mahjong Event", "<p>Philanthropy meets mahjong — popular with <a href=\"sorority-mahjong-parties.html\">sororities</a> and nonprofits. <a href=\"corporate-mahjong-events.html\">Corporate</a> too.</p>"),
+    page("thread-and-ink-mahjong.html", "Thread & Ink Mahjong Apparel", "Thread & Ink mahjong apparel — tournament gear from Lookout Mountain Mahjong.", "thread and ink mahjong, mahjong apparel, mahjong shirt", "Thread &amp; Ink Mahjong", "<p>Mahjong apparel from the Lookout Mountain Mahjong shop. Visit the public shop at lookoutmountainmahjong.com/shop.html.</p>"),
+    page("florida-mahjong.html", "Florida Mahjong Lessons", "Florida mahjong lessons — travel events and destination parties.", "florida mahjong, mahjong florida", "Florida Mahjong", "<p>We travel to Florida for private lessons, resorts, and seasonal events.</p>"),
+    page("dallas-mahjong.html", "Dallas Mahjong Lessons", "Dallas Texas mahjong lessons and private events.", "dallas mahjong, mahjong dallas texas", "Dallas Mahjong", "<p>Dallas-Fort Worth private mahjong lessons — <a href=\"mahjong-lessons-near-me.html\">nationwide travel</a>.</p>"),
+    page("charleston-sc-mahjong.html", "Charleston SC Mahjong", "Charleston South Carolina mahjong lessons.", "charleston sc mahjong, charleston south carolina mahjong", "Charleston, SC Mahjong", "<p>Lowcountry private lessons and events. <a href=\"southern-mahjong.html\">Southern mahjong</a>.</p>"),
+    page("columbia-sc-mahjong.html", "Columbia SC Mahjong", "Columbia South Carolina mahjong lessons.", "columbia sc mahjong, columbia south carolina mahjong", "Columbia, SC Mahjong", "<p>South Carolina capital region events.</p>"),
+    page("jacksonville-mahjong.html", "Jacksonville Mahjong", "Jacksonville FL mahjong lessons.", "jacksonville mahjong, mahjong jacksonville florida", "Jacksonville Mahjong", "<p>North Florida private mahjong events.</p>"),
+    page("go-viral-mahjong.html", "Go Viral With Mahjong | Mountain Mahjong", "Go viral with American mahjong — Instagram, group chats, Greenbrier. Lookout Mountain Mahjong.", "go viral mahjong, mahjong social media", "Go Viral With Mahjong", """<p>The playbook: learn at <a href="mahjong-101.html">Mahjong 101</a> → post your tiles on Instagram → tag <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a> → invite friends with <a href="share-mahjong.html">share messages</a>.</p>
+<p><a href="why-everyones-getting-mahjn.html">Why it's trending</a> · <a href="viral-mahjong.html">Viral mahjong</a> · <a href="get-mahjn.html">Get Mahj'n</a></p>""", priority="0.87", changefreq="weekly"),
 ]
 
 
@@ -297,7 +353,7 @@ def write_llms_txt(root: Path):
 - TML code: LOOKOUTMOUNTAIN
 
 ## Topics
-mahjong, american mah jongg, mahjong lessons near me, greenbrier mahjong, mahj jen, mahj hen, mountain mahjong, get mahjn, chattanooga atlanta nashville charlotte mahjong
+mahjong viral, get mahjn, a bam good time, instagram mahjong, tiktok mahjong, why everyone is getting mahjn, share mahjong, pink purple green tiles, greenbrier mahjong, mahj jen, mahj hen, southern mahjong, screen-free game night
 """
     (root / "llms.txt").write_text(text, encoding="utf-8")
 
