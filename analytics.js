@@ -1,18 +1,40 @@
 (function initLookoutMountainAnalytics() {
     const GA_ID = 'G-8C0BWCXBF0';
 
+    function isMahjongSite() {
+        const hostname = window.location.hostname.toLowerCase();
+        return hostname === 'lookoutmountainmahjong.com'
+            || hostname === 'www.lookoutmountainmahjong.com'
+            || hostname === 'localhost'
+            || hostname === '127.0.0.1';
+    }
+
+    window.gtag = function noopGtag() {};
+    window.trackEvent = function noopTrackEvent() {};
+
+    if (!isMahjongSite()) {
+        return;
+    }
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
         window.dataLayer.push(arguments);
     }
     window.gtag = gtag;
 
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    document.head.appendChild(gtagScript);
+
     gtag('js', new Date());
     gtag('config', GA_ID, {
         send_page_view: true,
         allow_google_signals: true,
         allow_ad_personalization_signals: true,
-        cookie_flags: 'SameSite=None;Secure'
+        cookie_flags: 'SameSite=None;Secure',
+        page_location: window.location.href,
+        page_hostname: window.location.hostname
     });
 
     function trackEvent(category, action, label, value, isConversion) {
