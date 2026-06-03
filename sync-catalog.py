@@ -6,6 +6,11 @@ import urllib.request
 
 BASE = "https://threadandinkco.com"
 OUTPUT = "threadandink-catalog.json"
+DEFAULT_FEATURED = {
+    "handle": "mahj-long-sleeve-sweater",
+    "eyebrow": "Featured on Instagram",
+    "description": "The sweater we highlighted with Thread & Ink Co — soft cream knit with bold MAHJ lettering, perfect for tournament weekends at The Greenbrier.",
+}
 COLLECTIONS = [
     {
         "title": "Mahjong at The Greenbrier",
@@ -37,6 +42,15 @@ def product_image(product):
         return images[0]["src"]
     image = product.get("image")
     return image.get("src") if image else None
+
+
+def load_existing_featured():
+    try:
+        with open(OUTPUT, encoding="utf-8") as handle:
+            existing = json.load(handle)
+        return existing.get("featured") or DEFAULT_FEATURED
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return DEFAULT_FEATURED
 
 
 def main():
@@ -104,6 +118,7 @@ def main():
         })
 
     catalog = {
+        "featured": load_existing_featured(),
         "categories": [
             {"id": "all", "label": "All"},
             {"id": "greenbrier", "label": "Greenbrier"},

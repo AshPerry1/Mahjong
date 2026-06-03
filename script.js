@@ -1159,13 +1159,15 @@ if ('serviceWorker' in navigator) {
     const productsEl = document.getElementById('shop-products');
     const filtersEl = document.getElementById('shop-filters');
     const productsCountEl = document.getElementById('shop-products-count');
+    const featuredWrapEl = document.getElementById('shop-featured-wrap');
+    const featuredEl = document.getElementById('shop-featured');
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
     const CATALOG_URL = 'threadandink-catalog.json';
     const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
-    let catalogData = { collections: [], products: [], categories: [] };
+    let catalogData = { collections: [], products: [], categories: [], featured: null };
     let activeCategory = 'all';
     let viewerIpHash = null;
     const viewCountCache = new Map();
@@ -1359,11 +1361,51 @@ if ('serviceWorker' in navigator) {
         });
     }
 
+    function getFeaturedProduct() {
+        const handle = catalogData.featured?.handle;
+        if (!handle) return null;
+        return catalogData.products.find((product) => product.handle === handle) || null;
+    }
+
     function getFilteredProducts() {
-        if (activeCategory === 'all') return catalogData.products;
-        return catalogData.products.filter((product) => (
-            Array.isArray(product.categories) && product.categories.includes(activeCategory)
-        ));
+        const featuredHandle = catalogData.featured?.handle;
+        const baseProducts = activeCategory === 'all'
+            ? catalogData.products
+            : catalogData.products.filter((product) => (
+                Array.isArray(product.categories) && product.categories.includes(activeCategory)
+            ));
+
+        if (!featuredHandle) return baseProducts;
+        return baseProducts.filter((product) => product.handle !== featuredHandle);
+    }
+
+    function renderFeaturedProduct() {
+        const product = getFeaturedProduct();
+        if (!featuredWrapEl || !featuredEl || !product) {
+            if (featuredWrapEl) featuredWrapEl.hidden = true;
+            return;
+        }
+
+        const eyebrow = catalogData.featured?.eyebrow || 'Featured';
+        const description = catalogData.featured?.description || '';
+
+        featuredWrapEl.hidden = false;
+        featuredEl.innerHTML = `
+            <a class="shop-featured-card shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
+                <div class="shop-featured-image shop-product-image">
+                    ${renderProductImage(product)}
+                </div>
+                <div class="shop-featured-body">
+                    <span class="shop-featured-badge">${eyebrow}</span>
+                    <span class="shop-product-collection">${product.collection}</span>
+                    <h4>${product.title}</h4>
+                    ${description ? `<p class="shop-featured-description">${description}</p>` : ''}
+                    <span class="shop-product-price">${formatPrice(product.price)}</span>
+                    <span class="shop-product-clicks" hidden aria-live="polite"></span>
+                    <span class="shop-product-cta shop-featured-cta">Buy on Thread &amp; Ink Co <span class="shop-product-cta-arrow" aria-hidden="true"></span></span>
+                </div>
+            </a>
+        `;
     }
 
     function updateProductsCount(count) {
@@ -1455,13 +1497,16 @@ if ('serviceWorker' in navigator) {
     }
 
     async function renderCatalog() {
+        renderFeaturedProduct();
         renderCollections(catalogData.collections);
         renderFilters(catalogData.categories);
         const visibleProducts = getFilteredProducts();
         renderProducts(visibleProducts);
         wireExternalShopLinks();
-        wireProductCards(visibleProducts);
-        await hydrateProductClickCounts(visibleProducts);
+        const featuredProduct = getFeaturedProduct();
+        const productsToWire = featuredProduct ? [featuredProduct, ...visibleProducts] : visibleProducts;
+        wireProductCards(productsToWire);
+        await hydrateProductClickCounts(productsToWire);
     }
 
     function showError() {
@@ -1477,7 +1522,8 @@ if ('serviceWorker' in navigator) {
             catalogData = {
                 collections: catalog.collections || [],
                 products: catalog.products || [],
-                categories: catalog.categories || [{ id: 'all', label: 'All' }]
+                categories: catalog.categories || [{ id: 'all', label: 'All' }],
+                featured: catalog.featured || null
             };
             await renderCatalog();
         } catch (error) {

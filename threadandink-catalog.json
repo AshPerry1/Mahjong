@@ -1,4 +1,9 @@
 {
+  "featured": {
+    "handle": "mahj-long-sleeve-sweater",
+    "eyebrow": "Featured on Instagram",
+    "description": "The sweater we highlighted with Thread & Ink Co — soft cream knit with bold MAHJ lettering, perfect for tournament weekends at The Greenbrier."
+  },
   "categories": [
     {
       "id": "all",
