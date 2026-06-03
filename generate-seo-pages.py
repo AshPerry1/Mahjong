@@ -52,28 +52,95 @@ def page(file: str, title: str, desc: str, kw: str, h1: str, body: str, **extra)
     return p
 
 
+def mahjong_kw(file: str, suffix: str, desc: str, extra_kw: str, h1: str, body: str, **extra) -> dict:
+    """Page optimized for 'mahjong' + suffix searches."""
+    title = f"Mahjong {suffix} | Lookout Mountain Mahjong"
+    keywords = f"mahjong, mahjong {suffix.lower()}, mah jongg, american mahjong, {extra_kw}"
+    return page(file, title, desc, keywords, h1, body, **extra)
+
+
 PAGES = [
     page(
         "mahjong.html",
-        "Mahjong | American Mahjong Lessons — Lookout Mountain Mahjong",
-        "American mahjong lessons, Mahjong 101 & 102, Greenbrier tournaments, and private events with certified TML Ambassadors Mahj Jen and Mahj Hen.",
-        "mahjong, american mahjong, mah jongg, mountain mahjong, lookout mountain mahjong",
-        "American Mahjong — Lookout Mountain Mahjong",
-        """<p><strong>Lookout Mountain Mahjong</strong> teaches <strong>American mahjong</strong> (mah jongg) nationwide — beginner lessons, private parties, corporate events, and luxury resort tournaments including The Greenbrier.</p>
-<p>Certified TML Ambassadors <strong>Jenn Kline (Mahj Jen)</strong> and <strong>Ann Henley Perry (Mahj Hen)</strong> offer Mahjong 101 ($125/person) and Mahjong 102 ($115/person). We bring tiles, tables, and the NMJL card.</p>
-<h2>Mahjong Services</h2>
+        "Mahjong — Lessons, Events, Tiles & Instructors | Lookout Mountain Mahjong",
+        "Mahjong lessons, Mahjong 101 & 102, private mahjong events, Greenbrier tournaments & TML tiles. Certified mahjong instructors Mahj Jen & Mahj Hen. Book American mahjong nationwide.",
+        "mahjong, mah jongg, mahjong lessons, mahjong near me, american mahjong, learn mahjong, mahjong instructor, mahjong tiles, mahjong game",
+        "Mahjong",
+        """<p><strong>Mahjong</strong> is America's fastest-growing social tile game — and <strong>Lookout Mountain Mahjong</strong> is your home for <strong>American mahjong</strong> lessons, events, and tournaments nationwide.</p>
+<p>Whether you searched <strong>mahjong</strong>, <strong>mah jongg</strong>, or <strong>mahjong near me</strong>, you found certified TML Ambassadors <a href="mahj-jen-mahj-hen.html">Mahj Jen (Jenn Kline)</a> and <a href="mahj-jen-mahj-hen.html">Mahj Hen (Ann Henley Perry)</a>. We teach <a href="mahjong-101.html">Mahjong 101</a> ($125/person) and <a href="mahjong-102.html">Mahjong 102</a> ($115/person) — tiles, tables, and NMJL cards included.</p>
+<h2>Mahjong Lessons</h2>
 <ul>
-<li><a href="learn-american-mahjong.html">Learn American Mahjong</a></li>
-<li><a href="mahjong-101.html">Mahjong 101</a> — beginners, $125/person</li>
-<li><a href="mahjong-102.html">Mahjong 102</a> — strategy, $115/person</li>
+<li><a href="mahjong-lessons.html">Mahjong lessons</a> — beginner to advanced</li>
 <li><a href="mahjong-lessons-near-me.html">Mahjong lessons near me</a></li>
-<li><a href="greenbrier-mahjong.html">Greenbrier mahjong</a></li>
-<li><a href="book-mahjong-lesson.html">Book a mahjong lesson</a></li>
-<li><a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a></li>
+<li><a href="book-mahjong-lesson.html">Book mahjong</a></li>
+<li><a href="private-mahjong-lessons.html">Private mahjong lessons</a></li>
+<li><a href="mahjong-for-beginners.html">Mahjong for beginners</a></li>
+<li><a href="hire-mahjong-instructor.html">Hire a mahjong instructor</a></li>
 </ul>
-<p>Follow <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a> on Instagram. Brand: <a href="get-mahjn.html">Get Mahj'n</a> · <a href="a-bam-good-time.html">A Bam Good Time</a>.</p>""",
-        priority="0.95",
-        schema={"@type": "WebPage", "name": "Mahjong | Lookout Mountain Mahjong"},
+<h2>Learn Mahjong</h2>
+<ul>
+<li><a href="what-is-mahjong.html">What is mahjong?</a></li>
+<li><a href="how-to-play-mahjong.html">How to play mahjong</a></li>
+<li><a href="learn-american-mahjong.html">Learn American mahjong</a></li>
+<li><a href="american-mah-jongg.html">American mah jongg</a></li>
+<li><a href="mahjong-rules.html">Mahjong rules</a></li>
+<li><a href="mahjong-tips.html">Mahjong tips</a></li>
+<li><a href="mahjong-faq.html">Mahjong FAQ</a></li>
+</ul>
+<h2>Mahjong Events</h2>
+<ul>
+<li><a href="mahjong-events.html">Mahjong events</a></li>
+<li><a href="mahjong-party.html">Mahjong party</a></li>
+<li><a href="greenbrier-mahjong.html">Greenbrier mahjong</a></li>
+<li><a href="mahjong-tournament.html">Mahjong tournament</a></li>
+<li><a href="corporate-mahjong-events.html">Corporate mahjong</a></li>
+<li><a href="girls-night-mahjong.html">Girls night mahjong</a></li>
+</ul>
+<h2>Mahjong Tiles &amp; Gear</h2>
+<ul>
+<li><a href="mahjong-tiles.html">Mahjong tiles</a></li>
+<li><a href="buy-mahjong-tiles.html">Buy mahjong tiles</a></li>
+<li><a href="the-mahjong-line.html">The Mahjong Line</a> — code LOOKOUTMOUNTAIN</li>
+</ul>
+<h2>Mahjong Near You</h2>
+<p><a href="mahjong-keyword-hub.html">Complete mahjong search index</a> · <a href="chattanooga-mahjong.html">Chattanooga</a> · <a href="atlanta-mahjong.html">Atlanta</a> · <a href="nashville-mahjong.html">Nashville</a> · <a href="georgia-mahjong.html">Georgia</a> · <a href="tennessee-mahjong.html">Tennessee</a> · nationwide travel</p>
+<p>Follow mahjong daily: <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a> · <a href="get-mahjn.html">Get Mahj'n</a></p>""",
+        priority="1.0",
+        changefreq="weekly",
+        schema={
+            "@type": "ItemList",
+            "name": "Lookout Mountain Mahjong — Mahjong Services",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Mahjong 101", "url": f"{BASE}/mahjong-101.html"},
+                {"@type": "ListItem", "position": 2, "name": "Mahjong Lessons Near Me", "url": f"{BASE}/mahjong-lessons-near-me.html"},
+                {"@type": "ListItem", "position": 3, "name": "Book Mahjong", "url": f"{BASE}/book-mahjong-lesson.html"},
+                {"@type": "ListItem", "position": 4, "name": "Greenbrier Mahjong", "url": f"{BASE}/greenbrier-mahjong.html"},
+                {"@type": "ListItem", "position": 5, "name": "Mahjong Tiles", "url": f"{BASE}/mahjong-tiles.html"},
+            ],
+        },
+    ),
+    mahjong_kw(
+        "mahjong-keyword-hub.html",
+        "Search Index — Every Mahjong Topic",
+        "Complete mahjong search index — lessons, rules, events, tiles, cities, instructors. Everything mahjong at Lookout Mountain Mahjong.",
+        "mahjong search, everything mahjong, mahjong guide",
+        "Mahjong — Complete Search Index",
+        """<p>Every <strong>mahjong</strong> topic in one place. Click what you searched for:</p>
+<h2>Mahjong Core</h2>
+<p><a href="mahjong.html">Mahjong home</a> · <a href="what-is-mahjong.html">What is mahjong</a> · <a href="play-mahjong.html">Play mahjong</a> · <a href="mahjong-game.html">Mahjong game</a> · <a href="mahjong-explained.html">Mahjong explained</a></p>
+<h2>Mahjong Lessons</h2>
+<p><a href="mahjong-lessons.html">Mahjong lessons</a> · <a href="mahjong-lessons-near-me.html">Near me</a> · <a href="teach-me-mahjong.html">Teach me mahjong</a> · <a href="mahjong-teacher.html">Mahjong teacher</a> · <a href="mahjong-coach.html">Mahjong coach</a> · <a href="mahjong-tutor.html">Mahjong tutor</a> · <a href="hire-mahjong-instructor.html">Hire instructor</a> · <a href="certified-mahjong-instructor.html">Certified instructor</a> · <a href="best-mahjong-lessons.html">Best lessons</a></p>
+<h2>Mahjong Spelling Variants</h2>
+<p><a href="american-mah-jongg.html">Mah jongg</a> · <a href="mah-jongg-lessons.html">Mah jongg lessons</a> · <a href="mahjongg-lessons.html">Mahjongg lessons</a> · <a href="majong-lessons.html">Majong lessons</a></p>
+<h2>Mahjong Events &amp; Social</h2>
+<p><a href="mahjong-events.html">Events</a> · <a href="mahjong-party.html">Party</a> · <a href="mahjong-night.html">Mahjong night</a> · <a href="local-mahjong.html">Local mahjong</a> · <a href="ladies-mahjong.html">Ladies mahjong</a></p>
+<h2>Mahjong Strategy</h2>
+<p><a href="mahjong-strategy.html">Strategy</a> · <a href="mahjong-scoring.html">Scoring</a> · <a href="mahjong-hands.html">Hands</a> · <a href="win-at-mahjong.html">Win at mahjong</a> · <a href="mahjong-102.html">Mahjong 102</a></p>
+<h2>Mahjong Tiles</h2>
+<p><a href="mahjong-tiles.html">Tiles</a> · <a href="buy-mahjong-tiles.html">Buy tiles</a> · <a href="mahjong-set.html">Mahjong set</a> · <a href="mahjong-accessories.html">Accessories</a></p>
+<p><a href="find-us.html">Find us</a> · <a href="book-mahjong-lesson.html">Book mahjong now</a></p>""",
+        priority="0.98",
+        changefreq="weekly",
     ),
     page("m.html", "M — Mahjong | Lookout Mountain Mahjong", "M is for Mahjong. Lookout Mountain Mahjong — American mahjong lessons with Mahj Jen & Mahj Hen.", "mahjong, m mahjong, mountain mahjong, get mahjn", "M is for Mahjong", """<p><strong>Mountain Mahjong</strong> with Mahj Jen &amp; Mahj Hen. American mahjong lessons, Greenbrier events, TML tiles.</p>
 <p><a href="mahjong.html">Everything mahjong</a> · <a href="book-mahjong-lesson.html">Book a lesson</a> · <a href="lookoutmountainmahjong.html">Instagram</a></p>""", priority="0.9"),
@@ -87,7 +154,7 @@ PAGES = [
 <h2>Names &amp; Brand</h2>
 <p><a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a> · <a href="jen-kline-mahjong.html">Jen Kline</a> · <a href="ann-henley-perry-mahjong.html">Ann Henley Perry</a> · <a href="lookout-mountain-mahjong.html">Lookout Mountain Mahjong</a> · <a href="mountain-mahjong.html">Mountain Mahjong</a> · <a href="get-mahjn.html">Get Mahj'n</a> · <a href="a-bam-good-time.html">A Bam Good Time</a> · <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a></p>
 <h2>Lessons &amp; Booking</h2>
-<p><a href="mahjong-101.html">Mahjong 101</a> · <a href="mahjong-102.html">Mahjong 102</a> · <a href="book-mahjong-lesson.html">Book a lesson</a> · <a href="beginner-mahjong.html">Beginner</a> · <a href="private-mahjong-lessons.html">Private lessons</a> · <a href="mahjong-lessons-near-me.html">Near me</a> · <a href="mahjong-class.html">Mahjong class</a> · <a href="mahjong-instructor.html">Instructor</a></p>
+<p><a href="mahjong.html">★ Mahjong home</a> · <a href="mahjong-keyword-hub.html">Mahjong search index</a> · <a href="mahjong-101.html">Mahjong 101</a> · <a href="mahjong-102.html">Mahjong 102</a> · <a href="mahjong-lessons.html">Mahjong lessons</a> · <a href="book-mahjong-lesson.html">Book</a> · <a href="beginner-mahjong.html">Beginner</a> · <a href="private-mahjong-lessons.html">Private</a> · <a href="mahjong-lessons-near-me.html">Near me</a> · <a href="hire-mahjong-instructor.html">Hire instructor</a></p>
 <h2>Learn &amp; Tips</h2>
 <p><a href="learn-american-mahjong.html">Learn American mahjong</a> · <a href="american-mah-jongg.html">American mah jongg</a> · <a href="how-to-play-mahjong.html">How to play</a> · <a href="mahjong-rules.html">Rules</a> · <a href="mahjong-charleston.html">Charleston</a> · <a href="mahjong-jokers.html">Jokers</a> · <a href="nmjl-card.html">NMJL card</a> · <a href="mahjong-tips.html">Tips</a> · <a href="mahjong-faq.html">FAQ</a></p>
 <h2>Events</h2>
@@ -320,6 +387,68 @@ PAGES = [
 <p><strong>Trend:</strong> <a href="why-everyones-getting-mahjn.html">Why everyone's getting Mahj'n</a> · <a href="trending-mahjong.html">Trending 2026</a> · <a href="viral-mahjong.html">Viral mahjong</a> · <a href="go-viral-mahjong.html">Go viral playbook</a></p>
 <p><strong>Social:</strong> <a href="instagram-mahjong.html">Instagram</a> · <a href="tiktok-mahjong.html">TikTok</a> · <a href="lookoutmountainmahjong.html">@lookoutmountainmahjong</a></p>
 <p><strong>Book:</strong> <a href="book-mahjong-lesson.html">Book Mahjong 101</a> · <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a></p>""", priority="0.92", changefreq="weekly"),
+    # ── Mahjong keyword wave (pop for "mahjong" searches) ──
+    mahjong_kw("mahjong-lessons.html", "Lessons", "Mahjong lessons for beginners and advanced players. Mahjong 101 $125, Mahjong 102 $115. We travel nationwide.", "mahjong lessons, mahjong classes, learn mahjong", "Mahjong Lessons", "<p>Professional <strong>mahjong lessons</strong> with certified TML Ambassadors. <a href=\"mahjong-101.html\">Mahjong 101</a> for beginners · <a href=\"mahjong-102.html\">102</a> for strategy · <a href=\"mahjong-lessons-near-me.html\">near me</a>.</p>", priority="0.97"),
+    mahjong_kw("mahjong-events.html", "Events", "Mahjong events nationwide — corporate, sorority, country club, Greenbrier tournaments.", "mahjong events, mahjong event planning", "Mahjong Events", "<p>Private <strong>mahjong events</strong> for every occasion. <a href=\"corporate-mahjong-events.html\">Corporate</a> · <a href=\"sorority-mahjong-parties.html\">Sorority</a> · <a href=\"greenbrier-mahjong.html\">Greenbrier</a> · <a href=\"book-mahjong-lesson.html\">Book</a>.</p>", priority="0.92"),
+    mahjong_kw("mahjong-party.html", "Party", "Book a mahjong party — private lesson at your home. 4–8 guests, $125/person, tiles included.", "mahjong party, mahjong party ideas, host mahjong party", "Mahjong Party", "<p>The ultimate <strong>mahjong party</strong> — we bring tiles, teach the game, send everyone home obsessed. <a href=\"girls-night-mahjong.html\">Girls night</a> · <a href=\"invite.html\">Invite friends</a>.</p>", priority="0.93"),
+    mahjong_kw("what-is-mahjong.html", "Explained — What Is It?", "What is mahjong? American mah jongg explained — tiles, rules, NMJL card, four players.", "what is mahjong, what is mah jongg, mahjong meaning", "What Is Mahjong?", "<p><strong>Mahjong</strong> (mah jongg) is a four-player tile game using 152 tiles and the annual NMJL card. American mahjong uses jokers and the Charleston. Learn in one lesson: <a href=\"mahjong-101.html\">Mahjong 101</a>.</p>", priority="0.94"),
+    mahjong_kw("play-mahjong.html", "Play — Learn Today", "Play mahjong today — book Mahjong 101 and play your first full game this week.", "play mahjong, play mah jongg, start playing mahjong", "Play Mahjong", "<p>Ready to <strong>play mahjong</strong>? No experience needed. <a href=\"mahjong-101.html\">Mahjong 101</a> takes you from zero to your first full game in one afternoon.</p>", priority="0.95"),
+    mahjong_kw("mahjong-game.html", "Game — American Mah Jongg", "The mahjong game — American mah jongg rules, tiles, and how to win.", "mahjong game, mah jongg game, tile game mahjong", "The Mahjong Game", "<p>The <strong>mahjong game</strong> uses bams, cracks, dots, winds, dragons, flowers, and jokers. <a href=\"how-to-play-mahjong.html\">How to play</a> · <a href=\"mahjong-rules.html\">Rules</a>.</p>", priority="0.91"),
+    mahjong_kw("mahjong-explained.html", "Explained for Beginners", "Mahjong explained simply — American mah jongg for first-timers.", "mahjong explained, mahjong for dummies, simple mahjong", "Mahjong Explained", "<p><strong>Mahjong explained</strong> in plain English. Book <a href=\"mahjong-101.html\">Mahjong 101</a> — we'll explain everything hands-on.</p>", priority="0.90"),
+    mahjong_kw("teach-me-mahjong.html", "Teach Me", "Teach me mahjong — private Mahjong 101 lesson. Mahj Jen & Mahj Hen come to you.", "teach me mahjong, teach me mah jongg", "Teach Me Mahjong", "<p><em>Teach me mahjong!</em> — that's what <a href=\"mahjong-101.html\">Mahjong 101</a> is for. We bring tiles, you bring friends.</p>", priority="0.94"),
+    mahjong_kw("mahjong-teacher.html", "Teacher", "Certified mahjong teacher — TML Ambassadors Mahj Jen & Mahj Hen.", "mahjong teacher, mahjong teachers near me", "Mahjong Teacher", "<p>Certified <strong>mahjong teachers</strong> — <a href=\"mahj-jen-mahj-hen.html\">Jenn Kline &amp; Ann Henley Perry</a>. <a href=\"book-mahjong-lesson.html\">Book</a>.</p>", priority="0.93"),
+    mahjong_kw("mahjong-coach.html", "Coach", "Mahjong coach for strategy and tournament prep. Mahjong 102 $115/person.", "mahjong coach, mahjong coaching", "Mahjong Coach", "<p><strong>Mahjong coaching</strong> via <a href=\"mahjong-102.html\">Mahjong 102</a> — strategy, Siamese, tournament play.</p>", priority="0.88"),
+    mahjong_kw("mahjong-tutor.html", "Tutor", "Private mahjong tutor — in-home lessons nationwide.", "mahjong tutor, private mahjong tutor", "Mahjong Tutor", "<p>Your private <strong>mahjong tutor</strong> comes to you. <a href=\"private-mahjong-lessons.html\">Private lessons</a> · <a href=\"mahjong-lessons-near-me.html\">Near me</a>.</p>", priority="0.90"),
+    mahjong_kw("hire-mahjong-instructor.html", "Hire an Instructor", "Hire a mahjong instructor for your event, club, or home. Nationwide travel.", "hire mahjong instructor, hire mahjong teacher, mahjong instructor for hire", "Hire a Mahjong Instructor", "<p><strong>Hire a mahjong instructor</strong> — corporate, clubs, private homes, resorts. Email lookoutmountainmahjong@gmail.com · <a href=\"book-mahjong-lesson.html\">Book online</a>.</p>", priority="0.95"),
+    mahjong_kw("certified-mahjong-instructor.html", "Certified Instructor", "Certified mahjong instructor — TML Ambassador certified. Mahj Jen & Mahj Hen.", "certified mahjong instructor, certified mah jongg teacher", "Certified Mahjong Instructor", "<p>Certified TML Ambassador <strong>mahjong instructors</strong>. <a href=\"mahj-jen-mahj-hen.html\">Meet the team</a>.</p>", priority="0.91"),
+    mahjong_kw("best-mahjong-lessons.html", "Best Lessons", "Best mahjong lessons in the South — Lookout Mountain Mahjong, Greenbrier, nationwide.", "best mahjong lessons, best mahjong class", "Best Mahjong Lessons", "<p>Why we're among the <strong>best mahjong lessons</strong> — certified, traveled, Greenbrier-tested. <a href=\"mahjong-101.html\">Try Mahjong 101</a>.</p>", priority="0.92"),
+    mahjong_kw("mahjong-for-beginners.html", "For Beginners", "Mahjong for beginners — Mahjong 101 from $125/person. No experience needed.", "mahjong for beginners, mahjong beginner class", "Mahjong for Beginners", "<p><strong>Mahjong for beginners</strong> starts with <a href=\"mahjong-101.html\">Mahjong 101</a>. Also: <a href=\"beginner-mahjong.html\">beginner guide</a> · <a href=\"what-is-mahjong.html\">what is mahjong</a>.</p>", priority="0.94"),
+    mahjong_kw("american-mahjong-lessons.html", "American Mahjong Lessons", "American mahjong lessons — NMJL rules, certified instructors, nationwide.", "american mahjong lessons, american mah jongg lessons", "American Mahjong Lessons", "<p><strong>American mahjong lessons</strong> — not Chinese mahjong. We teach NMJL rules. <a href=\"learn-american-mahjong.html\">Learn more</a> · <a href=\"book-mahjong-lesson.html\">Book</a>.</p>", priority="0.96"),
+    mahjong_kw("mah-jongg-lessons.html", "Mah Jongg Lessons", "Mah jongg lessons — spelled mah jongg, same great American tile game.", "mah jongg lessons, mah jongg classes, mah jongg near me", "Mah Jongg Lessons", "<p>Search <strong>mah jongg</strong>? Same game as mahjong. <a href=\"mahjong-lessons.html\">Mahjong lessons</a> · <a href=\"american-mah-jongg.html\">American mah jongg</a>.</p>", priority="0.95"),
+    mahjong_kw("mahjongg-lessons.html", "Mahjongg Lessons", "Mahjongg lessons — learn American mahjongg with certified instructors.", "mahjongg lessons, mahjongg classes", "Mahjongg Lessons", "<p><strong>Mahjongg</strong> = mahjong = mah jongg. <a href=\"mahjong-101.html\">Book Mahjong 101</a> · <a href=\"mahjong-lessons-near-me.html\">Near me</a>.</p>", priority="0.88"),
+    mahjong_kw("majong-lessons.html", "Majong Lessons", "Majong lessons — learn American mahjong (common spelling). Lookout Mountain Mahjong.", "majong lessons, majong classes, majong game", "Majong Lessons", "<p>Typed <strong>majong</strong>? You're in the right place. <a href=\"mahjong.html\">Mahjong lessons</a> with Mahj Jen &amp; Mahj Hen.</p>", priority="0.85"),
+    mahjong_kw("mahjong-night.html", "Night — Host a Game Night", "Mahjong night — host the perfect game night at home.", "mahjong night, mah jongg night, game night mahjong", "Mahjong Night", "<p>Make it a <strong>mahjong night</strong> — book <a href=\"mahjong-101.html\">Mahjong 101</a> for your group. <a href=\"girls-night-mahjong.html\">Girls night</a> · <a href=\"neighborhood-mahjong.html\">Neighborhood</a>.</p>", priority="0.90"),
+    mahjong_kw("local-mahjong.html", "Local — Find Lessons Near You", "Local mahjong lessons — Georgia, Tennessee, NC, AL, nationwide travel.", "local mahjong, local mah jongg, mahjong in my area", "Local Mahjong", "<p><strong>Local mahjong</strong> on Lookout Mountain + we travel. <a href=\"mahjong-lessons-near-me.html\">Lessons near me</a> · <a href=\"find-us.html\">All cities</a>.</p>", priority="0.92"),
+    mahjong_kw("ladies-mahjong.html", "Ladies Mahjong", "Ladies mahjong groups — luncheons, clubs, and private lessons.", "ladies mahjong, women's mahjong, ladies mah jongg", "Ladies Mahjong", "<p><strong>Ladies mahjong</strong> is our specialty. <a href=\"ladies-luncheon-mahjong.html\">Luncheon</a> · <a href=\"country-club-mahjong.html\">Country club</a> · <a href=\"girls-night-mahjong.html\">Girls night</a>.</p>", priority="0.89"),
+    mahjong_kw("mahjong-strategy.html", "Strategy", "Mahjong strategy — advanced tips, defensive play, hand selection.", "mahjong strategy, mah jongg strategy, win mahjong", "Mahjong Strategy", "<p>Level up your <strong>mahjong strategy</strong> with <a href=\"mahjong-102.html\">Mahjong 102</a>. <a href=\"mahjong-tips.html\">10 tips</a> · <a href=\"win-at-mahjong.html\">How to win</a>.</p>", priority="0.87"),
+    mahjong_kw("mahjong-scoring.html", "Scoring", "Mahjong scoring in American mah jongg — how points work.", "mahjong scoring, mah jongg scoring, mahjong points", "Mahjong Scoring", "<p><strong>Mahjong scoring</strong> varies by hand on the NMJL card. We teach scoring in <a href=\"mahjong-101.html\">Mahjong 101</a>.</p>", priority="0.84"),
+    mahjong_kw("mahjong-hands.html", "Hands — NMJL Card", "Mahjong hands on the NMJL card — winning combinations explained.", "mahjong hands, mah jongg hands, NMJL hands", "Mahjong Hands", "<p>Hundreds of <strong>mahjong hands</strong> on the annual NMJL card. Learn to read them: <a href=\"nmjl-card.html\">NMJL card guide</a> · <a href=\"mahjong-101.html\">101</a>.</p>", priority="0.86"),
+    mahjong_kw("win-at-mahjong.html", "How to Win", "How to win at mahjong — strategy tips from certified instructors.", "how to win mahjong, win at mah jongg, mahjong winning tips", "How to Win at Mahjong", "<p>Want to <strong>win at mahjong</strong>? Start with fundamentals in <a href=\"mahjong-101.html\">101</a>, strategy in <a href=\"mahjong-102.html\">102</a>, tips in <a href=\"mahjong-tips.html\">10 tips</a>.</p>", priority="0.88"),
+    mahjong_kw("buy-mahjong-tiles.html", "Buy Tiles", "Buy mahjong tiles — TML pink, purple, green. Ambassador code LOOKOUTMOUNTAIN.", "buy mahjong tiles, mahjong tiles for sale, best mahjong set", "Buy Mahjong Tiles", "<p><strong>Buy mahjong tiles</strong> from The Mahjong Line — code <strong>LOOKOUTMOUNTAIN</strong>. <a href=\"mahjong-tiles.html\">Tile guide</a> · <a href=\"the-mahjong-line.html\">TML</a>.</p>", priority="0.88"),
+    mahjong_kw("mahjong-set.html", "Set — Tiles & Accessories", "Mahjong set — tiles, racks, cards, mats. TML ambassador recommendations.", "mahjong set, complete mahjong set, mah jongg set", "Mahjong Set", "<p>The perfect <strong>mahjong set</strong> starts with TML tiles. <a href=\"buy-mahjong-tiles.html\">Buy tiles</a> · code LOOKOUTMOUNTAIN.</p>", priority="0.87"),
+    mahjong_kw("mahjong-accessories.html", "Accessories", "Mahjong accessories — mats, racks, cards, pushers. TML ambassador picks.", "mahjong accessories, mah jongg accessories, mahjong mat", "Mahjong Accessories", "<p><strong>Mahjong accessories</strong> including <a href=\"aqua-mat-mahjong.html\">aqua mats</a>. TML code LOOKOUTMOUNTAIN.</p>", priority="0.82"),
+    mahjong_kw("mahjong-usa.html", "USA — Nationwide Lessons", "Mahjong USA — American mah jongg lessons nationwide from Lookout Mountain Mahjong.", "mahjong usa, mahjong united states, american mahjong usa", "Mahjong USA", "<p><strong>Mahjong</strong> is booming across the USA. We teach in GA, TN, NC, FL, TX &amp; travel nationwide. <a href=\"mahjong-lessons-near-me.html\">Near me</a>.</p>", priority="0.90"),
+    mahjong_kw("mahjong-south.html", "South — Southern Mahjong", "Mahjong in the South — Georgia, Tennessee, Carolinas, Alabama, Florida.", "mahjong south, southern mah jongg, mahjong southeast", "Mahjong in the South", "<p><strong>Mahjong in the South</strong> — our home turf. <a href=\"southern-mahjong.html\">Southern mahjong</a> · <a href=\"georgia-mahjong.html\">Georgia</a> · <a href=\"tennessee-mahjong.html\">Tennessee</a>.</p>", priority="0.89"),
+    mahjong_kw("mahjong-for-seniors.html", "For Seniors", "Mahjong for seniors — social, cognitive, fun. Beginner-friendly Mahjong 101.", "mahjong for seniors, senior mah jongg, retirement mahjong", "Mahjong for Seniors", "<p><strong>Mahjong for seniors</strong> — social connection and mental sharpness. Gentle, fun <a href=\"mahjong-101.html\">Mahjong 101</a> lessons.</p>", priority="0.86"),
+    mahjong_kw("mahjong-learning.html", "Learning Center", "Mahjong learning — guides, lessons, tips, and classes.", "mahjong learning, learning mah jongg, mahjong education", "Mahjong Learning", "<p>Your <strong>mahjong learning</strong> hub: <a href=\"learn-american-mahjong.html\">Guide</a> · <a href=\"mahjong-101.html\">101</a> · <a href=\"mahjong-tips.html\">Tips</a> · <a href=\"mahjong-faq.html\">FAQ</a>.</p>", priority="0.91"),
+    page(
+        "mahjong-faq-extended.html",
+        "Mahjong FAQ — 20 Common Questions",
+        "Mahjong FAQ — pricing, rules, tiles, booking, beginners, Charleston, jokers, NMJL. Lookout Mountain Mahjong.",
+        "mahjong faq, mahjong questions, mah jongg FAQ, mahjong help",
+        "Mahjong FAQ — 20 Questions",
+        """<h2>How much do mahjong lessons cost?</h2><p>Mahjong 101 is $125/person. Mahjong 102 is $115/person.</p>
+<h2>What is American mahjong?</h2><p>Four players, 152 tiles, NMJL card, jokers, and the Charleston. <a href="what-is-mahjong.html">Full explanation</a>.</p>
+<h2>Do I need my own mahjong tiles?</h2><p>No — we bring everything to every lesson.</p>
+<h2>How long is a mahjong lesson?</h2><p>2–3 hours for Mahjong 101.</p>
+<h2>How many people for mahjong?</h2><p>4–8 for lessons; 4 to play a standard game.</p>
+<h2>Where do you teach mahjong?</h2><p>Lookout Mountain, GA + nationwide travel. <a href="mahjong-lessons-near-me.html">Cities</a>.</p>
+<h2>Who are the mahjong instructors?</h2><p><a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a>, certified TML Ambassadors.</p>
+<h2>Can you teach mahjong at my home?</h2><p>Yes — <a href="private-mahjong-lessons.html">private lessons</a> at your home, club, or venue.</p>
+<h2>What mahjong tiles do you recommend?</h2><p>The Mahjong Line (TML) — code LOOKOUTMOUNTAIN. <a href="buy-mahjong-tiles.html">Buy tiles</a>.</p>
+<h2>Do you host mahjong tournaments?</h2><p>Yes — <a href="greenbrier-mahjong.html">Greenbrier</a> and private events. <a href="mahjong-tournament.html">Tournaments</a>.</p>""",
+        priority="0.90",
+        schema={
+            "@type": "FAQPage",
+            "mainEntity": [
+                {"@type": "Question", "name": "How much do mahjong lessons cost?", "acceptedAnswer": {"@type": "Answer", "text": "Mahjong 101 is $125/person. Mahjong 102 is $115/person."}},
+                {"@type": "Question", "name": "What is American mahjong?", "acceptedAnswer": {"@type": "Answer", "text": "Four players, 152 tiles, the NMJL card, jokers, and the Charleston."}},
+                {"@type": "Question", "name": "Do I need my own mahjong tiles?", "acceptedAnswer": {"@type": "Answer", "text": "No. Instructors bring tiles, tables, and NMJL cards."}},
+                {"@type": "Question", "name": "Where do you teach mahjong?", "acceptedAnswer": {"@type": "Answer", "text": "Lookout Mountain, Georgia and nationwide travel."}},
+                {"@type": "Question", "name": "Can you teach mahjong at my home?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Private lessons at homes, clubs, and venues."}},
+            ],
+        },
+    ),
 ]
 
 
@@ -328,7 +457,7 @@ def build_schema(page: dict) -> dict:
     graph = [ORG, {"@type": "WebPage", "@id": url, "url": url, "name": page["title"], "description": page["description"], "isPartOf": {"@id": f"{HOME}#website"}}]
     extra = page.get("schema")
     if extra:
-        node = {"@context": "https://schema.org", **extra, "url": url}
+        node = {**extra, "url": url}
         if node.get("@type") == "Course":
             node.setdefault("provider", {"@id": f"{HOME}#organization"})
         graph.append(node)
@@ -395,7 +524,8 @@ def write_sitemap(root: Path):
 
 def write_llms_txt(root: Path):
     urls = [f"- {HOME} (public home)", f"- {BASE}/shop.html (public shop)", f"- {BASE}/faq.html (public FAQ)", f"- {BASE}/sitemap.xml (all URLs)"]
-    urls.append(f"- {BASE}/find-us.html (keyword index)")
+    urls.append(f"- {BASE}/mahjong.html (primary mahjong keyword page)")
+    urls.append(f"- {BASE}/mahjong-keyword-hub.html (mahjong search index)")
     for p in sorted(PAGES, key=lambda x: x["file"]):
         if p["file"] not in ("find-us.html",):
             urls.append(f"- {BASE}/{p['file']}")
