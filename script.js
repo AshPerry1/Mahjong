@@ -1159,13 +1159,13 @@ if ('serviceWorker' in navigator) {
     const productsEl = document.getElementById('shop-products');
     const filtersEl = document.getElementById('shop-filters');
     const productsCountEl = document.getElementById('shop-products-count');
-    const featuredWrapEl = document.getElementById('shop-featured-wrap');
+    const featuredWrapEl = document.getElementById('featured-sweater');
     const featuredEl = document.getElementById('shop-featured');
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
-    const CATALOG_URL = 'threadandink-catalog.json';
+    const CATALOG_URL = 'threadandink-catalog.json?v=featured-sweater-1';
     const COUNT_API = 'https://countapi.mileshilliard.com/api/v1';
     let catalogData = { collections: [], products: [], categories: [], featured: null };
     let activeCategory = 'all';

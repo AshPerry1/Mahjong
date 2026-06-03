@@ -4052,6 +4052,7 @@ a.register-btn:hover,
 
 .shop-page-hero .shop-all-btn {
     display: inline-flex;
+    margin-top: 4px;
 }
 
 .shop-intro {
@@ -4076,6 +4077,24 @@ a.register-btn:hover,
 .shop-all-btn {
     display: inline-flex;
     margin: 0 auto;
+}
+
+.shop-page-hero .shop-featured-wrap {
+    margin: 0 auto 28px;
+    max-width: 920px;
+    width: 100%;
+    scroll-margin-top: calc(var(--site-promo-banner-height, 0px) + 120px);
+}
+
+.shop-featured-hero-label {
+    margin: 0 0 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rose-pink);
+    text-align: center;
 }
 
 .shop-featured-wrap {
