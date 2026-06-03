@@ -1,0 +1,36 @@
+/* Minimal styles for crawler-only SEO pages — not linked from main site */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #1a1a2e;
+    background: #fff;
+}
+.seo-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+    font-weight: 600;
+}
+h2 {
+    font-size: 1.15rem;
+    margin: 2rem 0 0.75rem;
+    font-weight: 600;
+}
+p, li { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+a { color: #6f2c9d; }
+.seo-home-link {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8e8ef;
+    font-size: 0.9rem;
+    color: #555;
+}

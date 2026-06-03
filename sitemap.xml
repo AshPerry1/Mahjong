@@ -2,206 +2,167 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lookoutmountainmahjong.com/</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/find-us.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.98</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/m.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/private-mahjong-lessons.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/learn-american-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/mahjong-tips.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/mahjong-tiles.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/greenbrier-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/chattanooga-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/atlanta-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/georgia-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/tennessee-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/nashville-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/marthas-vineyard-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/corporate-mahjong-events.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/sorority-mahjong-parties.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/press.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/shop.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/faq.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lookoutmountainmahjong.com/book-mahjong-lesson.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://lookoutmountainmahjong.com/mahjong.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.98</priority>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/m.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/find-us.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/mahj-jen-mahj-hen.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/lookout-mountain-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/book-mahjong-lesson.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/mahjong-101.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/mahjong-102.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/learn-american-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/beginner-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/girls-night-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/invite.html</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://lookoutmountainmahjong.com/country-club-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/private-mahjong-lessons.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/mahjong-tips.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/mahjong-tiles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/greenbrier-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/west-virginia-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/chattanooga-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/atlanta-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/georgia-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/tennessee-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/nashville-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/knoxville-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lookoutmountainmahjong.com/charlotte-mahjong.html</loc>
-    <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lookoutmountainmahjong.com/site-map.html</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://lookoutmountainmahjong.com/marthas-vineyard-mahjong.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/corporate-mahjong-events.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/sorority-mahjong-parties.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/girls-night-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/country-club-mahjong.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/press.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://lookoutmountainmahjong.com/invite.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

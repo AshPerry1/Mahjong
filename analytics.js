@@ -169,47 +169,11 @@
             });
         });
 
-        document.querySelectorAll('a.footer-social-link, a[href*="instagram"], a[href*="bit.ly"], a[href*="tiktok"], a.site-promo-banner-cta, a.instagram-cta, a[data-track^="instagram"]').forEach(function(link) {
+        document.querySelectorAll('a.footer-social-link, a[href*="instagram"], a[href*="bit.ly"], a[href*="tiktok"], a.site-promo-banner-cta').forEach(function(link) {
             link.addEventListener('click', function() {
-                const href = this.getAttribute('href') || '';
-                trackEvent('Social Media', 'click_social', href);
-
-                if (href.indexOf('instagram.com') !== -1) {
-                    gtag('event', 'instagram_follow_click', {
-                        event_category: 'Conversion',
-                        event_label: this.getAttribute('data-track') || 'instagram_link',
-                        social_platform: 'instagram',
-                        user_intent: 'follow'
-                    });
-                }
+                trackEvent('Social Media', 'click_social', this.getAttribute('href') || '');
             });
         });
-
-        var urlParams = new URLSearchParams(window.location.search);
-        var utmSource = urlParams.get('utm_source') || urlParams.get('ref');
-        if (utmSource && (utmSource === 'instagram' || utmSource === 'ig' || utmSource === 'linkinbio')) {
-            gtag('event', 'instagram_referral_landing', {
-                event_category: 'Traffic',
-                event_label: utmSource,
-                page_type: getPageType()
-            });
-        }
-
-        if (document.referrer && document.referrer.indexOf('instagram.com') !== -1) {
-            gtag('event', 'instagram_referral_landing', {
-                event_category: 'Traffic',
-                event_label: 'instagram_referrer',
-                page_type: getPageType()
-            });
-        }
-
-        if (window.location.pathname === '/m.html' || window.location.pathname.endsWith('/m.html')) {
-            gtag('event', 'm_shortlink_landing', {
-                event_category: 'Traffic',
-                event_label: 'm_gateway',
-                page_type: 'm_shortlink'
-            });
-        }
 
         const hamburger = document.querySelector('.hamburger');
         if (hamburger) {

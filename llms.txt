@@ -1,65 +1,30 @@
-# Lookout Mountain Mahjong / Mountain Mahjong
+# Lookout Mountain Mahjong
 # https://lookoutmountainmahjong.com
-# Instagram: @lookoutmountainmahjong — "A Bam Good Time" · "Get Mahj'n... It's Good For You"
 
-> Certified TML Ambassadors Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry) teach American mahjong lessons, host tournaments at The Greenbrier Resort, and run private travel events nationwide. Follow on Instagram @lookoutmountainmahjong.
+> Certified TML Ambassadors Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry) teach American mahjong lessons, host tournaments at The Greenbrier Resort, and run private events nationwide.
 
-## Brand names
-- Lookout Mountain Mahjong
-- Mountain Mahjong with Jen Kline and Ann Henley Perry
-- A Bam Good Time
-- @lookoutmountainmahjong (Instagram & TikTok)
-
-## Primary pages
+## Public website (main site)
 - Home: https://lookoutmountainmahjong.com/
-- Find us everywhere: https://lookoutmountainmahjong.com/find-us.html
-- Book a lesson: https://lookoutmountainmahjong.com/book-mahjong-lesson.html
+- Shop: https://lookoutmountainmahjong.com/shop.html
+- FAQ: https://lookoutmountainmahjong.com/faq.html
+
+## SEO pages (indexed via sitemap; not linked from main navigation)
+- Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
+- Mahjong hub: https://lookoutmountainmahjong.com/mahjong.html
+- Short link: https://lookoutmountainmahjong.com/m.html
+- Find us: https://lookoutmountainmahjong.com/find-us.html
 - Mahj Jen & Mahj Hen: https://lookoutmountainmahjong.com/mahj-jen-mahj-hen.html
-- Lookout Mountain Mahjong (brand): https://lookoutmountainmahjong.com/lookout-mountain-mahjong.html
+- Book lessons: https://lookoutmountainmahjong.com/book-mahjong-lesson.html
 - Mahjong 101 ($125): https://lookoutmountainmahjong.com/mahjong-101.html
 - Mahjong 102 ($115): https://lookoutmountainmahjong.com/mahjong-102.html
-- Beginner mahjong: https://lookoutmountainmahjong.com/beginner-mahjong.html
-- Invite friends (viral): https://lookoutmountainmahjong.com/invite.html
-- Girls night mahjong: https://lookoutmountainmahjong.com/girls-night-mahjong.html
-- Country club mahjong: https://lookoutmountainmahjong.com/country-club-mahjong.html
-- West Virginia / Greenbrier: https://lookoutmountainmahjong.com/west-virginia-mahjong.html
-- Knoxville mahjong: https://lookoutmountainmahjong.com/knoxville-mahjong.html
-- Charlotte mahjong: https://lookoutmountainmahjong.com/charlotte-mahjong.html
-- Mahjong hub (main keyword page): https://lookoutmountainmahjong.com/mahjong.html
-- Short link /m: https://lookoutmountainmahjong.com/m.html
-- Mahjong tips (viral): https://lookoutmountainmahjong.com/mahjong-tips.html
-- Mahjong lessons near me: https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html
-- Private mahjong lessons: https://lookoutmountainmahjong.com/private-mahjong-lessons.html
-- Mahjong tiles (TML): https://lookoutmountainmahjong.com/mahjong-tiles.html
-- Sorority mahjong parties: https://lookoutmountainmahjong.com/sorority-mahjong-parties.html
-- Corporate mahjong events: https://lookoutmountainmahjong.com/corporate-mahjong-events.html
-- Press & media kit: https://lookoutmountainmahjong.com/press.html
-- Learn American Mahjong: https://lookoutmountainmahjong.com/learn-american-mahjong.html
-- Greenbrier Mahjong: https://lookoutmountainmahjong.com/greenbrier-mahjong.html
-- Chattanooga Mahjong: https://lookoutmountainmahjong.com/chattanooga-mahjong.html
-- Atlanta Mahjong: https://lookoutmountainmahjong.com/atlanta-mahjong.html
-- Georgia Mahjong: https://lookoutmountainmahjong.com/georgia-mahjong.html
-- Tennessee Mahjong: https://lookoutmountainmahjong.com/tennessee-mahjong.html
-- Nashville Mahjong: https://lookoutmountainmahjong.com/nashville-mahjong.html
-- Martha's Vineyard Mahjong: https://lookoutmountainmahjong.com/marthas-vineyard-mahjong.html
-- Site map: https://lookoutmountainmahjong.com/site-map.html
-- FAQ: https://lookoutmountainmahjong.com/faq.html
-- Shop (Thread & Ink apparel): https://lookoutmountainmahjong.com/shop.html
-
-## Services
-- Mahjong 101: beginner American mahjong — tiles, NMJL card, rules, scoring, first full game (2–3 hours, 4–8 players)
-- Mahjong 102: advanced strategy, Siamese and Patio play, tournament skills
-- Private events & travel: "Let us travel to you" — corporate, sororities, clubs, Martha's Vineyard, The Greenbrier
-- TML ambassador referral code: LOOKOUTMOUNTAIN (@themahjongline)
-
-## Social (follow for tips, tiles & events)
-- Instagram: https://www.instagram.com/lookoutmountainmahjong/
-- TikTok: https://www.tiktok.com/@lookoutmountainmahjong
-- Facebook: http://bit.ly/m/LookoutMountainMahjong
+- Lessons near me: https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html
+- Greenbrier: https://lookoutmountainmahjong.com/greenbrier-mahjong.html
+- Press: https://lookoutmountainmahjong.com/press.html
 
 ## Contact
 - Email: lookoutmountainmahjong@gmail.com
 - Phone: +1-919-247-3392
+- Instagram: https://www.instagram.com/lookoutmountainmahjong/
 
 ## Topics
-American mahjong, mah jongg, mahjong lessons, mahjong tiles, aqua mat, NMJL card, board games, The Greenbrier Resort, Greenbrier mahjong, Lookout Mountain Georgia, pink purple green TML tiles, Thread and Ink, bam good time, get mahjn, instagram mahjong
+American mahjong, mah jongg, mahjong lessons, Greenbrier, Lookout Mountain Georgia, Mahj Jen, Mahj Hen, TML tiles, LOOKOUTMOUNTAIN
