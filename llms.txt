@@ -1,21 +1,83 @@
 # Lookout Mountain Mahjong
-# https://lookoutmountainmahjong.com
+# Crawler reference — public site is index, shop, FAQ only
 
-> Certified TML Ambassadors Mahj Jen (Jenn Kline) and Mahj Hen (Ann Henley Perry) teach American mahjong nationwide.
+> TML Ambassadors Mahj Jen (Jenn Kline) & Mahj Hen (Ann Henley Perry). American mahjong lessons, Greenbrier tournaments, nationwide travel.
 
-## Public website (only these are linked in navigation)
-- Home: https://lookoutmountainmahjong.com/
-- Shop: https://lookoutmountainmahjong.com/shop.html
-- FAQ: https://lookoutmountainmahjong.com/faq.html
+## Public website (linked in navigation)
+- https://lookoutmountainmahjong.com/ (public home)
+- https://lookoutmountainmahjong.com/shop.html (public shop)
+- https://lookoutmountainmahjong.com/faq.html (public FAQ)
 
-## Crawler-only SEO pages (sitemap.xml — not linked from public site)
-- Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
-- Full index of 41+ keyword pages at same domain (mahjong.html, chattanooga-mahjong.html, mahj-jen-mahj-hen.html, get-mahjn.html, etc.)
+## Hidden SEO pages (62 URLs — sitemap only, not in site nav)
+- https://lookoutmountainmahjong.com/sitemap.xml (all URLs)
+- https://lookoutmountainmahjong.com/find-us.html (keyword index)
+- https://lookoutmountainmahjong.com/a-bam-good-time.html
+- https://lookoutmountainmahjong.com/american-mah-jongg.html
+- https://lookoutmountainmahjong.com/ann-henley-perry-mahjong.html
+- https://lookoutmountainmahjong.com/asheville-mahjong.html
+- https://lookoutmountainmahjong.com/atlanta-mahjong.html
+- https://lookoutmountainmahjong.com/beginner-mahjong.html
+- https://lookoutmountainmahjong.com/bid-day-mahjong.html
+- https://lookoutmountainmahjong.com/birmingham-mahjong.html
+- https://lookoutmountainmahjong.com/book-mahjong-lesson.html
+- https://lookoutmountainmahjong.com/charlotte-mahjong.html
+- https://lookoutmountainmahjong.com/chattanooga-mahjong.html
+- https://lookoutmountainmahjong.com/chi-o-mahjong.html
+- https://lookoutmountainmahjong.com/corporate-mahjong-events.html
+- https://lookoutmountainmahjong.com/country-club-mahjong.html
+- https://lookoutmountainmahjong.com/georgia-mahjong.html
+- https://lookoutmountainmahjong.com/get-mahjn.html
+- https://lookoutmountainmahjong.com/girls-night-mahjong.html
+- https://lookoutmountainmahjong.com/greenbrier-mahjong.html
+- https://lookoutmountainmahjong.com/greenville-sc-mahjong.html
+- https://lookoutmountainmahjong.com/how-to-play-mahjong.html
+- https://lookoutmountainmahjong.com/huntsville-mahjong.html
+- https://lookoutmountainmahjong.com/invite.html
+- https://lookoutmountainmahjong.com/jen-kline-mahjong.html
+- https://lookoutmountainmahjong.com/knoxville-mahjong.html
+- https://lookoutmountainmahjong.com/learn-american-mahjong.html
+- https://lookoutmountainmahjong.com/lookout-mountain-mahjong.html
+- https://lookoutmountainmahjong.com/lookoutmountainmahjong.html
+- https://lookoutmountainmahjong.com/louisville-mahjong.html
+- https://lookoutmountainmahjong.com/luxury-mahjong-retreat.html
+- https://lookoutmountainmahjong.com/m.html
+- https://lookoutmountainmahjong.com/mahj-jen-mahj-hen.html
+- https://lookoutmountainmahjong.com/mahjong-101.html
+- https://lookoutmountainmahjong.com/mahjong-102.html
+- https://lookoutmountainmahjong.com/mahjong-board-game.html
+- https://lookoutmountainmahjong.com/mahjong-brunch.html
+- https://lookoutmountainmahjong.com/mahjong-charleston.html
+- https://lookoutmountainmahjong.com/mahjong-class.html
+- https://lookoutmountainmahjong.com/mahjong-club.html
+- https://lookoutmountainmahjong.com/mahjong-faq.html
+- https://lookoutmountainmahjong.com/mahjong-instructor.html
+- https://lookoutmountainmahjong.com/mahjong-jokers.html
+- https://lookoutmountainmahjong.com/mahjong-lessons-near-me.html
+- https://lookoutmountainmahjong.com/mahjong-rules.html
+- https://lookoutmountainmahjong.com/mahjong-tiles.html
+- https://lookoutmountainmahjong.com/mahjong-tips.html
+- https://lookoutmountainmahjong.com/mahjong-tournament.html
+- https://lookoutmountainmahjong.com/mahjong.html
+- https://lookoutmountainmahjong.com/marthas-vineyard-mahjong.html
+- https://lookoutmountainmahjong.com/memphis-mahjong.html
+- https://lookoutmountainmahjong.com/mountain-mahjong.html
+- https://lookoutmountainmahjong.com/nashville-mahjong.html
+- https://lookoutmountainmahjong.com/nmjl-card.html
+- https://lookoutmountainmahjong.com/press.html
+- https://lookoutmountainmahjong.com/private-mahjong-lessons.html
+- https://lookoutmountainmahjong.com/raleigh-mahjong.html
+- https://lookoutmountainmahjong.com/savannah-mahjong.html
+- https://lookoutmountainmahjong.com/sorority-mahjong-parties.html
+- https://lookoutmountainmahjong.com/tennessee-mahjong.html
+- https://lookoutmountainmahjong.com/the-mahjong-line.html
+- https://lookoutmountainmahjong.com/west-virginia-mahjong.html
+- https://lookoutmountainmahjong.com/white-sulphur-springs-mahjong.html
 
 ## Contact
 - Email: lookoutmountainmahjong@gmail.com
 - Phone: +1-919-247-3392
 - Instagram: https://www.instagram.com/lookoutmountainmahjong/
+- TML code: LOOKOUTMOUNTAIN
 
-## Brand / search terms
-Mountain Mahjong, A Bam Good Time, Get Mahj'n, Mahj Jen, Mahj Hen, Greenbrier mahjong, TML LOOKOUTMOUNTAIN, american mah jongg
+## Topics
+mahjong, american mah jongg, mahjong lessons near me, greenbrier mahjong, mahj jen, mahj hen, mountain mahjong, get mahjn, chattanooga atlanta nashville charlotte mahjong

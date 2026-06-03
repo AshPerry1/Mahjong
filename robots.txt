@@ -5,7 +5,8 @@ Disallow: /test.html
 
 Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
 
-# AI / crawler hints
+# Crawler hints (hidden SEO pages listed here + sitemap — not linked from public site nav)
 # https://lookoutmountainmahjong.com/llms.txt
+# Regenerate hidden pages: python3 generate-seo-pages.py
 
 Crawl-delay: 1
