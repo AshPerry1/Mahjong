@@ -1158,6 +1158,7 @@ if ('serviceWorker' in navigator) {
     if (!collectionsEl || !productsEl) return;
 
     const SHOP_HOME = 'https://threadandinkco.com/';
+    const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
     const COUNT_API = 'https://api.countapi.xyz';
     const COUNT_NAMESPACE = 'lmm-mahjong-shop';
     let catalogData = { collections: [], products: [] };
@@ -1342,6 +1343,13 @@ if ('serviceWorker' in navigator) {
         `).join('');
     }
 
+    function renderProductImage(product) {
+        if (product.image) {
+            return `<img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async" class="shop-product-photo" onerror="this.onerror=null;this.src='${SHOP_PLACEHOLDER_LOGO}';this.classList.add('is-placeholder-logo');">`;
+        }
+        return `<img src="${SHOP_PLACEHOLDER_LOGO}" alt="Thread &amp; Ink Co" loading="lazy" decoding="async" class="shop-product-photo is-placeholder-logo">`;
+    }
+
     function renderProducts(products) {
         if (!products.length) {
             productsEl.innerHTML = '<p class="shop-empty">No products match this category.</p>';
@@ -1352,9 +1360,7 @@ if ('serviceWorker' in navigator) {
             <a class="shop-product-card" href="${product.url}" data-product-handle="${product.handle}" rel="noopener noreferrer" title="Buy on Thread &amp; Ink Co">
                 <div class="shop-product-image">
                     <span class="shop-product-views" aria-live="polite">Loading views…</span>
-                    ${product.image
-                        ? `<img src="${product.image}" alt="${product.title}" loading="lazy" decoding="async">`
-                        : '<span class="shop-product-placeholder">Mahjong gear</span>'}
+                    ${renderProductImage(product)}
                 </div>
                 <div class="shop-product-body">
                     <span class="shop-product-collection">${product.collection}</span>
