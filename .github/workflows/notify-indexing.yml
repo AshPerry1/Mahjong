@@ -1,0 +1,21 @@
+name: Notify search engines
+
+on:
+  workflow_run:
+    workflows: [Deploy to GitHub Pages]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    # Weekly reminder crawl for Bing/IndexNow partners (not fake traffic)
+    - cron: "0 14 * * 1"
+
+jobs:
+  indexnow:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait for Pages CDN
+        run: sleep 45
+      - name: Ping IndexNow (sitemap URLs)
+        run: python3 notify-search-engines.py
