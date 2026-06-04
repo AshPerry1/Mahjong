@@ -14,10 +14,14 @@ def _city_from_tuple(city, tup) -> dict:
     desc = f"{label} mahjong — private lessons and group events."
     blurb = f"{label} private mahjong lessons — Lookout Mountain Mahjong travels to your venue or home."
     links = (
+        '<p class="seo-inline-cta"><strong>Main site:</strong> '
+        '<a href="/">Home</a> · '
+        '<a href="/mahjong.html">Mahjong</a> · '
+        '<a href="/book-mahjong-lesson.html">Book</a> · '
+        '<a href="https://www.instagram.com/lookoutmountainmahjong/" rel="noopener noreferrer">Instagram</a></p>'
         f'<p><a href="{state_page}">{st} statewide</a> · '
         f'<a href="{hub_page}">Regional hub</a> · '
-        f'<a href="cities-mahjong-hub.html">All cities</a> · '
-        f'<a href="book-mahjong-lesson.html">Book</a></p>'
+        f'<a href="cities-mahjong-hub.html">All cities</a></p>'
     )
     return city(
         slug,

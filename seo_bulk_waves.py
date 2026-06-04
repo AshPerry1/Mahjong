@@ -8,6 +8,17 @@ from __future__ import annotations
 
 MEGA_WAVE_PAGE_TARGET = 500
 
+# Appended to bulk-wave page bodies; full nav also injected in generate-seo-pages.py render().
+SEO_MAIN_SITE_CTA_HTML = (
+    '<p class="seo-inline-cta"><strong>Main site:</strong> '
+    '<a href="/">Home</a> · '
+    '<a href="/mahjong.html">Mahjong</a> · '
+    '<a href="/shop.html">Shop</a> · '
+    '<a href="/book-mahjong-lesson.html">Book a lesson</a> · '
+    '<a href="/lookoutmountainmahjong.html">@lookoutmountainmahjong</a> · '
+    '<a href="https://www.instagram.com/lookoutmountainmahjong/" rel="noopener noreferrer">Instagram</a></p>'
+)
+
 
 def _greek_fr(mahjong_kw, slug: str, name: str, nick: str) -> dict:
     return mahjong_kw(
@@ -17,7 +28,8 @@ def _greek_fr(mahjong_kw, slug: str, name: str, nick: str) -> dict:
         f"{slug.replace('-', ' ')} mahjong, {nick} mah jongg fraternity",
         f"{name} Mahjong",
         f"<p><strong>{name}</strong> chapters — stand out with a mahjong philanthropy event. "
-        f'<a href="fraternity-mahjong.html">Fraternity</a> · <a href="greek-life-mahjong.html">Greek life</a>.</p>',
+        f'<a href="fraternity-mahjong.html">Fraternity</a> · <a href="greek-life-mahjong.html">Greek life</a>.</p>'
+        f"{SEO_MAIN_SITE_CTA_HTML}",
     )
 
 
@@ -29,7 +41,8 @@ def _greek_sor(mahjong_kw, slug: str, name: str, nick: str) -> dict:
         f"{slug.replace('-', ' ')} mahjong, {nick} mah jongg sorority",
         f"{name} Mahjong",
         f"<p><strong>{name}</strong> chapters — bid day and philanthropy mahjong. "
-        f'<a href="sorority-mahjong-parties.html">Sorority parties</a> · <a href="greek-life-mahjong.html">Greek life</a>.</p>',
+        f'<a href="sorority-mahjong-parties.html">Sorority parties</a> · <a href="greek-life-mahjong.html">Greek life</a>.</p>'
+        f"{SEO_MAIN_SITE_CTA_HTML}",
     )
 
 
@@ -50,7 +63,7 @@ def _occasion(mahjong_kw, slug: str, title: str, desc: str, body: str) -> dict:
         desc,
         f"{stem.replace('-', ' ')} mahjong, {stem.replace('-', ' ')} mah jongg",
         f"{title} Mahjong",
-        body,
+        body + SEO_MAIN_SITE_CTA_HTML,
     )
 
 
@@ -63,7 +76,7 @@ def _rule(mahjong_kw, slug: str, title: str, desc: str, body: str) -> dict:
         desc,
         f"{stem.replace('-', ' ')} mahjong, mah jongg {stem.replace('-', ' ')}",
         title if "Mahjong" in title else f"{title} in Mahjong",
-        body,
+        body + SEO_MAIN_SITE_CTA_HTML,
     )
 
 
@@ -341,9 +354,13 @@ def extend_pages_with_bulk_waves(pages: list, city, page, mahjong_kw) -> None:
     from seo_bulk_wave28 import bulk_pages_mega_wave_28
     from seo_bulk_wave29 import bulk_pages_mega_wave_29
     from seo_bulk_wave30 import bulk_pages_mega_wave_30
+    from seo_bulk_wave31 import bulk_pages_mega_wave_31
+    from seo_bulk_wave32 import bulk_pages_mega_wave_32
 
     _dedup_extend(pages, bulk_pages_mega_wave_26(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_27(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_28(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_29(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_30(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_31(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_32(city, page, mahjong_kw))

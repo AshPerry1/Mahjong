@@ -35,6 +35,90 @@ a:hover { color: #4a1d6b; }
     font-size: 0.9rem;
     color: #555;
 }
+.seo-lead {
+    font-size: 1.05rem;
+    background: #faf8ff;
+    border-left: 3px solid #CA69E2;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+}
+.seo-inline-cta {
+    font-size: 0.95rem;
+}
+.seo-main-nav {
+    margin: 0 0 1.75rem;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #faf8ff 0%, #f3eeff 100%);
+    border: 1px solid #e4d4f4;
+    border-radius: 10px;
+}
+.seo-main-nav-label {
+    margin: 0 0 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6f2c9d;
+}
+.seo-main-nav-links {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+}
+.seo-main-cta {
+    margin-top: 2.5rem;
+    padding: 22px 20px;
+    border-top: 1px solid #e8e8ef;
+    background: #faf8ff;
+    border-radius: 10px;
+}
+.seo-main-cta h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+.seo-main-cta p:last-child {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+}
+.seo-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #4a1d6b;
+    background: #fff;
+    border: 1px solid #d4c0e8;
+    border-radius: 8px;
+}
+.seo-btn:hover {
+    color: #fff;
+    background: #6f2c9d;
+    border-color: #6f2c9d;
+}
+.seo-btn-primary {
+    color: #fff;
+    background: #6f2c9d;
+    border-color: #6f2c9d;
+}
+.seo-btn-primary:hover {
+    background: #4a1d6b;
+    border-color: #4a1d6b;
+}
+.seo-btn-ig {
+    border-color: #e1306c;
+    color: #c13584;
+}
+.seo-btn-ig:hover {
+    background: #e1306c;
+    border-color: #e1306c;
+    color: #fff;
+}
 .viral-copy {
     background: #faf8ff;
     border-left: 3px solid #CA69E2;
