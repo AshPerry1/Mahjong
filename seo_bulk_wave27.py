@@ -21,7 +21,10 @@ def _city_from_tuple(city, tup) -> dict:
         '<a href="https://www.instagram.com/lookoutmountainmahjong/" rel="noopener noreferrer">Instagram</a></p>'
         f'<p><a href="{state_page}">{st} statewide</a> · '
         f'<a href="{hub_page}">Regional hub</a> · '
-        f'<a href="cities-mahjong-hub.html">All cities</a></p>'
+        f'<a href="cities-mahjong-hub.html">All cities</a> · '
+        f'<a href="{slug.replace("-mahjong.html", "-lessons-near-me.html")}">Lessons near me</a> · '
+        f'<a href="book-mahjong-{slug.replace("-mahjong.html", "")}.html">Book here</a> · '
+        f'<a href="mahjong-booking-near-me-hub.html">Book near me</a></p>'
     )
     return city(
         slug,

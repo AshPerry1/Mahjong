@@ -989,6 +989,115 @@ EXTRA_CITIES: dict[str, list[str]] = {
     ],
 }
 
+# Southeast-only mega wave: GA, TN, NC, SC, AL, FL + travel states KY, MS, LA, VA, AR
+SOUTHEAST_STATES = frozenset({"GA", "TN", "NC", "SC", "AL", "FL", "KY", "MS", "LA", "VA", "AR"})
+
+SOUTHEAST_EXTRA: dict[str, list[str]] = {
+    "GA": [
+        "Canton", "Woodstock", "Cumming", "Dahlonega", "Blue Ridge", "Helen", "Clayton",
+        "Hiawassee", "Blairsville", "Jasper", "Dallas", "Douglasville", "Newnan", "Fayetteville",
+        "Peachtree City", "Tyrone", "Sharpsburg", "LaGrange", "Americus", "Cordele", "Valdosta",
+        "Brunswick", "Jekyll Island", "St Marys", "Vidalia", "Dublin", "Swainsboro", "Elberton",
+        "Hartwell", "Washington", "Thomson", "Madison", "Eatonton", "Monticello", "Social Circle",
+        "Covington", "Monroe", "Loganville", "Snellville", "Lilburn", "Stone Mountain", "Tucker",
+        "Decatur", "Brookhaven", "Chamblee", "Doraville", "Roswell", "Marietta", "Kennesaw",
+        "Acworth", "Cartersville", "Rome", "Calhoun", "Dalton", "Chatsworth", "Cleveland",
+    ],
+    "TN": [
+        "Sewanee", "Winchester", "Tullahoma", "Shelbyville", "Lewisburg", "Pulaski", "Lawrenceburg",
+        "Columbia", "McMinnville", "Sparta", "Crossville", "Cookeville", "Livingston", "Jamestown",
+        "Oneida", "Rockwood", "Kingston", "Lenoir City", "Oak Ridge", "Clinton", "Harriman",
+        "Sweetwater", "Athens", "Etowah", "Dayton", "Dunlap", "Signal Mountain", "Red Bank",
+        "East Ridge", "Soddy Daisy", "Collegedale", "Ooltewah", "Apison", "Hixson", "Middle Valley",
+        "Powell", "Farragut", "Alcoa", "Sevierville", "Pigeon Forge", "Townsend", "Wears Valley",
+        "Tellico Plains", "Vonore", "Madisonville", "Newport", "Rogersville", "Greeneville",
+    ],
+    "NC": [
+        "Southern Pines", "Pinehurst", "Aberdeen", "Sanford", "Lillington", "Smithfield",
+        "Selma", "Goldsboro", "Kinston", "New Bern", "Havelock", "Morehead City", "Beaufort",
+        "Atlantic Beach", "Emerald Isle", "Swansboro", "Jacksonville", "Lumberton", "Whiteville",
+        "Southport", "Oak Island", "Sunset Beach", "Calabash", "Shallotte", "Elizabethtown",
+        "Laurinburg", "Rockingham", "Hamlet", "Asheboro", "Lexington", "Thomasville", "High Point",
+        "Jamestown", "Summerfield", "Oak Ridge", "King", "Mount Airy", "Elkin", "North Wilkesboro",
+        "Lenoir", "Morganton", "Marion", "Black Mountain", "Weaverville", "Mars Hill", "Brevard",
+        "Sylva", "Franklin", "Highlands", "Cashiers", "Cherokee", "Murphy", "Andrews",
+    ],
+    "SC": [
+        "Clemson", "Seneca", "Easley", "Pickens", "Liberty", "Williamston", "Anderson",
+        "Belton", "Honea Path", "Abbeville", "Greenwood", "Laurens", "Clinton", "Newberry",
+        "Winnsboro", "Blythewood", "Irmo", "Lexington", "West Columbia", "Cayce", "Batesburg-Leesville",
+        "Orangeburg", "Bamberg", "Walterboro", "Ridgeland", "Hardeeville", "Beaufort", "Port Royal",
+        "Folly Beach", "Isle of Palms", "Sullivan's Island", "Goose Creek", "Moncks Corner",
+        "Georgetown", "Murrells Inlet", "Surfside Beach", "Conway", "Little River", "North Myrtle Beach",
+        "Loris", "Bennettsville", "Dillon", "Marion", "Lake City", "Manning", "Bishopville",
+    ],
+    "AL": [
+        "Trussville", "Homewood", "Mountain Brook", "Vestavia Hills", "Pelham", "Alabaster",
+        "Calera", "Helena", "Chelsea", "Sylacauga", "Alexander City", "Eufaula", "Ozark",
+        "Andalusia", "Atmore", "Bay Minette", "Foley", "Spanish Fort", "Daphne", "Saraland",
+        "Tillmans Corner", "Theodore", "Satsuma", "Citronelle", "Monroeville", "Thomasville",
+        "Demopolis", "Livingston", "Camden", "Greenville", "Troy", "Ozark", "Headland",
+        "Geneva", "Hartselle", "Athens AL", "Moulton", "Russellville", "Jasper AL", "Oneonta",
+        "Guntersville", "Scottsboro", "Fort Payne", "Albertville", "Boaz", "Pell City", "Leeds",
+    ],
+    "FL": [
+        "Ponte Vedra Beach", "Atlantic Beach", "Neptune Beach", "Fernandina Beach", "Amelia Island",
+        "St Augustine Beach", "Palm Coast", "Flagler Beach", "New Smyrna Beach", "Edgewater",
+        "Titusville", "Melbourne Beach", "Indialantic", "Sebastian", "Stuart", "Jensen Beach",
+        "Hobe Sound", "Tequesta", "Lantana", "Manalapan", "Highland Beach", "Deerfield Beach",
+        "Lauderdale-by-the-Sea", "Sea Ranch Lakes", "Pembroke Pines", "Miramar", "Cooper City",
+        "Davie", "Plantation", "Sunrise", "Coral Springs", "Parkland", "Margate", "Tamarac",
+        "North Port", "Venice", "Englewood", "Punta Gorda", "Port Charlotte", "Placida",
+        "Boca Grande", "Captiva", "Sanibel", "Estero", "Bonita Springs", "Marco Island",
+        "Immokalee", "LaBelle", "Clewiston", "Belle Glade", "Lake Placid", "Avon Park",
+    ],
+    "KY": [
+        "Danville", "Bardstown", "Shelbyville", "La Grange", "Prospect", "Anchorage",
+        "St Matthews", "Jeffersontown", "Mount Washington", "Shepherdsville", "Elizabethtown",
+        "Radcliff", "Campbellsville", "Somerset", "London", "Corbin", "Williamsburg", "Barbourville",
+        "Middlesboro", "Pikeville", "Prestonsburg", "Paintsville", "Ashland", "Morehead",
+        "Maysville", "Winchester", "Richmond", "Berea", "Nicholasville", "Wilmore", "Harrodsburg",
+        "Frankfort", "Paris", "Georgetown KY", "Cynthiana", "Maysville", "Murray", "Mayfield",
+        "Paducah", "Hopkinsville", "Madisonville", "Owensboro", "Henderson", "Bowling Green",
+    ],
+    "MS": [
+        "Ocean Springs", "Gautier", "Pascagoula", "Long Beach", "Pass Christian", "Bay St Louis",
+        "Waveland", "Diamondhead", "D'Iberville", "Gulfport", "Starkville", "West Point",
+        "Columbus MS", "Starkville", "Philadelphia", "Meridian", "Laurel", "Hattiesburg",
+        "Petal", "Purvis", "Poplarville", "Wiggins", "Lucedale", "Moss Point", "Corinth",
+        "Booneville", "New Albany", "Oxford", "Batesville", "Clarksdale", "Greenville MS",
+        "Cleveland MS", "Indianola", "Yazoo City", "Ridgeland", "Madison MS", "Brandon",
+        "Pearl", "Clinton MS", "Flowood", "Ridgeland", "Canton MS", "Brookhaven", "McComb",
+    ],
+    "LA": [
+        "Mandeville", "Covington", "Slidell", "Hammond", "Ponchatoula", "Houma", "Thibodaux",
+        "Morgan City", "Franklin", "Abbeville LA", "Jennings", "Sulphur", "Westlake", "DeRidder",
+        "Leesville", "Natchitoches", "Ruston", "Monroe", "West Monroe", "Bastrop", "Minden",
+        "Bossier City", "Shreveport", "Natchitoches", "Alexandria", "Pineville", "Marksville",
+        "Opelousas", "Crowley", "Lafayette", "Youngsville", "Broussard", "Scott", "Breaux Bridge",
+        "St Martinville", "New Iberia", "Donaldsonville", "Plaquemine", "Gonzales", "Denham Springs",
+        "Walker", "Zachary", "Central", "Baker", "Port Allen", "Brusly", "St Francisville",
+    ],
+    "VA": [
+        "Williamsburg", "Yorktown", "Poquoson", "Hampton", "Newport News", "Portsmouth",
+        "Suffolk", "Chesapeake", "Virginia Beach", "Norfolk", "Smithfield", "Isle of Wight",
+        "Franklin VA", "Emporia", "South Boston", "Danville", "Martinsville", "Bassett",
+        "Rocky Mount", "Bedford", "Lynchburg", "Forest", "Amherst", "Farmville", "Blackstone",
+        "Petersburg", "Colonial Heights", "Hopewell", "Prince George", "Chester", "Midlothian",
+        "Glen Allen", "Short Pump", "Mechanicsville", "Ashland", "Colonial Beach", "Kilmarnock",
+        "Irvington", "Onancock", "Chincoteague", "Exmore", "Cape Charles", "Lexington VA",
+        "Staunton", "Waynesboro", "Harrisonburg", "Front Royal", "Luray", "Shenandoah",
+    ],
+    "AR": [
+        "Bentonville", "Rogers", "Bella Vista", "Siloam Springs", "Searcy", "Batesville",
+        "Heber Springs", "Greers Ferry", "Hot Springs Village", "Mena", "De Queen", "Hope",
+        "Camden", "El Dorado", "Magnolia", "Stuttgart", "Forrest City", "West Memphis",
+        "Blytheville", "Paragould", "Jonesboro", "Batesville", "Mountain Home", "Harrison",
+        "Eureka Springs", "Russellville", "Clarksville", "Conway", "Maumelle", "Sherwood",
+        "Jacksonville AR", "Cabot", "Bryant", "Searcy", "Russellville", "Arkadelphia", "Malvern",
+    ],
+}
+
 
 def slugify(text: str) -> str:
     text = text.lower().replace(".", "").replace("'", "")
@@ -1026,8 +1135,30 @@ def make_slug(city: str, st: str, existing: set[str], used: set[str]) -> str:
         n += 1
 
 
-def iter_seed_cities(csv_path: Path | None) -> list[tuple[str, str]]:
+def iter_seed_cities(csv_path: Path | None, *, southeast_only: bool = False) -> list[tuple[str, str]]:
     seeds: list[tuple[str, str]] = []
+    seen: set[tuple[str, str]] = set()
+
+    def add(city: str, st: str) -> None:
+        key = (city, st)
+        if key in seen:
+            return
+        if southeast_only and st not in SOUTHEAST_STATES:
+            return
+        seen.add(key)
+        seeds.append(key)
+
+    if southeast_only:
+        for st in sorted(SOUTHEAST_STATES):
+            for city in SOUTHEAST_EXTRA.get(st, []):
+                add(city, st)
+            for city in EXTRA_CITIES.get(st, []):
+                add(city, st)
+    else:
+        for st, cities in EXTRA_CITIES.items():
+            for city in cities:
+                add(city, st)
+
     if csv_path and csv_path.is_file():
         with csv_path.open(newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
@@ -1038,10 +1169,7 @@ def iter_seed_cities(csv_path: Path | None) -> list[tuple[str, str]]:
                     continue
                 abbr = STATE_NAME_TO_ABBR.get(state)
                 if abbr:
-                    seeds.append((city, abbr))
-    for st, cities in EXTRA_CITIES.items():
-        for city in cities:
-            seeds.append((city, st))
+                    add(city, abbr)
     return seeds
 
 
@@ -1080,11 +1208,16 @@ def main() -> None:
     parser.add_argument("--wave", type=int, default=29)
     parser.add_argument("--limit", type=int, default=410)
     parser.add_argument("--csv", type=Path, default=Path("/tmp/us_cities.csv"))
+    parser.add_argument(
+        "--southeast",
+        action="store_true",
+        help="Only GA/TN/NC/SC/AL/FL/KY/MS/LA/VA/AR; prioritize SOUTHEAST_EXTRA towns",
+    )
     args = parser.parse_args()
 
     root = Path(__file__).parent
     existing = collect_existing(root)
-    seeds = iter_seed_cities(args.csv if args.csv.exists() else None)
+    seeds = iter_seed_cities(args.csv if args.csv.exists() else None, southeast_only=args.southeast)
     tuples = build_tuples(seeds, existing, args.limit)
     var = f"WAVE{args.wave}_CITIES"
     out = root / f"seo_bulk_wave{args.wave}_cities_data.py"

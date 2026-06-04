@@ -356,6 +356,21 @@ def extend_pages_with_bulk_waves(pages: list, city, page, mahjong_kw) -> None:
     from seo_bulk_wave30 import bulk_pages_mega_wave_30
     from seo_bulk_wave31 import bulk_pages_mega_wave_31
     from seo_bulk_wave32 import bulk_pages_mega_wave_32
+    from seo_bulk_wave33 import bulk_pages_mega_wave_33
+    from seo_bulk_wave34 import bulk_pages_mega_wave_34
+    from seo_bulk_wave35 import bulk_pages_mega_wave_35
+    from seo_bulk_wave36 import bulk_pages_mega_wave_36
+    from seo_bulk_wave37 import bulk_pages_mega_wave_37
+    from seo_bulk_wave38 import bulk_pages_mega_wave_38
+    from seo_bulk_wave39 import bulk_pages_southeast_wave
+    from seo_bulk_wave40 import bulk_pages_booking_near_me_wave
+    from seo_bulk_wave41 import bulk_pages_mega_wave_41
+    from seo_bulk_wave42 import bulk_pages_book_mahjong_wave
+    from seo_bulk_wave43 import bulk_pages_hire_instructor_wave
+    from seo_bulk_wave44 import bulk_pages_mega_wave_44
+    from seo_bulk_wave45 import bulk_pages_wave_44_booking
+    from seo_bulk_wave46 import bulk_pages_mega_wave_46
+    from seo_bulk_wave47 import bulk_pages_wave_46_booking
 
     _dedup_extend(pages, bulk_pages_mega_wave_26(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_27(city, page, mahjong_kw))
@@ -364,3 +379,18 @@ def extend_pages_with_bulk_waves(pages: list, city, page, mahjong_kw) -> None:
     _dedup_extend(pages, bulk_pages_mega_wave_30(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_31(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_32(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_33(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_34(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_35(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_36(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_37(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_38(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_southeast_wave(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_booking_near_me_wave(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_41(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_book_mahjong_wave(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_hire_instructor_wave(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_44(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_wave_44_booking(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_46(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_wave_46_booking(city, page, mahjong_kw))
