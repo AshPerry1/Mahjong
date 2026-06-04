@@ -338,6 +338,8 @@ def _dedup_extend(pages: list, new_pages: list) -> int:
 def extend_pages_with_bulk_waves(pages: list, city, page, mahjong_kw) -> None:
     """Append all bulk mega waves to the main PAGES list (deduped by file slug)."""
     from seo_bulk_wave27 import bulk_pages_mega_wave_27
+    from seo_bulk_wave28 import bulk_pages_mega_wave_28
 
     _dedup_extend(pages, bulk_pages_mega_wave_26(city, page, mahjong_kw))
     _dedup_extend(pages, bulk_pages_mega_wave_27(city, page, mahjong_kw))
+    _dedup_extend(pages, bulk_pages_mega_wave_28(city, page, mahjong_kw))
