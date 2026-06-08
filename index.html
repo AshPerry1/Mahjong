@@ -38,12 +38,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="styles.css?v=14.2" as="style">
-    <link rel="stylesheet" href="styles.css?v=14.2" id="css-link">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="fonts/playfair-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="fonts/fonts.css?v=1">
+    <link rel="stylesheet" href="critical.css?v=1">
+    <link rel="preload" href="styles.css?v=14.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css?v=14.3"></noscript>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -121,7 +121,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#hero" class="logo-link">
-                    <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img" width="375" height="374" decoding="async" fetchpriority="high">
+                    <img src="logo-100.png" alt="Lookout Mountain Mahjong Logo" class="logo-img" width="100" height="100" decoding="async" fetchpriority="high">
                     <div class="logo-text">
                         <h2>Lookout Mountain Mahjong</h2>
                     </div>
@@ -1190,6 +1190,6 @@
         })();
     </script>
     <script src="analytics.js?v=3" defer></script>
-    <script src="script.js?v=14.2" id="js-link" defer></script>
+    <script src="script.js?v=14.3" id="js-link" defer></script>
 </body>
 </html>

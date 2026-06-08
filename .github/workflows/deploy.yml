@@ -22,6 +22,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Minify production assets
+        run: |
+          npm install -g terser clean-css-cli
+          terser script.js -c passes=2 -m -o script.js
+          terser shop.js -c passes=2 -m -o shop.js
+          terser analytics.js -c passes=2 -m -o analytics.js
+          cleancss -o critical.css critical.css
+          cleancss -o fonts/fonts.css fonts/fonts.css
+          cleancss -o styles.css styles.css
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
