@@ -1,5 +1,5 @@
 // Service Worker for Lookout Mountain Mahjong
-const CACHE_NAME = 'mahjong-cache-v14';
+const CACHE_NAME = 'mahjong-cache-v15';
 const PRECACHE_URLS = [
   '/',
   '/index.html',
@@ -35,6 +35,10 @@ function isStaticAsset(pathname) {
   return /\.(css|js|woff2|png|jpe?g|webp|gif|json)$/i.test(pathname);
 }
 
+function isDocumentRequest(request, pathname) {
+  return request.mode === 'navigate' || pathname === '/' || pathname.endsWith('.html');
+}
+
 function shouldCacheRequest(request, response) {
   if (!response || response.status !== 200 || request.method !== 'GET') {
     return false;
@@ -58,7 +62,9 @@ function shouldCacheRequest(request, response) {
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
+    caches.open(CACHE_NAME).then((cache) => (
+      Promise.allSettled(PRECACHE_URLS.map((url) => cache.add(url)))
+    ))
   );
   self.skipWaiting();
 });
@@ -70,6 +76,21 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(event.request.url);
   if (!isSameOrigin(url)) {
+    return;
+  }
+
+  if (isDocumentRequest(event.request, url.pathname)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (shouldCacheRequest(event.request, response)) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('/index.html')))
+    );
     return;
   }
 

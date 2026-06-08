@@ -568,6 +568,13 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
+
+    // Fallback: some mobile browsers never fire intersection callbacks reliably
+    setTimeout(() => {
+        document.querySelectorAll('.animate-on-scroll:not(.animate-in)').forEach((el) => {
+            el.classList.add('animate-in');
+        });
+    }, 2000);
 });
 
 // Performance optimization: Lazy load images
@@ -648,7 +655,7 @@ if (testimonialsContainer && document.querySelector('[data-testimonial]')) {
 // Service Worker registration — deferred so it does not compete with LCP
 if ('serviceWorker' in navigator) {
     const registerServiceWorker = () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
+        navigator.serviceWorker.register('/sw.js?v=15').catch(() => {});
     };
     if ('requestIdleCallback' in window) {
         requestIdleCallback(registerServiceWorker, { timeout: 4000 });

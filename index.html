@@ -42,8 +42,18 @@
     <link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="fonts/fonts.css?v=1">
     <link rel="stylesheet" href="critical.css?v=1">
-    <link rel="preload" href="styles.css?v=14.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles.css?v=14.3"></noscript>
+    <link rel="stylesheet" href="styles.css?v=14.4" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css?v=14.4"></noscript>
+    <script>
+    (function () {
+        function ensureMainStyles() {
+            var sheet = document.querySelector('link[href*="styles.css"]');
+            if (sheet && sheet.media === 'print') sheet.media = 'all';
+        }
+        document.addEventListener('DOMContentLoaded', ensureMainStyles);
+        setTimeout(ensureMainStyles, 1200);
+    })();
+    </script>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -1191,6 +1201,6 @@
         })();
     </script>
     <script src="analytics.js?v=3" defer></script>
-    <script src="script.js?v=14.3" id="js-link" defer></script>
+    <script src="script.js?v=14.4" id="js-link" defer></script>
 </body>
 </html>
