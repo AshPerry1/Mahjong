@@ -1,5 +1,5 @@
 // Service Worker for Lookout Mountain Mahjong
-const CACHE_NAME = 'mahjong-cache-v12';
+const CACHE_NAME = 'mahjong-cache-v13';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,114 +7,84 @@ const urlsToCache = [
   '/faq.html',
   '/styles.css',
   '/script.js',
+  '/shop.js',
   '/analytics.js',
-  '/logo.png',
-  '/threadandink-catalog.json',
-  '/thread-and-ink-logo.png',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
+  '/logo.png'
 ];
 
-// Install event - cache resources
-self.addEventListener('install', event => {
+const CACHEABLE_IMAGE_SUFFIXES = [
+  '/logo.png',
+  '/Attachment-1.png',
+  '/FES.png',
+  '/LMS.png'
+];
+
+function isSameOrigin(url) {
+  return url.origin === self.location.origin;
+}
+
+function shouldCacheRequest(request, response) {
+  if (!response || response.status !== 200 || request.method !== 'GET') {
+    return false;
+  }
+
+  const url = new URL(request.url);
+  if (!isSameOrigin(url)) {
+    return false;
+  }
+
+  const path = url.pathname;
+  if (/\.(png|jpe?g|webp|gif)$/i.test(path)) {
+    if (path.startsWith('/images/opt/')) {
+      return true;
+    }
+    return CACHEABLE_IMAGE_SUFFIXES.some((suffix) => path.endsWith(suffix));
+  }
+
+  return true;
+}
+
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
   );
 });
 
-// Fetch event - always try network first, then cache
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
-      .then(response => {
-        // If network request succeeds, update cache
-        if (response.status === 200) {
+      .then((response) => {
+        if (shouldCacheRequest(event.request, response)) {
           const responseClone = response.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseClone);
-            });
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
         }
         return response;
       })
-      .catch(() => {
-        // If network fails, try cache
-        return caches.match(event.request);
+      .catch(() => caches.match(event.request))
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => Promise.all(
+      cacheNames.map((cacheName) => {
+        if (cacheName !== CACHE_NAME) {
+          return caches.delete(cacheName);
+        }
+        return undefined;
       })
+    ))
   );
 });
 
-// Activate event - clean up old caches
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-});
-
-// Background sync for offline form submissions
-self.addEventListener('sync', event => {
+self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    event.waitUntil(doBackgroundSync());
-  }
-});
-
-function doBackgroundSync() {
-  // Handle offline form submissions
-  return new Promise((resolve) => {
-    // Implementation for background sync
-    resolve();
-  });
-}
-
-// Push notification handling
-self.addEventListener('push', event => {
-  const options = {
-    body: event.data ? event.data.text() : 'New mahjong event available!',
-    icon: '/logo.png',
-    badge: '/logo.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1
-    },
-    actions: [
-      {
-        action: 'explore',
-        title: 'Learn More',
-        icon: '/logo.png'
-      },
-      {
-        action: 'close',
-        title: 'Close',
-        icon: '/logo.png'
-      }
-    ]
-  };
-
-  event.waitUntil(
-    self.registration.showNotification('Lookout Mountain Mahjong', options)
-  );
-});
-
-// Notification click handling
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-
-  if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
+    event.waitUntil(Promise.resolve());
   }
 });

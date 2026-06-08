@@ -4,13 +4,7 @@
     <script>try { if (localStorage.getItem('lmm_promo_banner_dismissed') === '1') document.documentElement.classList.add('promo-banner-dismissed'); } catch (e) {}</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="cache-control" content="no-cache">
-    <meta name="expires" content="0">
-    <meta name="pragma" content="no-cache">
     <!-- Lookout Mountain Mahjong - Professional Mahjong Instruction -->
     <title>Lookout Mountain Mahjong | Professional Mahjong Instruction</title>
     <meta name="description" content="Expert American mahjong instruction from certified TML Ambassadors. Learn mahjong fundamentals and advanced strategies through personalized lessons and private events.">
@@ -44,18 +38,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
     
-    <!-- Google Analytics (Lookout Mountain Mahjong only — see analytics.js) -->
-    <script src="analytics.js?v=3"></script>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles.css?v=14.0" as="style">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=14.0" id="css-link">
+    <link rel="preload" href="styles.css?v=14.2" as="style">
+    <link rel="stylesheet" href="styles.css?v=14.2" id="css-link">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -133,7 +121,7 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#hero" class="logo-link">
-                    <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img">
+                    <img src="logo.png" alt="Lookout Mountain Mahjong Logo" class="logo-img" width="375" height="374" decoding="async" fetchpriority="high">
                     <div class="logo-text">
                         <h2>Lookout Mountain Mahjong</h2>
                     </div>
@@ -157,7 +145,6 @@
     <main id="main">
         <section id="hero" class="hero">
             <div class="hero-background">
-                <img src="./Hero.png" alt="Luxury mahjong instruction space" class="hero-bg-image">
                 <div class="hero-overlay"></div>
             </div>
             <div class="container">
@@ -209,7 +196,7 @@
                 <div class="events-grid">
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./Chio.png" alt="Chi O Mother/Daughter Mahjong Event" class="event-img">
+                            <img src="images/opt/Chio.jpg" alt="Chi O Mother/Daughter Mahjong Event" class="event-img" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Chi O Mother/Daughter Mahjong</h3>
@@ -219,7 +206,7 @@
                     </div>
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./vineyard.png" alt="Martha's Vineyard Private Lessons" class="event-img">
+                            <img src="images/opt/vineyard.jpg" alt="Martha's Vineyard Private Lessons" class="event-img" width="800" height="1067" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Martha's Vineyard Private Lessons</h3>
@@ -229,7 +216,7 @@
                     </div>
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./Bristol.png" alt="Bristol, VA Club Event" class="event-img">
+                            <img src="images/opt/Bristol.jpg" alt="Bristol, VA Club Event" class="event-img" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Bristol, VA Club Event</h3>
@@ -239,7 +226,7 @@
                     </div>
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./club.png" alt="Lookout Mountain Club Tournament" class="event-img">
+                            <img src="images/opt/club.jpg" alt="Lookout Mountain Club Tournament" class="event-img" width="800" height="1067" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Lookout Mountain Club Tournament</h3>
@@ -249,7 +236,7 @@
                     </div>
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./mini.png" alt="Mini Tournament Event" class="event-img">
+                            <img src="images/opt/mini.jpg" alt="Mini Tournament Event" class="event-img" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Mini Tournament</h3>
@@ -259,7 +246,7 @@
                     </div>
                     <div class="event-portfolio-card">
                         <div class="event-image">
-                            <img src="./Greenbrier.png" alt="Greenbrier Tournament Event" class="event-img">
+                            <img src="images/opt/Greenbrier.jpg" alt="Greenbrier Tournament Event" class="event-img" width="800" height="600" loading="lazy" decoding="async">
                         </div>
                         <div class="event-content">
                             <h3>Greenbrier Tournament</h3>
@@ -291,7 +278,7 @@
                         <div class="donation-list">
                             <div class="donation-item">
                                 <div class="donation-icon">
-                                    <img src="./FES.png" alt="FES Logo" class="donation-logo">
+                                    <img src="./FES.png" alt="FES Logo" class="donation-logo" width="80" height="80" loading="lazy" decoding="async">
                         </div>
                                 <div class="donation-content">
                                     <h4>Fairyland School</h4>
@@ -300,7 +287,7 @@
                         </div>
                             <div class="donation-item">
                                 <div class="donation-icon">
-                                    <img src="./LMS.png" alt="LMS Logo" class="donation-logo">
+                                    <img src="./LMS.png" alt="LMS Logo" class="donation-logo" width="80" height="80" loading="lazy" decoding="async">
                     </div>
                                 <div class="donation-content">
                                     <h4>Lookout Mountain School</h4>
@@ -309,7 +296,7 @@
                             </div>
                             <div class="donation-item">
                                 <div class="donation-icon">
-                                    <img src="./Orange.png" alt="Orange Grove Center Logo" class="donation-logo">
+                                    <img src="images/opt/Orange.jpg" alt="Orange Grove Center Logo" class="donation-logo" width="80" height="80" loading="lazy" decoding="async">
                                 </div>
                                 <div class="donation-content">
                                     <h4>Orange Grove</h4>
@@ -585,7 +572,7 @@
                 <div class="instructors-grid">
                     <div class="instructor-card">
                         <div class="instructor-image">
-                            <img src="./Jenn.png" alt="Mahj Jen" class="instructor-img">
+                            <img src="images/opt/Jenn.jpg" alt="Mahj Jen" class="instructor-img" width="800" height="600" loading="lazy" decoding="async">
                     </div>
                         <div class="instructor-content">
                             <h3>Mahj Jen</h3>
@@ -596,7 +583,7 @@
                     </div>
                     <div class="instructor-card">
                         <div class="instructor-image">
-                            <img src="./AH.png" alt="Mahj Hen" class="instructor-img">
+                            <img src="images/opt/AH.jpg" alt="Mahj Hen" class="instructor-img" width="800" height="600" loading="lazy" decoding="async">
                     </div>
                         <div class="instructor-content">
                             <h3>Mahj Hen</h3>
@@ -632,7 +619,8 @@
                     <div class="tml-visual">
                         <div class="tml-logo-container">
                             <img src="Attachment-1.png"
-                                 srcset="Attachment-1.png 400w, Attachment-1.png 600w, Attachment-1.png 800w"
+                                 width="595"
+                                 height="595"
                                  sizes="(min-width: 768px) 50vw, 100vw"
                                  alt="The Mahjong Line Logo"
                                  class="tml-logo"
@@ -1201,6 +1189,7 @@
             tabContainer.addEventListener('touchstart', handleTabSwitch, { passive: false });
         })();
     </script>
-    <script src="script.js?v=14.0" id="js-link"></script>
+    <script src="analytics.js?v=3" defer></script>
+    <script src="script.js?v=14.2" id="js-link" defer></script>
 </body>
 </html>
