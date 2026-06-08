@@ -5032,6 +5032,14 @@ a.register-btn:hover,
     margin: 0;
 }
 
+.footer-credit {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--luxury-slate);
+    opacity: 0.7;
+    letter-spacing: 0.02em;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-menu {
