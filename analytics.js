@@ -1,4 +1,4 @@
-(function initLookoutMountainAnalytics() {
+(function initMahjongAnalytics() {
     const GA_ID = 'G-8C0BWCXBF0';
 
     function isMahjongSite() {

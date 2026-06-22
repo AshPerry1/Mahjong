@@ -197,7 +197,7 @@ Best regards,
             subject = 'TML Referral Code Inquiry';
             body = `Dear Mahj Jen and Mahj Hen,
 
-I'm excited to invest in premium mahjong tiles from The Mahjong Line and would love to use your exclusive referral code LOOKOUTMOUNTAIN.
+I'm excited to invest in premium mahjong tiles from The Mahjong Line and would love your ambassador recommendations.
 
 Could you please share:
 - Exclusive offers and special discounts available through your partnership
