@@ -1052,10 +1052,16 @@ if ('serviceWorker' in navigator) {
             '',
             'Exclusive hosted mahjong experience with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, and more.',
             '',
-            'Details: ' + EVENT_URL,
-            'Flyer: ' + FLYER_URL,
+            'IMPORTANT: All reservations must be made through Martha King Travel ONLY.',
+            'Do not book directly with Ritz-Carlton or any other source.',
             '',
-            'Book with Martha King: martha@marthakingtravel.com'
+            'Book with Martha King:',
+            'martha@marthakingtravel.com',
+            'info@marthakingtravel.com',
+            'https://www.marthakingtravel.com',
+            '',
+            'Details: ' + EVENT_URL,
+            'Flyer: ' + FLYER_URL
         ].join('\n');
     }
 
