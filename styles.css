@@ -3931,6 +3931,16 @@ a.register-btn:hover,
     align-items: center;
 }
 
+.shop-page-kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8a36b2;
+    margin: 0 0 16px;
+}
+
 .shop-page-hero h1 {
     font-family: 'Playfair Display', 'Times New Roman', serif;
     font-size: clamp(2.5rem, 5vw, 3.75rem);

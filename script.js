@@ -1039,7 +1039,7 @@ if ('serviceWorker' in navigator) {
 })();
 
 (function initYachtEventShare() {
-    const EVENT_URL = 'https://lookoutmountainmahjong.com/#upcoming-event';
+    const EVENT_URL = 'https://lookoutmountainmahjong.com/luxury-yacht-mahjong-cruise-2027.html';
     const FLYER_URL = 'https://lookoutmountainmahjong.com/2027-ritz-yacht-mahjong-flyer.pdf';
 
     function buildYachtShareMessage() {

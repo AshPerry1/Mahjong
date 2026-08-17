@@ -82,6 +82,7 @@
         if (document.body.classList.contains('seo-page')) return 'seo';
         if (document.body.classList.contains('shop-page')) return 'shop';
         if (document.body.classList.contains('faq-page')) return 'faq';
+        if (document.body.classList.contains('yacht-event-page')) return 'yacht';
         if (document.querySelector('.hero')) return 'home';
         return 'other';
     }
@@ -553,6 +554,7 @@
             initHomeTracking();
             initYachtEventTracking();
         }
+        if (pageType === 'yacht') initYachtEventTracking();
         if (pageType === 'shop') initShopTracking();
         if (pageType === 'faq') initFaqTracking();
         if (pageType === 'seo') initSeoTracking();
