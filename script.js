@@ -1037,3 +1037,99 @@ if ('serviceWorker' in navigator) {
         wireFlyerLinks();
     }
 })();
+
+(function initYachtEventShare() {
+    const EVENT_URL = 'https://lookoutmountainmahjong.com/#upcoming-event';
+    const FLYER_URL = 'https://lookoutmountainmahjong.com/2027-ritz-yacht-mahjong-flyer.pdf';
+
+    function buildYachtShareMessage() {
+        return [
+            'Hey! I thought you would love this mahjong cruise.',
+            '',
+            'Luxury Yacht Journey: San Juan to Miami',
+            'January 29, 2027 | 6 nights aboard The Ritz-Carlton Yacht Collection | Ilma',
+            '',
+            'Lookout Mountain Mahjong is hosting an exclusive hosted experience ($900/person) with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, keepsakes, and more.',
+            '',
+            'San Juan → St. John → Virgin Gorda → Grand Turk → Miami',
+            '',
+            'Event details: ' + EVENT_URL,
+            'Download the flyer: ' + FLYER_URL,
+            '',
+            'Contact Martha King to book:',
+            'martha@marthakingtravel.com',
+            'https://www.marthakingtravel.com'
+        ].join('\n');
+    }
+
+    function copyShareMessage(message) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(message).then(() => {
+                window.alert('Event details copied! Paste into a text message to share with a friend.');
+            });
+        }
+
+        const textArea = document.createElement('textarea');
+        textArea.value = message;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        window.alert('Event details copied! Paste into a text message to share with a friend.');
+        return Promise.resolve();
+    }
+
+    function shareViaText() {
+        const message = buildYachtShareMessage();
+        const encodedBody = encodeURIComponent(message);
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            window.location.href = `sms:?&body=${encodedBody}`;
+            return;
+        }
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'Luxury Mahjong Yacht Journey',
+                text: message,
+                url: EVENT_URL
+            }).catch(() => copyShareMessage(message));
+            return;
+        }
+
+        copyShareMessage(message);
+    }
+
+    function shareViaEmail() {
+        const message = buildYachtShareMessage();
+        const subject = encodeURIComponent('Join me on a Luxury Mahjong Yacht Journey!');
+        const body = encodeURIComponent(message);
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    }
+
+    function wireShareButtons() {
+        document.querySelectorAll('[data-yacht-share]').forEach((button) => {
+            if (button.dataset.yachtShareWired === 'true') return;
+            button.dataset.yachtShareWired = 'true';
+
+            button.addEventListener('click', () => {
+                const channel = button.dataset.yachtShare;
+                if (channel === 'email') {
+                    shareViaEmail();
+                } else {
+                    shareViaText();
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireShareButtons);
+    } else {
+        wireShareButtons();
+    }
+})();

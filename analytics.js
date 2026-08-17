@@ -441,6 +441,33 @@
                 });
             });
         });
+
+        yachtSection.querySelectorAll('[data-yacht-share]').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const channel = this.dataset.yachtShare || 'share';
+                const label = channel === 'text' ? 'Share via Text' : 'Share via Email';
+
+                trackEvent('Yacht Event', 'share_yacht_event', label, null, true);
+
+                gtag('event', 'share_yacht_event', {
+                    event_category: 'Yacht Event',
+                    event_label: label,
+                    event_name: eventName,
+                    share_channel: channel,
+                    engagement_type: 'social_sharing',
+                    user_intent: 'yacht_event_sharing'
+                });
+
+                gtag('event', 'yacht_event_interest', {
+                    event_category: 'Conversion',
+                    event_label: 'Share - ' + label,
+                    event_name: eventName,
+                    share_channel: channel,
+                    engagement_type: 'social_sharing',
+                    user_intent: 'yacht_event_inquiry'
+                });
+            });
+        });
     }
 
     function initFaqTracking() {
