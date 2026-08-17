@@ -31,6 +31,10 @@ ORG = {
 
 PUBLIC_SITE = [
     ("", "weekly", "1.0"),
+    ("luxury-yacht-mahjong-cruise-2027.html", "weekly", "0.99"),
+    ("mahjong-cruise-2027.html", "weekly", "0.97"),
+    ("caribbean-mahjong-cruise.html", "weekly", "0.96"),
+    ("ritz-carlton-yacht-mahjong.html", "weekly", "0.96"),
     ("shop.html", "weekly", "0.9"),
     ("faq.html", "monthly", "0.8"),
 ]
@@ -108,6 +112,7 @@ PAGES = [
 </ul>
 <h2>Mahjong Events</h2>
 <ul>
+<li><a href="/luxury-yacht-mahjong-cruise-2027.html">2027 luxury mahjong cruise</a> — San Juan to Miami, book through Martha King Travel only</li>
 <li><a href="mahjong-events.html">Mahjong events</a></li>
 <li><a href="mahjong-party.html">Mahjong party</a></li>
 <li><a href="greenbrier-mahjong.html">Greenbrier mahjong</a></li>
@@ -152,7 +157,7 @@ PAGES = [
 <h2>Mahjong Spelling Variants</h2>
 <p><a href="american-mah-jongg.html">Mah jongg</a> · <a href="mah-jongg-lessons.html">Mah jongg lessons</a> · <a href="mahjongg-lessons.html">Mahjongg lessons</a> · <a href="majong-lessons.html">Majong lessons</a></p>
 <h2>Mahjong Events &amp; Social</h2>
-<p><a href="mahjong-events.html">Events</a> · <a href="mahjong-party.html">Party</a> · <a href="mahjong-night.html">Mahjong night</a> · <a href="local-mahjong.html">Local mahjong</a> · <a href="ladies-mahjong.html">Ladies mahjong</a></p>
+<p><a href="/luxury-yacht-mahjong-cruise-2027.html">2027 mahjong cruise</a> · <a href="mahjong-events.html">Events</a> · <a href="mahjong-party.html">Party</a> · <a href="mahjong-night.html">Mahjong night</a> · <a href="local-mahjong.html">Local mahjong</a> · <a href="ladies-mahjong.html">Ladies mahjong</a></p>
 <h2>Mahjong Strategy</h2>
 <p><a href="mahjong-strategy.html">Strategy</a> · <a href="mahjong-scoring.html">Scoring</a> · <a href="mahjong-hands.html">Hands</a> · <a href="win-at-mahjong.html">Win at mahjong</a> · <a href="mahjong-102.html">Mahjong 102</a></p>
 <h2>Mahjong Tiles</h2>
@@ -424,7 +429,7 @@ PAGES = [
 <p><strong>Book:</strong> <a href="book-mahjong-lesson.html">Book Mahjong 101</a> · <a href="mahj-jen-mahj-hen.html">Mahj Jen &amp; Mahj Hen</a></p>""", priority="0.92", changefreq="weekly"),
     # ── Mahjong keyword wave (pop for "mahjong" searches) ──
     mahjong_kw("mahjong-lessons.html", "Lessons", "Mahjong lessons for beginners and advanced players. Mahjong 101 $125, Mahjong 102 $115. We travel nationwide.", "mahjong lessons, mahjong classes, learn mahjong", "Mahjong Lessons", "<p>Professional <strong>mahjong lessons</strong> with certified TML Ambassadors. <a href=\"mahjong-101.html\">Mahjong 101</a> for beginners · <a href=\"mahjong-102.html\">102</a> for strategy · <a href=\"mahjong-lessons-near-me.html\">near me</a>.</p>", priority="0.97"),
-    mahjong_kw("mahjong-events.html", "Events", "Mahjong events nationwide — corporate, sorority, country club, Greenbrier tournaments.", "mahjong events, mahjong event planning", "Mahjong Events", "<p>Private <strong>mahjong events</strong> for every occasion. <a href=\"corporate-mahjong-events.html\">Corporate</a> · <a href=\"sorority-mahjong-parties.html\">Sorority</a> · <a href=\"greenbrier-mahjong.html\">Greenbrier</a> · <a href=\"book-mahjong-lesson.html\">Book</a>.</p>", priority="0.92"),
+    mahjong_kw("mahjong-events.html", "Events", "Mahjong events nationwide — 2027 luxury yacht cruise, corporate, sorority, country club, Greenbrier tournaments. Cruise bookings through Martha King Travel only.", "mahjong events, mahjong event planning, mahjong cruise", "Mahjong Events", "<p>Private <strong>mahjong events</strong> for every occasion. Featured: <a href=\"/luxury-yacht-mahjong-cruise-2027.html\">2027 luxury mahjong cruise</a> (book through Martha King Travel only). <a href=\"corporate-mahjong-events.html\">Corporate</a> · <a href=\"sorority-mahjong-parties.html\">Sorority</a> · <a href=\"greenbrier-mahjong.html\">Greenbrier</a> · <a href=\"book-mahjong-lesson.html\">Book</a>.</p>", priority="0.92"),
     mahjong_kw("mahjong-party.html", "Party", "Book a mahjong party — private lesson at your home. 4–8 guests, $125/person, tiles included.", "mahjong party, mahjong party ideas, host mahjong party", "Mahjong Party", "<p>The ultimate <strong>mahjong party</strong> — we bring tiles, teach the game, send everyone home obsessed. <a href=\"girls-night-mahjong.html\">Girls night</a> · <a href=\"invite.html\">Invite friends</a>.</p>", priority="0.93"),
     mahjong_kw("what-is-mahjong.html", "Explained — What Is It?", "What is mahjong? American mah jongg explained — tiles, rules, NMJL card, four players.", "what is mahjong, what is mah jongg, mahjong meaning", "What Is Mahjong?", "<p><strong>Mahjong</strong> (mah jongg) is a four-player tile game using 152 tiles and the annual NMJL card. American mahjong uses jokers and the Charleston. Learn in one lesson: <a href=\"mahjong-101.html\">Mahjong 101</a>.</p>", priority="0.94"),
     mahjong_kw("play-mahjong.html", "Play — Learn Today", "Play mahjong today — book Mahjong 101 and play your first full game this week.", "play mahjong, play mah jongg, start playing mahjong", "Play Mahjong", "<p>Ready to <strong>play mahjong</strong>? No experience needed. <a href=\"mahjong-101.html\">Mahjong 101</a> takes you from zero to your first full game in one afternoon.</p>", priority="0.95"),
@@ -636,7 +641,10 @@ PAGES = [
     mahjong_kw("real-estate-mahjong.html", "Real Estate Agent Events", "Real estate agent mahjong event — client appreciation that gets talked about.", "real estate mahjong, realtor client event mahjong", "Real Estate Mahjong Events", "<p>Realtors: host a <strong>mahjong</strong> open house event clients will remember. <a href=\"client-appreciation-mahjong.html\">Client appreciation</a>.</p>"),
     mahjong_kw("nonprofit-mahjong.html", "Nonprofit Fundraisers", "Nonprofit mahjong fundraiser — philanthropy with tiles.", "nonprofit mahjong, mahjong fundraiser nonprofit", "Nonprofit Mahjong Fundraiser", "<p><a href=\"charity-mahjong-event.html\">Charity mahjong</a> events for nonprofits — sell seats, teach mahjong, raise funds.</p>"),
     mahjong_kw("resort-mahjong.html", "Resort & Hotel Events", "Resort mahjong — luxury hotel and resort programming.", "resort mahjong, hotel mahjong event, luxury mahjong", "Resort Mahjong", "<p>Luxury <strong>resort mahjong</strong> like <a href=\"greenbrier-mahjong.html\">The Greenbrier</a>. We travel to resorts nationwide.</p>"),
-    mahjong_kw("cruise-mahjong.html", "Cruise & Travel Group Mahjong", "Cruise group mahjong lesson — pre-cruise or travel club events.", "cruise mahjong, travel group mahjong, mahjong cruise", "Cruise Group Mahjong", "<p>Travel clubs and cruise groups — learn <strong>mahjong</strong> before you sail. <a href=\"vacation-mahjong.html\">Vacation mahjong</a>.</p>"),
+    mahjong_kw("cruise-mahjong.html", "Cruise | 2027 San Juan to Miami Yacht Voyage", "Mahjong cruise with Lookout Mountain Mahjong — January 29, 2027 from San Juan to Miami aboard The Ritz-Carlton Yacht Ilma. Book exclusively through Martha King Travel.", "cruise mahjong, travel group mahjong, mahjong cruise, 2027 mahjong cruise, Caribbean mahjong cruise", "Mahjong Cruise", """<p>Lookout Mountain Mahjong hosts a <strong>mahjong cruise</strong> from San Juan to Miami aboard The Ritz-Carlton Yacht Collection Ilma, sailing <strong>January 29, 2027</strong>. Six nights, five ports, and hosted American mahjong with Ann Henley Perry and Jen Kline.</p>
+<p><strong>All cruise reservations must be made through Martha King Travel only.</strong> Do not book with Ritz-Carlton or any other source. Contact <a href="mailto:martha@marthakingtravel.com">martha@marthakingtravel.com</a> or visit <a href="https://www.marthakingtravel.com" rel="noopener noreferrer">marthakingtravel.com</a>.</p>
+<p><a href="/luxury-yacht-mahjong-cruise-2027.html">Full 2027 mahjong cruise details, itinerary, and suite pricing</a> · <a href="/mahjong-cruise-2027.html">2027 mahjong cruise</a> · <a href="/caribbean-mahjong-cruise.html">Caribbean mahjong cruise</a> · <a href="/ritz-carlton-yacht-mahjong.html">Ritz-Carlton yacht mahjong</a></p>
+<p>We also teach travel clubs before they sail. <a href="vacation-mahjong.html">Vacation mahjong</a>.</p>""", priority="0.95"),
     mahjong_kw("siamese-mahjong.html", "Siamese Mahjong", "Siamese mahjong — play two hands at once. Learn in Mahjong 102.", "siamese mahjong, siamese mah jongg rules", "Siamese Mahjong", "<p><strong>Siamese mahjong</strong> — advanced play with two hands simultaneously. Taught in <a href=\"mahjong-102.html\">Mahjong 102</a>.</p>"),
     mahjong_kw("patio-mahjong.html", "Patio Mahjong", "Patio mahjong — larger group format for 8+ players.", "patio mahjong, patio mah jongg, mahjong patio rules", "Patio Mahjong", "<p><strong>Patio mahjong</strong> for bigger groups. Learn in <a href=\"mahjong-102.html\">Mahjong 102</a> after <a href=\"mahjong-101.html\">101</a>.</p>"),
     mahjong_kw("american-vs-chinese-mahjong.html", "American vs Chinese Mahjong", "American vs Chinese mahjong — key differences explained.", "american vs chinese mahjong, difference mahjong types", "American vs Chinese Mahjong", "<p>We teach <strong>American mahjong</strong> (NMJL, jokers, Charleston) — not Chinese mahjong. <a href=\"learn-american-mahjong.html\">Learn American</a>.</p>"),
@@ -890,7 +898,7 @@ PAGES = [
 <h2>Groups &amp; Organizations</h2>
 <p><a href="sorority-mahjong-parties.html">Sorority events</a> · <a href="kappa-delta-mahjong.html">Kappa Delta</a> · <a href="tri-delta-mahjong.html">Tri Delta</a> · <a href="kappa-kappa-gamma-mahjong.html">KKG</a> · <a href="delta-gamma-mahjong.html">Delta Gamma</a> · <a href="alpha-phi-mahjong.html">Alpha Phi</a> · <a href="alpha-kappa-alpha-mahjong.html">Alpha Kappa Alpha</a> · <a href="delta-sigma-theta-mahjong.html">Delta Sigma Theta</a> · <a href="sigma-delta-tau-mahjong.html">Sigma Delta Tau</a> · <a href="phi-mu-mahjong.html">Phi Mu</a> · <a href="sigma-sigma-sigma-mahjong.html">Tri Sigma</a> · <a href="alpha-gamma-delta-mahjong.html">Alpha Gamma Delta</a> · <a href="chi-omega-mahjong.html">Chi Omega</a> · <a href="alpha-xi-delta-mahjong.html">Alpha Xi Delta</a> · <a href="sigma-gamma-rho-mahjong.html">Sigma Gamma Rho</a> · <a href="zeta-phi-beta-mahjong.html">Zeta Phi Beta</a> · <a href="sigma-chi-mahjong.html">Sigma Chi</a> · <a href="beta-theta-pi-mahjong.html">Beta Theta Pi</a> · <a href="kappa-alpha-psi-mahjong.html">Kappa Alpha Psi</a> · <a href="sigma-nu-mahjong.html">Sigma Nu</a> · <a href="delta-tau-delta-mahjong.html">Delta Tau Delta</a> · <a href="delta-upsilon-mahjong.html">Delta Upsilon</a> · <a href="theta-chi-mahjong.html">Theta Chi</a> · <a href="sigma-phi-epsilon-mahjong.html">Sigma Phi Epsilon</a> · <a href="tau-kappa-epsilon-mahjong.html">Tau Kappa Epsilon</a> · <a href="phi-gamma-delta-mahjong.html">Phi Gamma Delta</a> · <a href="sigma-alpha-epsilon-mahjong.html">Sigma Alpha Epsilon</a> · <a href="pi-kappa-phi-mahjong.html">Pi Kappa Phi</a> · <a href="delta-chi-mahjong.html">Delta Chi</a> · <a href="sigma-phi-theta-mahjong.html">Sigma Phi Theta</a> · <a href="phi-sigma-sigma-mahjong.html">Phi Sigma Sigma</a> · <a href="alpha-sigma-alpha-mahjong.html">Alpha Sigma Alpha</a> · <a href="iota-phi-theta-mahjong.html">Iota Phi Theta</a> · <a href="alpha-phi-alpha-mahjong.html">Alpha Phi Alpha</a> · <a href="omega-psi-phi-mahjong.html">Omega Psi Phi</a> · <a href="phi-beta-sigma-mahjong.html">Phi Beta Sigma</a> · <a href="zeta-beta-tau-mahjong.html">Zeta Beta Tau</a> · <a href="theta-xi-mahjong.html">Theta Xi</a> · <a href="sigma-pi-mahjong.html">Sigma Pi</a> · <a href="delta-psi-mahjong.html">Delta Psi</a> · <a href="kappa-kappa-psi-mahjong.html">Kappa Kappa Psi</a> · <a href="phi-kappa-psi-mahjong.html">Phi Kappa Psi</a> · <a href="alpha-epsilon-pi-mahjong.html">Alpha Epsilon Pi</a> · <a href="sigma-alpha-mu-mahjong.html">Sigma Alpha Mu</a> · <a href="tau-beta-pi-mahjong.html">Tau Beta Pi</a> · <a href="beta-chi-theta-mahjong.html">Beta Chi Theta</a> · <a href="pi-kappa-alpha-mahjong.html">Pi Kappa Alpha</a> · <a href="lambda-chi-alpha-mahjong.html">Lambda Chi Alpha</a> · <a href="chi-psi-mahjong.html">Chi Psi</a> · <a href="charity-mahjong-event.html">Charity</a> · <a href="country-club-mahjong.html">Country club</a></p>
 <h2>Reunions &amp; Travel</h2>
-<p><a href="family-reunion-mahjong.html">Family reunion</a> · <a href="class-reunion-mahjong.html">Class reunion</a> · <a href="vacation-mahjong.html">Vacation</a> · <a href="cabin-mahjong.html">Cabin</a> · <a href="cottage-mahjong.html">Cottage</a> · <a href="ski-lodge-mahjong.html">Ski lodge</a> · <a href="yacht-club-mahjong.html">Yacht club</a> · <a href="greenbrier-mahjong.html">Greenbrier</a></p>
+<p><a href="/luxury-yacht-mahjong-cruise-2027.html">2027 mahjong cruise</a> · <a href="family-reunion-mahjong.html">Family reunion</a> · <a href="class-reunion-mahjong.html">Class reunion</a> · <a href="vacation-mahjong.html">Vacation</a> · <a href="cabin-mahjong.html">Cabin</a> · <a href="cottage-mahjong.html">Cottage</a> · <a href="ski-lodge-mahjong.html">Ski lodge</a> · <a href="yacht-club-mahjong.html">Yacht club</a> · <a href="greenbrier-mahjong.html">Greenbrier</a></p>
 <h2>Wedding Weekend</h2>
 <p><a href="rehearsal-dinner-mahjong.html">Rehearsal dinner</a> · <a href="welcome-party-mahjong.html">Welcome party</a> · <a href="bridal-brunch-mahjong.html">Bridal brunch</a> · <a href="graduation-party-mahjong.html">Graduation party</a> · <a href="alumni-event-mahjong.html">Alumni event</a> · <a href="fundraiser-luncheon-mahjong.html">Fundraiser luncheon</a> · <a href="mahjong-mixer.html">Mahjong mixer</a> · <a href="milestone-birthday-mahjong.html">Milestone birthday</a> · <a href="team-retreat-mahjong.html">Team retreat</a> · <a href="open-house-mahjong.html">Open house</a> · <a href="holiday-open-house-mahjong.html">Holiday open house</a> · <a href="holiday-brunch-mahjong.html">Holiday brunch</a> · <a href="cookie-exchange-mahjong.html">Cookie exchange</a> · <a href="spa-day-mahjong.html">Spa day</a> · <a href="progressive-dinner-mahjong.html">Progressive dinner</a> · <a href="garden-tour-mahjong.html">Garden tour</a> · <a href="art-walk-mahjong.html">Art walk</a> · <a href="paint-and-sip-mahjong.html">Paint and sip</a> · <a href="charity-bake-sale-mahjong.html">Charity bake sale</a> · <a href="neighborhood-picnic-mahjong.html">Neighborhood picnic</a> · <a href="vendor-fair-mahjong.html">Vendor fair</a> · <a href="launch-party-mahjong.html">Launch party</a> · <a href="grand-opening-mahjong.html">Grand opening</a> · <a href="staff-appreciation-mahjong.html">Staff appreciation</a> · <a href="back-to-school-mahjong.html">Back to school</a> · <a href="fall-festival-mahjong.html">Fall festival</a> · <a href="harvest-party-mahjong.html">Harvest party</a> · <a href="pop-up-mahjong.html">Pop-up event</a> · <a href="trunk-show-mahjong.html">Trunk show</a> · <a href="charity-walk-mahjong.html">Charity walk</a> · <a href="company-picnic-mahjong.html">Company picnic</a> · <a href="volunteer-appreciation-mahjong.html">Volunteer appreciation</a> · <a href="wedding-mahjong.html">Wedding weekend</a> · <a href="retirement-community-mahjong.html">Retirement community</a></p>
 <p><a href="venues-mahjong-hub.html">All venues</a> · <a href="seasonal-mahjong-hub.html">Seasonal</a> · <a href="book-mahjong-lesson.html">Book now</a></p>""", priority="0.91"),
@@ -1236,7 +1244,7 @@ PAGES = [
     mahjong_kw("backyard-mahjong.html", "Backyard Party", "Backyard mahjong party — outdoor game night at home.", "backyard mahjong, backyard mah jongg party", "Backyard Mahjong Party", "<p><strong>Backyard mahjong</strong> — tables on the lawn, friends around the tiles. <a href=\"summer-mahjong.html\">Summer</a> · <a href=\"girls-night-mahjong.html\">Girls night</a>.</p>"),
     mahjong_kw("lakeside-mahjong.html", "Lakeside Gathering", "Lakeside mahjong — dock and lake house game night.", "lakeside mahjong, lakeside mah jongg party", "Lakeside Mahjong", "<p><strong>Lakeside mahjong</strong> on the dock — the perfect lake weekend activity. <a href=\"lake-house-mahjong.html\">Lake house</a> · <a href=\"vacation-mahjong.html\">Vacation</a>.</p>"),
     mahjong_kw("sunset-mahjong.html", "Sunset Gathering", "Sunset mahjong — golden hour game night outdoors.", "sunset mahjong, sunset mah jongg party", "Sunset Mahjong", "<p><strong>Sunset mahjong</strong> — golden hour, good friends, beautiful tiles. <a href=\"rooftop-mahjong.html\">Rooftop</a> · <a href=\"porch-mahjong.html\">Porch</a>.</p>"),
-    mahjong_kw("yacht-club-mahjong.html", "Yacht Club Events", "Yacht club mahjong — marina and waterfront club events.", "yacht club mahjong, yacht club mah jongg event", "Yacht Club Mahjong", "<p>Yacht and boating clubs — host a <strong>mahjong</strong> lesson for members. <a href=\"country-club-mahjong.html\">Country club</a> · <a href=\"resort-mahjong.html\">Resort</a>.</p>"),
+    mahjong_kw("yacht-club-mahjong.html", "Yacht Club Events", "Yacht club mahjong — marina events and the 2027 Ritz-Carlton yacht mahjong cruise. Book the cruise through Martha King Travel only.", "yacht club mahjong, yacht club mah jongg event, mahjong cruise", "Yacht Club Mahjong", "<p>Yacht and boating clubs — host a <strong>mahjong</strong> lesson for members. Sailing with us in 2027: <a href=\"/luxury-yacht-mahjong-cruise-2027.html\">Lookout Mountain Mahjong luxury yacht cruise</a> (book through Martha King Travel only). <a href=\"country-club-mahjong.html\">Country club</a> · <a href=\"resort-mahjong.html\">Resort</a>.</p>"),
     mahjong_kw("farmers-market-mahjong.html", "Farmers Market Pop-Up", "Farmers market mahjong — community pop-up lesson idea.", "farmers market mahjong, community mah jongg pop up", "Farmers Market Mahjong", "<p>Community groups — bring <strong>mahjong</strong> to your farmers market or town square. <a href=\"neighborhood-mahjong.html\">Neighborhood</a> · <a href=\"hoa-mahjong.html\">HOA</a>.</p>"),
     mahjong_kw("mahjong-quads.html", "Quads Hands", "Quads in mahjong — four-of-a-kind hands on the NMJL card.", "quads mahjong, mah jongg quads hand", "Quads in Mahjong", "<p><strong>Quads</strong> hands require four of a kind — a common category on the NMJL card. Learn to read them: <a href=\"read-nmjl-card.html\">Read the card</a> · <a href=\"mahjong-102.html\">102</a>.</p>"),
     mahjong_kw("second-right-pass-mahjong.html", "Second Right Pass", "Second right pass in the Charleston — passing tiles to the right.", "second right pass mahjong, charleston pass right mah jongg", "Second Right Pass in the Charleston", "<p>Round two of the Charleston — <strong>pass to the right</strong>. Full sequence in <a href=\"mahjong-101.html\">Mahjong 101</a> · <a href=\"first-left-pass-mahjong.html\">First left pass</a>.</p>"),
@@ -1837,6 +1845,7 @@ SEO_MAIN_SITE_NAV_HTML = """<nav class="seo-main-nav" aria-label="Main site">
 <p class="seo-main-nav-links">
 <a class="seo-btn seo-btn-primary" href="/">Main site home</a>
 <a class="seo-btn" href="/mahjong.html">Mahjong</a>
+<a class="seo-btn" href="/luxury-yacht-mahjong-cruise-2027.html">2027 Cruise</a>
 <a class="seo-btn" href="/shop.html">Shop</a>
 <a class="seo-btn" href="/book-mahjong-lesson.html">Book a lesson</a>
 <a class="seo-btn seo-btn-ig" href="https://www.instagram.com/lookoutmountainmahjong/" rel="noopener noreferrer">Instagram @lookoutmountainmahjong</a>
@@ -1847,6 +1856,7 @@ SEO_MAIN_SITE_FOOTER_HTML = """<div class="seo-main-cta">
 <h2>Lookout Mountain Mahjong — main site</h2>
 <p>American mahjong lessons with Mahj Jen &amp; Mahj Hen. Daily tips on Instagram.</p>
 <p><a class="seo-btn seo-btn-primary" href="/">Visit main site</a>
+<a class="seo-btn" href="/luxury-yacht-mahjong-cruise-2027.html">2027 Mahjong Cruise</a>
 <a class="seo-btn" href="/mahjong.html">Mahjong hub</a>
 <a class="seo-btn seo-btn-ig" href="https://www.instagram.com/lookoutmountainmahjong/" rel="noopener noreferrer">Follow on Instagram</a>
 <a class="seo-btn" href="/book-mahjong-lesson.html">Book Mahjong 101</a></p>
@@ -1926,31 +1936,41 @@ def write_sitemap(root: Path):
 
 
 def write_llms_txt(root: Path):
-    urls = [f"- {HOME} (public home)", f"- {BASE}/shop.html (public shop)", f"- {BASE}/faq.html (public FAQ)", f"- {BASE}/sitemap.xml (all URLs)"]
+    public = [
+        f"- {HOME} (public home)",
+        f"- {BASE}/luxury-yacht-mahjong-cruise-2027.html (2027 Ritz-Carlton yacht mahjong cruise — all bookings through Martha King Travel only)",
+        f"- {BASE}/mahjong-cruise-2027.html (2027 mahjong cruise)",
+        f"- {BASE}/caribbean-mahjong-cruise.html (Caribbean mahjong cruise itinerary)",
+        f"- {BASE}/ritz-carlton-yacht-mahjong.html (Ritz-Carlton Yacht Ilma mahjong)",
+        f"- {BASE}/shop.html (public shop)",
+        f"- {BASE}/faq.html (public FAQ)",
+    ]
+    urls = public + [f"- {BASE}/sitemap.xml (all URLs)"]
     urls.append(f"- {BASE}/mahjong.html (primary mahjong keyword page)")
     urls.append(f"- {BASE}/mahjong-keyword-hub.html (mahjong search index)")
     for p in sorted(PAGES, key=lambda x: x["file"]):
         if p["file"] not in ("find-us.html",):
             urls.append(f"- {BASE}/{p['file']}")
     text = f"""# Lookout Mountain Mahjong
-# Crawler reference — public site is index, shop, FAQ only
+# Crawler reference — public site is index, shop, FAQ, and 2027 cruise pages
 
-> TML Ambassadors Mahj Jen (Jenn Kline) & Mahj Hen (Ann Henley Perry). American mahjong lessons, Greenbrier tournaments, nationwide travel.
+> TML Ambassadors Mahj Jen (Jenn Kline) & Mahj Hen (Ann Henley Perry). American mahjong lessons, Greenbrier tournaments, nationwide travel. 2027 luxury yacht mahjong cruise bookings through Martha King Travel only.
 
 ## Public website (linked in navigation)
-{chr(10).join(urls[:3])}
+{chr(10).join(public)}
 
 ## Hidden SEO pages ({len(PAGES)} URLs — sitemap only, not in site nav)
-{chr(10).join(urls[3:])}
+{chr(10).join(urls[len(public):])}
 
 ## Contact
 - Email: lookoutmountainmahjong@gmail.com
 - Phone: +1-919-247-3392
 - Instagram: https://www.instagram.com/lookoutmountainmahjong/
 - TML code: LOOKOUTMOUNTAIN
+- 2027 cruise booking: Martha King Travel only — martha@marthakingtravel.com
 
 ## Topics
-mahjong viral, get mahjn, a bam good time, instagram mahjong, tiktok mahjong, why everyone is getting mahjn, share mahjong, pink purple green tiles, greenbrier mahjong, mahj jen, mahj hen, southern mahjong, screen-free game night
+mahjong cruise 2027, ritz-carlton yacht ilma mahjong, caribbean mahjong cruise, martha king travel, mahjong viral, get mahjn, a bam good time, instagram mahjong, tiktok mahjong, why everyone is getting mahjn, share mahjong, pink purple green tiles, greenbrier mahjong, mahj jen, mahj hen, southern mahjong, screen-free game night
 """
     (root / "llms.txt").write_text(text, encoding="utf-8")
 

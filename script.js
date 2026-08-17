@@ -914,7 +914,7 @@ if ('serviceWorker' in navigator) {
 })();
 
 (function initPromoBannerDismiss() {
-    const STORAGE_KEY = 'lmm_promo_banner_dismissed';
+    const STORAGE_KEY = 'lmm_promo_banner_cruise_2027';
 
     function wireDismissButtons() {
         document.querySelectorAll('.site-promo-banner-dismiss').forEach((btn) => {

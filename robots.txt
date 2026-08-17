@@ -5,6 +5,12 @@ Disallow: /test.html
 
 Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
 
+# Priority event
+# https://lookoutmountainmahjong.com/luxury-yacht-mahjong-cruise-2027.html
+# https://lookoutmountainmahjong.com/mahjong-cruise-2027.html
+# https://lookoutmountainmahjong.com/caribbean-mahjong-cruise.html
+# https://lookoutmountainmahjong.com/ritz-carlton-yacht-mahjong.html
+
 # Crawler hints (hidden SEO pages listed here + sitemap — not linked from public site nav)
 # https://lookoutmountainmahjong.com/llms.txt
 # Regenerate hidden pages: python3 generate-seo-pages.py
