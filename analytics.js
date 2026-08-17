@@ -148,7 +148,7 @@
             });
         });
 
-        document.querySelectorAll('button.cta-button, a.cta-button').forEach(function(button) {
+        document.querySelectorAll('button.cta-button, a.cta-button:not(#upcoming-event a)').forEach(function(button) {
             button.addEventListener('click', function() {
                 const buttonText = (this.textContent || '').trim()
                     || (this.querySelector('.button-text') && this.querySelector('.button-text').textContent.trim())
@@ -177,7 +177,7 @@
             });
         });
 
-        document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+        document.querySelectorAll('a[href^="mailto:"]:not(#upcoming-event a)').forEach(function(link) {
             link.addEventListener('click', function() {
                 const email = (this.getAttribute('href') || '').replace('mailto:', '').split('?')[0];
                 trackEvent('Contact', 'click_email', email, null, true);
@@ -203,7 +203,7 @@
             });
         });
 
-        document.querySelectorAll('a[href^="http"]:not(.tml-button):not(.shop-collection-card):not(.shop-product-card)').forEach(function(link) {
+        document.querySelectorAll('a[href^="http"]:not(.tml-button):not(.shop-collection-card):not(.shop-product-card):not(#upcoming-event a)').forEach(function(link) {
             link.addEventListener('click', function() {
                 const url = this.getAttribute('href') || '';
                 const linkText = (this.textContent || '').trim();
@@ -332,6 +332,17 @@
                         content_type: entry.target.id,
                         engagement_type: 'section_view'
                     });
+
+                    if (entry.target.id === 'upcoming-event') {
+                        trackEvent('Yacht Event', 'view_yacht_event_section', '2027 Ritz Yacht Mahjong Journey');
+                        gtag('event', 'yacht_event_impression', {
+                            event_category: 'Yacht Event',
+                            event_label: '2027 Ritz Yacht Mahjong Journey',
+                            event_name: '2027 Ritz Yacht Mahjong Journey',
+                            engagement_type: 'section_view',
+                            user_intent: 'event_discovery'
+                        });
+                    }
                 }
             });
         }, { threshold: 0.5 });
@@ -362,6 +373,73 @@
             if (section) {
                 shopObserver.observe(section);
             }
+        });
+    }
+
+    function initYachtEventTracking() {
+        const yachtSection = document.getElementById('upcoming-event');
+        if (!yachtSection) return;
+
+        const eventName = '2027 Ritz Yacht Mahjong Journey';
+
+        yachtSection.querySelectorAll('[data-flyer-download]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const flyerId = this.dataset.flyerDownload || 'flyer';
+                const flyerLabel = this.dataset.flyerLabel || 'Event Flyer';
+
+                trackEvent('Yacht Event', 'download_flyer', flyerLabel, null, true);
+
+                gtag('event', 'download_flyer', {
+                    event_category: 'Yacht Event',
+                    event_label: flyerLabel,
+                    flyer_id: flyerId,
+                    event_name: eventName,
+                    user_intent: 'event_interest'
+                });
+
+                gtag('event', 'yacht_event_interest', {
+                    event_category: 'Conversion',
+                    event_label: 'Flyer Download - ' + flyerLabel,
+                    event_name: eventName,
+                    engagement_type: 'flyer_download',
+                    user_intent: 'yacht_event_inquiry'
+                });
+            });
+        });
+
+        yachtSection.querySelectorAll('a[href^="http"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const linkText = (this.textContent || '').trim();
+                const url = this.getAttribute('href') || '';
+
+                trackEvent('Yacht Event', 'click_partner_link', linkText + ' - ' + url, null, true);
+
+                gtag('event', 'yacht_event_interest', {
+                    event_category: 'Conversion',
+                    event_label: 'Partner Link - ' + linkText,
+                    event_name: eventName,
+                    link_url: url,
+                    engagement_type: 'partner_click',
+                    user_intent: 'yacht_event_inquiry'
+                });
+            });
+        });
+
+        yachtSection.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const email = (this.getAttribute('href') || '').replace('mailto:', '').split('?')[0];
+
+                trackEvent('Yacht Event', 'click_contact_email', email, null, true);
+
+                gtag('event', 'yacht_event_interest', {
+                    event_category: 'Conversion',
+                    event_label: 'Contact Email - ' + email,
+                    event_name: eventName,
+                    contact_method: 'email',
+                    engagement_type: 'contact_click',
+                    user_intent: 'yacht_event_inquiry'
+                });
+            });
         });
     }
 
@@ -444,7 +522,10 @@
         initSiteTracking();
 
         const pageType = getPageType();
-        if (pageType === 'home') initHomeTracking();
+        if (pageType === 'home') {
+            initHomeTracking();
+            initYachtEventTracking();
+        }
         if (pageType === 'shop') initShopTracking();
         if (pageType === 'faq') initFaqTracking();
         if (pageType === 'seo') initSeoTracking();

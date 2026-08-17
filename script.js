@@ -983,34 +983,14 @@ if ('serviceWorker' in navigator) {
         return 'Desktop';
     }
 
-    function trackFlyerDownload(flyerId, flyerLabel) {
-        if (typeof trackEvent === 'function') {
-            trackEvent('Events', 'download_flyer', flyerLabel, null, true);
-        }
-
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'download_flyer', {
-                event_category: 'Events',
-                event_label: flyerLabel,
-                flyer_id: flyerId,
-                user_intent: 'event_interest'
-            });
-        }
-    }
-
     async function notifyFlyerDownload(flyerId, flyerLabel) {
         const dedupeKey = `${FLYER_SESSION_PREFIX}${flyerId}`;
         try {
-            if (sessionStorage.getItem(dedupeKey) === '1') {
-                trackFlyerDownload(flyerId, flyerLabel);
-                return;
-            }
+            if (sessionStorage.getItem(dedupeKey) === '1') return;
             sessionStorage.setItem(dedupeKey, '1');
         } catch (e) {
             /* private browsing */
         }
-
-        trackFlyerDownload(flyerId, flyerLabel);
 
         const payload = {
             _subject: `Flyer downloaded: ${flyerLabel}`,
