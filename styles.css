@@ -994,6 +994,27 @@ html.promo-banner-dismissed body.has-promo-banner .shop-page-hero {
     text-decoration: underline;
 }
 
+.featured-event-card {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.event-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+}
+
+.event-action-buttons .register-btn,
+.event-action-buttons .cta-button {
+    width: auto;
+    min-width: 180px;
+    flex: 1 1 auto;
+    max-width: 280px;
+}
+
 @media (max-width: 768px) {
     .events-container {
         gap: 40px;
