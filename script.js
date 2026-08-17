@@ -971,3 +971,89 @@ if ('serviceWorker' in navigator) {
         wireTabs();
     }
 })();
+
+(function initFlyerDownloadNotify() {
+    const FLYER_NOTIFY_ENDPOINT = 'https://formsubmit.co/ajax/lookoutmountainmahjong@gmail.com';
+    const FLYER_SESSION_PREFIX = 'lmm_flyer_notify_';
+
+    function getDeviceSummary() {
+        const width = window.innerWidth || 0;
+        if (width <= 768) return 'Mobile';
+        if (width <= 1024) return 'Tablet';
+        return 'Desktop';
+    }
+
+    function trackFlyerDownload(flyerId, flyerLabel) {
+        if (typeof trackEvent === 'function') {
+            trackEvent('Events', 'download_flyer', flyerLabel, null, true);
+        }
+
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'download_flyer', {
+                event_category: 'Events',
+                event_label: flyerLabel,
+                flyer_id: flyerId,
+                user_intent: 'event_interest'
+            });
+        }
+    }
+
+    async function notifyFlyerDownload(flyerId, flyerLabel) {
+        const dedupeKey = `${FLYER_SESSION_PREFIX}${flyerId}`;
+        try {
+            if (sessionStorage.getItem(dedupeKey) === '1') {
+                trackFlyerDownload(flyerId, flyerLabel);
+                return;
+            }
+            sessionStorage.setItem(dedupeKey, '1');
+        } catch (e) {
+            /* private browsing */
+        }
+
+        trackFlyerDownload(flyerId, flyerLabel);
+
+        const payload = {
+            _subject: `Flyer downloaded: ${flyerLabel}`,
+            _template: 'table',
+            _captcha: 'false',
+            event: flyerLabel,
+            flyer_id: flyerId,
+            downloaded_at: new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }),
+            page_url: window.location.href,
+            referrer: document.referrer || 'Direct visit',
+            device: getDeviceSummary()
+        };
+
+        try {
+            await fetch(FLYER_NOTIFY_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+        } catch (error) {
+            console.warn('Flyer download notification failed', error);
+        }
+    }
+
+    function wireFlyerLinks() {
+        document.querySelectorAll('[data-flyer-download]').forEach((link) => {
+            if (link.dataset.flyerWired === 'true') return;
+            link.dataset.flyerWired = 'true';
+
+            link.addEventListener('click', () => {
+                const flyerId = link.dataset.flyerDownload || 'flyer';
+                const flyerLabel = link.dataset.flyerLabel || 'Event Flyer';
+                notifyFlyerDownload(flyerId, flyerLabel);
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', wireFlyerLinks);
+    } else {
+        wireFlyerLinks();
+    }
+})();
