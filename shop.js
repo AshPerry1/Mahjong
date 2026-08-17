@@ -9,7 +9,7 @@
 
     const SHOP_HOME = 'https://threadandinkco.com/';
     const SHOP_PLACEHOLDER_LOGO = 'thread-and-ink-logo.png';
-    const CATALOG_URL = 'threadandink-catalog.json?v=featured-sweater-1';
+    const CATALOG_URL = 'threadandink-catalog.json?v=live-2026-08-17';
     let catalogData = { collections: [], products: [], categories: [], featured: null };
     let activeCategory = 'all';
 
