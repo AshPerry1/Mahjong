@@ -1041,31 +1041,36 @@ if ('serviceWorker' in navigator) {
 (function initYachtEventShare() {
     const EVENT_URL = 'https://lookoutmountainmahjong.com/luxury-yacht-mahjong-cruise-2027.html';
     const FLYER_URL = 'https://lookoutmountainmahjong.com/2027-ritz-yacht-mahjong-flyer.pdf';
+    const SHARE_SUBJECT = 'Join me on a Luxury Mahjong Yacht Journey!';
 
     function buildYachtShareMessage() {
         return [
-            'Hey! I thought you would love this mahjong cruise.',
+            'Hey! Come sail with me on Lookout Mountain Mahjong\'s luxury yacht cruise.',
             '',
             'Luxury Yacht Journey: San Juan to Miami',
             'January 29, 2027 | 6 nights aboard The Ritz-Carlton Yacht Collection | Ilma',
             '',
-            'Lookout Mountain Mahjong is hosting an exclusive hosted experience ($900/person) with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, keepsakes, and more.',
+            'Exclusive hosted mahjong experience with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, and more.',
             '',
-            'San Juan → St. John → Virgin Gorda → Grand Turk → Miami',
+            'Details: ' + EVENT_URL,
+            'Flyer: ' + FLYER_URL,
             '',
-            'Event details: ' + EVENT_URL,
-            'Download the flyer: ' + FLYER_URL,
-            '',
-            'Contact Martha King to book:',
-            'martha@marthakingtravel.com',
-            'https://www.marthakingtravel.com'
+            'Book with Martha King: martha@marthakingtravel.com'
         ].join('\n');
+    }
+
+    function isAppleMobile() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function isMobile() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
 
     function copyShareMessage(message) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
             return navigator.clipboard.writeText(message).then(() => {
-                window.alert('Event details copied! Paste into a text message to share with a friend.');
+                window.alert('Event details copied! Paste into a text or email to share with a friend.');
             });
         }
 
@@ -1078,50 +1083,47 @@ if ('serviceWorker' in navigator) {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        window.alert('Event details copied! Paste into a text message to share with a friend.');
+        window.alert('Event details copied! Paste into a text or email to share with a friend.');
         return Promise.resolve();
     }
 
-    function shareViaText() {
+    function preloadShareLinks() {
         const message = buildYachtShareMessage();
         const encodedBody = encodeURIComponent(message);
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        const encodedSubject = encodeURIComponent(SHARE_SUBJECT);
+        const smsHref = isAppleMobile() ? `sms:&body=${encodedBody}` : `sms:?body=${encodedBody}`;
+        const mailHref = `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
 
-        if (isMobile) {
-            window.location.href = `sms:?&body=${encodedBody}`;
-            return;
-        }
-
-        if (navigator.share) {
-            navigator.share({
-                title: 'Luxury Mahjong Yacht Journey',
-                text: message,
-                url: EVENT_URL
-            }).catch(() => copyShareMessage(message));
-            return;
-        }
-
-        copyShareMessage(message);
-    }
-
-    function shareViaEmail() {
-        const message = buildYachtShareMessage();
-        const subject = encodeURIComponent('Join me on a Luxury Mahjong Yacht Journey!');
-        const body = encodeURIComponent(message);
-        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        document.querySelectorAll('[data-yacht-share="text"]').forEach((link) => {
+            link.setAttribute('href', smsHref);
+        });
+        document.querySelectorAll('[data-yacht-share="email"]').forEach((link) => {
+            link.setAttribute('href', mailHref);
+        });
     }
 
     function wireShareButtons() {
-        document.querySelectorAll('[data-yacht-share]').forEach((button) => {
-            if (button.dataset.yachtShareWired === 'true') return;
-            button.dataset.yachtShareWired = 'true';
+        preloadShareLinks();
 
-            button.addEventListener('click', () => {
-                const channel = button.dataset.yachtShare;
-                if (channel === 'email') {
-                    shareViaEmail();
-                } else {
-                    shareViaText();
+        document.querySelectorAll('[data-yacht-share]').forEach((link) => {
+            if (link.dataset.yachtShareWired === 'true') return;
+            link.dataset.yachtShareWired = 'true';
+
+            link.addEventListener('click', (event) => {
+                const channel = link.dataset.yachtShare;
+                const message = buildYachtShareMessage();
+
+                if (channel === 'text' && !isMobile()) {
+                    event.preventDefault();
+                    if (navigator.share) {
+                        navigator.share({
+                            title: SHARE_SUBJECT,
+                            text: message,
+                            url: EVENT_URL
+                        }).catch(() => copyShareMessage(message));
+                    } else {
+                        copyShareMessage(message);
+                    }
                 }
             });
         });

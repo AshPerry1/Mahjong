@@ -426,7 +426,7 @@
             });
         });
 
-        yachtSection.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+        yachtSection.querySelectorAll('a[href^="mailto:"]:not([data-yacht-share])').forEach(function(link) {
             link.addEventListener('click', function() {
                 const email = (this.getAttribute('href') || '').replace('mailto:', '').split('?')[0];
 
