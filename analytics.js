@@ -409,6 +409,8 @@
         });
 
         yachtSection.querySelectorAll('a[href^="http"]').forEach(function(link) {
+            if (link.hasAttribute('data-yacht-share') || link.hasAttribute('data-yacht-video') || link.hasAttribute('data-flyer-download')) return;
+
             link.addEventListener('click', function() {
                 const linkText = (this.textContent || '').trim();
                 const url = this.getAttribute('href') || '';
@@ -422,6 +424,46 @@
                     link_url: url,
                     engagement_type: 'partner_click',
                     user_intent: 'yacht_event_inquiry'
+                });
+            });
+        });
+
+        yachtSection.querySelectorAll('[data-yacht-video]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                const platform = this.dataset.yachtVideo || 'video';
+                trackEvent('Yacht Event', 'watch_announcement_video', platform, null, true);
+                gtag('event', 'watch_announcement_video', {
+                    event_category: 'Yacht Event',
+                    event_label: 'Instagram Announcement Video',
+                    event_name: eventName,
+                    video_platform: platform,
+                    video_url: this.getAttribute('href') || '',
+                    engagement_type: 'video_watch',
+                    user_intent: 'yacht_event_viral'
+                });
+                gtag('event', 'yacht_event_interest', {
+                    event_category: 'Conversion',
+                    event_label: 'Watch Announcement Video',
+                    event_name: eventName,
+                    engagement_type: 'video_watch',
+                    user_intent: 'yacht_event_inquiry'
+                });
+            });
+        });
+
+        document.querySelectorAll('[data-yacht-video]').forEach(function(link) {
+            if (yachtSection.contains(link)) return;
+            if (link.dataset.yachtVideoWired === 'true') return;
+            link.dataset.yachtVideoWired = 'true';
+            link.addEventListener('click', function() {
+                trackEvent('Yacht Event', 'watch_announcement_video', 'instagram_banner', null, true);
+                gtag('event', 'watch_announcement_video', {
+                    event_category: 'Yacht Event',
+                    event_label: 'Instagram Announcement Video - Banner/Hero',
+                    event_name: eventName,
+                    video_platform: 'instagram',
+                    engagement_type: 'video_watch',
+                    user_intent: 'yacht_event_viral'
                 });
             });
         });
@@ -446,7 +488,13 @@
         yachtSection.querySelectorAll('[data-yacht-share]').forEach(function(button) {
             button.addEventListener('click', function() {
                 const channel = this.dataset.yachtShare || 'share';
-                const label = channel === 'text' ? 'Share via Text' : 'Share via Email';
+                const labelMap = {
+                    text: 'Share via Text',
+                    email: 'Share via Email',
+                    'copy-video': 'Copy Video Link',
+                    'video-text': 'Text the Video'
+                };
+                const label = labelMap[channel] || ('Share - ' + channel);
 
                 trackEvent('Yacht Event', 'share_yacht_event', label, null, true);
 

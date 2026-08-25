@@ -914,7 +914,7 @@ if ('serviceWorker' in navigator) {
 })();
 
 (function initPromoBannerDismiss() {
-    const STORAGE_KEY = 'lmm_promo_banner_cruise_2027';
+    const STORAGE_KEY = 'lmm_promo_banner_cruise_video_2027';
 
     function wireDismissButtons() {
         document.querySelectorAll('.site-promo-banner-dismiss').forEach((btn) => {
@@ -1041,16 +1041,21 @@ if ('serviceWorker' in navigator) {
 (function initYachtEventShare() {
     const EVENT_URL = 'https://lookoutmountainmahjong.com/luxury-yacht-mahjong-cruise-2027.html';
     const FLYER_URL = 'https://lookoutmountainmahjong.com/2027-ritz-yacht-mahjong-flyer.pdf';
-    const SHARE_SUBJECT = 'Join me on a Luxury Mahjong Yacht Journey!';
+    const VIDEO_URL = 'https://www.instagram.com/p/DcTs3Jpuxej/';
+    const SHARE_SUBJECT = 'Watch this — Lookout Mountain Mahjong Ritz Yacht Cruise!';
 
     function buildYachtShareMessage() {
         return [
-            'Hey! Come sail with me on Lookout Mountain Mahjong\'s luxury yacht cruise.',
+            'You have to watch this announcement video for Lookout Mountain Mahjong\'s luxury yacht cruise!',
+            '',
+            'Watch here: ' + VIDEO_URL,
             '',
             'Luxury Yacht Journey: San Juan to Miami',
             'January 29, 2027 | 6 nights aboard The Ritz-Carlton Yacht Collection | Ilma',
             '',
-            'Exclusive hosted mahjong experience with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, and more.',
+            'Exclusive hosted mahjong with Ann Henley Perry and Jen Kline — welcome reception, poolside play, strategy sessions, and more.',
+            '',
+            'Please watch, like, comment, share, and send it to a friend!',
             '',
             'IMPORTANT: All reservations must be made through Martha King Travel ONLY.',
             'Do not book directly with Ritz-Carlton or any other source.',
@@ -1065,6 +1070,20 @@ if ('serviceWorker' in navigator) {
         ].join('\n');
     }
 
+    function buildVideoShareMessage() {
+        return [
+            'Watch Lookout Mountain Mahjong\'s Ritz Yacht cruise announcement!',
+            '',
+            VIDEO_URL,
+            '',
+            'Jan 29, 2027 — San Juan to Miami on The Ritz-Carlton Yacht Ilma.',
+            'Please like, comment, share & send to a friend!',
+            '',
+            'Book through Martha King Travel ONLY: martha@marthakingtravel.com',
+            'Details: ' + EVENT_URL
+        ].join('\n');
+    }
+
     function isAppleMobile() {
         return /iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
@@ -1073,11 +1092,13 @@ if ('serviceWorker' in navigator) {
         return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
 
-    function copyShareMessage(message) {
+    function copyShareMessage(message, successText) {
+        const done = () => {
+            window.alert(successText || 'Copied! Paste into a text, email, or Instagram DM to share.');
+        };
+
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            return navigator.clipboard.writeText(message).then(() => {
-                window.alert('Event details copied! Paste into a text or email to share with a friend.');
-            });
+            return navigator.clipboard.writeText(message).then(done);
         }
 
         const textArea = document.createElement('textarea');
@@ -1089,15 +1110,18 @@ if ('serviceWorker' in navigator) {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        window.alert('Event details copied! Paste into a text or email to share with a friend.');
+        done();
         return Promise.resolve();
     }
 
     function preloadShareLinks() {
         const message = buildYachtShareMessage();
+        const videoMessage = buildVideoShareMessage();
         const encodedBody = encodeURIComponent(message);
+        const encodedVideoBody = encodeURIComponent(videoMessage);
         const encodedSubject = encodeURIComponent(SHARE_SUBJECT);
         const smsHref = isAppleMobile() ? `sms:&body=${encodedBody}` : `sms:?body=${encodedBody}`;
+        const videoSmsHref = isAppleMobile() ? `sms:&body=${encodedVideoBody}` : `sms:?body=${encodedVideoBody}`;
         const mailHref = `mailto:?subject=${encodedSubject}&body=${encodedBody}`;
 
         document.querySelectorAll('[data-yacht-share="text"]').forEach((link) => {
@@ -1105,6 +1129,9 @@ if ('serviceWorker' in navigator) {
         });
         document.querySelectorAll('[data-yacht-share="email"]').forEach((link) => {
             link.setAttribute('href', mailHref);
+        });
+        document.querySelectorAll('[data-yacht-share="video-text"]').forEach((link) => {
+            link.setAttribute('href', videoSmsHref);
         });
     }
 
@@ -1117,15 +1144,31 @@ if ('serviceWorker' in navigator) {
 
             link.addEventListener('click', (event) => {
                 const channel = link.dataset.yachtShare;
-                const message = buildYachtShareMessage();
+                const message = channel === 'video-text' || channel === 'copy-video'
+                    ? buildVideoShareMessage()
+                    : buildYachtShareMessage();
 
-                if (channel === 'text' && !isMobile()) {
+                if (channel === 'copy-video') {
                     event.preventDefault();
                     if (navigator.share) {
                         navigator.share({
                             title: SHARE_SUBJECT,
                             text: message,
-                            url: EVENT_URL
+                            url: VIDEO_URL
+                        }).catch(() => copyShareMessage(message, 'Video link copied! Paste into Instagram, text, or email.'));
+                    } else {
+                        copyShareMessage(message, 'Video link copied! Paste into Instagram, text, or email.');
+                    }
+                    return;
+                }
+
+                if ((channel === 'text' || channel === 'video-text') && !isMobile()) {
+                    event.preventDefault();
+                    if (navigator.share) {
+                        navigator.share({
+                            title: SHARE_SUBJECT,
+                            text: message,
+                            url: channel === 'video-text' ? VIDEO_URL : EVENT_URL
                         }).catch(() => copyShareMessage(message));
                     } else {
                         copyShareMessage(message);

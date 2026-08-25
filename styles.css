@@ -1091,6 +1091,95 @@ html.promo-banner-dismissed body.has-promo-banner .shop-page-hero {
     text-decoration: underline;
 }
 
+.yacht-video-spotlight {
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 22px 20px 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1f172d 0%, #3b1d4a 55%, #5b2a6e 100%);
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(31, 23, 45, 0.28);
+}
+
+.yacht-video-kicker {
+    margin: 0 0 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e9b3f5;
+}
+
+.yacht-video-spotlight h3,
+.yacht-video-spotlight .yacht-video-title {
+    margin: 0 0 10px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.yacht-video-spotlight p {
+    margin: 0 auto 18px;
+    max-width: 42rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.yacht-video-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.yacht-video-watch-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 200px;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f58529 0%, #dd2a7b 40%, #8134af 70%, #515bd4 100%);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(221, 42, 123, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.yacht-video-watch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(221, 42, 123, 0.45);
+    color: #fff;
+}
+
+.yacht-video-watch-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.yacht-share-btn.yacht-share-btn-secondary {
+    background: transparent;
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #fff;
+    box-shadow: none;
+}
+
+.yacht-video-spotlight .yacht-share-btn.yacht-share-btn-secondary:hover {
+    background: #fff;
+    color: #1f172d;
+    border-color: #fff;
+}
+
 .yacht-share-block {
     width: 100%;
     margin-top: 8px;
