@@ -10,6 +10,9 @@ Sitemap: https://lookoutmountainmahjong.com/sitemap.xml
 # https://lookoutmountainmahjong.com/mahjong-cruise-2027.html
 # https://lookoutmountainmahjong.com/caribbean-mahjong-cruise.html
 # https://lookoutmountainmahjong.com/ritz-carlton-yacht-mahjong.html
+# https://lookoutmountainmahjong.com/ritz-mahjong-cruise-announcement.html
+# https://lookoutmountainmahjong.com/share-ritz-mahjong-cruise.html
+# https://www.instagram.com/p/DcTs3Jpuxej/
 
 # Crawler hints (hidden SEO pages listed here + sitemap — not linked from public site nav)
 # https://lookoutmountainmahjong.com/llms.txt
